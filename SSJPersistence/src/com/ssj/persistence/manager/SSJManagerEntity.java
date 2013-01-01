@@ -117,5 +117,12 @@ public class SSJManagerEntity <T> {
 	public void end() {
 		entityManager.close();
 	}
+
+	/**
+	 * @return the entityManager
+	 */
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
 }
 	
