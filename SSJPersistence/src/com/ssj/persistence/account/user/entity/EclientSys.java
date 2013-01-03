@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ssj.persistence.account;
+package com.ssj.persistence.account.user.entity;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -16,10 +16,10 @@ import javax.persistence.PrimaryKeyJoinColumn;
  * @since 2013
  * @copyright Shopping São Joao
  */
-@DiscriminatorValue("EClientSys")
+@DiscriminatorValue("EclientSys")
 @Entity
 @PrimaryKeyJoinColumn(name="id")
-public class EClientSys extends User {
+public class EclientSys extends User {
 
 	/**
 	 * 

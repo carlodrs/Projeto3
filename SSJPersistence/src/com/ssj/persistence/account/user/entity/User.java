@@ -1,4 +1,4 @@
-package com.ssj.persistence.account;
+package com.ssj.persistence.account.user.entity;
 
 import java.io.Serializable;
 
@@ -28,6 +28,7 @@ public class User implements Serializable {
 	private char optIn;
 	private String gender;
 	private String docNumber;
+	private String rg;
 	
 	@OneToOne(mappedBy="user", cascade=CascadeType.PERSIST)
 	private UserEmail userEmail;
@@ -53,8 +54,25 @@ public class User implements Serializable {
 	public void setUserId(Long id) {
 		this.userId = id;
 	}
-
 	
+	
+	
+	/**
+	 * @return the rg
+	 */
+	public String getRg() {
+		return rg;
+	}
+
+
+	/**
+	 * @param rg the rg to set
+	 */
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+
 	/**
 	 * @return the name
 	 */
@@ -130,7 +148,7 @@ public class User implements Serializable {
 	/**
 	 * @return the docNumber
 	 */
-	public String getDocNumber() {
+	protected String getDocNumber() {
 		return docNumber;
 	}
 
@@ -138,7 +156,7 @@ public class User implements Serializable {
 	/**
 	 * @param docNumber the docNumber to set
 	 */
-	public void setDocNumber(String docNumber) {
+	protected void setDocNumber(String docNumber) {
 		this.docNumber = docNumber;
 	}
 

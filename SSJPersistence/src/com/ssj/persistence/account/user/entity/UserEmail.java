@@ -1,4 +1,4 @@
-package com.ssj.persistence.account;
+package com.ssj.persistence.account.user.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;

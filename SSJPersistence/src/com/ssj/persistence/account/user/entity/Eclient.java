@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ssj.persistence.account;
+package com.ssj.persistence.account.user.entity;
 
 import java.util.Calendar;
 
@@ -20,9 +20,9 @@ import javax.persistence.PrimaryKeyJoinColumn;
  *
  */
 @Entity
-@DiscriminatorValue("EClient")
+@DiscriminatorValue("Eclient")
 @PrimaryKeyJoinColumn(name="id") 
-public class EClient extends User {
+public class Eclient extends User {
 
 	/**
 	 * 

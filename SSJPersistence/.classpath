@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MysqlDriver"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OpenJPA"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring3"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

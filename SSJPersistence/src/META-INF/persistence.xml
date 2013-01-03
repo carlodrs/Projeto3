@@ -11,10 +11,10 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		<!-- Persistences POJO -->
-		<class>com.ssj.persistence.account.User</class>
-		<class>com.ssj.persistence.account.UserEmail</class>
-		<class>com.ssj.persistence.account.EClient</class>
-		<class>com.ssj.persistence.account.EClientSys</class>
+		<class>com.ssj.persistence.account.user.entity.User</class>
+		<class>com.ssj.persistence.account.user.entity.UserEmail</class>
+		<class>com.ssj.persistence.account.user.entity.Eclient</class>
+		<class>com.ssj.persistence.account.user.entity.EclientSys</class>
 		
 		<!-- Access Configuration -->
 		<properties>

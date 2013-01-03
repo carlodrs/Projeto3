@@ -8,7 +8,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import java.util.logging.Level;
 
-import com.ssj.persistence.account.User;
+import com.ssj.persistence.account.user.entity.User;
 
 
 /**
