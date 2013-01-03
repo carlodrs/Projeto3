@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @since 2012
  * @copyright  Shopping São João 
  * */
-@Component("SSJGenericDao")
+@Repository
 public interface SSJGenericDao < T extends Serializable > {
 	
 	/**
@@ -26,6 +27,7 @@ public interface SSJGenericDao < T extends Serializable > {
 	 * @return void
 	 * @throws Exception Problems in the method
 	 * */
+	@Transactional
 	public void create(T t) throws Exception;
 
 	/**

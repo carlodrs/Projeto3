@@ -1,7 +1,5 @@
 package com.ssj.persistence.account.user.dao;
 
-import org.springframework.stereotype.Component;
-
 import com.ssj.persistence.account.user.entity.Eclient;
 import com.ssj.persistence.generic.dao.SSJGenericDao;
 
@@ -15,6 +13,6 @@ import com.ssj.persistence.generic.dao.SSJGenericDao;
  * Shopping São João
  * 
  * */
-@Component("EclientDao")
+
 public interface EclientDao extends SSJGenericDao<Eclient>  {
 }

@@ -7,25 +7,12 @@
 	<!-- Unit persistence -->
 	<persistence-unit name="SSJPersistence" transaction-type="RESOURCE_LOCAL">
 		
-		<!-- Provider: Hibernate -->
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		
 		<!-- Persistences POJO -->
 		<class>com.ssj.persistence.account.user.entity.User</class>
 		<class>com.ssj.persistence.account.user.entity.UserEmail</class>
 		<class>com.ssj.persistence.account.user.entity.Eclient</class>
 		<class>com.ssj.persistence.account.user.entity.EclientSys</class>
 		
-		<!-- Access Configuration -->
-		<properties>
-			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-	        <property name="hibernate.connection.username" value="root"/>
-	        <property name="hibernate.connection.password" value="mysql"/>
-	        <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/SSJDEV"/>
-	        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-	    	<property name="hibernate.show_sql" value="true"/>
-	    	<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-	    </properties>
 	</persistence-unit>
  
 </persistence>

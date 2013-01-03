@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ssj.persistence.generic.dao.SSJGenericDao;
 
@@ -18,7 +19,6 @@ import com.ssj.persistence.generic.dao.SSJGenericDao;
  * @since 2012
  * @copyright  Shopping São João 
  * */
-@Component("SSJGenericDaoImpl")
 public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJGenericDao  <T>{
 	
 	/* The entity manager for SSJ */	
@@ -35,16 +35,11 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 	 * @return void
 	 * @throws Exception Problems in the method
 	 * */
+	@Transactional
 	public void create(T t) throws Exception{
 		try {
-			entityManager.getTransaction().begin();
 			entityManager.persist(t);
-			entityManager.getTransaction().commit();
-			
 		} catch (Exception e) {
-			if ( entityManager.getTransaction().isActive()){
-				entityManager.getTransaction().rollback();
-			}
 			throw e;
 		}
 	}
@@ -59,14 +54,8 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 	 * */
 	public void update(T t) throws Exception{
 		try {
-			entityManager.getTransaction().begin();
 			entityManager.merge(t);
-			entityManager.getTransaction().commit();
-			
 		} catch (Exception e) {
-			if ( entityManager.getTransaction().isActive()){
-				entityManager.getTransaction().rollback();
-			}
 			throw e;
 		}
 	}
@@ -81,14 +70,9 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 	 * */
 	public void delete(T t) throws Exception{
 		try {
-			entityManager.getTransaction().begin();
 			entityManager.remove(entityManager.merge(t));
-			entityManager.getTransaction().commit();
 			
 		} catch (Exception e) {
-			if ( entityManager.getTransaction().isActive()){
-				entityManager.getTransaction().rollback();
-			}
 			throw e;
 		}
 	}
@@ -110,7 +94,6 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 			throw e;
 		}
 	}
-
 
 	/**
 	 * 

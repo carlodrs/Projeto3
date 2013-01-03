@@ -1,4 +1,4 @@
-package com.ssj.service.account.user;
+package com.ssj.service.account.user.interfaces;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

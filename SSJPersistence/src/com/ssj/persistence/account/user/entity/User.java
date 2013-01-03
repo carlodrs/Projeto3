@@ -30,7 +30,7 @@ public class User implements Serializable {
 	private String docNumber;
 	private String rg;
 	
-	@OneToOne(mappedBy="user", cascade=CascadeType.PERSIST)
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
 	private UserEmail userEmail;
 	
 	private static final long serialVersionUID = 1L;

@@ -23,7 +23,7 @@ public class UserEmail implements Serializable {
 	@GeneratedValue(strategy = GenerationType.TABLE)  
 	private Long id;
 	
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="userId")
     private User user;
 	private String email;

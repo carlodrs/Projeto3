@@ -29,6 +29,9 @@ public class UserBean implements Serializable{
 	private String rg;
 	private String email;
 	private String password;
+	private UserEmailBean userEmail;
+	
+	
 	/**
 	 * @return the name
 	 */
@@ -155,5 +158,16 @@ public class UserBean implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+	/**
+	 * @return the emailBean
+	 */
+	public UserEmailBean getUserEmail() {
+		return this.userEmail;
+	}
+	/**
+	 * @param emailBean the emailBean to set
+	 */
+	public void setUserEmail(UserEmailBean userEmail) {
+		this.userEmail = userEmail;
+	}
 }

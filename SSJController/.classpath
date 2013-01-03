@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SSJPersistence"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring3"/>
+	<classpathentry kind="lib" path="/SSJWeb/WebContent/WEB-INF/lib/struts/aopalliance-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
