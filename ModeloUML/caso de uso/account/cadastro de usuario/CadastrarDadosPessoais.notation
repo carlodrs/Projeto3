@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+  <notation:Diagram xmi:id="_57jkkE-dEeK6gb4Ep59_gA" type="UseCase" name="AccountSection" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_57jkkU-dEeK6gb4Ep59_gA"/>
+    <element xmi:type="uml:Model" href="CadastrarDadosPessoais.uml#_57hvYE-dEeK6gb4Ep59_gA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_CmUVQE-eEeK6gb4Ep59_gA" type="UseCase" name="Cadastrar Dados Pessoais" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_DR6P8U-eEeK6gb4Ep59_gA" type="2011" fontName="Segoe UI" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DR6P80-eEeK6gb4Ep59_gA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DR6P9E-eEeK6gb4Ep59_gA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DR6P9U-eEeK6gb4Ep59_gA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DR6P9k-eEeK6gb4Ep59_gA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DR6P90-eEeK6gb4Ep59_gA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DR6P-E-eEeK6gb4Ep59_gA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DR6P-U-eEeK6gb4Ep59_gA" type="5014">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DR6P-k-eEeK6gb4Ep59_gA" x="20" y="60"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DR6P-0-eEeK6gb4Ep59_gA" type="6029">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DR6P_E-eEeK6gb4Ep59_gA" x="20" y="100"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DR6P_U-eEeK6gb4Ep59_gA" type="6037">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DR6P_k-eEeK6gb4Ep59_gA" x="20" y="80"/>
+      </children>
+      <element xmi:type="uml:Actor" href="CadastrarDadosPessoais.uml#_DR6P8E-eEeK6gb4Ep59_gA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DR6P8k-eEeK6gb4Ep59_gA" x="75" y="135"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_D3_YgE-eEeK6gb4Ep59_gA" type="2013" fontName="Segoe UI" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D3_Ygk-eEeK6gb4Ep59_gA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D3_Yg0-eEeK6gb4Ep59_gA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D3_YhE-eEeK6gb4Ep59_gA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D3_YhU-eEeK6gb4Ep59_gA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D3_Yhk-eEeK6gb4Ep59_gA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D3_Yh0-eEeK6gb4Ep59_gA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_D3_YiE-eEeK6gb4Ep59_gA" type="5016"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_D3_YiU-eEeK6gb4Ep59_gA" type="7009">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_D3_Yik-eEeK6gb4Ep59_gA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_D3_Yi0-eEeK6gb4Ep59_gA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3_YjE-eEeK6gb4Ep59_gA"/>
+      </children>
+      <element xmi:type="uml:UseCase" href="CadastrarDadosPessoais.uml#_D3ZioE-eEeK6gb4Ep59_gA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3_YgU-eEeK6gb4Ep59_gA" x="265" y="140"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_CmUVQU-eEeK6gb4Ep59_gA"/>
+    <element xmi:type="uml:Model" href="CadastrarDadosPessoais.uml#_57hvYE-dEeK6gb4Ep59_gA"/>
+    <edges xmi:type="notation:Connector" xmi:id="_GlncYE-eEeK6gb4Ep59_gA" type="4011" source="_DR6P8U-eEeK6gb4Ep59_gA" target="_D3_YgE-eEeK6gb4Ep59_gA" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GlwmUE-eEeK6gb4Ep59_gA" visible="false" type="6008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GlwmUU-eEeK6gb4Ep59_gA" y="40"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_GlwmUk-eEeK6gb4Ep59_gA" type="6033">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GlwmU0-eEeK6gb4Ep59_gA" y="-20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_GlncYU-eEeK6gb4Ep59_gA" fontName="Segoe UI"/>
+      <element xmi:type="uml:Association" href="CadastrarDadosPessoais.uml#_GlT6YE-eEeK6gb4Ep59_gA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GlncYk-eEeK6gb4Ep59_gA" points="[40, 2, -204, -3]$[151, 11, -93, 6]"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

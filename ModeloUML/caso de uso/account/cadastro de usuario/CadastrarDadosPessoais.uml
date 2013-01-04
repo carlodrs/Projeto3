@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_57hvYE-dEeK6gb4Ep59_gA" name="model">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_DR6P8E-eEeK6gb4Ep59_gA" name="Usuario"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_D3ZioE-eEeK6gb4Ep59_gA" name="Cadastrar Dados Pessoais"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_GlT6YE-eEeK6gb4Ep59_gA" name="A_actor_cadastrar dados pessoais" memberEnd="_GlT6YU-eEeK6gb4Ep59_gA _GlT6ZE-eEeK6gb4Ep59_gA">
+    <ownedEnd xmi:id="_GlT6YU-eEeK6gb4Ep59_gA" name="actor" type="_DR6P8E-eEeK6gb4Ep59_gA" association="_GlT6YE-eEeK6gb4Ep59_gA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GlT6Yk-eEeK6gb4Ep59_gA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GlT6Y0-eEeK6gb4Ep59_gA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_GlT6ZE-eEeK6gb4Ep59_gA" name="cadastrar dados pessoais" type="_D3ZioE-eEeK6gb4Ep59_gA" association="_GlT6YE-eEeK6gb4Ep59_gA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GlT6ZU-eEeK6gb4Ep59_gA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GlT6Zk-eEeK6gb4Ep59_gA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

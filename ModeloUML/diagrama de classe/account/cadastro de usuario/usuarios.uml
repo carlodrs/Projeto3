@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_gsceAFDgEeKQJ-irH_maWw" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_mfCHsFDgEeKQJ-irH_maWw" name="User">
+    <ownedAttribute xmi:id="_h4oSYFDiEeKQJ-irH_maWw" name="nome" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_inAbUFDiEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_inIXIFDiEeKQJ-irH_maWw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_inLacFDiEeKQJ-irH_maWw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_dHpaMFDjEeKQJ-irH_maWw" name="name" visibility="private" type="_cv-ncFDrEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dxTbMFDjEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dxUCQFDjEeKQJ-irH_maWw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_dxV3cFDjEeKQJ-irH_maWw" value=""/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_m2lvQFDkEeKQJ-irH_maWw" name="nickName" visibility="private" type="_cv-ncFDrEeKQJ-irH_maWw"/>
+    <ownedAttribute xmi:id="_0Z3RkFDlEeKQJ-irH_maWw" name="usuarioEmail" type="_AVoVcFDlEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0Z3RkVDlEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Z3RklDlEeKQJ-irH_maWw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ug9vEFDmEeKQJ-irH_maWw" name="usuarioEmail" type="_AVoVcFDlEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ug9vEVDmEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ug9vElDmEeKQJ-irH_maWw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_7zIIsFDmEeKQJ-irH_maWw" name="usuarioEmail" type="_AVoVcFDlEeKQJ-irH_maWw" association="_7zIvwFDmEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7zIIsVDmEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7zIIslDmEeKQJ-irH_maWw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_DP1DcFDqEeKQJ-irH_maWw" name="optIn" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EDgjIFDqEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EDgjIVDqEeKQJ-irH_maWw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_EDhxQFDqEeKQJ-irH_maWw" value="No"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2fTQ4FNSEeKuL7rhNogGJw" name="gender" visibility="private" type="_cv-ncFDrEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jD4YFNSEeKuL7rhNogGJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jGUoFNSEeKuL7rhNogGJw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_4jJX8FNSEeKuL7rhNogGJw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_J0sGUFNVEeKuL7rhNogGJw" name="docNumber" visibility="private" type="_cv-ncFDrEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KVSR8FNVEeKuL7rhNogGJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KVUHIFNVEeKuL7rhNogGJw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_KVXKcFNVEeKuL7rhNogGJw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_IMnmYFODEeKuL7rhNogGJw" name="userId" visibility="private" type="_O7PIkFOFEeKuL7rhNogGJw" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OeM5MFODEeKuL7rhNogGJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OeOHUFODEeKuL7rhNogGJw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_XL0KYFDiEeKQJ-irH_maWw" name="setName">
+      <ownedParameter xmi:id="_DSMwEFDsEeKQJ-irH_maWw" name="nome" type="_cv-ncFDrEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_YSYw4FDiEeKQJ-irH_maWw" name="getName"/>
+    <ownedOperation xmi:id="_aTBL4FDiEeKQJ-irH_maWw" name="setNickName">
+      <ownedParameter xmi:id="_TUYaQFDsEeKQJ-irH_maWw" name="nickName" type="_cv-ncFDrEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_MeVpIFDkEeKQJ-irH_maWw" name="getNickName"/>
+    <ownedOperation xmi:id="_ZBPwEFDkEeKQJ-irH_maWw" name="Operation5"/>
+    <ownedOperation xmi:id="_PG9pgFDqEeKQJ-irH_maWw" name="setOptIn">
+      <ownedParameter xmi:id="_ecQGkFDsEeKQJ-irH_maWw" name="value" type="_n_h-MFDtEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_RClBoFDqEeKQJ-irH_maWw" name="getOptIn"/>
+    <ownedOperation xmi:id="_QDv7gFNTEeKuL7rhNogGJw" name="setGender">
+      <ownedParameter xmi:id="_knGDwFNTEeKuL7rhNogGJw" name="gender" type="_n_h-MFDtEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_lgfJ4FNTEeKuL7rhNogGJw" name="getGender">
+      <ownedRule xmi:id="InteractionUse-returnValue_type_recipient_correspondence" name="returnValue_type_recipient_correspondence">
+        <ownedComment xmi:id="InteractionUse-returnValue_type_recipient_correspondence-_ownedComment.0" annotatedElement="InteractionUse-returnValue_type_recipient_correspondence">
+          <body>The type of the returnValue must correspond to the type of the returnValueRecipient.</body>
+        </ownedComment>
+        <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#InteractionUse"/>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="InteractionUse-returnValue_type_recipient_correspondence-_specification">
+          <language>OCL</language>
+          <body>true</body>
+        </specification>
+      </ownedRule>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Oq7cgFNVEeKuL7rhNogGJw" name="setDocNumber">
+      <ownedParameter xmi:id="_US-qIFNVEeKuL7rhNogGJw" name="docNumber" type="_cv-ncFDrEeKQJ-irH_maWw"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_VN-50FNVEeKuL7rhNogGJw" name="geDocNumber"/>
+    <ownedOperation xmi:id="_QRbxYFODEeKuL7rhNogGJw" name="setUserId">
+      <ownedParameter xmi:id="_zV91sFOEEeKuL7rhNogGJw" name="id" type="_O7PIkFOFEeKuL7rhNogGJw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_hacO0FOFEeKuL7rhNogGJw" name="getUserId"/>
+    <ownedReception xmi:id="_OSrUkFDkEeKQJ-irH_maWw" name="Reception1"/>
+    <ownedReception xmi:id="_CSnpwFDpEeKQJ-irH_maWw" name="Reception2"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_qyeS0FDgEeKQJ-irH_maWw" name="Client">
+    <generalization xmi:id="_1DTpcFDgEeKQJ-irH_maWw" general="_mfCHsFDgEeKQJ-irH_maWw"/>
+    <ownedAttribute xmi:id="_EBwFEFDpEeKQJ-irH_maWw" name="cpf" visibility="private" type="_cv-ncFDrEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FJaQsFDpEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FJa3wFDpEeKQJ-irH_maWw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_FJcs8FDpEeKQJ-irH_maWw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Re4YkFDpEeKQJ-irH_maWw" name="birthday" visibility="private" type="_6TJU8FDsEeKQJ-irH_maWw"/>
+    <ownedAttribute xmi:id="_UzSvoFDpEeKQJ-irH_maWw" name="sexo" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VpGWQFDpEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VpG9UFDpEeKQJ-irH_maWw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_VpJZkFDpEeKQJ-irH_maWw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_X2yvIFDkEeKQJ-irH_maWw" name="getCPF"/>
+    <ownedOperation xmi:id="_cww8gFDpEeKQJ-irH_maWw" name="setCPF">
+      <ownedParameter xmi:id="_4UKfwFDsEeKQJ-irH_maWw" name="cpf" type="_cv-ncFDrEeKQJ-irH_maWw"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_gFxwgFDpEeKQJ-irH_maWw" name="getBirthDay"/>
+    <ownedOperation xmi:id="_hxqDgFDpEeKQJ-irH_maWw" name="setBirthday">
+      <ownedParameter xmi:id="_A0HuoFDtEeKQJ-irH_maWw" name="date" type="_6TJU8FDsEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_odSOAFDpEeKQJ-irH_maWw" name="getSexo"/>
+    <ownedOperation xmi:id="_pkixAFDpEeKQJ-irH_maWw" name="setSexo"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rpuq8FDgEeKQJ-irH_maWw" name="Partner">
+    <generalization xmi:id="_1wUgcFDgEeKQJ-irH_maWw" general="_mfCHsFDgEeKQJ-irH_maWw"/>
+    <ownedAttribute xmi:id="_r_yEYFDpEeKQJ-irH_maWw" name="cnpj" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vFi7cFDpEeKQJ-irH_maWw" name="companyName" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v4whEFDpEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v4xIIFDpEeKQJ-irH_maWw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_v4yWQFDpEeKQJ-irH_maWw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_dpmbQFDkEeKQJ-irH_maWw" name="getCNPJ"/>
+    <ownedOperation xmi:id="_4kJj4FDpEeKQJ-irH_maWw" name="setCNPJ">
+      <ownedParameter xmi:id="_Z26dsFDtEeKQJ-irH_maWw" name="cnpj" type="_cv-ncFDrEeKQJ-irH_maWw"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_7Dt9oFDpEeKQJ-irH_maWw" name="getCompanyName"/>
+    <ownedOperation xmi:id="_9bd4IFDpEeKQJ-irH_maWw" name="setCompanyName">
+      <ownedParameter xmi:id="_dDd5QFDtEeKQJ-irH_maWw" name="nomeFantasia" type="_cv-ncFDrEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AVoVcFDlEeKQJ-irH_maWw" name="UserEmail">
+    <ownedAttribute xmi:id="_wHMGAFDmEeKQJ-irH_maWw" name="usuario" type="_mfCHsFDgEeKQJ-irH_maWw" association="_wHNUIFDmEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wHMGAVDmEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wHMGAlDmEeKQJ-irH_maWw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_RrGhkFDnEeKQJ-irH_maWw" name="userEmail" visibility="private" type="_cv-ncFDrEeKQJ-irH_maWw"/>
+    <ownedAttribute xmi:id="_iLxekFDnEeKQJ-irH_maWw" name="password" visibility="private" type="_cv-ncFDrEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jKz5sFDnEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jK0gwFDnEeKQJ-irH_maWw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_jK1u4FDnEeKQJ-irH_maWw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HW9lMFONEeKuL7rhNogGJw" name="id" visibility="private" type="_O7PIkFOFEeKuL7rhNogGJw" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MZC_AFONEeKuL7rhNogGJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MZE0MFONEeKuL7rhNogGJw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_MZH3gFONEeKuL7rhNogGJw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_xysJEFDnEeKQJ-irH_maWw" name="setUserEmail">
+      <ownedRule xmi:id="Message-arguments" name="arguments">
+        <ownedComment xmi:id="Message-arguments-_ownedComment.0" annotatedElement="Message-arguments">
+          <body>Arguments of a Message must only be: i) attributes of the sending lifeline ii) constants iii) symbolic values (which are wildcard values representing any legal value) iv) explicit parameters of the enclosing Interaction v) attributes of the class owning the Interaction</body>
+        </ownedComment>
+        <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Message"/>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="Message-arguments-_specification">
+          <language>OCL</language>
+          <body>true</body>
+        </specification>
+      </ownedRule>
+      <ownedParameter xmi:id="_K404UFDuEeKQJ-irH_maWw" name="userEmail" type="_cv-ncFDrEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_yJ0PoFDnEeKQJ-irH_maWw" name="getUserEmail"/>
+    <ownedOperation xmi:id="_y7VMIFDnEeKQJ-irH_maWw" name="setPassword">
+      <ownedParameter xmi:id="_uYAYoFDsEeKQJ-irH_maWw" name="password" type="_cv-ncFDrEeKQJ-irH_maWw" isUnique="false"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zL-QMFDnEeKQJ-irH_maWw" name="getPassword"/>
+    <ownedOperation xmi:id="__5Ks0FDtEeKQJ-irH_maWw" name="Operation1"/>
+    <ownedOperation xmi:id="_OunvQFONEeKuL7rhNogGJw" name="getId"/>
+    <ownedOperation xmi:id="_TwixAFONEeKuL7rhNogGJw" name="setId">
+      <ownedParameter xmi:id="_XxIRkFONEeKuL7rhNogGJw" name="id" type="_O7PIkFOFEeKuL7rhNogGJw" isUnique="false"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_wHNUIFDmEeKQJ-irH_maWw" name="usuarioEmail_usuario_1" memberEnd="_wHNUIVDmEeKQJ-irH_maWw _wHMGAFDmEeKQJ-irH_maWw">
+    <ownedEnd xmi:id="_wHNUIVDmEeKQJ-irH_maWw" name="usuarioEmail" type="_AVoVcFDlEeKQJ-irH_maWw" association="_wHNUIFDmEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wHNUIlDmEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wHNUI1DmEeKQJ-irH_maWw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7zIvwFDmEeKQJ-irH_maWw" name="usuario_usuarioEmail_1" memberEnd="_7zIvwVDmEeKQJ-irH_maWw _7zIIsFDmEeKQJ-irH_maWw">
+    <ownedEnd xmi:id="_7zIvwVDmEeKQJ-irH_maWw" name="usuario" type="_mfCHsFDgEeKQJ-irH_maWw" association="_7zIvwFDmEeKQJ-irH_maWw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7zIvwlDmEeKQJ-irH_maWw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7zIvw1DmEeKQJ-irH_maWw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_cv-ncFDrEeKQJ-irH_maWw" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_6TJU8FDsEeKQJ-irH_maWw" name="Date"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_n_h-MFDtEeKQJ-irH_maWw" name="char"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_O7PIkFOFEeKuL7rhNogGJw" name="Long"/>
+</uml:Model>
