@@ -1,9 +1,9 @@
-package com.ssj.persistence.account.test;
+package com.ssj.testcase.persistence.account.test.old;
 
 
 import java.util.ArrayList;
 
-import com.ssj.persistence.account.User;
+import com.ssj.persistence.account.user.entity.User;
 import com.ssj.persistence.manager.SSJManagerEntity;
 
 public class UserTestCaseJPA {

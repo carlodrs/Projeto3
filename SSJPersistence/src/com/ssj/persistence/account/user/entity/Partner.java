@@ -16,10 +16,10 @@ import javax.persistence.PrimaryKeyJoinColumn;
  * @since 2013
  * @copyright Shopping São Joao
  */
-@DiscriminatorValue("EclientSys")
+@DiscriminatorValue("Partner")
 @Entity
 @PrimaryKeyJoinColumn(name="id")
-public class EclientSys extends User {
+public class Partner extends User {
 
 	/**
 	 * 

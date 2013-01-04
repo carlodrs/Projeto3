@@ -10,8 +10,8 @@
 		<!-- Persistences POJO -->
 		<class>com.ssj.persistence.account.user.entity.User</class>
 		<class>com.ssj.persistence.account.user.entity.UserEmail</class>
-		<class>com.ssj.persistence.account.user.entity.Eclient</class>
-		<class>com.ssj.persistence.account.user.entity.EclientSys</class>
+		<class>com.ssj.persistence.account.user.entity.Client</class>
+		<class>com.ssj.persistence.account.user.entity.Partner</class>
 		
 	</persistence-unit>
  

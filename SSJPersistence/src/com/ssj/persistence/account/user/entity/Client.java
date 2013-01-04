@@ -20,9 +20,9 @@ import javax.persistence.PrimaryKeyJoinColumn;
  *
  */
 @Entity
-@DiscriminatorValue("Eclient")
+@DiscriminatorValue("Client")
 @PrimaryKeyJoinColumn(name="id") 
-public class Eclient extends User {
+public class Client extends User {
 
 	/**
 	 * 

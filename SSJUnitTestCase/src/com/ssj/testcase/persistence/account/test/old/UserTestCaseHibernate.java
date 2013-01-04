@@ -1,10 +1,10 @@
-package com.ssj.persistence.account.test;
+package com.ssj.testcase.persistence.account.test.old;
 
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.ssj.persistence.account.User;
+import com.ssj.persistence.account.user.entity.User;
 import com.ssj.persistence.util.HibernateUtil;
 
 public class UserTestCaseHibernate {

@@ -1,17 +1,17 @@
-package com.ssj.persistence.account.test;
+package com.ssj.testcase.persistence.account.test.old;
 
 import java.util.Calendar;
 
-import com.ssj.persistence.account.EClient;
-import com.ssj.persistence.account.EClientSys;
-import com.ssj.persistence.account.UserEmail;
+import com.ssj.persistence.account.user.entity.Client;
+import com.ssj.persistence.account.user.entity.Partner;
+import com.ssj.persistence.account.user.entity.UserEmail;
 import com.ssj.persistence.manager.SSJManagerEntity;
 
 public class UserRegistrationTestCase {
 
 	public static void main(String[] args) {
 		
-		EClient client = new EClient();
+		Client client = new Client();
 		client.setName("Carlos Renato Domingos da Silva");
 		client.setCpf("29293578867");
 		client.setGender("M");
@@ -30,7 +30,7 @@ public class UserRegistrationTestCase {
 		userEmail.setPassword("test");	
 		
 		
-		EClientSys sysClient = new EClientSys();
+		Partner sysClient = new Partner();
 		sysClient.setName("Isabel");
 		sysClient.setName("Isabelzinha");
 		

@@ -15,6 +15,7 @@
        
 	<context:component-scan base-package="com.ssj.service"/>
 	<context:component-scan base-package="com.ssj.persistence"/>
+	<context:component-scan base-package="com.ssj.action"/>
 	
 	<!-- holding properties for database connectivity /-->
 	<context:property-placeholder location="classpath:META-INF/jdbc.properties"/>
@@ -38,7 +39,7 @@
     	</property>
     	<property name="jpaProperties">
         	<props>
-            	<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+            	<prop key="hibernate.hbm2ddl.auto">update</prop>
             	 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
     			 <prop key="hibernate.show_sql">true</prop>
     		</props>
