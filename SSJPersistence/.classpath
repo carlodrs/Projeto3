@@ -12,9 +12,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate4"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MysqlDriver"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OpenJPA"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Persistence"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
