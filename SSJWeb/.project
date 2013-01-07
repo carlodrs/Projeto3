@@ -3,6 +3,8 @@
 	<name>SSJWeb</name>
 	<comment></comment>
 	<projects>
+		<project>SSJService</project>
+		<project>SSJPersistence</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
