@@ -1,4 +1,4 @@
-package com.ssj.action.account.user;
+package com.ssj.test.action.account.user;
 
 import java.util.Calendar;
 

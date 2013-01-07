@@ -1,6 +1,6 @@
-package com.ssj.action.account.user;
+package com.ssj.test.action.account.user;
 
-import com.ssj.generic.test.SSJGenericSpringTest;
+import com.ssj.test.SSJGenericSpringTest;
 
 /**
  * Test case action suppport test

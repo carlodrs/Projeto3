@@ -1,4 +1,4 @@
-package com.ssj.testcase.persistence.account.test.old;
+package com.ssj.old;
 
 import java.util.Calendar;
 

@@ -1,4 +1,4 @@
-package com.ssj.generic.test;
+package com.ssj.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

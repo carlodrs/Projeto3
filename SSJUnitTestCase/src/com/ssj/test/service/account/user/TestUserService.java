@@ -1,12 +1,12 @@
-package com.ssj.service.account.user;
+package com.ssj.test.service.account.user;
 
-import com.ssj.generic.test.SSJGenericSpringTest;
 import com.ssj.service.account.user.interfaces.PartnerService;
 import com.ssj.service.account.user.interfaces.UserService;
 import com.ssj.service.account.user.interfaces.impl.PartnerServiceImpl;
 import com.ssj.service.account.user.interfaces.impl.UserServiceImpl;
 import com.ssj.service.bean.account.user.PartnerBean;
 import com.ssj.service.bean.account.user.UserBean;
+import com.ssj.test.SSJGenericSpringTest;
 
 public class TestUserService extends SSJGenericSpringTest{
 	
