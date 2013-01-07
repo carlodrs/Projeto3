@@ -161,13 +161,13 @@ public class UserBean implements Serializable{
 	/**
 	 * @return the emailBean
 	 */
-	public UserEmailBean getUserEmail() {
+	protected UserEmailBean getUserEmail() {
 		return this.userEmail;
 	}
 	/**
 	 * @param emailBean the emailBean to set
 	 */
-	public void setUserEmail(UserEmailBean userEmail) {
+	protected void setUserEmail(UserEmailBean userEmail) {
 		this.userEmail = userEmail;
 	}
 }
