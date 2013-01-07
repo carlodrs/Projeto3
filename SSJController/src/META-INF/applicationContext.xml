@@ -15,10 +15,10 @@
        
 	<context:component-scan base-package="com.ssj.service"/>
 	<context:component-scan base-package="com.ssj.persistence"/>
-	<context:component-scan base-package="com.ssj.action"/>
+	<context:component-scan base-package="com.ssj.test"/>
 	
 	<!-- holding properties for database connectivity /-->
-	<context:property-placeholder location="classpath:META-INF/jdbc.properties"/>
+	<context:property-placeholder location="classpath*:META-INF/jdbc.properties"/>
 
   
 	<!--  Configure datasource of this project -->  
