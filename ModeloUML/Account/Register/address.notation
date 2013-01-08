@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+  <notation:Diagram xmi:id="_dUCFgFmYEeKwtOZzFBqzEA" type="PapyrusUMLClassDiagram" name="Address - Class diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_dUCFgVmYEeKwtOZzFBqzEA"/>
+    <element xmi:type="uml:Model" href="address.uml#_dUAQUFmYEeKwtOZzFBqzEA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_dU95oFmYEeKwtOZzFBqzEA" type="PapyrusUMLSequenceDiagram" name="Address - sequence diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_dU95oVmYEeKwtOZzFBqzEA" type="2001" fontName="Segoe UI" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dU95olmYEeKwtOZzFBqzEA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dU95o1mYEeKwtOZzFBqzEA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dU95pFmYEeKwtOZzFBqzEA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dU95pVmYEeKwtOZzFBqzEA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dU95plmYEeKwtOZzFBqzEA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dU95p1mYEeKwtOZzFBqzEA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_dU95qFmYEeKwtOZzFBqzEA" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_dU95qVmYEeKwtOZzFBqzEA" type="7001">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dU95qlmYEeKwtOZzFBqzEA"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="address.uml#_dUIMIFmYEeKwtOZzFBqzEA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dU95q1mYEeKwtOZzFBqzEA"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_dU95rFmYEeKwtOZzFBqzEA"/>
+    <element xmi:type="uml:Interaction" href="address.uml#_dUIMIFmYEeKwtOZzFBqzEA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_dVA88FmYEeKwtOZzFBqzEA" type="UseCase" name="Address - use case" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_dVA88VmYEeKwtOZzFBqzEA"/>
+    <element xmi:type="uml:Model" href="address.uml#_dUAQUFmYEeKwtOZzFBqzEA"/>
+  </notation:Diagram>
+</xmi:XMI>

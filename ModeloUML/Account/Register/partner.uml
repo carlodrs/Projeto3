@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_34vIsFmXEeKwtOZzFBqzEA" name="Model">
+  <packageImport xmi:id="_34vIsVmXEeKwtOZzFBqzEA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_DlwLoFmnEeKwtOZzFBqzEA" name="Partner"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_FQJQ4FmnEeKwtOZzFBqzEA" name="Cadastrar Partner">
+    <extend xmi:id="_M_YNcFmnEeKwtOZzFBqzEA" extendedCase="_Fm3u0FmnEeKwtOZzFBqzEA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Fm3u0FmnEeKwtOZzFBqzEA" name="Cadastrar usuario"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JRke8FmnEeKwtOZzFBqzEA" name="A_partner_cadastrar partner" memberEnd="_JRke8VmnEeKwtOZzFBqzEA _JRke9FmnEeKwtOZzFBqzEA">
+    <ownedEnd xmi:id="_JRke8VmnEeKwtOZzFBqzEA" name="partner" type="_DlwLoFmnEeKwtOZzFBqzEA" association="_JRke8FmnEeKwtOZzFBqzEA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JRke8lmnEeKwtOZzFBqzEA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JRke81mnEeKwtOZzFBqzEA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_JRke9FmnEeKwtOZzFBqzEA" name="cadastrar partner" type="_FQJQ4FmnEeKwtOZzFBqzEA" association="_JRke8FmnEeKwtOZzFBqzEA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JRke9VmnEeKwtOZzFBqzEA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JRke9lmnEeKwtOZzFBqzEA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
