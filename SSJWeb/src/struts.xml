@@ -26,6 +26,18 @@
                 <param name="namespace">/example</param>
             </result>
         </action>
+        
+        <action name="userRegistration" >
+			<result>/account/user/userRegistration.jsp</result>
+		</action>
+
+   		<action name="createUser" class="com.ssj.action.account.user.UserRegistration">
+         	 <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+    
     </package>
 
     <include file="example.xml"/>
