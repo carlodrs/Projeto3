@@ -11,9 +11,9 @@
 
 	<h4>Informe seu email e senha</h4>	
 	<s:form action="createUser">
-		<s:textfield name="email" label="Email"/>
+		<s:textfield name="email" label="Email" value=""/>
 		<br/>
-		<s:password name="password" label="password"/>
+		<s:password name="password" label="password" value=""/>
 	
 		<s:submit/>
 	</s:form>
