@@ -21,7 +21,7 @@ import javax.persistence.OneToOne;
 public class User implements Serializable {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.TABLE)  
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
 	private Long userId;
 	private String name;
 	private String nickName;

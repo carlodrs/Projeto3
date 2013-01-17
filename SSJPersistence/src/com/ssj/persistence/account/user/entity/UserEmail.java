@@ -20,9 +20,6 @@ import javax.persistence.*;
 public class UserEmail implements Serializable {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)  
-	private Long id;
-	
 	@OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="userId")
     private User user;
@@ -77,19 +74,6 @@ public class UserEmail implements Serializable {
 		this.user = user;
 	}
 
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
 	
 	
 	
