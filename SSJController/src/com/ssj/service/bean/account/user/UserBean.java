@@ -21,7 +21,7 @@ public class UserBean implements Serializable{
 	
 	private String name;
 	private String nickName;
-	private Calendar birthDay;
+	private Calendar birthday;
 	private String cpf;
 	private String cnpj;
 	private String gender;
@@ -30,6 +30,15 @@ public class UserBean implements Serializable{
 	private String email;
 	private String password;
 	private UserEmailBean userEmail;
+	private String occupation;
+	private String literacy;
+	private String preferencialMusic;
+	private String preferencialFood;
+	private String religion;
+	private String facebookId;
+	private String twitterId;
+	private String linkedInId;
+	
 	
 	
 	/**
@@ -56,17 +65,19 @@ public class UserBean implements Serializable{
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+	
+	
 	/**
-	 * @return the birthDay
+	 * @return the birthday
 	 */
-	public Calendar getBirthDay() {
-		return birthDay;
+	public Calendar getBirthday() {
+		return birthday;
 	}
 	/**
-	 * @param birthDay the birthDay to set
+	 * @param birthday the birthday to set
 	 */
-	public void setBirthDay(Calendar birthDay) {
-		this.birthDay = birthDay;
+	public void setBirthday(Calendar birthday) {
+		this.birthday = birthday;
 	}
 	/**
 	 * @return the cpf
@@ -170,4 +181,106 @@ public class UserBean implements Serializable{
 	protected void setUserEmail(UserEmailBean userEmail) {
 		this.userEmail = userEmail;
 	}
+	/**
+	 * @return the occupation
+	 */
+	public String getOccupation() {
+		return occupation;
+	}
+	/**
+	 * @param occupation the occupation to set
+	 */
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+	/**
+	 * @return the literacy
+	 */
+	public String getLiteracy() {
+		return literacy;
+	}
+	/**
+	 * @param literacy the literacy to set
+	 */
+	public void setLiteracy(String literacy) {
+		this.literacy = literacy;
+	}
+	
+	/**
+	 * @return the preferencialMusic
+	 */
+	public String getPreferencialMusic() {
+		return preferencialMusic;
+	}
+	/**
+	 * @param preferencialMusic the preferencialMusic to set
+	 */
+	public void setPreferencialMusic(String preferencialMusic) {
+		this.preferencialMusic = preferencialMusic;
+	}
+	/**
+	 * @return the preferencialFood
+	 */
+	public String getPreferencialFood() {
+		return preferencialFood;
+	}
+	/**
+	 * @param preferencialFood the preferencialFood to set
+	 */
+	public void setPreferencialFood(String preferencialFood) {
+		this.preferencialFood = preferencialFood;
+	}
+	/**
+	 * @return the religion
+	 */
+	public String getReligion() {
+		return religion;
+	}
+	/**
+	 * @param religion the religion to set
+	 */
+	public void setReligion(String religion) {
+		this.religion = religion;
+	}
+	/**
+	 * @return the facebookId
+	 */
+	public String getFacebookId() {
+		return facebookId;
+	}
+	/**
+	 * @param facebookId the facebookId to set
+	 */
+	public void setFacebookId(String facebookId) {
+		this.facebookId = facebookId;
+	}
+	/**
+	 * @return the twitterId
+	 */
+	public String getTwitterId() {
+		return twitterId;
+	}
+	/**
+	 * @param twitterId the twitterId to set
+	 */
+	public void setTwitterId(String twitterId) {
+		this.twitterId = twitterId;
+	}
+	/**
+	 * @return the linkedInId
+	 */
+	public String getLinkedInId() {
+		return linkedInId;
+	}
+	/**
+	 * @param linkedInId the linkedInId to set
+	 */
+	public void setLinkedInId(String linkedInId) {
+		this.linkedInId = linkedInId;
+	}
+	public void setFoodPrefs(String foodPrefs) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

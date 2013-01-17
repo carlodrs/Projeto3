@@ -9,6 +9,7 @@ import com.ssj.persistence.account.user.dao.ClientDao;
 import com.ssj.persistence.account.user.dao.PartnerDao;
 import com.ssj.persistence.account.user.entity.Client;
 import com.ssj.persistence.account.user.entity.Partner;
+import com.ssj.persistence.account.user.entity.User;
 import com.ssj.persistence.account.user.entity.UserEmail;
 import com.ssj.service.account.user.interfaces.UserService;
 import com.ssj.service.bean.account.user.PartnerBean;
@@ -33,39 +34,16 @@ public class UserServiceImpl implements UserService {
 	@Qualifier("ClientDaoImpl")
 	private ClientDao<Client> clientDao;
 
-	@Autowired
-	@Qualifier("PartnerDaoImpl")
-	private PartnerDao<Partner> partnerDao;
-	
 	/**
 	 * @param eClientDao the clientDao to set
 	 */
 	public void create (UserBean bean) throws Exception{
 		
 		//Configuring user email
-		UserEmail userEmail = extractEmailData(bean);
+		User user = this.populate(bean);
 		
-		if (bean instanceof PartnerBean){
-
-			//Configuring user's data
-			Partner partner = new Partner();
-			BeanUtils.copyProperties(bean, partner);
-			partner.setUserEmail(userEmail);
-			
-			//create on database
-			this.partnerDao.create(partner);
-			 
-		}else{
-			
-			//Configuring user's data
-			Client client = new Client();
-			BeanUtils.copyProperties(bean, client);
-			client.setUserEmail(userEmail);
-			
-			//create on database
-			this.clientDao.create(client);
-		}
-		
+		//create on database
+		this.clientDao.create(user);
 	}
 
 	/**
@@ -82,7 +60,37 @@ public class UserServiceImpl implements UserService {
 		return userEmail;
 	}
 	
-
+	/**
+	 * 
+	 * Populate Method to get the user ready to be handled
+	 * @param bean Bean of the user
+	 * @return User
+	 * */	
+	protected User populate(UserBean bean) {
+		
+		UserEmail userEmail = this.extractEmailData(bean);
+		User userReference = null;
+		
+		//recover the Partner Entity reference
+		if (bean instanceof PartnerBean){
+			userReference = new Partner();
+		}else 
+			//Recover the User Entity reference
+			if (bean instanceof UserBean){
+			userReference = new Client();
+		}
+		
+		//configure relationship
+		userReference.setUserEmail(userEmail);
+		userEmail.setUser(userReference);
+		
+		//copy properties datas
+		BeanUtils.copyProperties(bean, userReference);
+		
+		//user populated
+		return userReference;
+	}
+	
 	@Override
 	public void read(UserBean bean) throws Exception {
 		// TODO Auto-generated method stub
@@ -110,20 +118,4 @@ public class UserServiceImpl implements UserService {
 		client.setUserEmail(userEmail);
 		this.clientDao.create(client);
 	}
-
-	/**
-	 * @param clientDao the clientDao to set
-	 */
-	public void setClientDao(ClientDao<Client> clientDao) {
-		this.clientDao = clientDao;
-	}
-
-	/**
-	 * @param partnerDao the partnerDao to set
-	 */
-	public void setPartnerDao(PartnerDao<Partner> partnerDao) {
-		this.partnerDao = partnerDao;
-	}
-	
-	
 }
