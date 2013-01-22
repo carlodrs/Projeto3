@@ -5,12 +5,12 @@
 <tiles-definitions>
   	
   	<!-- TEMPLATE PAGES -->
-	<definition name="simple" templateExpression="/layouts/simple.jsp">
-		<put-attribute name="txt"  cascade="true" value="simple page parent kkk"/>
+	<definition name="simple" template="/site/layouts/simple.jsp">
+		<put-attribute name="txt" value="simple page parent kkk"/>
 	</definition>
-    
-    <definition name="simplec" extends="simpe">
-		<put-attribute name="txt" cascade="true" value="simple page child kkk"/>
+	
+	<definition name="simpleChild" extends="simple">
+		<put-attribute name="txt" value="simple page child kkk"/>
 	</definition>
 	
   	<!-- TEMPLATE PAGES -->

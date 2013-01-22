@@ -8,11 +8,11 @@
 	<!-- Web application name -->
 	<display-name>SSJWeb</display-name>
   
-  	<!-- NOT UNCOMMENT -> load velocity engine -->
- 	<listener>
+  	<!-- VELOCITY ENGINE: NOT UNCOMMENT -> load velocity engine 
+ 	<listener>	
         <listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
     </listener>
-	 
+	-->
 	 
   	<!-- Struts 2 Main Filter -->
 	<filter>
