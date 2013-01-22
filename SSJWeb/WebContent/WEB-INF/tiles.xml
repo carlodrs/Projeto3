@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+  	
+  	<!-- TEMPLATE PAGES -->
+	<definition name="simple" templateExpression="/layouts/simple.jsp">
+		<put-attribute name="txt"  cascade="true" value="simple page parent kkk"/>
+	</definition>
+    
+    <definition name="simplec" extends="simpe">
+		<put-attribute name="txt" cascade="true" value="simple page child kkk"/>
+	</definition>
+	
+  	<!-- TEMPLATE PAGES -->
+	<definition name="template" template="/layouts/template.jsp">
+    	<put-attribute name="header" value="/layouts/header.jsp" />
+    	<put-attribute name="main" value="/layouts/mainPage.jsp" />
+    	<put-attribute name="footer" value="/layouts/footer.jsp" />
+ 	</definition>
+  	<!-- ENDS TEMPLATE PAGES -->
+	
+  	<!-- HEADER OF TEMPLATE PAGE -->
+  	<definition name="header" template="/layouts/header.jsp">
+  		<put-attribute name="title" value="store.title" />
+  	  	<put-attribute name="jsCss" value="/layouts/includes.jsp" />
+  	</definition>
+  	<!-- ENDS HEADER OF TEMPLATE PAGE -->
+  	
+  	<!-- MAIN PAGE -->
+	<definition name="main.content" template="/layouts/main/mainPage.jsp">
+	  	<put-attribute name="main.header" value="/layouts/main/header.jsp" />
+  	  	<put-attribute name="main.content" value="/layouts/main/content.jsp" />
+  	  	<put-attribute name="main.footer" value="/layouts/main/footer.jsp" />
+  	</definition>  
+	<!-- ENDS MAIN PAGE -->
+
+	<!-- MAIN PAGE HEADER -->
+	<definition name="main.header" template="/layouts/main/header.jsp">
+  		<put-attribute name="logo.title" value="/layouts/main/logotitle.jsp" />
+  	  	<put-attribute name="social.network" value="/layouts/main/social.jsp" />
+  	  	<put-attribute name="menu.header" value="/layouts/main/menuHeader.jsp" />
+ 	  	<put-attribute name="header.search" value="/layouts/main/headerSearch.jsp" />
+ 	  	<put-attribute name="header.slider" value="/layouts/main/headerSlider.jsp" />
+  	</definition>
+  	<!-- END MAIN PAGE HEADER -->
+  	
+</tiles-definitions>
