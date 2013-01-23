@@ -8,5 +8,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Persistence"/>
 	<classpathentry kind="lib" path="/SSJWeb/WebContent/WEB-INF/lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/SSJWeb/WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -32,7 +32,7 @@ public class UserAction {
 		calendar.set(Calendar.MONTH, 7);
 		calendar.set(Calendar.DATE, 4);
 		
-		userBean.setBirthDay(calendar);
+		userBean.setBirthday(calendar);
 		
 		
 		try {
