@@ -28,9 +28,8 @@
  
  	<!-- Welcome File list -->
  	<welcome-file-list>
-    	<welcome-file>default.jsp</welcome-file>
-    	<welcome-file>/site/index.jsp</welcome-file>
-  	</welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
   	
   	<!-- Spring Listener Configuration -->
   	<listener>

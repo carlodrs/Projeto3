@@ -5,45 +5,50 @@
 <tiles-definitions>
   	
   	<!-- TEMPLATE PAGES -->
-	<definition name="simple" template="/site/layouts/simple.jsp">
-		<put-attribute name="txt" value="simple page parent kkk"/>
-	</definition>
-	
-	<definition name="simpleChild" extends="simple">
-		<put-attribute name="txt" value="simple page child kkk"/>
-	</definition>
-	
-  	<!-- TEMPLATE PAGES -->
-	<definition name="template" template="/layouts/template.jsp">
-    	<put-attribute name="header" value="/layouts/header.jsp" />
-    	<put-attribute name="main" value="/layouts/mainPage.jsp" />
-    	<put-attribute name="footer" value="/layouts/footer.jsp" />
+  	<!-- EXTERNAL PAGES (OWN PARENT TEMPLATE) -->
+	<definition name="template" template="/site/layouts/template.jsp">
+    	<put-attribute name="header" value="parent.header" />
+    	<put-attribute name="content"   value="parent.content" />
+    	<put-attribute name="footer" value="parent.footer" />
  	</definition>
-  	<!-- ENDS TEMPLATE PAGES -->
-	
+  	
   	<!-- HEADER OF TEMPLATE PAGE -->
-  	<definition name="header" template="/layouts/header.jsp">
-  		<put-attribute name="title" value="store.title" />
-  	  	<put-attribute name="jsCss" value="/layouts/includes.jsp" />
+  	<definition name="parent.header" template="/site/layouts/header.jsp">
+  		<put-attribute name="charset" value="UTF-8" />
+  		<put-attribute name="title" value="Shopping São João" />
+  	  	<put-attribute name="includes.js.css" value="/site/layouts/includes.jsp" />
   	</definition>
   	<!-- ENDS HEADER OF TEMPLATE PAGE -->
   	
   	<!-- MAIN PAGE -->
-	<definition name="main.content" template="/layouts/main/mainPage.jsp">
-	  	<put-attribute name="main.header" value="/layouts/main/header.jsp" />
-  	  	<put-attribute name="main.content" value="/layouts/main/content.jsp" />
-  	  	<put-attribute name="main.footer" value="/layouts/main/footer.jsp" />
+	<definition name="parent.content" template="/site/layouts/mainPage.jsp">
+	  	<put-attribute name="header" value="child.header" />
+  	  	<!-- 
+  	  	<put-attribute name="main.content" value="child.content" />
+  	  	<put-attribute name="main.footer" value="child.footer" />
+  		 -->
   	</definition>  
 	<!-- ENDS MAIN PAGE -->
-
-	<!-- MAIN PAGE HEADER -->
-	<definition name="main.header" template="/layouts/main/header.jsp">
-  		<put-attribute name="logo.title" value="/layouts/main/logotitle.jsp" />
-  	  	<put-attribute name="social.network" value="/layouts/main/social.jsp" />
-  	  	<put-attribute name="menu.header" value="/layouts/main/menuHeader.jsp" />
- 	  	<put-attribute name="header.search" value="/layouts/main/headerSearch.jsp" />
- 	  	<put-attribute name="header.slider" value="/layouts/main/headerSlider.jsp" />
+	
+  	<!-- BEGINS FOOTER  TEMPLATE PAGE-->
+  	<definition name="parent.footer" template="/site/layouts/footer.jsp">
+  	</definition>
+  	<!-- ENDS FOOTER TEMPLATE PAGE -->
+  	
+  	<!-- CONTENT CHILD PARENT PAGE (MAIN PAGES FROM THE SITE) -->
+  	
+  	<!-- MAIN PAGE HEADER -->
+	<definition name="child.header" template="/site/layouts/main/header.jsp">
+  		<put-attribute name="logo.title" value="/site/pages/logotitle.jsp" />
+  	  	<put-attribute name="social.network" value="/site/pages/social.jsp" />
+  	  	<put-attribute name="menu.header" value="/site/pages/menuHeader.jsp" />
+ 	  	<put-attribute name="header.search" value="/site/pages/headerSearch.jsp" />
+ 	  	<put-attribute name="header.slider" value="/site/pages/headerSlider.jsp" />
   	</definition>
   	<!-- END MAIN PAGE HEADER -->
+  	
+  	<!-- PHISICAL PAGES -->
+  	<definition name="home.page" extends="template"/>
+  	
   	
 </tiles-definitions>

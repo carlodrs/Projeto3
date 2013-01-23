@@ -8,7 +8,7 @@
 	</title>
 	
 	<!-- BEGIN JAVASCRIPTS AND CSS DECLARATIONS -->
-		<tiles:insertAttribute name="jsCss"/>
+		<tiles:insertAttribute name="includes.js.css"/>
 	<!-- ENDS JAVASCRIPTS AND CSS DECLARATIONS -->
 
 </head>

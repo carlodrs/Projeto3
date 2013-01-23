@@ -7,21 +7,21 @@
 		<div id="wrapper">
 
 			<!-- HEADER -->
-	  			<tiles:insertAttribute name="main.header" />
+	  			<tiles:insertAttribute name="header" />
   			<!-- ENDS HEADER -->
 			
 			<!-- MAIN -->
 			<div id="main">
 				
 				<!-- CONTENT -->
-					<tiles:insertAttribute name="main.content" />
+				<%-- 	<tiles:insertAttribute name="content" /> --%>
 				<!-- ENDS  CONTENT -->
 
 			</div>
 			<!-- ENDS MAIN -->
 			
 			<!-- FOOTER -->
-				<tiles:insertAttribute name="main.footer"/>
+				<%--<tiles:insertAttribute name="footer"/>--%>
 			<!-- ENDS FOOTER -->
 		
 		</div>

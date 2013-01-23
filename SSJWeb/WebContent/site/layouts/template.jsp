@@ -9,7 +9,7 @@
     <!-- ENDS TEMPLATE HEADER -->
     
     <!-- TEMPLATE MAIN -->
-    	<tiles:insertAttribute name="main" />
+    	<tiles:insertAttribute name="content" />
     <!-- ENDS TEMPLATE MAIN -->
     
     <!-- TEMPLATE MAIN -->
