@@ -16,6 +16,17 @@
 							<li><a href="features-monobox.html"><span>Facilidades</span></a></li>
 						</ul>
 					</li>
+					
+					 <!-- My Space -->
+					<li><a href="features.html">Lojas</a>
+						<ul>
+							<li><a href="features-appearance.html"><span>Alerquina</span></a></li>
+							<li><a href="features-columns.html"><span>Suquinho</span></a></li>
+							<li><a href="features-accordion.html"><span>0900</span></a></li>
+							<li><a href="features-toggle.html"><span>X modas</span></a></li>
+						</ul>
+					</li>
+                    
                     
                     <!-- Categorias de produtos
 					<li><a href="blog.html">BLOG</a></li>
@@ -224,15 +235,14 @@
 					</li>
 					<li><a href="http://luiszuno.com/blog/downloads/shinra-html-template">Contato</a>
                     	<ul>
+                    		<li><a href="gallery-3.html"><span>Ajuda online</span></a></li>
                         	<li><a href="gallery-3.html"><span>Canal do Cliente</span></a></li>
 							<li><a href="gallery-3.html"><span>Programa Afiliados</span></a></li>
 							<li><a href="gallery-2.html"><span>Seja nosso Parceiro</span></a></li>
-							<li><a href="video-gallery.html"><span>Trabalhe Conosco</span></a></li>
-                            <li><a href="gallery.html"><span>Sugestões</span></a></li>
+							<li><a href="gallery.html"><span>Sugestões</span></a></li>
+							<li><a href="gallery.html"><span>Tefones úteis</span></a></li>
+                            <li><a href="video-gallery.html"><span>Trabalhe Conosco</span></a></li>
                         </ul>
-                    
-                    
                     </li>
-                    <li><a href="http://luiszuno.com/blog/downloads/shinra-html-template">Ajuda online</a></li>
-				</ul>
+                </ul>
 				<%-- ENDS MENU NAVIGATION HEADER --%>
