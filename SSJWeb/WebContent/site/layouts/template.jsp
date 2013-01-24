@@ -3,17 +3,17 @@
 
 <%-- HTM VERSION 5 DIV --%>
 <html>
-	
-	<!-- TEMPLATE HEADER -->
-    	<tiles:insertAttribute name="header" />
-    <!-- ENDS TEMPLATE HEADER -->
+		
+		<!-- TEMPLATE HEADER -->
+	    	<tiles:insertAttribute name="header" />
+	    <!-- ENDS TEMPLATE HEADER -->
     
-    <!-- TEMPLATE MAIN -->
-    	<tiles:insertAttribute name="content" />
-    <!-- ENDS TEMPLATE MAIN -->
+   		<!-- TEMPLATE MAIN -->
+    		<tiles:insertAttribute name="content" />
+    	<!-- ENDS TEMPLATE MAIN -->
     
-    <!-- TEMPLATE MAIN -->
-    	<tiles:insertAttribute name="footer" />
-    <!-- END TEMPLATE FOOTER -->
+    	<!-- TEMPLATE MAIN -->
+    		<tiles:insertAttribute name="footer" />
+    	<!-- END TEMPLATE FOOTER -->
 </html>
 <%-- ENDS HTM VERSION 5 DIV --%>

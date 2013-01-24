@@ -14,7 +14,7 @@
 			<div id="main">
 				
 				<!-- CONTENT -->
-				<%-- 	<tiles:insertAttribute name="content" /> --%>
+				<tiles:insertAttribute name="content" />
 				<!-- ENDS  CONTENT -->
 
 			</div>
