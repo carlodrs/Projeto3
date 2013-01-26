@@ -132,6 +132,30 @@ ul.tabs li.current a {
 	background-position: center left;	
 }
 
+/* BOX SEARCH HOME PAGE ------------------------------------------*/
+
+#body-search{
+	position: absolute;
+	top:237px;
+	right: 67px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	background: url("gloss.png") repeat scroll left center #FFD800;
+	text-shadow: none;
+	height: 50px;
+	width: 870px;
+}
+
+#body-search-title {
+	position: absolute;
+	top: 204px;
+	right: 550px;
+	font-family: ubuntu;
+	font-size: 20px;
+	width: 380px;
+}
+
 /* FOOTER --------------------------------------------------------*/
 
 

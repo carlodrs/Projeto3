@@ -1,7 +1,7 @@
 	<%-- MENU NAVIGATION HEADER --%>
 	<ul id="nav" class="sf-menu">
 					<li class="current-menu-item">
-                    	<a href="index.html">Inicio</a>
+                    	<a href="index.jsp">Inicio</a>
                     </li>
                     
                     <!-- My Space -->
@@ -10,8 +10,8 @@
 							<li><a href="account/mySpace.jsp"><span>Meu Perfil</span></a></li>
 							<li><a href="account/myOrders.jsp"><span>Meus Pedidos</span></a></li>
 							<li><a href="account/myWishlist.jsp"><span>Minha Lista de Desejos</span></a></li>
-							<li><a href="account/myPreferences.jsp"><span>Minhas prefências</span></a></li>
-							<li><a href="account/myCommunities.jsp"><span>Minha comunidade</span></a></li>
+							<li><a href="account/myPreferences.jsp"><span>Minhas Prefências</span></a></li>
+							<li><a href="account/myCommunities.jsp"><span>Minhas Redes Sociais</span></a></li>
 							<li><a href="account/myPreferedStores.jsp"><span>Minhas Lojas Prediletas</span></a></li>
 							<li><a href="account/facilities.jsp"><span>Facilidades</span></a></li>
 						</ul>

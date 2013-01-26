@@ -2,17 +2,18 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
-<tiles-definitions>
-  	
-  	<!-- TEMPLATE PAGES -->
-  	<!-- EXTERNAL PAGES (OWN PARENT TEMPLATE) -->
+<tiles-definitions>  	
+
+  	<!--  =================== TEMPLATES FROM THE SITE ============================== -->
+
+  	<!-- FULL TEMPLATE PARTS HEADER, CONTENT AND FOOTER -->
 	<definition name="template" template="/site/layouts/template.jsp">
     	<put-attribute name="header" value="parent.header" />
     	<put-attribute name="content"   value="parent.content" />
     	<put-attribute name="footer" value="parent.footer" />
  	</definition>
   	
-  	<!-- HEADER OF TEMPLATE PAGE -->
+  	<!-- EXTERNAL HEADER OF TEMPLATE PAGE -->
   	<definition name="parent.header" template="/site/layouts/header.jsp">
   		<put-attribute name="charset" value="UTF-8" />
   		<put-attribute name="title" value="Shopping São João" />
@@ -20,8 +21,9 @@
   	</definition>
   	<!-- ENDS HEADER OF TEMPLATE PAGE -->
   	
-  	<!-- MAIN PAGE -->
+  	<!-- CONTENT TEMPLATE - MAIN PAGE -->
 	<definition name="parent.content" template="/site/layouts/mainPage.jsp">
+		<put-attribute name="cssClass" value="home"/>
 	  	<put-attribute name="header" cascade="true" value="child.header.slider" />
   	  	<put-attribute name="content" cascade="true" value="/site/layouts/main/content.jsp" />
   	  	<!-- 
@@ -30,13 +32,14 @@
   	</definition>  
 	<!-- ENDS MAIN PAGE -->
 	
-  	<!-- BEGINS FOOTER  TEMPLATE PAGE-->
+  	<!-- BEGINS FOOTER TEMPLATE PAGE-->
   	<definition name="parent.footer" template="/site/layouts/footer.jsp">
   	</definition>
   	<!-- ENDS FOOTER TEMPLATE PAGE -->
   	
   	<!-- TEMPLATES PAGES MY ACCOUNT --> 
   	<definition name="my.space.home" extends="parent.content">
+  		<put-attribute name="cssClass" value=""/>
   		<put-attribute name="header" value="child.header.noslider" />
   		<put-attribute name="content" value="/site/account/mySpace.jsp" />
   	</definition>
@@ -45,7 +48,7 @@
   	
   	<!-- CONTENT CHILD PARENT PAGE (MAIN PAGES FROM THE SITE) -->
   	
-  	<!-- MAIN PAGE HEADER -->
+  	<!-- HEADER FROM THE CONTENT WITHOUT SLIDER -->
   	<definition name="child.header.noslider" template="/site/layouts/main/header.jsp">
   		<put-attribute name="logo.title" value="/site/pages/logotitle.jsp" />
   	  	<put-attribute name="social.network" value="/site/pages/social.jsp" />
@@ -54,6 +57,7 @@
  	  	<put-attribute name="header.slider" value=""/>
  	</definition>
   	
+  	<!-- HEADER FROM THE CONTENT WITH SLIDER -->
 	<definition name="child.header.slider" extends="child.header.noslider">
   	  	<put-attribute name="header.slider" value="/site/pages/headerSlider.jsp" />
   	</definition>

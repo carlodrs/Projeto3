@@ -1,7 +1,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
 <!-- BODY -->
-<body class="home">
+<body class='<tiles:getAsString name="cssClass"/>'>
 
 	<!-- WRAPPER -->
 		<div id="wrapper">

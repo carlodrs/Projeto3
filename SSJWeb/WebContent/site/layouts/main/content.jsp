@@ -1,16 +1,31 @@
-
+			<div id="boxSearch">	
+				<div id="body-search-title">
+					Pesquisar produtos ou serviços
+				</div>
+				
+				<div id="body-search">
+					<form action="/search" id="bsForm" method="get">
+						<div>
+							<input type="text" id="txtSearch" name="txtSearch" value="">
+							<input type="submit" value="" id="search" name="search" title="Clique para pesquisar">
+						</div>
+					</form>
+				</div>
+			</div>
+			
 				<div id="content">
 				
+						
 				
-					
+				
 						<!-- TABS -->
 						<!-- the tabs -->
 						<ul class="tabs">
+							<li><a href="#">Produtos da Semana</a></li>
+							<li><a href="#">Produtos em Ofertas</a></li>
 							<li><a href="#">Suas ultimas visitas</a></li>
-							<li><a href="#">Recomendado por você</a></li>
 							<li><a href="#">Recomendado pela comunidade</a></li>
 							<li><a href="#">Forum do site</a></li>
-							<li><a href="#">Aniversariantes</a></li>
 						</ul>
 						
 						<!-- tab "panes" -->
