@@ -13,6 +13,10 @@
 		<class>com.ssj.persistence.account.user.entity.Client</class>
 		<class>com.ssj.persistence.account.user.entity.Partner</class>
 		<class>com.ssj.persistence.account.address.entity.Address</class>
+		<class>com.ssj.persistence.product.entity.Product</class>
+		<class>com.ssj.persistence.product.entity.Attribute</class>
+		<class>com.ssj.persistence.product.entity.Stock</class>
+		<class>com.ssj.persistence.product.entity.StockHistory</class>
 		
 	</persistence-unit>
  

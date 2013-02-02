@@ -12,7 +12,7 @@ import java.io.Serializable;
  * Shopping São João
  * 
  * */
-public interface Service {
+public interface Service <T extends Serializable>{
 	
 	/**
 	 * Service method to create the entities on the system
@@ -20,7 +20,7 @@ public interface Service {
 	 * @return abstract void
 	 * @throws Exception
 	 * */
-	public abstract void create (Serializable bean) throws Exception;
+	public abstract void create (T t) throws Exception;
 
 	/**
 	 * Service method to read the entities on the system
@@ -28,7 +28,7 @@ public interface Service {
 	 * @return abstract void
 	 * @throws Exception
 	 * */
-	public abstract void read (Serializable bean) throws Exception;
+	public abstract void read (T t) throws Exception;
 
 	
 	/**
@@ -37,7 +37,7 @@ public interface Service {
 	 * @return abstract void
 	 * @throws Exception
 	 * */
-	public abstract void delete (Serializable bean) throws Exception;
+	public abstract void delete (T t) throws Exception;
 
 	
 	
@@ -47,5 +47,5 @@ public interface Service {
 	 * @return abstract void
 	 * @throws Exception
 	 * */
-	public abstract void update (Serializable bean) throws Exception;
+	public abstract void update (T t) throws Exception;
 }
