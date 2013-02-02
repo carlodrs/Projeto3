@@ -84,10 +84,9 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 	 * @return T
 	 * @throws Exception Problems in the method
 	 * */
-	@SuppressWarnings("unchecked")
-	public T read(T t, Object o) throws Exception{
+	public T read(Class<T> className, Object o) throws Exception{
 		try {
-			return (T) entityManager.find(t.getClass(), o);
+			return (T) entityManager.getReference(className, o);
 			
 		} catch (Exception e) {
 			throw e;

@@ -19,6 +19,7 @@ public class UserBean implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private Long id;
 	private String name;
 	private String nickName;
 	private Calendar birthday;
@@ -38,9 +39,19 @@ public class UserBean implements Serializable{
 	private String facebookId;
 	private String twitterId;
 	private String linkedInId;
-	
-	
-	
+		
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 	/**
 	 * @return the name
 	 */

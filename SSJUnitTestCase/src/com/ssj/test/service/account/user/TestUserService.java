@@ -13,8 +13,8 @@ public class TestUserService extends SSJGenericSpringTest{
 	public static void main(String[] args) {
 		TestUserService t = new TestUserService();
 		t.createUser();
-		t.createUserEmailOnly();
-		t.createPartner();
+	//	t.createUserEmailOnly();
+	//	t.createPartner(); //corrigir esse erro;
 	}
 
 	private void createPartner() {

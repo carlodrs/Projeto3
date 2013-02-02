@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ssj.persistence.account.user.entity.User;
+
 /**
  * 
  * Interface for utility CRUD operations to the persistent object
@@ -56,7 +58,7 @@ public interface SSJGenericDao < T extends Serializable > {
 	 * @throws Exception Problems in the method
 	 * */
 	
-	public T read(T t, Object o) throws Exception;
+	public T read(Class<T> className, Object o) throws Exception;
 
 	/**
 	 * 

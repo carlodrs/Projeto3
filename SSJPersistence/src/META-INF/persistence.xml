@@ -12,6 +12,7 @@
 		<class>com.ssj.persistence.account.user.entity.UserEmail</class>
 		<class>com.ssj.persistence.account.user.entity.Client</class>
 		<class>com.ssj.persistence.account.user.entity.Partner</class>
+		<class>com.ssj.persistence.account.address.entity.Address</class>
 		
 	</persistence-unit>
  

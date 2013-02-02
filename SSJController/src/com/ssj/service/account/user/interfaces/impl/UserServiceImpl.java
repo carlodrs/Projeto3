@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.ssj.persistence.account.user.dao.ClientDao;
-import com.ssj.persistence.account.user.dao.PartnerDao;
 import com.ssj.persistence.account.user.entity.Client;
 import com.ssj.persistence.account.user.entity.Partner;
 import com.ssj.persistence.account.user.entity.User;
@@ -33,6 +32,11 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	@Qualifier("ClientDaoImpl")
 	private ClientDao<Client> clientDao;
+	private Client client;
+	
+	public UserServiceImpl(){
+		this.client = new Client();
+ 	}
 
 	/**
 	 * @param eClientDao the clientDao to set
@@ -92,15 +96,14 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public void read(UserBean bean) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public User read(UserBean bean) throws Exception {
+		return clientDao.read(User.class, bean.getId());
 	}
 
 	@Override
 	public void delete(UserBean bean) throws Exception {
-		// TODO Auto-generated method stub
-		
+		BeanUtils.copyProperties(bean, client);	
+		clientDao.delete(client);
 	}
 
 	@Override

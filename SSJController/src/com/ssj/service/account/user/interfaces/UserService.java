@@ -1,5 +1,6 @@
 package com.ssj.service.account.user.interfaces;
 
+import com.ssj.persistence.account.user.entity.User;
 import com.ssj.service.bean.account.user.UserBean;
 
 
@@ -29,7 +30,7 @@ public interface UserService {
 	 * @return void
 	 * @throws Exception
 	 * */
-	public void read (UserBean bean) throws Exception;
+	public User read (UserBean bean) throws Exception;
 
 	
 	/**
