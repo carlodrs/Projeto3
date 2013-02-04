@@ -21,21 +21,14 @@ import com.ssj.service.bean.account.address.AddressBean;
  * Shopping São João
  */
 @Service("AddressServiceImpl")
-@Qualifier("AddressServiceImpl")
 public class AddressServiceImpl implements AddressService{
 
 	@Autowired
 	AddressDao addressDao;
-	Address address;
-	
-	public AddressServiceImpl(){
-		this.address = new Address();
-	}
-	
+
 	@Override
 	public void create(AddressBean bean) throws Exception {
-		BeanUtils.copyProperties(bean, address);
-		this.addressDao.create(address);
+		this.addressDao.create(bean.getAddress());
 	}
 
 	@Override
@@ -47,15 +40,20 @@ public class AddressServiceImpl implements AddressService{
 
 	@Override
 	public void delete(AddressBean bean) throws Exception {
-		BeanUtils.copyProperties(address, bean);
-		this.addressDao.delete(address);
+		this.addressDao.delete(bean.getAddress());
 	
 	}
 
 	@Override
 	public void update(AddressBean bean) throws Exception {
-		BeanUtils.copyProperties(address, bean);
-		this.addressDao.update(address);
-	
+		this.addressDao.update(bean.getAddress());
+	}
+
+	@Override
+	public AddressBean load(AddressBean t) throws Exception {
+		Address address = this.addressDao.load(Address.class, t.getId());
+		t.setAddress(address);
+		
+		return t;
 	}
 }

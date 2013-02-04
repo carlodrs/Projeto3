@@ -2,6 +2,8 @@ package com.ssj.service;
 
 import java.io.Serializable;
 
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * 
  * Service to create the Generic Entities on the system
@@ -12,6 +14,7 @@ import java.io.Serializable;
  * Shopping São João
  * 
  * */
+@Transactional
 public interface Service <T extends Serializable>{
 	
 	/**
@@ -20,6 +23,7 @@ public interface Service <T extends Serializable>{
 	 * @return abstract void
 	 * @throws Exception
 	 * */
+	
 	public abstract void create (T t) throws Exception;
 
 	/**
@@ -28,6 +32,7 @@ public interface Service <T extends Serializable>{
 	 * @return abstract void
 	 * @throws Exception
 	 * */
+	
 	public abstract T read (T t) throws Exception;
 
 	
@@ -37,6 +42,7 @@ public interface Service <T extends Serializable>{
 	 * @return abstract void
 	 * @throws Exception
 	 * */
+	
 	public abstract void delete (T t) throws Exception;
 
 	
@@ -47,5 +53,15 @@ public interface Service <T extends Serializable>{
 	 * @return abstract void
 	 * @throws Exception
 	 * */
+	
 	public abstract void update (T t) throws Exception;
+	
+
+	/**
+	 * Service method to load by id (recharged the properties of the object from database entity)
+	 * @param t Entity Database mapped class
+	 * @return T entity populated
+	 * @throws Exception
+	 * */
+	public abstract T load (T t) throws Exception;
 }

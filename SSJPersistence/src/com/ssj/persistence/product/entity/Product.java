@@ -28,6 +28,10 @@ public class Product implements Serializable {
 	
 	@OneToMany(cascade = CascadeType.PERSIST)
 	private Set<Attribute> attributes;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	private Category category;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Product() {
@@ -96,5 +100,12 @@ public class Product implements Serializable {
 	public void setAttributeList(Set<Attribute> attributeList) {
 		this.attributes = attributeList;
 	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
    
+	
 }

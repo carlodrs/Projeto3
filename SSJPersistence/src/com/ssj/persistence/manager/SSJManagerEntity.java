@@ -13,6 +13,7 @@ import com.ssj.persistence.util.JPAUtil;
  * @since 2012
  * @copyright  Shopping São João 
  * */
+@Deprecated
 public class SSJManagerEntity <T> {
 	
 	/* The entity manager for SSJ */

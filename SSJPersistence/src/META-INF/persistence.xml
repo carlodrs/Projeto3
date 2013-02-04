@@ -17,6 +17,7 @@
 		<class>com.ssj.persistence.product.entity.Attribute</class>
 		<class>com.ssj.persistence.product.entity.Stock</class>
 		<class>com.ssj.persistence.product.entity.StockHistory</class>
+		<class>com.ssj.persistence.product.entity.Category</class>
 		
 	</persistence-unit>
  

@@ -1,6 +1,6 @@
 package com.ssj.service.account.user.interfaces;
 
-import com.ssj.persistence.account.user.entity.User;
+import com.ssj.service.Service;
 import com.ssj.service.bean.account.user.UserBean;
 
 
@@ -14,43 +14,7 @@ import com.ssj.service.bean.account.user.UserBean;
  * Shopping São João
  * 
  * */
-public interface UserService {
-	
-	/**
-	 * Service method to create the eclients on the system
-	 * @param bean
-	 * @return void
-	 * @throws Exception
-	 * */
-	public void create (UserBean bean) throws Exception;
-
-	/**
-	 * Service method to read the eclients on the system
-	 * @param bean
-	 * @return void
-	 * @throws Exception
-	 * */
-	public User read (UserBean bean) throws Exception;
-
-	
-	/**
-	 * Service method to delete the eclients on the system
-	 * @param bean
-	 * @return void
-	 * @throws Exception
-	 * */
-	public void delete (UserBean bean) throws Exception;
-
-	
-	
-	/**
-	 * Service method to update the eclients on the system
-	 * @param bean
-	 * @return void
-	 * @throws Exception
-	 * */
-	public void update (UserBean bean) throws Exception;
-
+public interface UserService extends Service<UserBean> {
 	
 	/**
 	 * Service method to create the email user

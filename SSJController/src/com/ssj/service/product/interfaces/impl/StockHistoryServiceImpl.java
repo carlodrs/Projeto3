@@ -11,6 +11,7 @@ package com.ssj.service.product.interfaces.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ssj.persistence.product.dao.StockHistoryDao;
+import com.ssj.persistence.product.entity.StockHistory;
 import com.ssj.service.Service;
 import com.ssj.service.product.bean.StockHistoryBean;
 import com.ssj.service.product.interfaces.StockHistoryService;
@@ -37,8 +38,11 @@ public class StockHistoryServiceImpl implements StockHistoryService{
 
 	@Override
 	public StockHistoryBean read(StockHistoryBean t) throws Exception {
+		
+		StockHistory stockHistory = this.stockHistoryDao.read(StockHistory.class, t.getId());
+		t.setStockHistory(stockHistory);
+	
 		return t;
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -52,5 +56,12 @@ public class StockHistoryServiceImpl implements StockHistoryService{
 	public void update(StockHistoryBean t) throws Exception {
 		this.stockHistoryDao.update(t.getStockHistory());
 		
+	}
+
+	@Override
+	public StockHistoryBean load(StockHistoryBean t) throws Exception {
+		StockHistory stockHistory =  this.stockHistoryDao.load(StockHistory.class, t.getId());
+		t.setStockHistory(stockHistory);
+		return t;
 	}
 }

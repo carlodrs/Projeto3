@@ -4,11 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.EntityManager;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.ssj.persistence.account.user.entity.User;
 
 /**
  * 
@@ -20,6 +17,7 @@ import com.ssj.persistence.account.user.entity.User;
  * @copyright  Shopping São João 
  * */
 @Repository
+@Transactional
 public interface SSJGenericDao < T extends Serializable > {
 	
 	/**
@@ -29,7 +27,6 @@ public interface SSJGenericDao < T extends Serializable > {
 	 * @return void
 	 * @throws Exception Problems in the method
 	 * */
-	@Transactional
 	public void create(T t) throws Exception;
 
 	/**
@@ -67,8 +64,16 @@ public interface SSJGenericDao < T extends Serializable > {
 	 * @return void
 	 * */
 	public void end();
+	
+	
 	/**
-	 * @return the entityManager
-	 */
-	public EntityManager getEntityManager();
+	 * 
+	 * Load/get the object persistent from database (recharged the entity properties)
+	  @param T object persistent
+	 * @return T
+	 * @throws Exception Problems in the method
+	 * */
+	
+	public T load(Class<T> className, Object o) throws Exception;
+
 }

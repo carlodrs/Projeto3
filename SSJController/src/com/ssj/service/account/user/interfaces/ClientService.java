@@ -11,6 +11,6 @@ package com.ssj.service.account.user.interfaces;
  * 
  * Shopping São João
  */
-public interface ClientService extends UserService {
+public interface ClientService<T> extends UserService {
 
 }

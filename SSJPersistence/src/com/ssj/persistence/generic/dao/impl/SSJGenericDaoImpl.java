@@ -5,8 +5,6 @@ import java.io.Serializable;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import com.ssj.persistence.generic.dao.SSJGenericDao;
 
 /**
@@ -34,7 +32,6 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 	 * @return void
 	 * @throws Exception Problems in the method
 	 * */
-	@Transactional
 	public void create(T t) throws Exception{
 		try {
 			entityManager.persist(t);
@@ -54,6 +51,7 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 	public void update(T t) throws Exception{
 		try {
 			entityManager.merge(t);
+			entityManager.flush();
 		} catch (Exception e) {
 			throw e;
 		}
@@ -103,11 +101,21 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 		entityManager.close();
 	}
 
+
 	/**
-	 * @return the entityManager
-	 */
-	public EntityManager getEntityManager() {
-		return entityManager;
+	 * 
+	 * Load/get the object persistent from database (recharged the entity properties)
+	  @param T object persistent
+	 * @return T
+	 * @throws Exception Problems in the method
+	 * */
+	
+	public T load(Class<T> className, Object o) throws Exception {
+		try {
+			return (T) entityManager.find(className, o);
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 }
 	

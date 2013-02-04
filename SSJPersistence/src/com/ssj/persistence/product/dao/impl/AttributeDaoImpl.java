@@ -4,6 +4,7 @@
 package com.ssj.persistence.product.dao.impl;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 
 import com.ssj.persistence.generic.dao.impl.SSJGenericDaoImpl;
 import com.ssj.persistence.product.dao.AttributeDao;
@@ -18,7 +19,7 @@ import com.ssj.persistence.product.entity.Attribute;
  * @since 2013
  * @version 1.0
  */
-@Qualifier("AttributeDaoImpl")
+@Repository("AttributeDaoImpl")
 public class AttributeDaoImpl extends 
 	SSJGenericDaoImpl<Attribute> implements AttributeDao{
 
