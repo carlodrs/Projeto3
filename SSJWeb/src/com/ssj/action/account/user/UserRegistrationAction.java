@@ -1,12 +1,9 @@
 package com.ssj.action.account.user;
 
-import java.util.Calendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.service.account.user.interfaces.ClientService;
-import com.ssj.service.bean.account.user.UserBean;
 
 public class UserRegistrationAction extends ActionSupport {
 
@@ -43,6 +40,7 @@ public class UserRegistrationAction extends ActionSupport {
 	
 		
 		//Populate Bean
+		/*
 		UserBean userBean = new UserBean();
 		userBean.setEmail(this.getEmail());
 		userBean.setPassword(this.getPassword());
@@ -64,7 +62,7 @@ public class UserRegistrationAction extends ActionSupport {
 		
 		//Create user on database
 		clientService.create(userBean);
-		
+		*/
 		return super.execute();
 	}
 	

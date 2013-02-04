@@ -22,13 +22,9 @@
 package example;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.ssj.service.account.user.interfaces.PartnerService;
-import com.ssj.service.account.user.interfaces.impl.PartnerServiceImpl;
 import com.ssj.service.bean.account.user.PartnerBean;
-import com.ssj.service.bean.account.user.UserEmailBean;
 
 /**
  * <code>Set welcome message.</code>
@@ -46,8 +42,8 @@ public class HelloWorld extends ExampleSupport {
     		
     		
     		PartnerBean bean = new PartnerBean();
-    		bean.setEmail("jose@ig.com");
-    		bean.setPassword("passswd");
+    		//bean.setEmail("jose@ig.com");
+    		//bean.setPassword("passswd");
     		
     		partnerService.create(bean);
     		
