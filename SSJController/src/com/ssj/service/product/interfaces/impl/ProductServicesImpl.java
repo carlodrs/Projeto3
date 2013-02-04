@@ -3,9 +3,8 @@
  */
 package com.ssj.service.product.interfaces.impl;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import com.ssj.persistence.product.dao.ProductDao;
 import com.ssj.persistence.product.entity.Product;
@@ -19,36 +18,29 @@ import com.ssj.service.product.interfaces.ProductService;
  * @since 2013
  *
  */
-@Qualifier("ProductServicesImpl")
+@Service("ProductServicesImpl")
 public class ProductServicesImpl implements ProductService{
 	
-	private Product product;
 	
 	@Autowired
 	private ProductDao productDao;
-	
-	
-	public ProductServicesImpl(){
-		this.product = new Product();
-	}
-	
+
 	/**		
 	 * @see com.ssj.service.Service#create(java.io.Serializable)
 	 */
 	@Override
 	public void create(ProductBean bean) throws Exception {
-		
-		BeanUtils.copyProperties(bean, this.product);
-		productDao.create(product);
+		productDao.create(bean.getProduct());
 	}
 
 	/* (non-Javadoc)
 	 * @see com.ssj.service.Service#read(java.io.Serializable)
 	 */
 	@Override
-	public void read(ProductBean bean) throws Exception {
-		// TODO Auto-generated method stub
-
+	public ProductBean read(ProductBean bean) throws Exception {
+		Product product = productDao.read(Product.class, bean.getId());
+		bean.setProduct(product);
+		return bean;
 	}
 
 	/**
@@ -56,8 +48,7 @@ public class ProductServicesImpl implements ProductService{
 	 */
 	@Override
 	public void delete(ProductBean bean) throws Exception {
-		BeanUtils.copyProperties(bean, this.product);
-		productDao.delete(product);
+		productDao.delete(bean.getProduct());
 	}
 
 	/**
@@ -65,8 +56,7 @@ public class ProductServicesImpl implements ProductService{
 	 */
 	@Override
 	public void update(ProductBean bean) throws Exception {
-		BeanUtils.copyProperties(bean, this.product);
-		productDao.update(product);
+		productDao.update(bean.getProduct());
 
 	}
 

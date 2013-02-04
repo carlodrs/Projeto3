@@ -9,6 +9,7 @@ package com.ssj.service.product.interfaces;
  * */
 
 import com.ssj.service.Service;
+import com.ssj.service.product.bean.AttributeBean;
 
-public interface AttributeService extends Service{
+public interface AttributeService extends Service<AttributeBean>{
 }

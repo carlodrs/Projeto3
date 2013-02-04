@@ -8,10 +8,10 @@ import com.ssj.test.SSJGenericSpringTest;
  * @version 1.0
  * @since 2013
  * */
-public class TestUserAction extends SSJGenericSpringTest {
+public class UserActionTest extends SSJGenericSpringTest {
 	
 	public static void main(String[] args) {
-		new TestUserAction().init();
+		new UserActionTest().init();
 	}
 
 	/**

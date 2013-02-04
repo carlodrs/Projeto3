@@ -8,11 +8,9 @@ package com.ssj.service.product.interfaces.impl;
  * @since 2013 
  * */
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ssj.persistence.product.dao.StockHistoryDao;
-import com.ssj.persistence.product.entity.StockHistory;
 import com.ssj.service.Service;
 import com.ssj.service.product.bean.StockHistoryBean;
 import com.ssj.service.product.interfaces.StockHistoryService;
@@ -27,40 +25,32 @@ import com.ssj.service.product.interfaces.StockHistoryService;
  * */
 public class StockHistoryServiceImpl implements StockHistoryService{
 	
-	/** Member stock history entity */
-	private StockHistory history;
-	
 	@Autowired
 	private StockHistoryDao stockHistoryDao;
 	
-	public StockHistoryServiceImpl(){
-		this.history = new StockHistory();
-	}
 
 	@Override
 	public void create(StockHistoryBean t) throws Exception {
-		BeanUtils.copyProperties(t, this.history);
-		this.stockHistoryDao.create(this.history);
+		this.stockHistoryDao.create(t.getStockHistory());
 		
 	}
 
 	@Override
-	public void read(StockHistoryBean t) throws Exception {
+	public StockHistoryBean read(StockHistoryBean t) throws Exception {
+		return t;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void delete(StockHistoryBean t) throws Exception {
-		BeanUtils.copyProperties(t, this.history);
-		this.stockHistoryDao.delete(this.history);
+		this.stockHistoryDao.delete(t.getStockHistory());
 		
 	}
 
 	@Override
 	public void update(StockHistoryBean t) throws Exception {
-		BeanUtils.copyProperties(t, this.history);
-		this.stockHistoryDao.update(this.history);
+		this.stockHistoryDao.update(t.getStockHistory());
 		
 	}
 }

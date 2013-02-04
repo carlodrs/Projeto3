@@ -1,13 +1,12 @@
 package com.ssj.service.product.interfaces.impl;
 
-import java.io.Serializable;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.ssj.persistence.product.dao.AttributeDao;
 import com.ssj.persistence.product.entity.Attribute;
+import com.ssj.service.product.bean.AttributeBean;
 import com.ssj.service.product.interfaces.AttributeService;
 
 /**
@@ -26,24 +25,21 @@ public class AttributeServiceImpl implements AttributeService {
 	private AttributeDao attributeDao;
 	private Attribute attribute;
 	
-	public AttributeServiceImpl(){
-		this.attribute = new Attribute();
-	}
-	
 	@Override
-	public void create(Serializable bean) throws Exception {
+	public void create(AttributeBean bean) throws Exception {
 			BeanUtils.copyProperties(bean, this.attribute);
 			this.attributeDao.create(this.attribute);
 	}
 
 	@Override
-	public void read(Serializable bean) throws Exception {
+	public AttributeBean read(AttributeBean bean) throws Exception {
+		return bean;
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void delete(Serializable bean) throws Exception {
+	public void delete(AttributeBean bean) throws Exception {
 		BeanUtils.copyProperties(bean, this.attribute);
 		this.attributeDao.delete(this.attribute);
 
@@ -51,7 +47,7 @@ public class AttributeServiceImpl implements AttributeService {
 	}
 
 	@Override
-	public void update(Serializable bean) throws Exception {
+	public void update(AttributeBean bean) throws Exception {
 		BeanUtils.copyProperties(bean, this.attribute);
 		this.attributeDao.update(this.attribute);
 

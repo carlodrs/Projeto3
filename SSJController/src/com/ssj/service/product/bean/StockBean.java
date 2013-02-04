@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.ssj.persistence.product.entity.Product;
+import com.ssj.persistence.product.entity.Stock;
 import com.ssj.persistence.product.entity.StockHistory;
 
 
@@ -24,7 +25,7 @@ public class StockBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Long id;
 	private Product product;
-	private Long quantityPosition;
+	private Stock stock;
 	private List<StockHistory> stockHistories;
 	/**
 	 * @return the id
@@ -51,16 +52,16 @@ public class StockBean implements Serializable{
 		this.product = product;
 	}
 	/**
-	 * @return the quantityPosition
+	 * @return the stock
 	 */
-	public Long getQuantityPosition() {
-		return quantityPosition;
+	public Stock getStock() {
+		return stock;
 	}
 	/**
-	 * @param quantityPosition the quantityPosition to set
+	 * @param stock the stock to set
 	 */
-	public void setQuantityPosition(Long quantityPosition) {
-		this.quantityPosition = quantityPosition;
+	public void setStock(Stock stock) {
+		this.stock = stock;
 	}
 	/**
 	 * @return the stockHistories
@@ -76,6 +77,4 @@ public class StockBean implements Serializable{
 	}
 	
 	
-	
-
 }

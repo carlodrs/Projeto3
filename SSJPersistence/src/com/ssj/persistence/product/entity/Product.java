@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.lang.Double;
 import java.lang.Long;
 import java.lang.String;
-import java.util.List;
+import java.util.Set;
 import javax.persistence.*;
 
 /**
@@ -16,6 +16,7 @@ import javax.persistence.*;
 public class Product implements Serializable {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String shortName;
@@ -25,8 +26,8 @@ public class Product implements Serializable {
 	private Double offerPrice;
 	private Double percentDiscount;
 	
-	@OneToMany
-	private List<Attribute> attributes;
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private Set<Attribute> attributes;
 	private static final long serialVersionUID = 1L;
 
 	public Product() {
@@ -88,11 +89,11 @@ public class Product implements Serializable {
 	public void setPercentDiscount(Double percentDiscount) {
 		this.percentDiscount = percentDiscount;
 	}   
-	public List<Attribute> getAttributes() {
+	public Set<Attribute> getAttributes() {
 		return this.attributes;
 	}
 
-	public void setAttributeList(List<Attribute> attributeList) {
+	public void setAttributeList(Set<Attribute> attributeList) {
 		this.attributes = attributeList;
 	}
    

@@ -8,15 +8,16 @@ import com.ssj.service.bean.account.user.PartnerBean;
 import com.ssj.service.bean.account.user.UserBean;
 import com.ssj.test.SSJGenericSpringTest;
 
-public class TestUserService extends SSJGenericSpringTest{
+public class UserServiceTest extends SSJGenericSpringTest{
 	
 	public static void main(String[] args) {
-		TestUserService t = new TestUserService();
+		UserServiceTest t = new UserServiceTest();
 		t.createUser();
 	//	t.createUserEmailOnly();
 	//	t.createPartner(); //corrigir esse erro;
 	}
 
+	@SuppressWarnings("unused")
 	private void createPartner() {
 		// Info
 		System.out.println("My Beans Load from Spring : \n" 

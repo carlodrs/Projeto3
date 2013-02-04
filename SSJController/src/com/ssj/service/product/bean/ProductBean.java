@@ -1,9 +1,8 @@
 package com.ssj.service.product.bean;
 
 import java.io.Serializable;
-import java.util.List;
 
-import com.ssj.persistence.product.entity.Attribute;
+import com.ssj.persistence.product.entity.Product;
 
 /**
  * 
@@ -14,20 +13,20 @@ import com.ssj.persistence.product.entity.Attribute;
  * 
  * */
 public class ProductBean implements Serializable {
-
+	
+	/* Constructor begins Product Entity*/
+	public ProductBean() {
+		this.product = new Product();
+	}
+	
 	/**
-	 * 
+	 * Serial version Id
 	 */
 	private static final long serialVersionUID = 1L;
 	private Long id;
-	private String name;
-	private String shortName;
-	private String longName;
-	private String description;
-	private Double price;
-	private Double offerPrice;
-	private Double percentDiscount;
-	private List<Attribute> attributes;
+	private Product product;
+	
+	
 	/**
 	 * @return the id
 	 */
@@ -41,102 +40,18 @@ public class ProductBean implements Serializable {
 		this.id = id;
 	}
 	/**
-	 * @return the name
+	 * @return the product
 	 */
-	public String getName() {
-		return name;
+	public Product getProduct() {
+		return product;
 	}
 	/**
-	 * @param name the name to set
+	 * @param product the product to set
 	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-	/**
-	 * @return the shortName
-	 */
-	public String getShortName() {
-		return shortName;
-	}
-	/**
-	 * @param shortName the shortName to set
-	 */
-	public void setShortName(String shortName) {
-		this.shortName = shortName;
-	}
-	/**
-	 * @return the longName
-	 */
-	public String getLongName() {
-		return longName;
-	}
-	/**
-	 * @param longName the longName to set
-	 */
-	public void setLongName(String longName) {
-		this.longName = longName;
-	}
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	/**
-	 * @return the price
-	 */
-	public Double getPrice() {
-		return price;
-	}
-	/**
-	 * @param price the price to set
-	 */
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-	/**
-	 * @return the offerPrice
-	 */
-	public Double getOfferPrice() {
-		return offerPrice;
-	}
-	/**
-	 * @param offerPrice the offerPrice to set
-	 */
-	public void setOfferPrice(Double offerPrice) {
-		this.offerPrice = offerPrice;
-	}
-	/**
-	 * @return the percentDiscount
-	 */
-	public Double getPercentDiscount() {
-		return percentDiscount;
-	}
-	/**
-	 * @param percentDiscount the percentDiscount to set
-	 */
-	public void setPercentDiscount(Double percentDiscount) {
-		this.percentDiscount = percentDiscount;
-	}
-	/**
-	 * @return the attributes
-	 */
-	public List<Attribute> getAttributes() {
-		return attributes;
-	}
-	/**
-	 * @param attributes the attributes to set
-	 */
-	public void setAttributes(List<Attribute> attributes) {
-		this.attributes = attributes;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	
 	
-	
+
 }

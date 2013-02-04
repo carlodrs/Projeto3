@@ -1,11 +1,9 @@
 package com.ssj.persistence.product.entity;
 
 import java.io.Serializable;
-import java.lang.Long;
-import java.lang.String;
-import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Entity implementation class for Entity: Attribute
@@ -19,7 +17,7 @@ public class Attribute implements Serializable {
 	private Long id;
 	private String name;
 	private String value;
-	private List<String> listValue;
+	private String listValue;
 	private static final long serialVersionUID = 1L;
 
 	public Attribute() {
@@ -46,11 +44,11 @@ public class Attribute implements Serializable {
 	public void setValue(String value) {
 		this.value = value;
 	}   
-	public List<String> getListValue() {
+	public String getListValue() {
 		return this.listValue;
 	}
 
-	public void setListValue(List<String> listValue) {
+	public void setListValue(String listValue) {
 		this.listValue = listValue;
 	}
    

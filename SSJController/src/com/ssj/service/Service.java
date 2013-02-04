@@ -28,7 +28,7 @@ public interface Service <T extends Serializable>{
 	 * @return abstract void
 	 * @throws Exception
 	 * */
-	public abstract void read (T t) throws Exception;
+	public abstract T read (T t) throws Exception;
 
 	
 	/**

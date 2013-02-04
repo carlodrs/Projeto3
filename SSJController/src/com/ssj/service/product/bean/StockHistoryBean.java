@@ -1,10 +1,7 @@
 package com.ssj.service.product.bean;
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.List;
 
-import com.ssj.persistence.product.entity.Product;
 import com.ssj.persistence.product.entity.StockHistory;
 
 
@@ -22,58 +19,45 @@ public class StockHistoryBean implements Serializable{
 	/**
 	 * 
 	 */
-	private Long idStockHistory;
-	private Calendar registryDate;
-	private Long idSupplier;
-	private Long quantity;
+	private static final long serialVersionUID = 1L;
+
 	/**
-	 * @return the idStockHistory
+	 *  Entity StockHistory
+	 *  @see StockHistory
 	 */
-	public Long getIdStockHistory() {
-		return idStockHistory;
-	}
+	private StockHistory stockHistory;
+	
+	private Long id;
+
 	/**
-	 * @param idStockHistory the idStockHistory to set
+	 * @return the stockHistory
 	 */
-	public void setIdStockHistory(Long idStockHistory) {
-		this.idStockHistory = idStockHistory;
+	public StockHistory getStockHistory() {
+		return stockHistory;
 	}
+
 	/**
-	 * @return the registryDate
+	 * @param stockHistory the stockHistory to set
 	 */
-	public Calendar getRegistryDate() {
-		return registryDate;
+	public void setStockHistory(StockHistory stockHistory) {
+		this.stockHistory = stockHistory;
 	}
+
 	/**
-	 * @param registryDate the registryDate to set
+	 * @return the id
 	 */
-	public void setRegistryDate(Calendar registryDate) {
-		this.registryDate = registryDate;
+	public Long getId() {
+		return id;
 	}
+
 	/**
-	 * @return the idSupplier
+	 * @param id the id to set
 	 */
-	public Long getIdSupplier() {
-		return idSupplier;
+	public void setId(Long id) {
+		this.id = id;
 	}
-	/**
-	 * @param idSupplier the idSupplier to set
-	 */
-	public void setIdSupplier(Long idSupplier) {
-		this.idSupplier = idSupplier;
-	}
-	/**
-	 * @return the quantity
-	 */
-	public Long getQuantity() {
-		return quantity;
-	}
-	/**
-	 * @param quantity the quantity to set
-	 */
-	public void setQuantity(Long quantity) {
-		this.quantity = quantity;
-	}
+	
+	
 	
 	
 }

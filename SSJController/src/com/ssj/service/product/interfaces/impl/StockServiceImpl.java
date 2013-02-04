@@ -36,9 +36,10 @@ public class StockServiceImpl implements StockService {
 	}
 
 	@Override
-	public void read(StockBean t) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public StockBean read(StockBean t) throws Exception {
+		Stock stock = this.stockDao.read(Stock.class, t.getId());
+		t.setStock(stock);
+		return t;
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package com.ssj.service.account.address.interfaces;
 
 import com.ssj.service.Service;
+import com.ssj.service.bean.account.address.AddressBean;
 
 /**
  * Service Address to handle the Address on the System
@@ -9,6 +10,6 @@ import com.ssj.service.Service;
  * @see Service, UserService
  * @since 2013 
  * */
-public interface AddressService extends Service {
+public interface AddressService extends Service <AddressBean>{
 
 }
