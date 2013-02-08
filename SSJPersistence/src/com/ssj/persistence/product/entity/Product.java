@@ -26,7 +26,7 @@ public class Product implements Serializable {
 	private Double offerPrice;
 	private Double percentDiscount;
 	
-	@OneToMany(cascade = CascadeType.PERSIST)
+	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY) 
 	private Set<Attribute> attributes;
 	
 	@OneToOne(cascade = CascadeType.PERSIST)

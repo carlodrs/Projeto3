@@ -62,8 +62,10 @@ public class ProductServicesImpl implements ProductService{
 
 	@Override
 	public ProductBean load(ProductBean t) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
+		t.setProduct(productDao.load(
+				Product.class, t.getId()));
+		return t;
 	}
 
 }
