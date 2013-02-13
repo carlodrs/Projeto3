@@ -98,7 +98,7 @@ public class ProductAction {
 
 		ProductBean productBean = new ProductBean();
 		Product product = new Product();
-		product.setId(8L);
+		product.setId(3L);
 		
 		productBean.setProduct(product);
 		

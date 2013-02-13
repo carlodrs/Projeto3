@@ -18,6 +18,8 @@
 		<class>com.ssj.persistence.product.entity.Stock</class>
 		<class>com.ssj.persistence.product.entity.StockHistory</class>
 		<class>com.ssj.persistence.product.entity.Category</class>
+		<class>com.ssj.persistence.order.entity.OrderShop</class>
+		<class>com.ssj.persistence.order.entity.OrderItem</class>
 		
 	</persistence-unit>
  

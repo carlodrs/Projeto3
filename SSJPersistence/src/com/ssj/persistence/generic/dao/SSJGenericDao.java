@@ -2,8 +2,6 @@ package com.ssj.persistence.generic.dao;
 
 import java.io.Serializable;
 
-import javax.persistence.EntityManager;
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

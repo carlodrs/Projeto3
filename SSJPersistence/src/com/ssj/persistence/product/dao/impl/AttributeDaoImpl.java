@@ -3,7 +3,6 @@
  */
 package com.ssj.persistence.product.dao.impl;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.ssj.persistence.generic.dao.impl.SSJGenericDaoImpl;
