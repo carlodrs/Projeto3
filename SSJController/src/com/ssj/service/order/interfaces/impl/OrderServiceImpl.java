@@ -3,6 +3,8 @@
  */
 package com.ssj.service.order.interfaces.impl;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -77,8 +79,31 @@ public class OrderServiceImpl implements OrderService{
 	 */
 	@Override
 	public void deleteOrderItem(OrderBean orderBean) throws Exception {
-		for (OrderItem orderItem : orderBean.getOrderItem()) {
+		/*for (OrderItem orderItem : orderBean.getOrderItem()) {
 			this.orderDao.deleteOrderItem(orderItem);
+		}*/
+		
+		for (OrderItem orderItem : orderBean.getOrderItem()) {
+			Set<OrderItem> setOrdersItems = 
+				orderBean.getOrder().getOrderItems();
+			
+			if (setOrdersItems.contains(orderItem)){
+				setOrdersItems.remove(orderItem);
+			}
+			
+			//update relationship and delete orderitem
+			this.orderDao.update(orderBean.getOrder());
+			this.orderDao.deleteOrderItem(orderItem);
+		}
+	}
+
+	@Override
+	/**
+	 * @see com.ssj.service.order.interfaces.OrderService#createOrderItems(java.io.Serializable)
+	 */
+	public void createOrderItems(OrderBean orderBean) throws Exception {
+		for (OrderItem orderItem : orderBean.getOrderItem()) {
+			this.orderDao.createOrderItems(orderItem);
 		}
 	}
 }

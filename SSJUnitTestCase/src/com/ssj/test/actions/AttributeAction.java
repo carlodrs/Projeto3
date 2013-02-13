@@ -4,16 +4,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.ssj.persistence.product.entity.Attribute;
 import com.ssj.persistence.product.entity.Product;
+import com.ssj.service.product.bean.AttributeBean;
 import com.ssj.service.product.bean.ProductBean;
+import com.ssj.service.product.interfaces.AttributeService;
 import com.ssj.service.product.interfaces.ProductService;
 
+@Component("AttributeAction")
 public class AttributeAction {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+    private AttributeService attributeService;
 	
 	/****************** Method test to create attributes *******************************/
 	/***********************************************************************************/
@@ -44,6 +51,14 @@ public class AttributeAction {
 		
 	}
 
-
-
+	public void testDeleteAttributes() throws Exception{
+		
+		Attribute attribute = new Attribute();
+		attribute.setId(1L);
+		
+		AttributeBean attributeBean = new AttributeBean();
+		attributeBean.setAttribute(attribute);
+		
+		this.attributeService.delete(attributeBean);
+	}
 }

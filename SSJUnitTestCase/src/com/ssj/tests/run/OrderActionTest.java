@@ -25,7 +25,8 @@ public class OrderActionTest extends SSJGenericSpringTest{
 		
 		
 		///////////////////////Set of test case o the users possibilites/////////////////////////////////
-		//orderAction.testCreateOrder(); 
+		orderAction.testCreateOrder(); 
+		orderAction.testCreateOrderItems(); 
 		orderAction.testRemoveItems(); 
 	}
 

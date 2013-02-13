@@ -3,6 +3,7 @@ package com.ssj.persistence.order.entity;
 import java.io.Serializable;
 import java.lang.Long;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import com.ssj.persistence.product.entity.Product;
 
@@ -21,7 +22,8 @@ public class OrderItem implements Serializable, Comparable<OrderItem> {
 	@OneToOne
 	private Product product;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.PERSIST)
+	@NotNull
 	private OrderShop order;
 	
 	private static final long serialVersionUID = 1L;

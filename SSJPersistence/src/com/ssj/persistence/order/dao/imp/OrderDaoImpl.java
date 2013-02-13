@@ -24,4 +24,10 @@ public class OrderDaoImpl
 		orderItem = getEntityManager().getReference(OrderItem.class, orderItem.getId());
 		getEntityManager().remove(orderItem);
 	}
+
+	@Override
+	public void createOrderItems(OrderItem orderItem) throws Exception {
+		getEntityManager().persist(orderItem);
+		
+	}
 }

@@ -23,4 +23,11 @@ public interface OrderDao extends SSJGenericDao<OrderShop> {
 	 * */
 	public void deleteOrderItem(OrderItem orderItem) throws Exception;
 
+	/**
+	 * Method to create order items
+	 * @param orderItem ordes items to create
+	 * @throws Exception
+	 * */
+	public void createOrderItems(OrderItem orderItem) throws Exception;
+
 }

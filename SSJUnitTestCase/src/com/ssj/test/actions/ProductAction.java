@@ -5,7 +5,6 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.openjpa.lib.log.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -75,12 +74,12 @@ public class ProductAction {
 	public void testUpdateteProduct() throws Exception {
 		
 		ProductBean productBean = new ProductBean();
-		productBean.setId(8L);
+		productBean.setId(1L);
 		
 		productBean = this.productService.load(productBean);
 		
 		Product product = productBean.getProduct();
-		product.setId(8L);
+		product.setId(1L);
 		product.setName("Condicionador cond perfectus");
 		product.setShortName("condicionador cond");
 		product.setDescription("Condiciona tudo!!!");
