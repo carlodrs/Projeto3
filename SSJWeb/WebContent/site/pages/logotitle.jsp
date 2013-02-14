@@ -7,7 +7,7 @@
               --%>
               <!-- Shop Name -->
               <div id="titlelogo">
-					Shopping São João
+					Aphrodit
               </div>    
 	</div>
 	

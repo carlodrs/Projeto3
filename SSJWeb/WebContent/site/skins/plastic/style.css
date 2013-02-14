@@ -141,7 +141,7 @@ ul.tabs li.current a {
 	border-radius: 15px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
-	background: url("gloss.png") repeat scroll left center #FFD800;
+	background: url("gloss.png") repeat scroll left center rgb(63, 63, 61);
 	text-shadow: none;
 	height: 50px;
 	width: 870px;
@@ -154,6 +154,7 @@ ul.tabs li.current a {
 	font-family: ubuntu;
 	font-size: 20px;
 	width: 380px;
+	color: black
 }
 
 /* FOOTER --------------------------------------------------------*/
