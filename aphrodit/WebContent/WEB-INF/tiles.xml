@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>  	
+
+  	<!--  =================== TEMPLATES FROM THE SITE ============================== -->
+
+  	<!-- FULL TEMPLATE PARTS HEADER, CONTENT AND FOOTER -->
+	<definition name="template" template="/site/template.jsp">
+    	<put-attribute name="header" value="parent.header" />
+    	<put-attribute name="content"   value="parent.content" />
+    </definition>
+  	
+  	<!-- EXTERNAL HEADER OF TEMPLATE PAGE -->
+  	<definition name="parent.header" template="/site/header.jsp">
+  		<put-attribute name="charset" value="UTF-8" />
+  		<put-attribute name="title" value="Aphrodit" />
+  	  	<put-attribute name="includes.js.css" value="/site/include/includes.jsp" />
+  	</definition>
+  	<!-- ENDS HEADER OF TEMPLATE PAGE -->
+  	
+  	<!-- CONTENT TEMPLATE - MAIN PAGE -->
+	<definition name="parent.content" template="/site/page.jsp">
+		<put-attribute name="cssClass" value="home"/>
+	  	<put-attribute name="header" cascade="true" value="/site/pages/header.jsp" />
+	  	<put-attribute name="menu" cascade="true" value="/site/pages/menu.jsp" />
+	  	<put-attribute name="slider" cascade="true" value="/site/pages/slider.jsp" />
+	  	<put-attribute name="content" cascade="true" value="/site/pages/content.jsp" />
+	  	<put-attribute name="twitter" cascade="true" value="/site/pages/twitter.jsp" />
+	  	<put-attribute name="footer" cascade="true" value="/site/pages/footer.jsp" />
+	  	<put-attribute name="bottom" value="/site/pages/bottom.jsp" />
+  		
+  	</definition>  
+	<!-- ENDS MAIN PAGE -->
+	
+  	<!-- TEMPLATES PAGES MY ACCOUNT 
+  	<definition name="my.space.home" extends="parent.content">
+  		<put-attribute name="cssClass" value=""/>
+  		<put-attribute name="header" value="child.header.noslider" />
+  		<put-attribute name="content" value="/site/account/mySpace.jsp" />
+  	</definition>
+  	ENDS TEMPLATES PAGES MY ACCOUNT -->
+  	
+  	
+  	<!-- CONTENT CHILD PARENT PAGE (MAIN PAGES FROM THE SITE) -->
+  	
+  	<!-- HEADER FROM THE CONTENT WITHOUT SLIDER 
+  	<definition name="child.header.noslider" template="/site/layouts/main/header.jsp">
+  		<put-attribute name="logo.title" value="/site/pages/logotitle.jsp" />
+  	  	<put-attribute name="social.network" value="/site/pages/social.jsp" />
+  	  	<put-attribute name="menu.header" value="/site/pages/menuHeader.jsp" />
+ 	  	<put-attribute name="header.search" value="/site/pages/headerSearch.jsp" />
+ 	  	<put-attribute name="header.slider" value=""/>
+ 	</definition>
+  	
+  	HEADER FROM THE CONTENT WITH SLIDER 
+	<definition name="child.header.slider" extends="child.header.noslider">
+  	  	<put-attribute name="header.slider" value="/site/pages/headerSlider.jsp" />
+  	</definition>
+  	END MAIN PAGE HEADER -->
+  	
+  	<!-- PHISICAL PAGES HOME PAGE -->
+  	<definition name="home.page" extends="template"/>
+  	
+  	<!-- PHISICAL PAGES MY SPACE CONTENT
+  	<definition name="my.space" extends="template">
+  		<put-attribute name="content"  value="my.space.home" />
+  	</definition>
+ 	 ENDS MY SPACE CONTENT -->
+
+</tiles-definitions>

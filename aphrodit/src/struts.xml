@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+  	 <package name="register" namespace="/account/register" extends="struts-default">
+		
+		<action name="user">	
+			<result>/account/register/user.jsp</result>
+		</action>
+	
+		<action name="createUser" class="com.ssj.action.account.user.UserRegistrationAction">
+			<result name="success">/account/register/success.html</result>
+			<result name="error">/account/register/fail.html</result>
+		</action>
+		
+	</package>
+	
+	<package name="simple" namespace="/simple" extends="struts-default">
+		
+		<action name="child">	
+			<result>/site/layouts/simpleChild.jsp</result>
+		</action>
+	</package>
+	
+	
+	
+	
+</struts>	
+<!--
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+        
+        <action name="userRegistration" >
+			<result>/account/user/userRegistration.jsp</result>
+		</action>
+
+   		<action name="createUser" class="com.ssj.action.account.user.UserRegistration">
+         	 <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+    
+    </package>
+
+    <include file="example.xml"/>´-->
+
+
+
