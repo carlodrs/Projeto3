@@ -38,11 +38,21 @@
 									<li><a href="gallery-2.html"><span> Semi-Joias</span></a></li>
 								</ul>
 							</li>
-							<li class="current-menu-item"><a href="gallery.html">Galeria<span class="subheader">Nosso Showcase</span></a>
+							<li class="current-menu-item"><a href="gallery.html">Galeria<span class="subheader">Show Room</span></a>
 								<ul>
 									<li><a href="gallery.html"><span> Todos produtos</span></a></li>
 								</ul>
 							</li>
+							
+							<li><a href="contact.html">A Loja<span class="subheader">Quem somos</span></a>
+								<ul>
+									<li><a href="gallery.html"><span> Locais de atendimento</span></a></li>
+									<li><a href="gallery.html"><span> Telefones uteis</span></a></li>
+									<li><a href="gallery.html"><span> Parcerias</span></a></li>
+									<li><a href="gallery.html"><span> Trabalhe conosco</span></a></li>
+								</ul>
+							</li>
+							
 							<li><a href="contact.html">Contato<span class="subheader">Fale conosco</span></a>
 								<ul>
 									<li><a href="gallery.html"><span> Locais de atendimento</span></a></li>
