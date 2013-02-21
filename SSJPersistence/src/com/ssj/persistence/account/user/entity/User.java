@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 /**
  * Entity implementation class for Entity: User
@@ -31,6 +32,7 @@ public class User implements Serializable {
 	private String rg;
 	
 	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+	@NotNull
 	private UserEmail userEmail;
 	
 	private static final long serialVersionUID = 1L;

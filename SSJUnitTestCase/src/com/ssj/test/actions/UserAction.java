@@ -28,7 +28,7 @@ public class UserAction {
 	/*****************************************************************************/
 	public void testCreateUser() {
 		
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 2; i++) {
 			// configuring email
 			UserEmail userEmail = new UserEmail();
 			userEmail.setEmail(i + " caredom@zipmail.com");
@@ -48,9 +48,12 @@ public class UserAction {
 			calendar.set(Calendar.DATE, 4);
 			client.setBirthday(calendar);
 			
+			//set user email
+			client.setUserEmail(userEmail);
+			userEmail.setUser(client);
+			
 			//configuring UserBean object
 			ClientBean clientBean = new ClientBean();
-			clientBean.setId(10L);
 			clientBean.setUser(client);
 			
 			try {
@@ -69,8 +72,8 @@ public class UserAction {
 	public void testCreateUserEmailOnly() {
 		
 		UserEmail userEmail = new UserEmail();
-		userEmail.setEmail("testdoemail@gmail.com");
-		userEmail.setPassword("senha do gmail");
+		userEmail.setEmail("carlosrenato.s@gmail.com");
+		userEmail.setPassword("rambito01");
 		
 		Partner partner = new Partner();
 		partner.setUserEmail(userEmail);

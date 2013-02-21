@@ -2,6 +2,7 @@ package com.ssj.persistence.account.user.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -19,10 +20,11 @@ import javax.persistence.*;
 @Entity
 public class UserEmail implements Serializable {
 	
-	@Id
 	@OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="userId")
+	@NotNull
     private User user;
+	
+	@Id
 	private String email;
 	private String password;
 	

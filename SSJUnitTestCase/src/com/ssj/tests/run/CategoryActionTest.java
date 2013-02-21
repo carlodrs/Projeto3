@@ -1,4 +1,4 @@
-package com.ssj.test.config.service.product;
+package com.ssj.tests.run;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

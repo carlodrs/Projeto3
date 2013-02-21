@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
  * @copyright  Shopping São João 
  * */
 @Repository
-@Transactional
 public interface SSJGenericDao < T extends Serializable > {
 	
 	/**

@@ -8,12 +8,9 @@ package com.ssj.service.order.interfaces;
  * @since 2013 
  * */
 
-import org.springframework.transaction.annotation.Transactional;
-
 import com.ssj.service.Service;
 import com.ssj.service.order.bean.OrderBean;
 
-@Transactional
 public interface OrderService extends Service <OrderBean>{
 	
 	/**
