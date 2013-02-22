@@ -4,9 +4,11 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
 
-  	 <package name="register" namespace="/account/register" extends="struts-default">
-		
+  	<package name="register" namespace="/account/register" extends="struts-default">
 		<action name="user">	
 			<result>/account/register/user.jsp</result>
 		</action>
@@ -15,19 +17,16 @@
 			<result name="success">/account/register/success.html</result>
 			<result name="error">/account/register/fail.html</result>
 		</action>
-		
 	</package>
 	
-	<package name="simple" namespace="/simple" extends="struts-default">
-		
-		<action name="child">	
-			<result>/site/layouts/simpleChild.jsp</result>
+	<package name="security" namespace="/security" extends="struts-default">
+		<action name="login" class="br.com.store.security.action.LoginAction">	
+			<result name="input">/security/login.jsp</result>
+			<result name="error">/security/login.jsp</result>
+			<result name="success">/cms/index.jsp</result>
 		</action>
 	</package>
-	
-	
-	
-	
+
 </struts>	
 <!--
         <default-action-ref name="index" />

@@ -3,6 +3,7 @@
     <wb-module deploy-name="aphrodit">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
         <dependent-module archiveName="SSJService.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SSJService/SSJService">
             <dependency-type>uses</dependency-type>
         </dependent-module>
