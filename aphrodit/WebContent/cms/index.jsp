@@ -1,26 +1,3 @@
-<!doctype html>
-
-<body>
-	
-	<div id="top">
-		CMS - Loja - Site		
-	</div>
-	
-	
-	
-	<div id="menu">
-		Menu
-		
-	</div>
-	
-	
-	<div id="center">
-		center
-		
-	</div>
-	
-	<div id="bottom">
-		bottom
-	
-	</div>
-</body>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<!DOCTYPE  html>
+<tiles:insertDefinition name="cms.template"/>

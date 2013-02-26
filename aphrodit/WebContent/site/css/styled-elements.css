@@ -231,7 +231,7 @@ table {
 	border-spacing:0;
 	border-top:1px solid white;
 	margin-bottom:28px;
-	width:100%;
+	/*width:100%;*/
 	text-align: left;
 }
 
@@ -248,7 +248,7 @@ td{
 }
 
 td, th{
-	border-bottom: 1px solid #1f1f1f;
+	/*border-bottom: 1px solid #1f1f1f;*/
 }
 
 /* LISTS ------------------------------------------------------------*/

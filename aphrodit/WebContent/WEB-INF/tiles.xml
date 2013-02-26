@@ -9,7 +9,14 @@
   	<!-- FULL TEMPLATE PARTS HEADER, CONTENT AND FOOTER -->
 	<definition name="template" template="/site/template.jsp">
     	<put-attribute name="header" value="parent.header" />
-    	<put-attribute name="content"   value="parent.content" />
+    	<put-attribute name="cssClass" value="home"/>
+	  	<put-attribute name="top" value="/site/pages/header.jsp" />
+	  	<put-attribute name="menu" value="/site/pages/menu.jsp" />
+	  	<put-attribute name="slider" value="/site/pages/slider.jsp" />
+	  	<put-attribute name="content" value="/site/pages/content.jsp" />
+	  	<put-attribute name="twitter" value="/site/pages/twitter.jsp" />
+	  	<put-attribute name="footer" value="/site/pages/footer.jsp" />
+	  	<put-attribute name="bottom" value="/site/pages/bottom.jsp" />
     </definition>
   	
   	<!-- EXTERNAL HEADER OF TEMPLATE PAGE -->
@@ -22,17 +29,26 @@
   	
   	<!-- CONTENT TEMPLATE - MAIN PAGE -->
 	<definition name="parent.content" template="/site/page.jsp">
-		<put-attribute name="cssClass" value="home"/>
-	  	<put-attribute name="header" cascade="true" value="/site/pages/header.jsp" />
-	  	<put-attribute name="menu" cascade="true" value="/site/pages/menu.jsp" />
-	  	<put-attribute name="slider" cascade="true" value="/site/pages/slider.jsp" />
-	  	<put-attribute name="content" cascade="true" value="/site/pages/content.jsp" />
-	  	<put-attribute name="twitter" cascade="true" value="/site/pages/twitter.jsp" />
-	  	<put-attribute name="footer" cascade="true" value="/site/pages/footer.jsp" />
-	  	<put-attribute name="bottom" value="/site/pages/bottom.jsp" />
-  		
-  	</definition>  
+	</definition>  
 	<!-- ENDS MAIN PAGE -->
+	
+	<!--  Parent CMS Product -->
+  	<definition name="cms.template" extends="template">
+  		<put-attribute name="cssClass" value=""/>
+  		<put-attribute name="top" value="/cms/pages/top.jsp" />
+  		<put-attribute name="slider" value="" />
+  		<put-attribute name="twitter" value="" />
+	  	<put-attribute name="footer" value="" />
+	  	<put-attribute name="menu" value="/cms/pages/menu.jsp" />
+	  	<put-attribute name="content"  value="/cms/pages/content.jsp" />
+	  	<put-attribute name="bottom" value="/cms/pages/bottom.jsp" />
+  	</definition>
+	<!-- Product create -->
+  	<definition name="cms.template.product.create" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/product/create.jsp" />
+	</definition>
+	
+	
 	
   	<!-- TEMPLATES PAGES MY ACCOUNT 
   	<definition name="my.space.home" extends="parent.content">

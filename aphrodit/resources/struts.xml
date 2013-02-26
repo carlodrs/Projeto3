@@ -2,33 +2,15 @@
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
-
 <struts>
-	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
 
-  	<package name="register" namespace="/account/register" extends="struts-default">
-		<action name="user">	
-			<result>/account/register/user.jsp</result>
-		</action>
-	
-		<action name="createUser" class="com.ssj.action.account.user.UserRegistrationAction">
-			<result name="success">/account/register/success.html</result>
-			<result name="error">/account/register/fail.html</result>
-		</action>
-	</package>
-	
-	<package name="security" namespace="/security" extends="struts-default">
-		<action name="login" class="br.com.store.security.action.LoginAction">	
-			<result name="input">/security/login.jsp</result>
-			<result name="error">/security/login.jsp</result>
-			<result name="success">/cms/index.jsp</result>
-		</action>
-	</package>
 
-</struts>	
-<!--
+    <package name="default" namespace="/" extends="struts-default">
+
         <default-action-ref name="index" />
 
         <global-results>
@@ -41,25 +23,33 @@
 
         <action name="index">
             <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
+                <param name="actionName">Store</param>
+                <param name="namespace">/site</param>
             </result>
         </action>
-        
-        <action name="userRegistration" >
-			<result>/account/user/userRegistration.jsp</result>
-		</action>
-
-   		<action name="createUser" class="com.ssj.action.account.user.UserRegistration">
-         	 <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
-            </result>
-        </action>
-    
     </package>
+    
+    <package name="site" namespace="/" extends="struts-default">
+		<action name="loginCMS" class="br.com.store.security.action.LoginAction">	
+			<result name="input">/site/loginCMS.jsp</result>
+			<result name="error">/site/loginCMS.jsp</result>
+			<result name="success">/cms/index.jsp</result>
+		</action>
+		
+		<action name="ProductInitCMSAction" class="br.com.store.cms.action.ProductCMSAction">	
+			<result name="input">/cms/pages/product/template_create.jsp</result>
+		</action>
+		
+		<action name="ProductCreateCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="create">	
+			<result name="error">/cms/pages/product/template_create.jsp</result>
+			<result name="success">/cms/pages/message.jsp</result>
+		</action>
+		
+	</package>
 
-    <include file="example.xml"/>´-->
 
 
+    <!-- Add packages here -->
+
+</struts>
 

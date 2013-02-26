@@ -1,4 +1,5 @@
 <!-- CSS -->
+		<link rel="stylesheet" href="css/cms.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/social-icons.css" type="text/css" media="screen" />
 		<!--[if IE 8]>
