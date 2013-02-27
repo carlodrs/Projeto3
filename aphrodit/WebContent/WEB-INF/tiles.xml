@@ -6,6 +6,10 @@
 
   	<!--  =================== TEMPLATES FROM THE SITE ============================== -->
 
+
+	<!-- PHISICAL PAGES HOME PAGE -->
+  	<definition name="home.page" extends="template"/>
+  	
   	<!-- FULL TEMPLATE PARTS HEADER, CONTENT AND FOOTER -->
 	<definition name="template" template="/site/template.jsp">
     	<put-attribute name="header" value="parent.header" />
@@ -43,14 +47,24 @@
 	  	<put-attribute name="content"  value="/cms/pages/content.jsp" />
 	  	<put-attribute name="bottom" value="/cms/pages/bottom.jsp" />
   	</definition>
-	<!-- Product create -->
+  	
+  	<!-- Product message -->
   	<definition name="cms.template.product.create" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/product/create.jsp" />
 	</definition>
 	
+	<!-- Product create -->
+  	<definition name="cms.template.product.message" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/product/message.jsp" />
+	</definition>
 	
+	<!-- Product list all products -->
+  	<definition name="cms.template.product.list" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/product/listAll.jsp" />
+	</definition>
 	
-  	<!-- TEMPLATES PAGES MY ACCOUNT 
+	<!--  ====================================NOT DISCOMMENT =================================================== -->
+  	<!-- NOT USED TEMPLATES PAGES MY ACCOUNT 
   	<definition name="my.space.home" extends="parent.content">
   		<put-attribute name="cssClass" value=""/>
   		<put-attribute name="header" value="child.header.noslider" />
@@ -76,8 +90,7 @@
   	</definition>
   	END MAIN PAGE HEADER -->
   	
-  	<!-- PHISICAL PAGES HOME PAGE -->
-  	<definition name="home.page" extends="template"/>
+  
   	
   	<!-- PHISICAL PAGES MY SPACE CONTENT
   	<definition name="my.space" extends="template">

@@ -4,7 +4,7 @@
 	
 		<h3>Tela cadastro de produtos</h3>
 			
-	<s:actionmessage />
+		<s:actionerror/>
 		
 		<s:form name="ProductCreateCMSAction" action="ProductCreateCMSAction" method="post"> 
 	

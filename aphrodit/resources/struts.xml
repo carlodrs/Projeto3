@@ -42,7 +42,13 @@
 		
 		<action name="ProductCreateCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="create">	
 			<result name="error">/cms/pages/product/template_create.jsp</result>
-			<result name="success">/cms/pages/message.jsp</result>
+			<result name="success">/cms/pages/product/template_message.jsp</result>
+		</action>
+		
+		
+		<action name="ProductListCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="listAll">	
+			<result name="success">/cms/pages/product/template_list.jsp</result>
+			<result name="error">/cms/pages/product/template_list.jsp</result>
 		</action>
 		
 	</package>
