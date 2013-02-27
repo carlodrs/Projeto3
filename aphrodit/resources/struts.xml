@@ -29,7 +29,7 @@
         </action>
     </package>
     
-    <package name="site" namespace="/" extends="struts-default">
+    <package name="site" namespace="/site" extends="struts-default">
 		<action name="loginCMS" class="br.com.store.security.action.LoginAction">	
 			<result name="input">/site/loginCMS.jsp</result>
 			<result name="error">/site/loginCMS.jsp</result>
@@ -37,10 +37,14 @@
 		</action>
 		
 		<action name="ProductInitCMSAction" class="br.com.store.cms.action.ProductCMSAction">	
+			<result name="input">/cms/pages/product/template_message.jsp</result>
+		</action>
+		
+		<action name="ProductPrepareCreateCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="prepare">	
 			<result name="input">/cms/pages/product/template_create.jsp</result>
 		</action>
 		
-		<action name="ProductCreateCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="create">	
+		<action name="ProductCreateCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="create"> 	
 			<result name="error">/cms/pages/product/template_create.jsp</result>
 			<result name="success">/cms/pages/product/template_message.jsp</result>
 		</action>
@@ -50,6 +54,13 @@
 			<result name="success">/cms/pages/product/template_list.jsp</result>
 			<result name="error">/cms/pages/product/template_list.jsp</result>
 		</action>
+		
+		<action name="ProductSearchCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="listAll">	
+			<result name="success">/cms/pages/product/template_list.jsp</result>
+			<result name="error">/cms/pages/product/template_list.jsp</result>
+		</action>
+		
+		
 		
 	</package>
 

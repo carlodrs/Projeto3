@@ -50,6 +50,15 @@ ul#menucms li a:hover {
 	font-size: 30px;
 }
 
+#messageList {
+	margin-top: -75px;
+	margin-left: 129px;
+}
+
+#messageSearch {
+	margin-top: -75px;
+	margin-left: 258px;
+}
 
 #bottomcms{
 	height: 117px;

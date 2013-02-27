@@ -2,14 +2,23 @@
 
 <div id="messageContent" class="cmscontent">
 		
-		<h3><s:actionerror/></h3>
+		<h3><s:actionmessage/></h3>
 		
-		<s:form name="ProductInitCMSAction" action="ProductInitCMSAction" method="post"> 
-			<s:submit key="button.registry.new" align="center"/>	
-		</s:form>
-	
-		<s:form name="ProductListCMSAction" action="ProductListCMSAction" method="post"> 
-			<s:submit key="button.list.all" align="center"/>	
-		</s:form>
-			 
+		<div id="messageNew">
+			<s:form name="ProductPrepareCreateCMSAction" action="ProductPrepareCreateCMSAction" method="post"> 
+				<s:submit key="buttonregistrynew" align="center"/>	
+			</s:form>
+		</div>
+		
+		<div id="messageList">
+			<s:form name="ProductListCMSAction" action="ProductListCMSAction" method="post"> 
+				<s:submit key="buttonlistall" align="center"/>	
+			</s:form>
+		</div>
+		
+		<div id="messageSearch">
+			<s:form name="ProductSearchCMSAction" action="ProductSearchCMSAction" method="post"> 
+				<s:submit key="buttonsearch" align="center"/>	
+			</s:form>
+		</div>	 
 </div>

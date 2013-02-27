@@ -1,0 +1,49 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="name">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="description">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="shortName">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="price">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+          <field-validator type="int">
+             <message key="errors.number" />
+        </field-validator>
+    </field>
+	<field name="offerPrice">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+        <field-validator type="int">
+             <message key="errors.number" />
+        </field-validator>
+    </field>
+	<field name="discount">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+        <field-validator type="int">
+           <message key="errors.number" />
+        </field-validator>
+    </field>
+</validators>

@@ -144,6 +144,16 @@ public class ProductCMSAction extends ActionSupport {
 	
 	@Override
 	public String execute() throws Exception {
+		addActionMessage(getText("product.select.option"));
+		return INPUT;
+	}
+	
+	/**
+	 * Prepare to create product
+	 * @return String
+	 * @throws Exception
+	 */
+	public String prepare() throws Exception {
 		return INPUT;
 	}
 	
