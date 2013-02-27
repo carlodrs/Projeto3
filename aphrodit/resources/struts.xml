@@ -44,9 +44,10 @@
 			<result name="input">/cms/pages/product/template_create.jsp</result>
 		</action>
 		
-		<action name="ProductCreateCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="create"> 	
+		<action name="ProductCreateCMSAction" class="br.com.store.cms.action.ProductCreateCMSAction" method="create"> 	
 			<result name="error">/cms/pages/product/template_create.jsp</result>
 			<result name="success">/cms/pages/product/template_message.jsp</result>
+			<result name="input">/cms/pages/product/template_create.jsp</result>
 		</action>
 		
 		

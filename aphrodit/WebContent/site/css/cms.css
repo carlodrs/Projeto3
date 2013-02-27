@@ -24,7 +24,7 @@ ul#menucms li a:link, ul#menucms li a:visited {
 	border-left:10px solid #EEC591;
 	padding-left:5px;
 	padding-top: 10px;
-	height: 30px;
+	height: 42px;
 }
 ul#menucms li a:hover {
 	background-color: #FFE4B5;
@@ -40,9 +40,9 @@ ul#menucms li a:hover {
 .cmscontent{
 	border: 1px solid gray;
 	background: white;
-	height: 701px;
+	height: 903px;
 	width: 989px;
-	margin-top: -701px;
+	margin-top: -906px;
 	margin-left: 271px;
 }
 

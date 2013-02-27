@@ -6,13 +6,13 @@
 			
 		<s:actionerror/>
 		
-		<s:form action="ProductCreateCMSAction"> 
+		<s:form name="ProductCreateCMSAction" action="ProductCreateCMSAction" method="post" enctype="multipart/form-data" validate="true">  
 	
 			<s:file name="picture" key="product.picture" />
-			<s:file name="picture" key="product.thumb1" />
-			<s:file name="picture" key="product.thumb2" />
-			<s:file name="picture" key="product.thumb3" />
-			<s:file name="picture" key="product.thumb4" />
+			<s:file name="thumb1" key="product.thumb1" />
+			<s:file name="thumb2" key="product.thumb2" />
+			<s:file name="thumb3" key="product.thumb3" />
+			<s:file name="thumb4" key="product.thumb4" />
 			<s:textfield name="name" key="product.name" />
 			<s:textfield name="shortName" key="product.shortName" required="true"/>
 			<s:textarea name="description" key="product.description"  required="true"/>
