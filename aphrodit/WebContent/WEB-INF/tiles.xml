@@ -63,6 +63,13 @@
   		<put-attribute name="content"  value="/cms/pages/product/listAll.jsp" />
 	</definition>
 	
+	<!-- Product list all products -->
+  	<definition name="cms.template.cms.login" extends="cms.template">
+  		<put-attribute name="menu" value="" />
+  		<put-attribute name="content"  value="/cms/security/login.jsp" />
+	</definition>
+	
+	
 	<!--  ====================================NOT DISCOMMENT =================================================== -->
   	<!-- NOT USED TEMPLATES PAGES MY ACCOUNT 
   	<definition name="my.space.home" extends="parent.content">

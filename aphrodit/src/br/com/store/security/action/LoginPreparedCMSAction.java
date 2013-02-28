@@ -4,8 +4,6 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.ssj.persistence.account.user.entity.UserEmail;
-import com.ssj.service.security.login.bean.LoginBean;
 import com.ssj.service.security.login.interfaces.LoginService;
 
 /** 
@@ -16,7 +14,7 @@ import com.ssj.service.security.login.interfaces.LoginService;
  * @see SessionAware
  * 
  * */
-public class LoginAction extends ActionSupport{
+public class LoginPreparedCMSAction extends ActionSupport{
 	
 	/**
 	 * Serial version id
@@ -33,34 +31,16 @@ public class LoginAction extends ActionSupport{
 	//private SessionMap<String,String> sessionmap;
 	
 	@Autowired
-	private LoginService loginService;
+	protected LoginService loginService;
 	
 	/**
-	 * Method execute from struts to handle the loin
-	 * @return String name of operation identifier 
-	 * @throws Exception
-	 * @see LoginService
-	 *
+	 * Prepare form to make the login for the user
+	 * @return String
+	 * @see ActionSupport
 	 * */
-	public String execute() throws Exception{
-		
-		UserEmail userEmail = new UserEmail();
-		userEmail.setEmail(this.getEmail());
-		userEmail.setPassword(this.getPassword());
-		
-		LoginBean loginBean = new LoginBean();
-		loginBean.setUserEmail(userEmail);
-		
-		boolean logged = this.loginService.checkUser(loginBean);
-
-		if (logged == true){
-			return SUCCESS;
-		}else {
-			addActionError(getText("error.login"));
-			return ERROR;
-		}
+	public String prepare() {
+		return INPUT;
 	}
-
 	/**
 	 * @return the email
 	 */
@@ -88,7 +68,7 @@ public class LoginAction extends ActionSupport{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	/*
 	public void validate() {
 		
 		if (this.getEmail().trim().length() == 0) {
@@ -98,7 +78,8 @@ public class LoginAction extends ActionSupport{
 		if (this.getPassword().trim().length() == 0) {
 			addFieldError("password", "Password is required");
 		}
-	}	
+	}*/	
+	
 	
 /*	
 	public void setSession(Map map) {

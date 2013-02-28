@@ -1,8 +1,11 @@
 package br.com.store.cms.action;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.ssj.persistence.product.entity.Product;
 import com.ssj.service.product.interfaces.ProductService;
 
 /**
@@ -22,9 +25,11 @@ public class ProductCMSAction extends ActionSupport {
 	private Double offerPrice;
 	private String picture;
 	private Double discount;
+	private List<Product> products;
+	
 
 	@Autowired
-	ProductService productService;
+	protected ProductService productService;
 	
 	/**
 	 * @return the name
@@ -136,6 +141,22 @@ public class ProductCMSAction extends ActionSupport {
 
 
 	/**
+	 * @return the products
+	 */
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	/**
+	 * @param products the products to set
+	 */
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+
+
+	/**
 	 * Serial version UId
 	 */
 	private static final long serialVersionUID = 1;
@@ -144,6 +165,20 @@ public class ProductCMSAction extends ActionSupport {
 	public String execute() throws Exception {
 		addActionMessage(getText("product.select.option"));
 		return INPUT;
+	}
+	
+	/**
+	 * List all products regitered on the system
+	 * @return String success or error
+	 * @exception Exception
+	 */
+	public String listAll() throws Exception {
+		try {
+			this.setProducts(this.productService.listAll());
+			return SUCCESS;	
+		} catch (Exception e) {
+			return ERROR;
+		}
 	}
 	
 	/**

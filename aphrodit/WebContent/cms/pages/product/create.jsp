@@ -20,7 +20,11 @@
 			<s:textfield name="offerPrice" key="product.offerPrice" required="true"/>
 			<s:textfield name="discount" key="product.discount" required="true"/>
 			
-			<s:submit key="buttonregistry" align="center"/>	
+			<s:submit key="buttonregistry" align="center"/>
 		</s:form>
-			 
+		
+		<s:form name="ProductListCMSAction" action="ProductListCMSAction" method="post"> 
+			<s:submit key="buttonlistall" align="center"/>	
+		</s:form>
+	
 </div>

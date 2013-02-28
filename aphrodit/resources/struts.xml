@@ -30,11 +30,16 @@
     </package>
     
     <package name="site" namespace="/site" extends="struts-default">
-		<action name="loginCMS" class="br.com.store.security.action.LoginAction">	
-			<result name="input">/site/loginCMS.jsp</result>
-			<result name="error">/site/loginCMS.jsp</result>
+		<action name="loginCMS" class="br.com.store.security.action.LoginCMSAction" method="doLogin">	
+			<result name="input">/cms/templateLoginCMS.jsp</result>
+			<result name="error">/cms/templateLoginCMS.jsp</result>
 			<result name="success">/cms/index.jsp</result>
 		</action>
+		
+		<action name="prepareLoginCMS" class="br.com.store.security.action.LoginPreparedCMSAction" method="prepare">	
+			<result name="input">/cms/templateLoginCMS.jsp</result>
+		</action>
+		
 		
 		<action name="ProductInitCMSAction" class="br.com.store.cms.action.ProductCMSAction">	
 			<result name="input">/cms/pages/product/template_message.jsp</result>
