@@ -1,4 +1,4 @@
-package br.com.store.cms.action;
+package br.com.store.cms.product.action;
 
 
 import com.opensymphony.xwork2.ActionSupport;

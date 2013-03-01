@@ -30,44 +30,64 @@
     </package>
     
     <package name="site" namespace="/site" extends="struts-default">
-		<action name="loginCMS" class="br.com.store.security.action.LoginCMSAction" method="doLogin">	
+		<action name="loginCMS" class="br.com.store.cms.security.action.LoginCMSAction" method="doLogin">	
 			<result name="input">/cms/templateLoginCMS.jsp</result>
 			<result name="error">/cms/templateLoginCMS.jsp</result>
 			<result name="success">/cms/index.jsp</result>
 		</action>
 		
-		<action name="prepareLoginCMS" class="br.com.store.security.action.LoginPreparedCMSAction" method="prepare">	
+		<action name="prepareLoginCMS" class="br.com.store.cms.security.action.LoginPreparedCMSAction" method="prepare">	
 			<result name="input">/cms/templateLoginCMS.jsp</result>
 		</action>
 		
 		
-		<action name="ProductInitCMSAction" class="br.com.store.cms.action.ProductCMSAction">	
+		<action name="ProductInitCMSAction" class="br.com.store.cms.product.action.ProductCMSAction">	
 			<result name="input">/cms/pages/product/template_message.jsp</result>
 		</action>
 		
-		<action name="ProductPrepareCreateCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="prepare">	
+		<action name="ProductPrepareCreateCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="prepare">	
 			<result name="input">/cms/pages/product/template_create.jsp</result>
 		</action>
 		
-		<action name="ProductCreateCMSAction" class="br.com.store.cms.action.ProductCreateCMSAction" method="create"> 	
+		<action name="ProductCreateCMSAction" class="br.com.store.cms.product.action.ProductCreateCMSAction" method="create"> 	
 			<result name="error">/cms/pages/product/template_create.jsp</result>
 			<result name="success">/cms/pages/product/template_message.jsp</result>
 			<result name="input">/cms/pages/product/template_create.jsp</result>
 		</action>
 		
 		
-		<action name="ProductListCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="listAll">	
+		<action name="ProductListCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">	
 			<result name="success">/cms/pages/product/template_list.jsp</result>
 			<result name="error">/cms/pages/product/template_list.jsp</result>
 		</action>
 		
-		<action name="ProductSearchCMSAction" class="br.com.store.cms.action.ProductCMSAction" method="listAll">	
+		<action name="ProductSearchCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">	
 			<result name="success">/cms/pages/product/template_list.jsp</result>
 			<result name="error">/cms/pages/product/template_list.jsp</result>
 		</action>
 		
+		<action name="ClientRegisteredAction" class="br.com.store.cms.user.action.ClientRegisteredAction" method="create"> 	
+			<result name="error">/cms/pages/user/template_create_user.jsp</result>
+			<result name="success">/cms/pages/user/template_message_user.jsp</result>
+			<result name="input">/cms/pages/user/template_create_user.jsp</result>
+		</action>
 		
 		
+		<action name="PrepareClientRegisteredAction" class="br.com.store.cms.user.action.PrepareClientRegisteredAction" method="prepare"> 	
+			<result name="input">/cms/pages/user/template_create_user.jsp</result>
+		</action>
+		
+		<action name="ListClientRegisteredAction" class="br.com.store.cms.user.action.PrepareClientRegisteredAction" method="listAll">	
+			<result name="success">/cms/pages/user/template_list_user.jsp</result>
+			<result name="error">/cms/pages/user/template_list_user.jsp</result>
+		</action>
+		
+		<action name="ClientInitRegisteredAction" class="br.com.store.cms.user.action.PrepareClientRegisteredAction">	
+			<result name="input">/cms/pages/user/template_message_user.jsp</result>
+		</action>
+		
+		
+	
 	</package>
 
 

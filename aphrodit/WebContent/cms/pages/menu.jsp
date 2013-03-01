@@ -56,7 +56,7 @@
 						
 						
 						<li>
-							<a href="ClientRegisteredAction">Usuários cadastrados</a>
+							<a href="ClientInitRegisteredAction">Usuários cadastrados</a>
 						</li>
 						
 						

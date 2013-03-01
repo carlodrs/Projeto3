@@ -1,4 +1,4 @@
-package br.com.store.security.action;
+package br.com.store.cms.security.action;
 
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -41,10 +41,12 @@ public class LoginCMSAction extends LoginPreparedCMSAction{
 		try {
 			boolean logged = this.loginService.checkUser(loginBean);
 			
-			if (logged == true)
+			if (logged == true){
 				return SUCCESS;
-			else
+			}else{
+				addActionError(getText("error.login"));
 				return ERROR;
+			}	
 
 		} catch (Exception e) {
 			e.printStackTrace();

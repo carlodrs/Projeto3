@@ -63,11 +63,30 @@
   		<put-attribute name="content"  value="/cms/pages/product/listAll.jsp" />
 	</definition>
 	
-	<!-- Product list all products -->
+	<!-- Login CMS -->
   	<definition name="cms.template.cms.login" extends="cms.template">
   		<put-attribute name="menu" value="" />
   		<put-attribute name="content"  value="/cms/security/login.jsp" />
 	</definition>
+	
+	
+	<!-- User CMS -->
+	<definition name="template.cms.user.create" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/user/create.jsp" />
+	</definition>
+	
+	<definition name="template.cms.user.message" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/user/message.jsp" />
+	</definition>
+	
+	<definition name="template.cms.user.list" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/user/listAll.jsp" />
+	</definition>
+	
+	<definition name="template.cms.user.message" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/user/message.jsp" />
+	</definition>
+	
 	
 	
 	<!--  ====================================NOT DISCOMMENT =================================================== -->

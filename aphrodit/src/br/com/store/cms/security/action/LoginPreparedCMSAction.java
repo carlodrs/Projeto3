@@ -1,4 +1,4 @@
-package br.com.store.security.action;
+package br.com.store.cms.security.action;
 
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;

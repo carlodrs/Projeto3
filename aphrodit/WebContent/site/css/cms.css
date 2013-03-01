@@ -65,7 +65,9 @@ ul#menucms li a:hover {
 	margin-top: -75px;
 	margin-left: 258px;
 }
-
+.errorMessage{
+	font-size: 15px;
+}
 #bottomcms{
 	height: 117px;
 	position: relative;
