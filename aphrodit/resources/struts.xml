@@ -29,7 +29,10 @@
         </action>
     </package>
     
+    
     <package name="site" namespace="/site" extends="struts-default">
+	
+		<!-- Login -->
 		<action name="loginCMS" class="br.com.store.cms.security.action.LoginCMSAction" method="doLogin">	
 			<result name="input">/cms/templateLoginCMS.jsp</result>
 			<result name="error">/cms/templateLoginCMS.jsp</result>
@@ -40,7 +43,7 @@
 			<result name="input">/cms/templateLoginCMS.jsp</result>
 		</action>
 		
-		
+		<!-- Product -->
 		<action name="ProductInitCMSAction" class="br.com.store.cms.product.action.ProductCMSAction">	
 			<result name="input">/cms/pages/product/template_message.jsp</result>
 		</action>
@@ -66,6 +69,7 @@
 			<result name="error">/cms/pages/product/template_list.jsp</result>
 		</action>
 		
+		<!-- client -->
 		<action name="ClientRegisteredAction" class="br.com.store.cms.user.action.ClientRegisteredAction" method="create"> 	
 			<result name="error">/cms/pages/user/template_create_user.jsp</result>
 			<result name="success">/cms/pages/user/template_message_user.jsp</result>
@@ -86,8 +90,26 @@
 			<result name="input">/cms/pages/user/template_message_user.jsp</result>
 		</action>
 		
+		<!-- attribute -->
+		<action name="AttributeCreateCMSAction" class="br.com.store.cms.attribute.action.AttributeCreateCMSAction" method="create"> 	
+			<result name="error">/cms/pages/attribute/template_create_attribute.jsp</result>
+			<result name="success">/cms/pages/attribute/template_message_attribute.jsp</result>
+			<result name="input">/cms/pages/attribute/template_create_attribute.jsp</result>
+		</action>
 		
-	
+		<action name="PrepareCreateAttributeAction" class="br.com.store.cms.attribute.action.AttributeCMSAction" method="prepare"> 	
+			<result name="input">/cms/pages/attribute/template_create_attribute.jsp</result>
+		</action>
+		
+		<action name="ListAttributeRegisteredAction" class="br.com.store.cms.attribute.action.AttributeCMSAction" method="listAll">	
+			<result name="success">/cms/pages/attribute/template_list_attribute.jsp</result>
+			<result name="error">/cms/pages/attribute/template_list_attribute.jsp</result>
+		</action>
+		
+		<action name="AttributeInitRegisteredAction" class="br.com.store.cms.attribute.action.AttributeCMSAction">	
+			<result name="input">/cms/pages/attribute/template_message_attribute.jsp</result>
+		</action>
+		
 	</package>
 
 

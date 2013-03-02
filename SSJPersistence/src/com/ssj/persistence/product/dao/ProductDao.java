@@ -3,6 +3,8 @@
  */
 package com.ssj.persistence.product.dao;
 
+import java.util.List;
+
 import com.ssj.persistence.generic.dao.SSJGenericDao;
 import com.ssj.persistence.product.entity.Product;
 
@@ -14,4 +16,10 @@ import com.ssj.persistence.product.entity.Product;
  */
 public interface ProductDao extends SSJGenericDao<Product> {
 
+	/**
+	 * Method to get list all products
+	 * @return List<Product>
+	 * @throws Exception 
+	 * */
+	public List<Product> listAll() throws Exception;
 }

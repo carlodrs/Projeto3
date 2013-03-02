@@ -87,6 +87,23 @@
   		<put-attribute name="content"  value="/cms/pages/user/message.jsp" />
 	</definition>
 	
+	<!-- Attribute CMS -->
+	<definition name="template.cms.attribute.create" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/attribute/create.jsp" />
+	</definition>
+	
+	<definition name="template.cms.attribute.message" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/attribute/message.jsp" />
+	</definition>
+	
+	<definition name="template.cms.attribute.list" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/attribute/listAll.jsp" />
+	</definition>
+	
+	<definition name="template.cms.attribute.message" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/attribute/message.jsp" />
+	</definition>
+	
 	
 	
 	<!--  ====================================NOT DISCOMMENT =================================================== -->

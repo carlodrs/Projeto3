@@ -3,6 +3,7 @@
  */
 package com.ssj.service.account.user.interfaces;
 
+
 /**
  * Service Client extends of UserSerice
  * @author Carlos Silva
@@ -12,5 +13,7 @@ package com.ssj.service.account.user.interfaces;
  * Shopping São João
  */
 public interface ClientService<T> extends UserService {
+	
+
 
 }

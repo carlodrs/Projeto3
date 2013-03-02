@@ -24,8 +24,8 @@ public class UserActionTest extends SSJGenericSpringTest {
 		///////////////////////Set of test case o the users possibilites/////////////////////////////////
 		
 		userAction.testCreateUser(); 
-		userAction.testCreatePartner();
-		userAction.testCreateUserEmailOnly();
+		//userAction.testCreatePartner();
+		//userAction.testCreateUserEmailOnly();
 	
 	
 	}

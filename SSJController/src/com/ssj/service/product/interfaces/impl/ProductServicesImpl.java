@@ -3,6 +3,8 @@
  */
 package com.ssj.service.product.interfaces.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -66,6 +68,11 @@ public class ProductServicesImpl implements ProductService{
 		t.setProduct(productDao.load(
 				Product.class, t.getId()));
 		return t;
+	}
+
+	@Override
+	public List<Product> listAll() throws Exception {
+		return productDao.listAll();
 	}
 
 }

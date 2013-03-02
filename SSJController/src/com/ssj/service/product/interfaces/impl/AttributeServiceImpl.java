@@ -1,5 +1,7 @@
 package com.ssj.service.product.interfaces.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +54,11 @@ public class AttributeServiceImpl implements AttributeService {
 		Attribute attribute =  this.attributeDao.load(Attribute.class, t.getId());
 		t.setAttribute(attribute);
 		return t;
+	}
+
+	@Override
+	public List<Attribute> listAll() throws Exception {
+		return this.attributeDao.listAll();
 	}
 
 }

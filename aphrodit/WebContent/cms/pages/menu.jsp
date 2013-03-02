@@ -8,7 +8,7 @@
 						</li>
 						
 						<li>
-							<a href="AttributeAction">Cadastro de atributos</a>
+							<a href="AttributeInitRegisteredAction">Cadastro de atributos</a>
 						</li>
 						
 						<li>

@@ -3,6 +3,8 @@
  */
 package com.ssj.persistence.product.dao;
 
+import java.util.List;
+
 import com.ssj.persistence.generic.dao.SSJGenericDao;
 import com.ssj.persistence.product.entity.Attribute;
 
@@ -16,5 +18,12 @@ import com.ssj.persistence.product.entity.Attribute;
  * @version 1.0
  */
 public interface AttributeDao extends SSJGenericDao<Attribute> {
+
+	/**
+	 * List all attributes registered on database
+	 * @return List of attributes
+	 * @throws Exception
+	 * */
+	public List<Attribute> listAll() throws Exception;
 
 }

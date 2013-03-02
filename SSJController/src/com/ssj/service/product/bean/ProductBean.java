@@ -1,6 +1,7 @@
 package com.ssj.service.product.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.ssj.persistence.product.entity.Product;
 
@@ -12,6 +13,10 @@ import com.ssj.persistence.product.entity.Product;
  * @since 2013
  * 
  * */
+/**
+ * @author Carlos
+ *
+ */
 public class ProductBean implements Serializable {
 	
 	/* Constructor begins Product Entity*/
@@ -25,6 +30,7 @@ public class ProductBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Long id;
 	private Product product;
+	private List<Product> products;
 	
 	
 	/**
@@ -50,6 +56,18 @@ public class ProductBean implements Serializable {
 	 */
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+	/**
+	 * @return the products
+	 */
+	public List<Product> getProducts() {
+		return products;
+	}
+	/**
+	 * @param products the products to set
+	 */
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 	
 	

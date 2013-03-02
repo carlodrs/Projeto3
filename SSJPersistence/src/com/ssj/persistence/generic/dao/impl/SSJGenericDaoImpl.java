@@ -121,7 +121,7 @@ public abstract class SSJGenericDaoImpl <T extends Serializable> implements SSJG
 	/**
 	 * @return the entityManager
 	 */
-	protected EntityManager getEntityManager() {
+	public EntityManager getEntityManager() {
 		return entityManager;
 	}
 }

@@ -1,5 +1,8 @@
 package com.ssj.service.account.user.interfaces;
 
+import java.util.List;
+
+import com.ssj.persistence.account.user.entity.User;
 import com.ssj.service.Service;
 import com.ssj.service.bean.account.user.UserBean;
 
@@ -23,5 +26,12 @@ public interface UserService extends Service<UserBean> {
 	 * @throws Exception
 	 * */
 	public void createUserEmail(UserBean useBean) throws Exception;
+	
+	/**
+	 * Method to get all the registered users
+	 * @return List list users
+	 * @throws Exception;
+	 * */
+	public List<User> listAll() throws Exception;
 
 }

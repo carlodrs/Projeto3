@@ -1,6 +1,7 @@
 package com.ssj.persistence.account.user.entity;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -30,6 +31,7 @@ public class User implements Serializable {
 	private String gender;
 	private String docNumber;
 	private String rg;
+	private Calendar birthday;
 	
 	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
 	@NotNull
@@ -177,4 +179,18 @@ public class User implements Serializable {
 	public void setUserEmail(UserEmail userEmail) {
 		this.userEmail = userEmail;
 	}
+
+	/**
+	 * @return the birthday
+	 */
+	public Calendar getBirthday() {
+		return birthday;
+	}
+	/**
+	 * @param birthday the birthday to set
+	 */
+	public void setBirthday(Calendar birthday) {
+		this.birthday = birthday;
+	}
+	
 }

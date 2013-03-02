@@ -3,8 +3,6 @@
  */
 package com.ssj.persistence.account.user.entity;
 
-import java.util.Calendar;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -28,7 +26,7 @@ public class Client extends User {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Calendar birthday;
+	
 	/**
 	 * @return the cpf
 	 */
@@ -40,18 +38,6 @@ public class Client extends User {
 	 */
 	public void setCpf(String cpf) {
 		this.setDocNumber(cpf);
-	}
-	/**
-	 * @return the birthday
-	 */
-	public Calendar getBirthday() {
-		return birthday;
-	}
-	/**
-	 * @param birthday the birthday to set
-	 */
-	public void setBirthday(Calendar birthday) {
-		this.birthday = birthday;
 	}
 	
 	

@@ -3,7 +3,7 @@
 *
 */
 ul#menucms {
-	width:270px;
+	width:200px;
 	border-right:1px solid white;
 	background:white;
 	margin:0;
@@ -41,9 +41,9 @@ ul#menucms li a:hover {
 	border: 1px solid gray;
 	background: white;
 	height: 903px;
-	width: 989px;
+	width: 1061px;
 	margin-top: -906px;
-	margin-left: 271px;
+	margin-left: 200px;
 }
 
 .cmslogin{

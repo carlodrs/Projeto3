@@ -1,13 +1,13 @@
 package com.ssj.service.account.user.interfaces.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.ssj.persistence.account.user.dao.UserDao;
-import com.ssj.persistence.account.user.entity.Client;
 import com.ssj.persistence.account.user.entity.User;
-import com.ssj.persistence.account.user.entity.UserEmail;
 import com.ssj.service.account.user.interfaces.UserService;
 import com.ssj.service.bean.account.user.UserBean;
 
@@ -66,5 +66,10 @@ public class UserServiceImpl implements UserService {
 		User user = this.userDao.load(User.class, t.getId());
 		t.setUser(user);
 		return t;
+	}
+
+	@Override
+	public List<User> listAll() throws Exception {
+		return this.userDao.listAll();
 	}
 }

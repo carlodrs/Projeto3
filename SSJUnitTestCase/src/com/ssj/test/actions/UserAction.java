@@ -28,17 +28,17 @@ public class UserAction {
 	/*****************************************************************************/
 	public void testCreateUser() {
 		
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 1; i++) {
 			// configuring email
 			UserEmail userEmail = new UserEmail();
-			userEmail.setEmail(i + " caredom@zipmail.com");
-			userEmail.setPassword(i + " rambito");
+			userEmail.setEmail("caredom@zipmail.com");
+			userEmail.setPassword("rambito");
 			
 			//creating user
 			Client client =  new Client();
-			client.setName(i + " Carlos Renato Domingos da Silva");
-			client.setCpf(i + " 29293578867");
-			client.setGender(i + " M");
+			client.setName("Carlos Renato Domingos da Silva");
+			client.setCpf("29293578867");
+			client.setGender("M");
 			client.setOptIn('y');
 			
 			//set birthday

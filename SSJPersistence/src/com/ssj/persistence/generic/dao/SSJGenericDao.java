@@ -2,6 +2,8 @@ package com.ssj.persistence.generic.dao;
 
 import java.io.Serializable;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -72,5 +74,5 @@ public interface SSJGenericDao < T extends Serializable > {
 	 * */
 	
 	public T load(Class<T> className, Object o) throws Exception;
-
+	
 }

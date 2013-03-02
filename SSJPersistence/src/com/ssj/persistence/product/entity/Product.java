@@ -20,7 +20,6 @@ public class Product implements Serializable {
 	private Long id;
 	private String name;
 	private String shortName;
-	private String longName;
 	private String description;
 	private Double price;
 	private Double offerPrice;
@@ -58,13 +57,7 @@ public class Product implements Serializable {
 	public void setShortName(String shortName) {
 		this.shortName = shortName;
 	}   
-	public String getLongName() {
-		return this.longName;
-	}
-
-	public void setLongName(String longName) {
-		this.longName = longName;
-	}   
+	
 	public String getDescription() {
 		return this.description;
 	}
