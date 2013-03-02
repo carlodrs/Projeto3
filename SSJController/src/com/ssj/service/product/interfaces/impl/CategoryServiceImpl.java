@@ -3,6 +3,8 @@
  */
 package com.ssj.service.product.interfaces.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -68,5 +70,15 @@ public class CategoryServiceImpl implements CategoryService {
 		t.setCategory(category);
 		
 		return t;
+	}
+
+	@Override
+	public List<Category> listAll() throws Exception {
+		return this.categoryDao.listAll();
+	}
+
+	@Override
+	public List<Category> listAllParents() throws Exception {
+		return this.categoryDao.listAllParents();
 	}
 }

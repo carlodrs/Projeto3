@@ -8,11 +8,11 @@
 						</li>
 						
 						<li>
-							<a href="AttributeInitRegisteredAction">Cadastro de atributos</a>
+							<a href="AttributeInitCMSAction">Cadastro de atributos</a>
 						</li>
 						
 						<li>
-							<a href="CategoryActon">Cadastro de categorias</a>
+							<a href="CategoryInitCMSAction">Cadastro de categorias</a>
 						</li>
 						
 						<li>

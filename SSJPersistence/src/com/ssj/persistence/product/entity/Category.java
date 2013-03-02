@@ -18,6 +18,7 @@ public class Category implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	private String description;
 	
 	@ManyToOne(fetch = FetchType.LAZY) 
 	@JoinColumn(name = "parentId", insertable = true, updatable = true, nullable = true) 
@@ -58,4 +59,18 @@ public class Category implements Serializable {
 	public void setParentId(Category parentId) {
 		this.parentId = parentId;
 	}
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
 }

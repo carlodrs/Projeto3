@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.ssj.persistence.product.entity.Product;
-import com.ssj.service.product.interfaces.ProductService;
+import com.ssj.persistence.product.entity.Category;
+import com.ssj.service.product.interfaces.CategoryService;
 
 /**
  * 
- * Product Action CMS to registry product 
+ * Category Action CMS to registry category 
  * @author Carlos Silva
  * @version 1.0
  * @since 1.0
@@ -18,18 +18,19 @@ import com.ssj.service.product.interfaces.ProductService;
  * */
 public class CategoryCMSAction extends ActionSupport {
 
+	/**
+	 * Serial version
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
-	private String shortName;
 	private String description;
-	private Double price;
-	private Double offerPrice;
-	private String picture;
-	private Double discount;
-	private List<Product> products;
+	private String isParent;
+	private Long parentId;
+	private List<Category> categories;
 	
-
 	@Autowired
-	protected ProductService productService;
+	protected CategoryService categoryService;
+	
 	
 	/**
 	 * @return the name
@@ -60,121 +61,61 @@ public class CategoryCMSAction extends ActionSupport {
 	}
 
 	/**
-	 * @return the price
+	 * @return the isParent
 	 */
-	public Double getPrice() {
-		return price;
+	public String getIsParent() {
+		return isParent;
 	}
 
 	/**
-	 * @param price the price to set
+	 * @param isParent the isParent to set
 	 */
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setIsParent(String isParent) {
+		this.isParent = isParent;
 	}
 
 	/**
-	 * @return the offerPrice
+	 * @return the parentId
 	 */
-	public Double getOfferPrice() {
-		return offerPrice;
+	public Long getParentId() {
+		return parentId;
 	}
-
-	/**
-	 * @param offerPrice the offerPrice to set
-	 */
-	public void setOfferPrice(Double offerPrice) {
-		this.offerPrice = offerPrice;
-	}
-
-	/**
-	 * @return the picture
-	 */
-	public String getPicture() {
-		return picture;
-	}
-
-	/**
-	 * @param picture the picture to set
-	 */
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
-
-	/**
-	 * @return the discount
-	 */
-	public Double getDiscount() {
-		return discount;
-	}
-
-	/**
-	 * @param discount the discount to set
-	 */
-	public void setDiscount(Double discount) {
-		this.discount = discount;
-	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	
 	
 	/**
-	 * @return the shortName
+	 * @return the categories
 	 */
-	public String getShortName() {
-		return shortName;
+	public List<Category> getCategories() {
+		return categories;
 	}
 
 	/**
-	 * @param shortName the shortName to set
+	 * @param categories the categories to set
 	 */
-	public void setShortName(String shortName) {
-		this.shortName = shortName;
-	}
-
-
-
-	/**
-	 * @return the products
-	 */
-	public List<Product> getProducts() {
-		return products;
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	/**
-	 * @param products the products to set
+	 * @param parentId the parentId to set
 	 */
-	public void setProducts(List<Product> products) {
-		this.products = products;
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
 	}
 
-
-
-	/**
-	 * Serial version UId
-	 */
-	private static final long serialVersionUID = 1;
-	
 	@Override
 	public String execute() throws Exception {
-		addActionMessage(getText("product.select.option"));
+		addActionMessage(getText("category.select.option"));
 		return INPUT;
 	}
 	
 	/**
-	 * List all products regitered on the system
+	 * List all categories registered on the system
 	 * @return String success or error
 	 * @exception Exception
 	 */
 	public String listAll() throws Exception {
 		try {
-			this.setProducts(this.productService.listAll());
+			this.setCategories(this.categoryService.listAll());
 			return SUCCESS;	
 		} catch (Exception e) {
 			return ERROR;
@@ -182,11 +123,31 @@ public class CategoryCMSAction extends ActionSupport {
 	}
 	
 	/**
-	 * Prepare to create product
+	 * List all parent categories registered on the system
+	 * @return String success or error
+	 * @exception Exception
+	 */
+	public String listAllParents() throws Exception {
+		try {
+			this.setCategories(this.categoryService.listAllParents());
+			return SUCCESS;	
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
+	/**
+	 * Prepare to create category
 	 * @return String
 	 * @throws Exception
 	 */
 	public String prepare() throws Exception {
+		
+		try{
+			this.setCategories(this.categoryService.listAllParents());
+		} catch (Exception e) {
+			return ERROR;
+		}
+			
 		return INPUT;
 	}
 }

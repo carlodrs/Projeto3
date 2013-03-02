@@ -106,14 +106,31 @@
 			<result name="error">/cms/pages/attribute/template_list_attribute.jsp</result>
 		</action>
 		
-		<action name="AttributeInitRegisteredAction" class="br.com.store.cms.attribute.action.AttributeCMSAction">	
+		<action name="AttributeInitCMSAction" class="br.com.store.cms.attribute.action.AttributeCMSAction">	
 			<result name="input">/cms/pages/attribute/template_message_attribute.jsp</result>
+		</action>
+
+		<!-- Category -->
+		<action name="CategoryCreateCMSAction" class="br.com.store.cms.category.action.CategoryCreateCMSAction" method="create"> 	
+			<result name="error">/cms/pages/category/template_create_category.jsp</result>
+			<result name="success">/cms/pages/category/template_message_category.jsp</result>
+			<result name="input">/cms/pages/category/template_create_category.jsp</result>
+		</action>
+		
+		<action name="PrepareCreateCategoryAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="prepare"> 	
+			<result name="input">/cms/pages/category/template_create_category.jsp</result>
+		</action>
+		
+		<action name="ListCategoryRegisteredAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="listAll">	
+			<result name="success">/cms/pages/category/template_list_category.jsp</result>
+			<result name="error">/cms/pages/category/template_list_category.jsp</result>
+		</action>
+		
+		<action name="CategoryInitCMSAction" class="br.com.store.cms.category.action.CategoryCMSAction">	
+			<result name="input">/cms/pages/category/template_message_category.jsp</result>
 		</action>
 		
 	</package>
-
-
-
     <!-- Add packages here -->
 
 </struts>

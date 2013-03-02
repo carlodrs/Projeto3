@@ -2,12 +2,12 @@ package br.com.store.cms.category.action;
 
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.ssj.persistence.product.entity.Product;
-import com.ssj.service.product.bean.ProductBean;
+import com.ssj.persistence.product.entity.Category;
+import com.ssj.service.product.bean.CategoryBean;
 
 /**
  * 
- * Product Action CMS to registry product 
+ * Product Action CMS to category 
  * @author Carlos Silva
  * @version 1.0
  * @since 1.0
@@ -16,34 +16,47 @@ import com.ssj.service.product.bean.ProductBean;
 public class CategoryCreateCMSAction extends CategoryCMSAction {
 
 	/**
-	 * 
+	 * Version id
 	 */
 	private static final long serialVersionUID = 1L;
 
+
+
 	/**
-	 * Method to create product
+	 * Method to create category
 	 * @return 
 	 * */
 	public String create() {
 		
-		Product product = new Product();
-		product.setName(this.getName());
-		product.setDescription(this.getDescription());
-		product.setOfferPrice(this.getOfferPrice());
-		product.setPrice(this.getPrice());
-		product.setShortName(this.getShortName());
-		product.setPercentDiscount(this.getDiscount());
+		Category category = new Category();
+		category.setName(this.getName());
+		category.setDescription(this.getDescription());
 		
-		ProductBean productBean = new ProductBean();
-		productBean.setProduct(product);
+		//if category have a parent
+		if((Boolean.valueOf(this.getIsParent()) && this.getParentId() != -1) ||
+	      (!Boolean.valueOf(this.getIsParent()) && this.getParentId() == -1)){
+				addActionMessage(getText("category.parent.selected.incorrect"));
+				return ERROR;
+		}else{
+			if(!Boolean.valueOf(this.getIsParent())){
+				Category categoryParent = new Category();
+				categoryParent.setId(Long.valueOf(this.getParentId()));
+				category.setParentId(categoryParent);	
+			}
+			
+		}
+		
+		CategoryBean categoryBean = new CategoryBean();
+		categoryBean.setCategory(category);
+		
 		try {
-			productService.create(productBean);
-			addActionMessage(getText("product.create.success"));
+			this.categoryService.create(categoryBean);
+			addActionMessage(getText("category.create.success"));
 			return SUCCESS;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			addActionError(getText("error.product.create"));
+			addActionError(getText("error.category.create"));
 			return ERROR;
 		}
 	}

@@ -3,6 +3,8 @@
  */
 package com.ssj.persistence.product.dao;
 
+import java.util.List;
+
 import com.ssj.persistence.generic.dao.SSJGenericDao;
 import com.ssj.persistence.product.entity.Category;
 
@@ -16,4 +18,19 @@ import com.ssj.persistence.product.entity.Category;
  */
 public interface CategoryDao extends SSJGenericDao<Category> {
 
+	/**
+	 * Dao to list all the categories
+	 * @return List
+	 * @throws Exception
+	 * */
+	public List<Category> listAll() throws Exception;
+
+	
+
+	/**
+	 * Dao to list all the parents categories
+	 * @return List
+	 * @throws Exception
+	 * */
+	public List<Category> listAllParents() throws Exception;
 }

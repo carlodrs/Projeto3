@@ -10,7 +10,7 @@ import com.ssj.service.product.interfaces.AttributeService;
 
 /**
  * 
- * Product Action CMS to registry product 
+ * Product Action CMS to registry attribute 
  * @author Carlos Silva
  * @version 1.0
  * @since 1.0
@@ -99,7 +99,7 @@ public class AttributeCMSAction extends ActionSupport {
 	}
 	
 	/**
-	 * List all products regitered on the system
+	 * List all attributes regitered on the system
 	 * @return String success or error
 	 * @exception Exception
 	 */
@@ -113,7 +113,7 @@ public class AttributeCMSAction extends ActionSupport {
 	}
 	
 	/**
-	 * Prepare to create product
+	 * Prepare to create attribute
 	 * @return String
 	 * @throws Exception
 	 */
