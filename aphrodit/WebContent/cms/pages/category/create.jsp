@@ -9,7 +9,7 @@
 		<s:form name="CategoryCreateCMSAction" action="CategoryCreateCMSAction" method="post" validate="true">  
 	
 			<s:checkbox name="isParent" fieldValue="true" key="category.is.parent"/>
-			<s:textfield name="name" key="category.name" value="" required="true"/>
+			<s:textfield name="name" key="category.name" required="true"/>
 			<s:textfield name="description" key="category.description" required="true"/>
 			<s:select  key="parent.categories" required="true" headerKey="-1" headerValue="Selecione a categoria"
 				list="categories" listKey="id" listValue="name"	name="parentId" />
