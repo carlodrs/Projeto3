@@ -3,19 +3,20 @@
 
 <div id="listProductContent" class="cmscontent">
 	
-		<h3>Listagem de Atributos cadastrados</h3>
+		<h3>Listagem de categorias cadastradas</h3>
 			
 		<s:actionerror/>
 		
-		<display:table  export="true" id="attribute" name="attributes" 
-		requestURI="br.com.store.cms.attribute.action.AttributeCMSAction" pagesize="20">
+		<display:table  export="true" id="category" name="categories"
+		requestURI="br.com.store.cms.category.action.CategoryCMSAction" pagesize="20">
+			<display:column property="id" title="Id" sortable="true"/>
 			<display:column property="name" title="Nome" sortable="true"/>
-			<display:column property="listValue" title="Lista de Valores" sortable="true"/>
-			<display:column property="value" title="Valor" sortable="true"/>
+			<display:column property="description" title="Descrição" sortable="true"/>
+			<display:column property="parentId.id" title="Categoria pai" sortable="true"/>
 		</display:table>
 			 
 		
-		<s:form name="PrepareCreateAttributeAction" action="PrepareCreateAttributeAction" method="post"> 
+		<s:form name="PrepareCreateCategoryAction" action="PrepareCreateCategoryAction" method="post"> 
 			<s:submit key="buttonregistrynew" align="center"/>	
 		</s:form>
 		

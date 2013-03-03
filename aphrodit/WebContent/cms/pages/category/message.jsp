@@ -1,6 +1,6 @@
 <%@taglib uri="/struts-tags" prefix="s" %>
 
-<div id="messawgeContent" class="cmscontent">
+<div id="messageContent" class="cmscontent">
 		
 		<h3><s:actionmessage/></h3>
 		

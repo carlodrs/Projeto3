@@ -25,8 +25,9 @@ public class CategoryCreateCMSAction extends CategoryCMSAction {
 	/**
 	 * Method to create category
 	 * @return 
+	 * @throws Exception 
 	 * */
-	public String create() {
+	public String create() throws Exception {
 		
 		Category category = new Category();
 		category.setName(this.getName());
@@ -35,7 +36,8 @@ public class CategoryCreateCMSAction extends CategoryCMSAction {
 		//if category have a parent
 		if((Boolean.valueOf(this.getIsParent()) && this.getParentId() != -1) ||
 	      (!Boolean.valueOf(this.getIsParent()) && this.getParentId() == -1)){
-				addActionMessage(getText("category.parent.selected.incorrect"));
+				addActionError(getText("category.parent.selected.incorrect"));
+				this.setCategories(this.categoryService.listAllParents());
 				return ERROR;
 		}else{
 			if(!Boolean.valueOf(this.getIsParent())){

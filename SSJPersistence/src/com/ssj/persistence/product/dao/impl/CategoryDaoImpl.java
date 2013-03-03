@@ -60,7 +60,7 @@ public class CategoryDaoImpl extends SSJGenericDaoImpl<Category>
 			criteriaQuery.where(
 					criteriaBuilder.and(
 							//parent not null
-							criteriaBuilder.isNotNull(
+							criteriaBuilder.isNull(
 									root.get("parentId"))));
 						
 		TypedQuery<Category> typedQuery = getEntityManager().createQuery(criteriaQuery);
