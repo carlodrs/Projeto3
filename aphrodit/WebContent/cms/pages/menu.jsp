@@ -67,7 +67,7 @@
 					<ul>
 						
 						<li>
-							<a href="ProductSpotAction">Product spot</a>						
+							<a href="SpotInitCMSAction">Spot pages</a>						
 						</li>
 						
 						<li>

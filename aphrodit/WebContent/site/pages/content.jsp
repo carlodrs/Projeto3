@@ -7,7 +7,7 @@
 			<div class="clear"></div>
 			<div id="headline">
 				<span class="main">Bem vindo ao nosso site</span>
-				<span class="sub">Encontre aqui modernos calçados e acessórios a ótimos preços. Aproveite!</span>
+				<span class="sub">Aproveite todas ofertas e destaques. A Aphrodit leva-os até você!</span>
 				<!-- <a href="http://luiszuno.com/blog/downloads/nova-html-template" id="link" class="link-button-big"><span>Download Nova</span></a> 
 				 -->	
 			</div>
@@ -33,75 +33,129 @@
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="read-more link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+								
 								<li>
 									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
 									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+										<a href="single.html" class="header">Sapato Scanpan Max</a>
+										Sapato scarpan otimos para eventos noturnos
 									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+									<div class="excerpt">
+										Preço: R$ 10,00 
+									</div>
+									
+									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
 								</li>
+							
 								
 							</ul>
 						</div>

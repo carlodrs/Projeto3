@@ -7,6 +7,7 @@ import com.ssj.service.account.user.interfaces.ClientService;
 
 public class UserRegistrationAction extends ActionSupport {
 
+	@SuppressWarnings({ "rawtypes", "unused" })
 	@Autowired
 	private ClientService clientService;
 	

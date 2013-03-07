@@ -134,6 +134,27 @@
 			<result name="input" type="tiles">template.cms.category.message</result>
 		</action>
 		
+		<!-- spots products -->
+		<action name="SpotCreateCMSAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="create"> 	
+			<result name="error" type="tiles">template.cms.spot.create</result>
+			<result name="success" type="tiles">template.cms.spot.message</result>
+			<result name="input" type="tiles">template.cms.spot.create</result>
+		</action>
+		
+		<action name="PrepareCreateSpotAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="prepare"> 	
+			<result name="input" type="tiles">template.cms.spot.create</result>
+		</action>
+		
+		<action name="ListSpotRegisteredAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="listAll">	
+			<result name="success" type="tiles">template.cms.spot.list</result>
+			<result name="error" type="tiles">template.cms.spot.list</result>
+		</action>
+		
+		<action name="SpotInitCMSAction" class="br.com.store.cms.spot.action.SpotCMSAction">	
+			<result name="input" type="tiles">template.cms.spot.message</result>
+		</action>
+		
+		
 	</package>
     <!-- Add packages here -->
 

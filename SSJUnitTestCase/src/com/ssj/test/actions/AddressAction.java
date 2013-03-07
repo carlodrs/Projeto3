@@ -1,17 +1,20 @@
 package com.ssj.test.actions;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.ssj.persistence.account.address.entity.Address;
+import com.ssj.persistence.account.user.entity.User;
 import com.ssj.service.account.address.interfaces.AddressService;
-import com.ssj.service.account.user.interfaces.UserService;
+import com.ssj.service.account.user.interfaces.ClientService;
 import com.ssj.service.bean.account.address.AddressBean;
 import com.ssj.service.bean.account.user.UserBean;
 
+@Component("AddressAction")
 public class AddressAction {
 
 	@Autowired
-	private UserService userService;
+	private ClientService<User> userService;
 	
 	@Autowired
 	private AddressService addressService;
