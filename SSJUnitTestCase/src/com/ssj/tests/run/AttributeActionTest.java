@@ -23,8 +23,8 @@ public class AttributeActionTest extends SSJGenericSpringTest {
 		
 		///////////////////////Set of test case o the users possibilities/////////////////////////////////
 		
-		//attributeAction.testCreateAttributes(); 
-		attributeAction.testDeleteAttributes();
+		attributeAction.testCreateAttributes(); 
+		//attributeAction.testDeleteAttributes();
 	
 	
 	}

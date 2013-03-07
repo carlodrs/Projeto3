@@ -20,7 +20,7 @@ public class ContentSpot implements Serializable {
 	private String contentName;
 	private static final long serialVersionUID = 1L;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@NotNull
 	private Spot spot;
 

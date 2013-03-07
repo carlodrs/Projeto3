@@ -1,9 +1,10 @@
 package com.ssj.persistence.spot.entity;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 
 import com.ssj.persistence.product.entity.Product;
 
@@ -20,20 +21,20 @@ public class ContentProductSpot extends ContentSpot {
 	 */
 	private static final long serialVersionUID = 1L;
    
-	@OneToMany
-	private Set<Product> products;
+	@ManyToMany(fetch = FetchType.LAZY)
+	private List<Product> products;
 
 	/**
 	 * @return the products
 	 */
-	public Set<Product> getProducts() {
+	public List<Product> getProducts() {
 		return products;
 	}
 
 	/**
 	 * @param products the products to set
 	 */
-	public void setProducts(Set<Product> products) {
+	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
 	

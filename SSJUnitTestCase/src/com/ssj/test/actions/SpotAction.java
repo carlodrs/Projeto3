@@ -1,7 +1,7 @@
 package com.ssj.test.actions;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,24 +29,21 @@ public class SpotAction {
 		
 		Product product1 = new Product();
 		Product product2 = new Product();
-		Product product3 = new Product();
 		
 		product1.setId(1L);
 		product2.setId(2L);
-		product3.setId(3L);
 		
-		Set<Product> set = new HashSet<Product>();
-		set.add(product1);
-		set.add(product2);
-		set.add(product3);
+		List<Product> list = new ArrayList<Product>();
+		list.add(product1);
+		list.add(product2);
 		
 		SpotBean spotBean = new SpotBean();
-		spotBean.setId(2L);
+		spotBean.setId(4L);
 
 		spotBean = this.spotService.read(spotBean);
 		
 		ContentProductSpot contentSpot = new ContentProductSpot();
-		contentSpot.setProducts(set);
+		contentSpot.setProducts(list);
 		contentSpot.setContentName("home2Offer");
 		contentSpot.setSpot(spotBean.getSpot());
 		
@@ -54,7 +51,7 @@ public class SpotAction {
 		SpotBean bean = new SpotBean();
 		bean.setContentSpot(contentSpot);
 		
-		this.contentSpotService.update(bean);
+		this.contentSpotService.create(bean);
 	}
 	
 	/****************** Method test to create spot *******************************/
@@ -62,7 +59,7 @@ public class SpotAction {
 	public void testCreateSpot() throws Exception {
 		
 		Spot spot = new Spot();
-		spot.setSpotName("spot2Offers");
+		spot.setSpotName("spot1Offers");
 		
 		SpotBean bean = new SpotBean();
 		bean.setSpot(spot);

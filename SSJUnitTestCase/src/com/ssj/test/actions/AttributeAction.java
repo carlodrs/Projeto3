@@ -29,12 +29,20 @@ public class AttributeAction {
 		
 
 		Attribute attribute = new Attribute();
-		attribute.setId(1L);
+		//attribute.setId(1L);
 		attribute.setName("Lama negra");
 		
+		AttributeBean attributeBean = new AttributeBean();
+		attributeBean.setAttribute(attribute);
+		
+		this.attributeService.create(attributeBean);
+		
 		Attribute attribute2 = new Attribute();
-		attribute2.setId(2L);
+		//attribute2.setId(2L);
 		attribute2.setName("Crespo");
+		
+		attributeBean.setAttribute(attribute2);
+		this.attributeService.create(attributeBean);
 		
 		
 		Set<Attribute> attributeList = new HashSet<Attribute>();
@@ -48,7 +56,6 @@ public class AttributeAction {
 		productBean.setProduct(product);
 		
 		this.productService.create(productBean);
-		
 	}
 
 	public void testDeleteAttributes() throws Exception{
