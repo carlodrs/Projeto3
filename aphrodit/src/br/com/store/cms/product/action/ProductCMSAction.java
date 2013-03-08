@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.persistence.product.entity.Product;
+import com.ssj.service.product.bean.ProductBean;
 import com.ssj.service.product.interfaces.ProductService;
 
 /**
@@ -189,4 +190,34 @@ public class ProductCMSAction extends ActionSupport {
 	public String prepare() throws Exception {
 		return INPUT;
 	}
+	
+	
+	/**
+	 * Method to create product
+	 * @return 
+	 * */
+	public String create() {
+		
+		Product product = new Product();
+		product.setName(this.getName());
+		product.setDescription(this.getDescription());
+		product.setOfferPrice(this.getOfferPrice());
+		product.setPrice(this.getPrice());
+		product.setShortName(this.getShortName());
+		product.setPercentDiscount(this.getDiscount());
+		
+		ProductBean productBean = new ProductBean();
+		productBean.setProduct(product);
+		try {
+			productService.create(productBean);
+			addActionMessage(getText("product.create.success"));
+			return SUCCESS;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			addActionError(getText("error.product.create"));
+			return ERROR;
+		}
+	}
+	
 }
