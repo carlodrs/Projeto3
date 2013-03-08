@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.persistence.product.entity.Attribute;
+import com.ssj.service.product.bean.AttributeBean;
 import com.ssj.service.product.interfaces.AttributeService;
 
 /**
@@ -119,5 +120,31 @@ public class AttributeCMSAction extends ActionSupport {
 	 */
 	public String prepare() throws Exception {
 		return INPUT;
+	}
+	
+	
+	/**
+	 * Method to create attribute
+	 * @return 
+	 * */
+	public String create() {
+		
+		Attribute attribute = new Attribute();
+		attribute.setListValue(this.getListValue());
+		attribute.setName(this.getName());
+		attribute.setValue(this.getValue());
+		
+		AttributeBean attributeBean = new AttributeBean();
+		attributeBean.setAttribute(attribute);
+		try {
+			attributeService.create(attributeBean);
+			addActionMessage(getText("attribute.create.success"));
+			return SUCCESS;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			addActionError(getText("error.attibute.create"));
+			return ERROR;
+		}
 	}
 }
