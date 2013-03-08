@@ -12,7 +12,7 @@ import com.ssj.service.spot.interfaces.SpotService;
 
 /**
  * 
- * Category Action CMS to register the spot 
+ * Spot Action CMS to register the spot 
  * @author Carlos Silva
  * @version 1.0
  * @since 1.0

@@ -74,6 +74,17 @@
 			<result name="error" type="tiles">cms.template.product.list</result>
 		</action>
 		
+		<action name="ProductAvailableListCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAll</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">cms.template.product.popup.list</result>
+			<result name="error" type="tiles">cms.template.product.popup.list</result>
+		</action>
+		
+		
+		
+		
 		<action name="ProductSearchCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">	
 			<result name="success" type="tiles">cms.template.product.list</result>
 			<result name="error" type="tiles">cms.template.product.list</result>
@@ -176,7 +187,28 @@
 			<result name="input" type="tiles">template.cms.spot.message</result>
 		</action>
 		
+		<!-- content spots contents -->
+		<action name="ContentSpotCreateCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="create"> 	
+			<result name="error" type="tiles">template.cms.content.spot.create</result>
+			<result name="success" type="tiles">template.cms.content.spot.message</result>
+			<result name="input" type="tiles">template.cms.content.spot.create</result>
+		</action>
 		
+		<action name="PrepareCreateContentSpotAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="input"> 	
+			<result name="input" type="tiles">template.cms.content.spot.create</result>
+		</action>
+		
+		<action name="ListContentSpotRegisteredAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="listAll">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAll</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.content.spot.list</result>
+	        <result name="error" type="tiles">template.cms.content.spot.list</result>
+		</action>
+		
+		<action name="ContentSpotInitCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction">	
+			<result name="input" type="tiles">template.cms.content.spot.message</result>
+		</action>
 	</package>
     <!-- Add packages here -->
 

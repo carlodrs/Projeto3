@@ -48,6 +48,20 @@
 	  	<put-attribute name="bottom" value="/cms/pages/bottom.jsp" />
   	</definition>
   	
+  	<!-- Popup list (blank options) -->
+  	<definition name="popup.list" extends="cms.template">
+  		<put-attribute name="header" value="" />
+  		<put-attribute name="cssClass" value=""/>
+  		<put-attribute name="top" value=""/>
+  		<put-attribute name="slider" value=""/>
+  		<put-attribute name="twitter" value=""/>
+	  	<put-attribute name="footer" value=""/>
+	  	<put-attribute name="menu" value=""/>
+	  	<put-attribute name="content"  value=""/>
+	  	<put-attribute name="bottom" value=""/>
+  	</definition>
+  	
+  	
   	<!-- Product message -->
   	<definition name="cms.template.product.create" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/product/create.jsp" />
@@ -61,6 +75,10 @@
 	<!-- Product list all products -->
   	<definition name="cms.template.product.list" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/product/listAll.jsp" />
+	</definition>
+	
+	<definition name="cms.template.product.popup.list" extends="popup.list">
+		<put-attribute name="content"  value="/cms/pages/product/listAvailableProducts.jsp" />
 	</definition>
 	
 	<!-- Login CMS -->
@@ -123,6 +141,18 @@
   		<put-attribute name="content"  value="/cms/pages/spot/listAll.jsp" />
 	</definition>
 	
+	<!-- Content Spot CMS -->
+	<definition name="template.cms.content.spot.create" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/contentspot/create.jsp" />
+	</definition>
+	
+	<definition name="template.cms.content.spot.message" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/contentspot/message.jsp" />
+	</definition>
+	
+	<definition name="template.cms.content.spot.list" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/contentspot/listAll.jsp" />
+	</definition>
 	
 	
 	<!--  ====================================NOT DISCOMMENT =================================================== -->

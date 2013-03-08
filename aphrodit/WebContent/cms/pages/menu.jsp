@@ -71,7 +71,7 @@
 						</li>
 						
 						<li>
-							<a href="ContentSpotAction">Content spot</a>
+							<a href="ContentSpotInitCMSAction">Content spot</a>
 						</li>
 						
 						<li>

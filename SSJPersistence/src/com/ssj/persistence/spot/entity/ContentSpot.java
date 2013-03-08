@@ -16,8 +16,9 @@ public class ContentSpot implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idContent;
+	private Long id;
 	private String contentName;
+	private String contentDescription;
 	private static final long serialVersionUID = 1L;
 	
 	@OneToOne
@@ -27,12 +28,12 @@ public class ContentSpot implements Serializable {
 	public ContentSpot() {
 		super();
 	}   
-	public Long getIdContent() {
-		return this.idContent;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setIdContent(Long idContent) {
-		this.idContent = idContent;
+	public void setId(Long id) {
+		this.id = id;
 	}   
 	public String getContentName() {
 		return this.contentName;
@@ -52,6 +53,18 @@ public class ContentSpot implements Serializable {
 	 */
 	public void setSpot(Spot spot) {
 		this.spot = spot;
+	}
+	/**
+	 * @return the contentDescription
+	 */
+	public String getContentDescription() {
+		return contentDescription;
+	}
+	/**
+	 * @param contentDescription the contentDescription to set
+	 */
+	public void setContentDescription(String contentDescription) {
+		this.contentDescription = contentDescription;
 	}
    
 }

@@ -73,4 +73,11 @@ ul#menucms li a:hover {
 	position: relative;
 	z-index: 10;
 	background: #2a2d30 url(../img/header-glow.png) top center no-repeat;
-}	
+}
+
+
+.buttons{
+	margin-top: 194px;
+	margin-left: 400px;
+	position: absolute;
+}
