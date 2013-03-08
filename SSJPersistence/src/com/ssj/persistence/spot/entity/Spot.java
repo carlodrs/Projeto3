@@ -23,7 +23,35 @@ public class Spot implements Serializable {
 	private Long id;
 	
 	private String spotName;
+	private String spotDescription;
+	private boolean active;
 	
+	
+	
+	/**
+	 * @return the spotDescription
+	 */
+	public String getSpotDescription() {
+		return spotDescription;
+	}
+	/**
+	 * @param spotDescription the spotDescription to set
+	 */
+	public void setSpotDescription(String spotDescription) {
+		this.spotDescription = spotDescription;
+	}
+	/**
+	 * @return the active
+	 */
+	public boolean isActive() {
+		return active;
+	}
+	/**
+	 * @param active the active to set
+	 */
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 	@OneToOne(mappedBy="spot", cascade=CascadeType.ALL)
 	private ContentSpot contentSpot;
 	
