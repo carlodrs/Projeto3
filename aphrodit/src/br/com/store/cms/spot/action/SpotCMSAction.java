@@ -1,17 +1,18 @@
 package br.com.store.cms.spot.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.ssj.persistence.product.entity.Category;
-import com.ssj.service.product.bean.CategoryBean;
-import com.ssj.service.product.interfaces.CategoryService;
+import com.ssj.persistence.spot.entity.Spot;
+import com.ssj.service.spot.bean.SpotBean;
+import com.ssj.service.spot.interfaces.SpotService;
 
 /**
  * 
- * Category Action CMS to registry category 
+ * Category Action CMS to register the spot 
  * @author Carlos Silva
  * @version 1.0
  * @since 1.0
@@ -23,136 +24,120 @@ public class SpotCMSAction extends ActionSupport {
 	 * Serial version
 	 */
 	private static final long serialVersionUID = 1L;
-	private String name;
-	private String description;
-	private String isParent;
-	private Long parentId;
-	private List<Category> categories;
+	private String spotName;
+	private String spotDescription;
+	private boolean active;
+	private List<String> activeOptions;
+	private List<Spot> spots;
 	
 	@Autowired
-	protected CategoryService categoryService;
+	private SpotService spotService;
+	
+	
+	public SpotCMSAction(){
+		this.activeOptions = new ArrayList<String>();
+		this.activeOptions.add(getText("spot.activate"));
+		this.activeOptions.add(getText("spot.deactivate"));
+	}
 	
 	
 	/**
-	 * @return the name
+	 * @return the spots
 	 */
-	public String getName() {
-		return name;
+	public List<Spot> getSpots() {
+		return spots;
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param spots the spots to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setSpots(List<Spot> spots) {
+		this.spots = spots;
 	}
 
 	/**
-	 * @return the description
+	 * @return the spotName
 	 */
-	public String getDescription() {
-		return description;
+	public String getSpotName() {
+		return spotName;
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param spotName the spotName to set
 	 */
-	public void setDescription(String description) {
-		this.description = description;
+	public void setSpotName(String spotName) {
+		this.spotName = spotName;
+	}
+
+	
+
+	/**
+	 * @return the spotDescription
+	 */
+	public String getSpotDescription() {
+		return spotDescription;
+	}
+
+
+	/**
+	 * @param spotDescription the spotDescription to set
+	 */
+	public void setSpotDescription(String spotDescription) {
+		this.spotDescription = spotDescription;
+	}
+
+
+	/**
+	 * @return the active
+	 */
+	public boolean isActive() {
+		return active;
 	}
 
 	/**
-	 * @return the isParent
+	 * @param active the active to set
 	 */
-	public String getIsParent() {
-		return isParent;
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
-	/**
-	 * @param isParent the isParent to set
-	 */
-	public void setIsParent(String isParent) {
-		this.isParent = isParent;
-	}
-
-	/**
-	 * @return the parentId
-	 */
-	public Long getParentId() {
-		return parentId;
-	}
 	
 	/**
-	 * @return the categories
+	 * @return the activeOptions
 	 */
-	public List<Category> getCategories() {
-		return categories;
+	public List<String> getActiveOptions() {
+		return activeOptions;
 	}
 
-	/**
-	 * @param categories the categories to set
-	 */
-	public void setCategories(List<Category> categories) {
-		this.categories = categories;
-	}
 
 	/**
-	 * @param parentId the parentId to set
+	 * @param activeOptions the activeOptions to set
 	 */
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
+	public void setActiveOptions(List<String> activeOptions) {
+		this.activeOptions = activeOptions;
 	}
+
 
 	@Override
 	public String execute() throws Exception {
-		addActionMessage(getText("category.select.option"));
+		addActionMessage(getText("spot.select.option"));
 		return INPUT;
 	}
 	
 	/**
-	 * List all categories registered on the system
+	 * List all spots registered on the system
 	 * @return String success or error
 	 * @exception Exception
 	 */
 	public String listAll() throws Exception {
 		try {
-			this.setCategories(this.categoryService.listAll());
+			this.setSpots(this.spotService.listAll());
 			return SUCCESS;	
 		} catch (Exception e) {
 			return ERROR;
 		}
 	}
-	
-	/**
-	 * List all parent categories registered on the system
-	 * @return String success or error
-	 * @exception Exception
-	 */
-	public String listAllParents() throws Exception {
-		try {
-			this.setCategories(this.categoryService.listAllParents());
-			return SUCCESS;	
-		} catch (Exception e) {
-			return ERROR;
-		}
-	}
-	/**
-	 * Prepare to create category
-	 * @return String
-	 * @throws Exception
-	 */
-	public String prepare() throws Exception {
-		
-		try{
-			this.setCategories(this.categoryService.listAllParents());
-		} catch (Exception e) {
-			return ERROR;
-		}
-			
-		return INPUT;
-	}
-	
-	
+
 	
 
 	/**
@@ -162,37 +147,33 @@ public class SpotCMSAction extends ActionSupport {
 	 * */
 	public String create() throws Exception {
 		
-		Category category = new Category();
-		category.setName(this.getName());
-		category.setDescription(this.getDescription());
+		Spot spot = new Spot();
+		spot.setSpotName(spotName);
+		spot.setActive(this.isActive());
+		spot.setSpotDescription(this.getSpotDescription());
 		
-		//if category have a parent
-		if((Boolean.valueOf(this.getIsParent()) && this.getParentId() != -1) ||
-	      (!Boolean.valueOf(this.getIsParent()) && this.getParentId() == -1)){
-				addActionError(getText("category.parent.selected.incorrect"));
-				this.setCategories(this.categoryService.listAllParents());
-				return ERROR;
-		}else{
-			if(!Boolean.valueOf(this.getIsParent())){
-				Category categoryParent = new Category();
-				categoryParent.setId(Long.valueOf(this.getParentId()));
-				category.setParentId(categoryParent);	
-			}
-			
-		}
-		
-		CategoryBean categoryBean = new CategoryBean();
-		categoryBean.setCategory(category);
+		SpotBean spotBean = new SpotBean();
+		spotBean.setSpot(spot);
 		
 		try {
-			this.categoryService.create(categoryBean);
-			addActionMessage(getText("category.create.success"));
+			this.spotService.create(spotBean);
+			addActionMessage(getText("spot.create.success"));
 			return SUCCESS;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			addActionError(getText("error.category.create"));
+			addActionError(getText("error.spot.create"));
 			return ERROR;
 		}
+	}
+	
+	
+	/**
+	 * Prepare to create spot
+	 * @return String
+	 * @throws Exception
+	 */
+	public String input() throws Exception {
+		return INPUT;
 	}
 }
