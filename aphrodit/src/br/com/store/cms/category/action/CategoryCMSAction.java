@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.persistence.product.entity.Category;
+import com.ssj.service.product.bean.CategoryBean;
 import com.ssj.service.product.interfaces.CategoryService;
 
 /**
@@ -149,5 +150,47 @@ public class CategoryCMSAction extends ActionSupport {
 		}
 			
 		return INPUT;
+	}
+	
+
+	/**
+	 * Method to create category
+	 * @return 
+	 * @throws Exception 
+	 * */
+	public String create() throws Exception {
+		
+		Category category = new Category();
+		category.setName(this.getName());
+		category.setDescription(this.getDescription());
+		
+		//if category have a parent
+		if((Boolean.valueOf(this.getIsParent()) && this.getParentId() != -1) ||
+	      (!Boolean.valueOf(this.getIsParent()) && this.getParentId() == -1)){
+				addActionError(getText("category.parent.selected.incorrect"));
+				this.setCategories(this.categoryService.listAllParents());
+				return ERROR;
+		}else{
+			if(!Boolean.valueOf(this.getIsParent())){
+				Category categoryParent = new Category();
+				categoryParent.setId(Long.valueOf(this.getParentId()));
+				category.setParentId(categoryParent);	
+			}
+			
+		}
+		
+		CategoryBean categoryBean = new CategoryBean();
+		categoryBean.setCategory(category);
+		
+		try {
+			this.categoryService.create(categoryBean);
+			addActionMessage(getText("category.create.success"));
+			return SUCCESS;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			addActionError(getText("error.category.create"));
+			return ERROR;
+		}
 	}
 }
