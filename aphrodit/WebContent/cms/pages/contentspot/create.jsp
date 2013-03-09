@@ -13,9 +13,10 @@
 			<s:select  key="spot.choose" required="true" headerKey="-1" headerValue="Selecione o spot"
 			list="spots" listKey="id" listValue="spotName"	name="spotId" />
 			
-			<s:select multiple="true" key="spot.choose" required="true" headerKey="-1" headerValue="Selecione o spot"
-			list="spots" listKey="id" listValue="spotName"	name="spotId" />
+				<!-- 
 			
+				<s:select multiple="true" key="spot.choose" required="true" headerKey="-1" headerValue="Selecione o spot"
+				list="spots" listKey="id" listValue="spotName"	name="spotId" />
 				
 				<div class="buttons">
 					<input type="button" value="Adicionar produtos"
@@ -23,7 +24,7 @@
 					
 					<input type="button" value="Remover Produtos Selecionados"/>
 				</div>
-				
+				 -->
 				<s:submit key="buttonregistry" align="center"/>
 			
 		</s:form>

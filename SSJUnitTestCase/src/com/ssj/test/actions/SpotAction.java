@@ -38,12 +38,12 @@ public class SpotAction {
 		list.add(product2);
 		
 		SpotBean spotBean = new SpotBean();
-		spotBean.setId(4L);
+		spotBean.setId(1L);
 
 		spotBean = this.spotService.read(spotBean);
 		
 		ContentProductSpot contentSpot = new ContentProductSpot();
-		contentSpot.setProducts(list);
+		//contentSpot.setProducts(list);
 		contentSpot.setContentName("home2Offer");
 		contentSpot.setSpot(spotBean.getSpot());
 		

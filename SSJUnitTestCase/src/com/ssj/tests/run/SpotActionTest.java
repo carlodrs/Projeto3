@@ -23,7 +23,7 @@ public class SpotActionTest extends SSJGenericSpringTest {
 		
 		
 		///////////////////////Set of test case o the create spot possibilites/////////////////////////////////
-		action.testCreateSpot();
+		//action.testCreateSpot();
 		action.testCreateContentSpot();
 	
 	}

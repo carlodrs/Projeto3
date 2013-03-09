@@ -157,13 +157,9 @@ public class ContentSpotCMSAction extends ActionSupport {
 		contentSpot.setContentName(this.contentName);
 		contentSpot.setContentDescription(this.contentDescription);
 		
-		//spot entity
-		Spot spot = new Spot();
-		spot.setId(this.getSpotId());
-		
 		//creating bean spot
 		SpotBean spotBean  = new SpotBean();
-		spotBean.setSpot(spot);
+		spotBean.setId(this.getSpotId());
 		
 		//load the spot
 		spotBean = this.spotService.load(spotBean);
