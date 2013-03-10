@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.ssj.persistence.product.entity.Product;
-import com.ssj.persistence.spot.entity.ContentProductSpot;
+import com.ssj.persistence.spot.entity.ContentSpot;
 import com.ssj.persistence.spot.entity.Spot;
 import com.ssj.service.spot.bean.SpotBean;
 import com.ssj.service.spot.interfaces.ContentSpotService;
@@ -42,7 +42,7 @@ public class SpotAction {
 
 		spotBean = this.spotService.read(spotBean);
 		
-		ContentProductSpot contentSpot = new ContentProductSpot();
+		ContentSpot contentSpot = new ContentSpot();
 		//contentSpot.setProducts(list);
 		contentSpot.setContentName("home2Offer");
 		contentSpot.setSpot(spotBean.getSpot());

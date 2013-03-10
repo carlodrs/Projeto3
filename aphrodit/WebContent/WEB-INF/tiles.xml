@@ -154,6 +154,11 @@
   		<put-attribute name="content"  value="/cms/pages/contentspot/listAll.jsp" />
 	</definition>
 	
+	<definition name="template.cms.content.spot.detail" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/contentspot/detail.jsp" />
+	</definition>
+	
+	
 	
 	<!--  ====================================NOT DISCOMMENT =================================================== -->
   	<!-- NOT USED TEMPLATES PAGES MY ACCOUNT 

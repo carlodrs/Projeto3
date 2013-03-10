@@ -1,10 +1,12 @@
 package br.com.store.cms.spot.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.ssj.persistence.product.entity.Product;
 import com.ssj.persistence.spot.entity.ContentSpot;
 import com.ssj.persistence.spot.entity.Spot;
 import com.ssj.service.spot.bean.SpotBean;
@@ -30,7 +32,8 @@ public class ContentSpotCMSAction extends ActionSupport {
 	private List<Spot> spots;
 	private List<ContentSpot> contentSpots;
 	private Long spotId;
-	
+	private Long id;
+	private List<Product> products;
 	
 	@Autowired
 	private SpotService spotService;
@@ -39,9 +42,46 @@ public class ContentSpotCMSAction extends ActionSupport {
 	private ContentSpotService contentSpotService;
 	
 	public ContentSpotCMSAction(){
-		
+		this.spots = new ArrayList<Spot>();
 	}
 	
+	/**
+	 * @return the products
+	 */
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	/**
+	 * @param products the products to set
+	 */
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+
+
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+
+
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+
 	/**
 	 * @return the contentSpots
 	 */
@@ -188,5 +228,70 @@ public class ContentSpotCMSAction extends ActionSupport {
 	public String input() throws Exception {
 		this.setSpots(this.spotService.listAll());
 		return INPUT;
+	}
+	
+	/**
+	 * Prepare to show detail content spot
+	 * @return String
+	 * @throws Exception
+	 */
+	public String detail() throws Exception {
+		
+		try {
+
+			SpotBean spotBean = new SpotBean();
+			spotBean.setId(this.getId());
+			spotBean = this.contentSpotService.load(spotBean);
+
+			ContentSpot contentSpot = spotBean.getContentSpot();
+			
+			this.setContentName(contentSpot.getContentName());
+			this.setContentDescription(contentSpot.getContentDescription());
+			this.setProducts(contentSpot.getProducts());
+			this.spots.add(contentSpot.getSpot());
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ERROR;
+		}		
+		return SUCCESS;	
+	}
+	
+	
+
+	/**
+	 * Method to create category
+	 * @return 
+	 * @throws Exception 
+	 * */
+	public String update() throws Exception {
+		
+		//content spot entity
+		ContentSpot contentSpot  = new ContentSpot();
+		contentSpot.setContentName(this.contentName);
+		contentSpot.setContentDescription(this.contentDescription);
+		contentSpot.setProducts(this.getProducts());
+		
+		//creating bean spot
+		SpotBean spotBean  = new SpotBean();
+		spotBean.setId(this.getSpotId());
+		
+		//load the spot
+		spotBean = this.spotService.load(spotBean);
+		contentSpot.setSpot(spotBean.getSpot());
+		
+		//contet spot configured 
+		spotBean.setContentSpot(contentSpot);
+		
+		try {
+			this.contentSpotService.update(spotBean);
+			addActionMessage(getText("content.spot.update.success"));
+			return SUCCESS;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			addActionError(getText("error.content.spot.update"));
+			return ERROR;
+		}
 	}
 }
