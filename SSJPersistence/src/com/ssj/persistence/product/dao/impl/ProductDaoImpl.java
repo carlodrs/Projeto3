@@ -10,6 +10,7 @@ import javassist.NotFoundException;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
 
@@ -34,7 +35,9 @@ public class ProductDaoImpl extends
 		
 		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
 		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
-		criteriaQuery.from(Product.class);
+		Root<Product> root = criteriaQuery.from(Product.class);
+		criteriaQuery.orderBy(criteriaBuilder.asc(root.get("name")));
+		
 		TypedQuery<Product> typedQuery = getEntityManager().createQuery(criteriaQuery);
 		
 		try {

@@ -207,8 +207,21 @@
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">update</param>
 	        </interceptor-ref>
-			<result name="success" type="tiles">template.cms.content.spot.detail</result>
-	        <result name="error" type="tiles">template.cms.content.spot.detail</result>
+	        
+	        <!-- redirect to detail -->
+	    	<!-- success -->
+	        <result name="success" type="redirectAction">
+	        	<param name="actionName">DetailContentSpotRegisteredAction</param>
+	        	<param name="id">${id}</param>
+                <param name="namespace">/site</param>
+            </result>
+	    	<!-- error -->
+	     	<result name="error" type="redirectAction">
+	        	<param name="actionName">DetailContentSpotRegisteredAction</param>
+                <param name="id">${id}</param>
+                <param name="namespace">/site</param>
+            </result>
+	   	
 		</action>
 		
 		<action name="AddProductContentSpot" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="addProduct">

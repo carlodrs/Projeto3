@@ -54,7 +54,7 @@
 				
 					<s:hidden id="id" name="id"/>
 					<input type="button" value="relacionar" onclick="javascript:sendProductsToContent();"/>
-					
+					<input type="button" value="fechar" onclick="window.close();"/>
 				</s:form>	 
 				
 		</div>

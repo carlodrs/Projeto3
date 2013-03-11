@@ -298,6 +298,11 @@ public class ContentSpotCMSAction extends ActionSupport {
 		ContentSpot contentSpot = spotBean.getContentSpot();
 		Spot spot = contentSpot.getSpot();
 		spot.setId(this.spotId);
+		//configure product list attribute
+		this.extractProducts();
+		contentSpot.setProducts(this.products);
+		contentSpot.setContentName(this.contentName);
+		contentSpot.setContentDescription(this.contentDescription);
 		
 		return update(spotBean);
 	}
@@ -330,18 +335,6 @@ public class ContentSpotCMSAction extends ActionSupport {
 	 * */
 	public String addProduct() throws Exception {
 		
-		//load products from hidden fields
-		ArrayList<Product> arrProduct = new ArrayList<Product>();
-		if (this.getSpotListProduct() != null){
-			for(String p : this.getSpotListProduct()){
-				Product product = new  Product();
-				product.setId(Long.valueOf(p));
-				arrProduct.add(product);
-			}
-		}
-		//configure the property
-		this.products = arrProduct;
-		
 		//content spot entity
 		SpotBean spotBean = new SpotBean();
 		spotBean.setId(this.id);
@@ -349,9 +342,28 @@ public class ContentSpotCMSAction extends ActionSupport {
 		
 		//main content spot
 		ContentSpot content = spotBean.getContentSpot();
+		this.products = content.getProducts();
+
+		//configure products list attribute
+		extractProducts();
 		content.setProducts(this.products);
 		
 		return update(spotBean);
+	}
+
+	/**
+	 * Extract products from the dropdown list
+	 * @return ArrayList
+	 */
+	private void extractProducts() {
+		//load products from hidden fields
+		if (this.getSpotListProduct() != null){
+			for(String p : this.getSpotListProduct()){
+				Product product = new  Product();
+				product.setId(Long.valueOf(p));
+				this.products.add(product);
+			}
+		}
 	}
 	
 	/**

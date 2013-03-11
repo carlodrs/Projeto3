@@ -27,7 +27,9 @@
 						if (confirm("Deseja remover produtos selecionados?")){
 							$('#spotListProduct option:selected').each(function() {
 								$(this).remove();
-						     });	
+						     });
+							
+							selectAllproducts();
 						}
 					}
 					
@@ -37,6 +39,14 @@
 					document.forms[0].submit();
 
 				}
+				
+				
+				function selectAllproducts(){
+					$('#spotListProduct option').each(function() {
+						$(this).attr('selected', true);
+				     });
+				}
+				
 			</script>
 		
 			<s:textfield name="contentName" key="spot.contentName" required="true"/>
@@ -53,7 +63,7 @@
 				
 			</div>
 		
-				<s:submit key="buttonregistry" align="center"/>
+				<s:submit key="buttonregistry" align="center" onclick="javascript: selectAllproducts();"/>
 			
 		</s:form>
 		
