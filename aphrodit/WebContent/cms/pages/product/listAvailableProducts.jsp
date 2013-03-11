@@ -21,9 +21,8 @@
 					return false;
 				}
 				
-				$('#products').val(allVals);
 				document.forms[0].submit();
-			//	window.close();
+				//window.close();
 			}
 		</script>
 
@@ -35,12 +34,15 @@
 				<h3>Selecione os produtos disponíveis</h3>
 					
 				<s:actionerror/>
+				<s:actionmessage/>
 		
+		<s:form name="AddProductContentSpot" action="AddProductContentSpot" method="post"> 
+				
 				<display:table  export="true" id="product" name="products" 
 				requestURI="ProductListCMSAction" pagesize="20">
 					<display:column title="Mark" sortable="true">
 						<div id="cb">
-							<input type="checkbox" id="id" value="${product.id}"/>
+							<input type="checkbox" id="spotListProduct" name="spotListProduct"  value="${product.id}"/>
 						</div>
 					</display:column>
 					<display:column property="name" title="Nome" sortable="true"/>
@@ -50,10 +52,9 @@
 					<display:column property="offerPrice" title="Preço Sugerido" sortable="true" />
 				</display:table>
 				
-				<s:form name="UpdateContentSpotRegisteredAction" action="UpdateContentSpotRegisteredAction" validate="true"> 
-					<s:hidden id="products"></s:hidden>
+					<s:hidden id="id" name="id"/>
 					<input type="button" value="relacionar" onclick="javascript:sendProductsToContent();"/>
-				
+					
 				</s:form>	 
 				
 		</div>

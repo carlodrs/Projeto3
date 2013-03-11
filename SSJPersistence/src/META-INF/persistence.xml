@@ -22,8 +22,6 @@
 		<class>com.ssj.persistence.order.entity.OrderItem</class>
 		<class>com.ssj.persistence.spot.entity.Spot</class>
 		<class>com.ssj.persistence.spot.entity.ContentSpot</class>
-		<class>com.ssj.persistence.spot.entity.ContentProductSpot</class>
-		<class>com.ssj.persistence.spot.entity.ContentTextSpot</class>
 	</persistence-unit>
  
 </persistence>

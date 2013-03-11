@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.persistence.product.entity.Product;
 import com.ssj.persistence.spot.entity.ContentSpot;
 import com.ssj.persistence.spot.entity.Spot;
+import com.ssj.service.product.interfaces.ProductService;
 import com.ssj.service.spot.bean.SpotBean;
 import com.ssj.service.spot.interfaces.ContentSpotService;
 import com.ssj.service.spot.interfaces.SpotService;
@@ -34,17 +35,40 @@ public class ContentSpotCMSAction extends ActionSupport {
 	private Long spotId;
 	private Long id;
 	private List<Product> products;
+	private String[] spotListProduct;
 	
 	@Autowired
 	private SpotService spotService;
 	
 	@Autowired
+	private ProductService productService;
+	
+	@Autowired
 	private ContentSpotService contentSpotService;
 	
 	public ContentSpotCMSAction(){
+		this.products = new ArrayList<Product>();
 		this.spots = new ArrayList<Spot>();
+		this.spotListProduct = new String[0];
 	}
+
 	
+	/**
+	 * @return the spotListProduct
+	 */
+	public String[] getSpotListProduct() {
+		return spotListProduct;
+	}
+
+
+	/**
+	 * @param spotListProduct the spotListProduct to set
+	 */
+	public void setSpotListProduct(String[] spotListProduct) {
+		this.spotListProduct = spotListProduct;
+	}
+
+
 	/**
 	 * @return the products
 	 */
@@ -260,29 +284,32 @@ public class ContentSpotCMSAction extends ActionSupport {
 	
 
 	/**
-	 * Method to create category
+	 * Method to update the content spot
 	 * @return 
 	 * @throws Exception 
 	 * */
 	public String update() throws Exception {
 		
 		//content spot entity
-		ContentSpot contentSpot  = new ContentSpot();
-		contentSpot.setContentName(this.contentName);
-		contentSpot.setContentDescription(this.contentDescription);
-		contentSpot.setProducts(this.getProducts());
+		SpotBean spotBean = new SpotBean();
+		spotBean.setId(this.id);
+		spotBean = contentSpotService.load(spotBean);
 		
-		//creating bean spot
-		SpotBean spotBean  = new SpotBean();
-		spotBean.setId(this.getSpotId());
+		ContentSpot contentSpot = spotBean.getContentSpot();
+		Spot spot = contentSpot.getSpot();
+		spot.setId(this.spotId);
 		
-		//load the spot
-		spotBean = this.spotService.load(spotBean);
-		contentSpot.setSpot(spotBean.getSpot());
-		
-		//contet spot configured 
-		spotBean.setContentSpot(contentSpot);
-		
+		return update(spotBean);
+	}
+
+
+	/**
+	 * 
+	 * Operation action to update the content spot
+	 * @param spotBean
+	 * @return String result action
+	 */
+	private String update(SpotBean spotBean) {
 		try {
 			this.contentSpotService.update(spotBean);
 			addActionMessage(getText("content.spot.update.success"));
@@ -294,4 +321,51 @@ public class ContentSpotCMSAction extends ActionSupport {
 			return ERROR;
 		}
 	}
+		
+
+	/**
+	 * Method to add product for the content spot
+	 * @return 
+	 * @throws Exception 
+	 * */
+	public String addProduct() throws Exception {
+		
+		//load products from hidden fields
+		ArrayList<Product> arrProduct = new ArrayList<Product>();
+		if (this.getSpotListProduct() != null){
+			for(String p : this.getSpotListProduct()){
+				Product product = new  Product();
+				product.setId(Long.valueOf(p));
+				arrProduct.add(product);
+			}
+		}
+		//configure the property
+		this.products = arrProduct;
+		
+		//content spot entity
+		SpotBean spotBean = new SpotBean();
+		spotBean.setId(this.id);
+		spotBean = contentSpotService.load(spotBean);
+		
+		//main content spot
+		ContentSpot content = spotBean.getContentSpot();
+		content.setProducts(this.products);
+		
+		return update(spotBean);
+	}
+	
+	/**
+	 * List all products regitered on the system
+	 * @return String success or error
+	 * @exception Exception
+	 */
+	public String listAllProducts() throws Exception {
+		try {
+			this.setProducts(this.productService.listAll());
+			return SUCCESS;	
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
+
 }

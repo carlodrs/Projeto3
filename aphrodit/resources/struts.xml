@@ -74,17 +74,6 @@
 			<result name="error" type="tiles">cms.template.product.list</result>
 		</action>
 		
-		<action name="ProductAvailableListCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">
-			<interceptor-ref name="defaultStack">
-	          <param name="validation.excludeMethods">listAll</param>
-	        </interceptor-ref>	
-			<result name="success" type="tiles">cms.template.product.popup.list</result>
-			<result name="error" type="tiles">cms.template.product.popup.list</result>
-		</action>
-		
-		
-		
-		
 		<action name="ProductSearchCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">	
 			<result name="success" type="tiles">cms.template.product.list</result>
 			<result name="error" type="tiles">cms.template.product.list</result>
@@ -215,13 +204,35 @@
 		</action>
 		
 		<action name="UpdateContentSpotRegisteredAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="update">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
 			<result name="success" type="tiles">template.cms.content.spot.detail</result>
 	        <result name="error" type="tiles">template.cms.content.spot.detail</result>
+		</action>
+		
+		<action name="AddProductContentSpot" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="addProduct">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">addProduct</param>
+	        </interceptor-ref>
+			<result name="success" type="tiles">cms.template.product.popup.list</result>
+	        <result name="error" type="tiles">cms.template.product.popup.list</result>
 		</action>
 		
 		<action name="ContentSpotInitCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction">	
 			<result name="input" type="tiles">template.cms.content.spot.message</result>
 		</action>
+		
+		<action name="ProductAvailableListCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="listAllProducts">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAllProducts</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">cms.template.product.popup.list</result>
+			<result name="error" type="tiles">cms.template.product.popup.list</result>
+		</action>
+		
+		
+		
 	</package>
     <!-- Add packages here -->
 
