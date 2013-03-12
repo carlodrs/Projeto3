@@ -26,4 +26,12 @@ public interface AttributeDao extends SSJGenericDao<Attribute> {
 	 * */
 	public List<Attribute> listAll() throws Exception;
 
+	/**
+	 * Return specific attribute registered on database
+	 * @param name
+	 * @return Attribute
+	 * @throws Exception
+	 * */
+	public Attribute getAttributeByName(String name) throws Exception;
+
 }

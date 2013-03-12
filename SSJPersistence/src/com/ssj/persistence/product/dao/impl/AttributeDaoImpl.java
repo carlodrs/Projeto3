@@ -10,12 +10,14 @@ import javassist.NotFoundException;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
 
 import com.ssj.persistence.generic.dao.impl.SSJGenericDaoImpl;
 import com.ssj.persistence.product.dao.AttributeDao;
 import com.ssj.persistence.product.entity.Attribute;
+import com.ssj.persistence.product.entity.Product;
 
 /**
  * 
@@ -46,4 +48,20 @@ public class AttributeDaoImpl extends
 		}
 	}
 
+	
+	@Override
+	public Attribute getAttributeByName(String name) throws Exception{
+		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		CriteriaQuery<Attribute> criteriaQuery = criteriaBuilder.createQuery(Attribute.class);
+		Root<Attribute> root = criteriaQuery.from(Attribute.class);
+		criteriaQuery.where(criteriaBuilder.equal(root.get("name"), name));
+		
+		TypedQuery<Attribute> typedQuery = getEntityManager().createQuery(criteriaQuery);
+		
+		try {
+			return typedQuery.getSingleResult();
+		} catch (Exception e) {
+			throw new NotFoundException("No Attributes found : " + e.getMessage());
+		}
+	}
 }

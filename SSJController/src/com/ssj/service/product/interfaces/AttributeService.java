@@ -22,4 +22,13 @@ public interface AttributeService extends Service<AttributeBean>{
 	 * @throws Exception
 	 * */
 	public List<Attribute> listAll() throws Exception;
+
+	/**
+	 * Return specific attribute registered on database
+	 * @param name
+	 * @return Attribute
+	 * @throws Exception
+	 * */
+	public Attribute getAttributeByName(String name) throws Exception;
+
 }

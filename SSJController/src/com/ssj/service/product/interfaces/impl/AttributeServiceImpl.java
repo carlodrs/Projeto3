@@ -61,4 +61,13 @@ public class AttributeServiceImpl implements AttributeService {
 		return this.attributeDao.listAll();
 	}
 
+	/**
+	 * Return specific attribute registered on database
+	 * @param name
+	 * @return Attribute
+	 * @throws Exception
+	 * */
+	public Attribute getAttributeByName(String name) throws Exception{
+		return this.attributeDao.getAttributeByName(name);
+	}
 }

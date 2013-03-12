@@ -31,7 +31,7 @@ public class ProductBean implements Serializable {
 	private Long id;
 	private Product product;
 	private List<Product> products;
-	
+	private String pathUpload;
 	
 	/**
 	 * @return the id
@@ -70,6 +70,18 @@ public class ProductBean implements Serializable {
 		this.products = products;
 	}
 	
+	/**
+	 * @param text path to upload
+	 */
 	
-
+	public void setPathUpload(String text) {
+		this.pathUpload = text;
+	}
+	
+	/**
+	 * @return String path
+	 */
+	public String getPathUpload() {
+		return this.pathUpload;
+	}
 }

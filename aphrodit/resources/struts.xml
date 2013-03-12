@@ -8,6 +8,11 @@
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
 	<constant name="struts.i18n.encoding" value="LATIN1" />
+	
+	<!-- multipart form data -->
+	<constant name="struts.multipart.saveDir" value="c:/prodimages" />
+	<constant name="struts.multipart.parser"  value="jakarta"/>
+	<constant name="struts.multipart.maxSize" value="10000000"/>
 
     <package name="default" namespace="/" extends="struts-default">
 
@@ -60,6 +65,14 @@
 		</action>
 		
 		<action name="ProductCreateCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="create"> 	
+			<interceptor-ref name="defaultStack"/>
+		    <interceptor-ref name="fileUpload">
+		        <param name="allowedTypes">image/jpeg,image/gif,image/png,image/jpg</param>
+		    	<param name="maximumSize">10000000</param>
+		    </interceptor-ref> 
+		    <interceptor-ref name="validation"/>
+		    <interceptor-ref name="workflow"/>
+			
 			<result name="error" type="tiles">cms.template.product.create</result>
 			<result name="success" type="tiles">cms.template.product.message</result>
 			<result name="input" type="tiles">cms.template.product.create</result>

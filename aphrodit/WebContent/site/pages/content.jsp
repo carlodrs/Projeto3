@@ -31,7 +31,7 @@
 						<div>
 							<ul class="blocks-thumbs thumbs-rollover">
 								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
+									<a href="single.html" class="thumb" title="An image"><img src="images/04.png" width="282px" height="150px" alt="Post" /></a>
 									<div class="excerpt">
 										<a href="single.html" class="header">Sapato Scanpan Max</a>
 										Sapato scarpan otimos para eventos noturnos
@@ -41,7 +41,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -55,7 +55,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -69,7 +69,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -83,7 +83,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -97,7 +97,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -111,7 +111,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -125,7 +125,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -139,7 +139,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+									
 								</li>
 								
 								<li>
@@ -153,7 +153,7 @@
 									</div>
 									
 									<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
-									<a href="single.html" class="link-button-ex"><span>Experimentar</span></a>
+										
 								</li>
 							
 								
