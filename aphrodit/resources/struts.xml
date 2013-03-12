@@ -10,7 +10,7 @@
 	<constant name="struts.i18n.encoding" value="LATIN1" />
 	
 	<!-- multipart form data -->
-	<constant name="struts.multipart.saveDir" value="c:/prodimages" />
+	<constant name="struts.multipart.saveDir" value="" />
 	<constant name="struts.multipart.parser"  value="jakarta"/>
 	<constant name="struts.multipart.maxSize" value="10000000"/>
 
