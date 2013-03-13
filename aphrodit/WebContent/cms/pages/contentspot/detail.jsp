@@ -15,7 +15,7 @@
 
 					var allVals = [];
 					var optSelect = true;
-					$('#spotListProduct option:selected').each(function() {
+					$('#listProduct option:selected').each(function() {
 						allVals.push($(this).val());
 						optSelect = false;
 				     });
@@ -25,7 +25,7 @@
 						return false;
 					}else{
 						if (confirm("Deseja remover produtos selecionados?")){
-							$('#spotListProduct option:selected').each(function() {
+							$('#listProduct option:selected').each(function() {
 								$(this).remove();
 						     });
 							
@@ -42,7 +42,7 @@
 				
 				
 				function selectAllproducts(){
-					$('#spotListProduct option').each(function() {
+					$('#listProduct option').each(function() {
 						$(this).attr('selected', true);
 				     });
 				}
@@ -51,8 +51,7 @@
 		
 			<s:textfield name="contentName" key="spot.contentName" required="true"/>
 			<s:textfield name="contentDescription" key="spot.contentDescription" required="true"/>
-			<s:select  key="spot.choose" required="true" list="spots" listKey="id" listValue="spotName"	name="spotId" />
-			<s:select multiple="true" key="product.spot.choose" required="true" list="products" listKey="id" listValue="name" name="spotListProduct" id="spotListProduct" />
+			<s:select multiple="true" key="product.spot.choose" required="true" list="products" listKey="id" listValue="name" name="listProduct" id="listProduct" />
 			<s:hidden id="id" name="id"/>
 			<div class="buttons">
 				<input type="button" value="Adicionar produtos"

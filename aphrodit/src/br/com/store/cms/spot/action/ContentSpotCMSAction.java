@@ -8,11 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.persistence.product.entity.Product;
 import com.ssj.persistence.spot.entity.ContentSpot;
-import com.ssj.persistence.spot.entity.Spot;
 import com.ssj.service.product.interfaces.ProductService;
 import com.ssj.service.spot.bean.SpotBean;
 import com.ssj.service.spot.interfaces.ContentSpotService;
-import com.ssj.service.spot.interfaces.SpotService;
 
 /**
  * 
@@ -30,15 +28,14 @@ public class ContentSpotCMSAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private String contentName;
 	private String contentDescription;
-	private List<Spot> spots;
+	private String contentText;
+	private String isContentText;
+	
 	private List<ContentSpot> contentSpots;
 	private Long spotId;
 	private Long id;
 	private List<Product> products;
-	private String[] spotListProduct;
-	
-	@Autowired
-	private SpotService spotService;
+	private String[] listProduct;
 	
 	@Autowired
 	private ProductService productService;
@@ -48,24 +45,23 @@ public class ContentSpotCMSAction extends ActionSupport {
 	
 	public ContentSpotCMSAction(){
 		this.products = new ArrayList<Product>();
-		this.spots = new ArrayList<Spot>();
-		this.spotListProduct = new String[0];
+		this.listProduct = new String[0];
 	}
 
 	
 	/**
 	 * @return the spotListProduct
 	 */
-	public String[] getSpotListProduct() {
-		return spotListProduct;
+	public String[] getListProduct() {
+		return this.listProduct;
 	}
 
 
 	/**
 	 * @param spotListProduct the spotListProduct to set
 	 */
-	public void setSpotListProduct(String[] spotListProduct) {
-		this.spotListProduct = spotListProduct;
+	public void setListProduct(String[] listProduct) {
+		this.listProduct = listProduct;
 	}
 
 
@@ -137,24 +133,6 @@ public class ContentSpotCMSAction extends ActionSupport {
 		this.spotId = spotId;
 	}
 
-
-	/**
-	 * @return the spots
-	 */
-	public List<Spot> getSpots() {
-		return spots;
-	}
-
-	/**
-	 * @param spots the spots to set
-	 */
-	public void setSpots(List<Spot> spots) {
-		this.spots = spots;
-	}
-
-	
-
-
 	/**
 	 * @return the contentDescription
 	 */
@@ -184,6 +162,39 @@ public class ContentSpotCMSAction extends ActionSupport {
 	 */
 	public void setContentName(String contentName) {
 		this.contentName = contentName;
+	}
+
+	
+
+	/**
+	 * @return the contentText
+	 */
+	public String getContentText() {
+		return contentText;
+	}
+
+
+	/**
+	 * @param contentText the contentText to set
+	 */
+	public void setContentText(String contentText) {
+		this.contentText = contentText;
+	}
+
+
+	/**
+	 * @return the isContentText
+	 */
+	public String getIsContentText() {
+		return isContentText;
+	}
+
+
+	/**
+	 * @param isContentText the isContentText to set
+	 */
+	public void setIsContentText(String isContentText) {
+		this.isContentText = isContentText;
 	}
 
 
@@ -220,16 +231,11 @@ public class ContentSpotCMSAction extends ActionSupport {
 		ContentSpot contentSpot  = new ContentSpot();
 		contentSpot.setContentName(this.contentName);
 		contentSpot.setContentDescription(this.contentDescription);
+		contentSpot.setTextContent(this.contentText);
+		contentSpot.setIsContentText(this.isContentText);
 		
-		//creating bean spot
+		//creating bean spot to configure the content spot
 		SpotBean spotBean  = new SpotBean();
-		spotBean.setId(this.getSpotId());
-		
-		//load the spot
-		spotBean = this.spotService.load(spotBean);
-		contentSpot.setSpot(spotBean.getSpot());
-		
-		//contet spot configured 
 		spotBean.setContentSpot(contentSpot);
 		
 		try {
@@ -250,7 +256,6 @@ public class ContentSpotCMSAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String input() throws Exception {
-		this.setSpots(this.spotService.listAll());
 		return INPUT;
 	}
 	
@@ -272,8 +277,7 @@ public class ContentSpotCMSAction extends ActionSupport {
 			this.setContentName(contentSpot.getContentName());
 			this.setContentDescription(contentSpot.getContentDescription());
 			this.setProducts(contentSpot.getProducts());
-			this.spots.add(contentSpot.getSpot());
-	
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
@@ -296,14 +300,14 @@ public class ContentSpotCMSAction extends ActionSupport {
 		spotBean = contentSpotService.load(spotBean);
 		
 		ContentSpot contentSpot = spotBean.getContentSpot();
-		Spot spot = contentSpot.getSpot();
-		spot.setId(this.spotId);
+		
 		//configure product list attribute
 		this.extractProducts();
 		contentSpot.setProducts(this.products);
 		contentSpot.setContentName(this.contentName);
 		contentSpot.setContentDescription(this.contentDescription);
-		
+		contentSpot.setTextContent(this.contentText);
+		contentSpot.setIsContentText(this.isContentText);
 		return update(spotBean);
 	}
 
@@ -357,8 +361,8 @@ public class ContentSpotCMSAction extends ActionSupport {
 	 */
 	private void extractProducts() {
 		//load products from hidden fields
-		if (this.getSpotListProduct() != null){
-			for(String p : this.getSpotListProduct()){
+		if (this.getListProduct() != null){
+			for(String p : this.getListProduct()){
 				Product product = new  Product();
 				product.setId(Long.valueOf(p));
 				this.products.add(product);

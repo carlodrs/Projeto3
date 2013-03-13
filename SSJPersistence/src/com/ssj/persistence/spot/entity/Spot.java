@@ -1,13 +1,13 @@
 package com.ssj.persistence.spot.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
 
 /**
  * Entity implementation class for Entity: SpotProduct
@@ -26,7 +26,23 @@ public class Spot implements Serializable {
 	private String spotDescription;
 	private boolean active;
 	
+	@ManyToMany
+	private List<ContentSpot> contentSpots;
 	
+	/**
+	 * @return the contentSpots
+	 */
+	public List<ContentSpot> getContentSpots() {
+		return contentSpots;
+	}
+	/**
+	 * @param contentSpots the contentSpots to set
+	 */
+	public void setContentSpots(List<ContentSpot> contentSpots) {
+		this.contentSpots = contentSpots;
+	}
+
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * @return the spotDescription
@@ -52,10 +68,6 @@ public class Spot implements Serializable {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	@OneToOne(mappedBy="spot", cascade=CascadeType.ALL)
-	private ContentSpot contentSpot;
-	
-	private static final long serialVersionUID = 1L;
 
 	public Spot() {
 		super();
@@ -74,17 +86,9 @@ public class Spot implements Serializable {
 	public void setSpotName(String spotName) {
 		this.spotName = spotName;
 	}
-	/**
-	 * @return the contentSpot
-	 */
-	public ContentSpot getContentSpot() {
-		return contentSpot;
-	}
-	/**
-	 * @param contentSpot the contentSpot to set
-	 */
-	public void setContentSpot(ContentSpot contentSpot) {
-		this.contentSpot = contentSpot;
-	}
+	
+	
+	
+	
 	
 }

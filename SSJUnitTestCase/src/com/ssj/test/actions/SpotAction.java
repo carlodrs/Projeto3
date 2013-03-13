@@ -37,15 +37,14 @@ public class SpotAction {
 		list.add(product1);
 		list.add(product2);
 		
-		SpotBean spotBean = new SpotBean();
-		spotBean.setId(1L);
-
-		spotBean = this.spotService.read(spotBean);
+		//SpotBean spotBean = new SpotBean();
+		//spotBean.setId(1L);
+		//spotBean = this.spotService.read(spotBean);
 		
 		ContentSpot contentSpot = new ContentSpot();
 		//contentSpot.setProducts(list);
-		contentSpot.setContentName("home2Offer");
-		contentSpot.setSpot(spotBean.getSpot());
+		contentSpot.setContentName("content3");
+		//contentSpot.setSpot(spotBean.getSpot());
 		
 		
 		SpotBean bean = new SpotBean();
@@ -58,12 +57,46 @@ public class SpotAction {
 	/********************************************************************************/
 	public void testCreateSpot() throws Exception {
 		
+		
+		/*
+		
+		bean.setId(2L);
+		bean = this.contentSpotService.load(bean);
+		*/
+		ContentSpot contentSpotT = new ContentSpot();
+		contentSpotT.setId(2L);
+		
+		ArrayList<ContentSpot> list = new ArrayList<ContentSpot>();
+		list.add(contentSpotT);
+		
 		Spot spot = new Spot();
-		spot.setSpotName("spot1Offers");
+		spot.setContentSpots(list);
 		
 		SpotBean bean = new SpotBean();
 		bean.setSpot(spot);
 		
 		this.spotService.create(bean);
+	}
+	
+
+	/****************** Method test to create spot *******************************/
+	/********************************************************************************/
+	public void testUpdateSpot() throws Exception {
+		
+		SpotBean bean = new SpotBean();
+		bean.setId(1L);
+		bean = this.contentSpotService.load(bean);
+		
+		ArrayList<ContentSpot> list = new ArrayList<ContentSpot>();
+		list.add(bean.getContentSpot());
+		
+		bean.setId(2L);
+		bean = this.spotService.load(bean);
+		
+		Spot spot = bean.getSpot();
+		spot.setContentSpots(list);
+		bean.setSpot(spot);
+		
+		this.spotService.update(bean);
 	}
 }

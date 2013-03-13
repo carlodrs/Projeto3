@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.ssj.persistence.spot.entity.ContentSpot;
 import com.ssj.persistence.spot.entity.Spot;
 import com.ssj.service.spot.bean.SpotBean;
+import com.ssj.service.spot.interfaces.ContentSpotService;
 import com.ssj.service.spot.interfaces.SpotService;
 
 /**
@@ -24,15 +26,17 @@ public class SpotCMSAction extends ActionSupport {
 	 * Serial version
 	 */
 	private static final long serialVersionUID = 1L;
-	private String spotName;
-	private String spotDescription;
-	private boolean active;
+	private Spot spot;
+	private ContentSpot contentSpot;
+	private List<ContentSpot> contentSpots;
 	private List<String> activeOptions;
 	private List<Spot> spots;
 	
 	@Autowired
 	private SpotService spotService;
 	
+	@Autowired
+	private ContentSpotService contentSpotService;
 	
 	public SpotCMSAction(){
 		this.activeOptions = new ArrayList<String>();
@@ -55,53 +59,22 @@ public class SpotCMSAction extends ActionSupport {
 		this.spots = spots;
 	}
 
-	/**
-	 * @return the spotName
-	 */
-	public String getSpotName() {
-		return spotName;
-	}
-
-	/**
-	 * @param spotName the spotName to set
-	 */
-	public void setSpotName(String spotName) {
-		this.spotName = spotName;
-	}
-
 	
-
 	/**
-	 * @return the spotDescription
+	 * @return the contentSpot
 	 */
-	public String getSpotDescription() {
-		return spotDescription;
+	public ContentSpot getContentSpot() {
+		return contentSpot;
 	}
 
 
 	/**
-	 * @param spotDescription the spotDescription to set
+	 * @param contentSpot the contentSpot to set
 	 */
-	public void setSpotDescription(String spotDescription) {
-		this.spotDescription = spotDescription;
+	public void setContentSpot(ContentSpot contentSpot) {
+		this.contentSpot = contentSpot;
 	}
 
-
-	/**
-	 * @return the active
-	 */
-	public boolean isActive() {
-		return active;
-	}
-
-	/**
-	 * @param active the active to set
-	 */
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	
 	/**
 	 * @return the activeOptions
 	 */
@@ -141,16 +114,52 @@ public class SpotCMSAction extends ActionSupport {
 	
 
 	/**
+	 * @return the spot
+	 */
+	public Spot getSpot() {
+		return spot;
+	}
+
+
+	/**
+	 * @param spot the spot to set
+	 */
+	public void setSpot(Spot spot) {
+		this.spot = spot;
+	}
+
+
+	/**
+	 * @return the contentSpots
+	 */
+	public List<ContentSpot> getContentSpots() {
+		return contentSpots;
+	}
+
+
+	/**
+	 * @param contentSpots the contentSpots to set
+	 */
+	public void setContentSpots(List<ContentSpot> contentSpots) {
+		this.contentSpots = contentSpots;
+	}
+
+
+	/**
 	 * Method to create category
 	 * @return 
 	 * @throws Exception 
 	 * */
 	public String create() throws Exception {
 		
+		List<ContentSpot> contents = new ArrayList<ContentSpot>();
+		contents.add(this.contentSpot);
+		
 		Spot spot = new Spot();
-		spot.setSpotName(spotName);
-		spot.setActive(this.isActive());
-		spot.setSpotDescription(this.getSpotDescription());
+		spot.setSpotName(this.spot.getSpotName());
+		spot.setActive(this.spot.isActive());
+		spot.setSpotDescription(this.spot.getSpotDescription());
+		spot.setContentSpots(contents);
 		
 		SpotBean spotBean = new SpotBean();
 		spotBean.setSpot(spot);
@@ -174,6 +183,8 @@ public class SpotCMSAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String input() throws Exception {
+		//list all content to spot page
+		this.setContentSpots(this.contentSpotService.listAll());
 		return INPUT;
 	}
 }

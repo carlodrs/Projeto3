@@ -1,12 +1,14 @@
 package com.ssj.persistence.spot.entity;
 
 import java.io.Serializable;
-import java.lang.Long;
-import java.lang.String;
 import java.util.List;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 import com.ssj.persistence.product.entity.Product;
 
@@ -24,13 +26,11 @@ public class ContentSpot implements Serializable {
 	private String contentName;
 	private String contentDescription;
 	private static final long serialVersionUID = 1L;
-	 
+	private String isContentText;
+	
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Product> products;
-	
-	@OneToOne(fetch=FetchType.EAGER)
-	@NotNull
-	private Spot spot;
 	private String textContent;
 
 
@@ -79,18 +79,7 @@ public class ContentSpot implements Serializable {
 	public void setContentName(String contentName) {
 		this.contentName = contentName;
 	}
-	/**
-	 * @return the spot
-	 */
-	public Spot getSpot() {
-		return spot;
-	}
-	/**
-	 * @param spot the spot to set
-	 */
-	public void setSpot(Spot spot) {
-		this.spot = spot;
-	}
+	
 	/**
 	 * @return the contentDescription
 	 */
@@ -102,6 +91,20 @@ public class ContentSpot implements Serializable {
 	 */
 	public void setContentDescription(String contentDescription) {
 		this.contentDescription = contentDescription;
+	}
+
+	/**
+	 * @return the isContentText
+	 */
+	public String getIsContentText() {
+		return isContentText;
+	}
+
+	/**
+	 * @param isContentText the isContentText to set
+	 */
+	public void setIsContentText(String isContentText) {
+		this.isContentText = isContentText;
 	}
    
 }

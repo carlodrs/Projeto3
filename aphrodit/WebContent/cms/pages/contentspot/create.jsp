@@ -10,22 +10,9 @@
 	
 			<s:textfield name="contentName" key="spot.contentName" required="true"/>
 			<s:textfield name="contentDescription" key="spot.contentDescription" required="true"/>
-			<s:select  key="spot.choose" required="true" headerKey="-1" headerValue="Selecione o spot"
-			list="spots" listKey="id" listValue="spotName"	name="spotId" />
-			
-				<!-- 
-			
-				<s:select multiple="true" key="spot.choose" required="true" headerKey="-1" headerValue="Selecione o spot"
-				list="spots" listKey="id" listValue="spotName"	name="spotId" />
-				
-				<div class="buttons">
-					<input type="button" value="Adicionar produtos"
-					onclick="javascript:window.open('ProductAvailableListCMSAction','_blank','directories=no, status=no,width=500, height=500,top=0,left=0');"/>
-					
-					<input type="button" value="Remover Produtos Selecionados"/>
-				</div>
-				 -->
-				<s:submit key="buttonregistry" align="center"/>
+			<s:textarea name="contentText" key="spot.contentText"></s:textarea>
+			<s:checkbox name="isContentText" key="spot.is.contentText" />
+			<s:submit key="buttonregistry" align="center"/>
 			
 		</s:form>
 		

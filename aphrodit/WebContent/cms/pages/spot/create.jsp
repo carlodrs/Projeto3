@@ -8,10 +8,10 @@
 		
 		<s:form name="SpotCreateCMSAction" action="SpotCreateCMSAction" method="post" validate="true">  
 	
-			<s:radio name="active" key="spot.opt.active" list="activeOptions" required="true" value=""/>
-			<s:textfield name="spotName" key="spot.name" required="true"/>
-			<s:textfield name="spotDescription" key="spot.description" required="true"/>
-			
+			<s:radio name="spot.active" key="spot.opt.active" list="activeOptions" required="true" value="true"/>
+			<s:textfield name="spot.spotName" key="spot.name" required="true"/>
+			<s:textfield name="spot.spotDescription" key="spot.description" required="true"/>
+			<s:select  key="content.spot.choose" required="true" list="contentSpots"  listKey="id" listValue="contentName" name="contentSpot.id" />
 			<s:submit key="buttonregistry" align="center"/>
 		</s:form>
 		
