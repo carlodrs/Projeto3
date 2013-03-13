@@ -9,7 +9,7 @@
 	
 		<display:table  export="true" id="product" name="products" 
 		requestURI="ProductListCMSAction" pagesize="20">
-			<display:column title="Imagem"><img src="images/${product.image}" width="100px" height="100px"/></display:column>
+			<display:column title="Imagem"><img src="/images/${product.image}" width="100px" height="100px"/></display:column>
 			<display:column property="name" title="Nome" sortable="true"/>
 			<display:column property="description" title="Descrição" sortable="true"/>
 			<display:column property="shortName" title="Curto Nome" sortable="true"/>

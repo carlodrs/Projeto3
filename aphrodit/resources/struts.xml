@@ -10,7 +10,7 @@
 	<constant name="struts.i18n.encoding" value="LATIN1" />
 	
 	<!-- multipart form data -->
-	<constant name="struts.multipart.saveDir" value="" />
+	<constant name="struts.multipart.saveDir" value="C:/JAVA/tomcat7/webapps/images" />
 	<constant name="struts.multipart.parser"  value="jakarta"/>
 	<constant name="struts.multipart.maxSize" value="10000000"/>
 
@@ -40,6 +40,8 @@
 	    <result-types>
             <result-type default="true" name="tiles" class="com.ssj.servlet.tiles.TilesResult"/>
         </result-types>
+        
+        <action name="images"/>
         
 		<!-- Login -->
 		<action name="loginCMS" class="br.com.store.cms.security.action.LoginCMSAction" method="doLogin">	

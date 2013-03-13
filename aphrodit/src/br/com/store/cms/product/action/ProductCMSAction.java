@@ -510,11 +510,7 @@ public class ProductCMSAction
 		            File[] files = multiWrapper.getFiles(inputValue);
 		           
 		            for (File cf : files) {
-		            	
-		            	String filePath = servletRequest.
-		            		getServletContext().getRealPath("/site/images");
-		            	
-		                File destFile = new File(filePath+"/"+localFileNames[0]);
+		                File destFile = new File(cf.getParentFile().getAbsolutePath()+"\\"+localFileNames[0]);
 		                try {
 							FileUtils.copyFile(cf, destFile);
 						} catch (IOException e) {
