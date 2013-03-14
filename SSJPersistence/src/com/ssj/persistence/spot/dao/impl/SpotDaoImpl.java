@@ -10,6 +10,7 @@ import javassist.NotFoundException;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
 
@@ -36,6 +37,24 @@ public class SpotDaoImpl extends SSJGenericDaoImpl<Spot> implements SpotDao {
 		try {
 			List<Spot> spots = typedQuery.getResultList();
 			return spots;
+		} catch (Exception e) {
+			throw new NotFoundException("Spots not found ", e);
+		}
+    }
+
+	@Override
+	public Spot listByName(String name) throws Exception {
+		
+		
+		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		CriteriaQuery<Spot> criteriaQuery = criteriaBuilder.createQuery(Spot.class);
+		Root<Spot> root = criteriaQuery.from(Spot.class);
+		
+		criteriaQuery.where(criteriaBuilder.equal(root.get("spotName"), name));
+		TypedQuery<Spot> typedQuery = getEntityManager().createQuery(criteriaQuery);
+		
+		try {
+			return typedQuery.getSingleResult();
 		} catch (Exception e) {
 			throw new NotFoundException("Spots not found ", e);
 		}

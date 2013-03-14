@@ -169,6 +169,15 @@
 		</action>
 		
 		<!-- spots contents -->
+		
+		<action name="DetailSpotRegisteredAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="detail">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.spot.detail</result>
+	        <result name="error" type="tiles">template.cms.spot.detail</result>
+		</action>
+		
 		<action name="SpotCreateCMSAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="create"> 	
 			<result name="error" type="tiles">template.cms.spot.create</result>
 			<result name="success" type="tiles">template.cms.spot.message</result>

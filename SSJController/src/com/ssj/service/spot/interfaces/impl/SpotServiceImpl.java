@@ -81,4 +81,10 @@ public class SpotServiceImpl implements SpotService {
 	public List<Spot> listAll() throws Exception {
 		return this.spotDao.listAllSpots();
 	}
+
+	@Override
+	public Spot listByName(String name) throws Exception {
+		// TODO Auto-generated method stub
+		return this.spotDao.listByName(name);
+	}
 }

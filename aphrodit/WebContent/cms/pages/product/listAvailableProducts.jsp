@@ -42,7 +42,7 @@
 				requestURI="ProductListCMSAction" pagesize="20">
 					<display:column title="Mark" sortable="true">
 						<div id="cb">
-							<input type="checkbox" id="spotListProduct" name="spotListProduct"  value="${product.id}"/>
+							<input type="checkbox" id="listProduct" name="listProduct"  value="${product.id}"/>
 						</div>
 					</display:column>
 					<display:column title="Imagem"><img src="/images/${product.image}" width="70px" height="70px"/></display:column>

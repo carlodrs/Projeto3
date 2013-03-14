@@ -24,5 +24,14 @@ public interface SpotDao extends SSJGenericDao<Spot> {
 	 * @throws Exception
 	 * */
 	public List<Spot> listAllSpots() throws Exception;
+
+	
+	/**
+	 * Method to get the  spots by name
+	 * @param name
+	 * @return Spot
+	 * @throws Exception
+	 * */
+	public Spot listByName(String name) throws Exception;
 		
 }

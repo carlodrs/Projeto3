@@ -182,6 +182,36 @@ public class SpotCMSAction extends ActionSupport {
 	 * @return String
 	 * @throws Exception
 	 */
+	public String detail() throws Exception {
+		
+		try{
+			SpotBean spotBean = new SpotBean();
+			spotBean.setId(getSpot().getId());
+			spotBean = this.spotService.load(spotBean);
+			
+			Spot spot = spotBean.getSpot();
+			ContentSpot contentSpot = new ContentSpot();
+			for (ContentSpot content : spot.getContentSpots()) {
+				spotBean.setId(content.getId());
+				contentSpot = this.contentSpotService.load(spotBean).getContentSpot();
+			}
+			this.setContentSpots(this.contentSpotService.listAll());
+			this.setContentSpot(contentSpot);
+			this.setSpot(spot);
+			
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("error.detail.spot"));
+			return ERROR;
+		}		
+	}
+	
+	/**
+	 * Prepare to create spot
+	 * @return String
+	 * @throws Exception
+	 */
 	public String input() throws Exception {
 		//list all content to spot page
 		this.setContentSpots(this.contentSpotService.listAll());

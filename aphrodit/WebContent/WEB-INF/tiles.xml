@@ -141,6 +141,10 @@
   		<put-attribute name="content"  value="/cms/pages/spot/listAll.jsp" />
 	</definition>
 	
+	<definition name="template.cms.spot.detail" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/spot/detail.jsp" />
+	</definition>
+	
 	<!-- Content Spot CMS -->
 	<definition name="template.cms.content.spot.create" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/contentspot/create.jsp" />

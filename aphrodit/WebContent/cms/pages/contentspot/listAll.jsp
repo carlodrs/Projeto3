@@ -12,7 +12,6 @@
 			<display:column property="id" title="Id" paramId="id" sortable="true" url="/site/DetailContentSpotRegisteredAction"/>
 			<display:column property="contentName" title="Nome" sortable="true"/>
 			<display:column property="contentDescription" title="Descrição" sortable="true"/>
-			<display:column property="spot.spotName" title="Spot" sortable="true" />
 		</display:table>
 			 
 		
