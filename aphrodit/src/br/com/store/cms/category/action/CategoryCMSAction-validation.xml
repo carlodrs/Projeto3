@@ -1,7 +1,7 @@
 <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
 		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 <validators>
-	<field name="name">
+	<field name="category.name">
 		<field-validator type="required">
 			<param name="trim">true</param>
 			<message key="errors.required" />
@@ -13,7 +13,7 @@
 			<message key="errors.required" />
 		</field-validator>
 	</field>
-	<field name="description">
+	<field name="category.url">
 		<field-validator type="required">
 			<param name="trim">true</param>
 			<message key="errors.required" />

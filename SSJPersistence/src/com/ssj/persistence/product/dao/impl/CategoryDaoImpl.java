@@ -11,7 +11,6 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import javax.persistence.metamodel.EntityType;
 
 import org.springframework.stereotype.Repository;
 
@@ -53,15 +52,14 @@ public class CategoryDaoImpl extends SSJGenericDaoImpl<Category>
 	public List<Category> listAllParents() throws Exception{
 		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
 		CriteriaQuery<Category> criteriaQuery = criteriaBuilder.createQuery(Category.class);
-		EntityType<Category> type = getEntityManager().getMetamodel().entity(Category.class);
-		
+			
 		Root<Category> root = criteriaQuery.from(Category.class);
-		
+			
 			criteriaQuery.where(
 					criteriaBuilder.and(
 							//parent not null
 							criteriaBuilder.isNull(
-									root.get("parentId"))));
+									root.get("parent"))));
 						
 		TypedQuery<Category> typedQuery = getEntityManager().createQuery(criteriaQuery);
 		

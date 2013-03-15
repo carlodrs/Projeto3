@@ -1,5 +1,6 @@
 package br.com.store.cms.category.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,64 +24,47 @@ public class CategoryCMSAction extends ActionSupport {
 	 * Serial version
 	 */
 	private static final long serialVersionUID = 1L;
-	private String name;
-	private String description;
-	private String isParent;
-	private Long parentId;
+	private Category category;
+	private Boolean isParent;
 	private List<Category> categories;
 	
 	@Autowired
 	protected CategoryService categoryService;
 	
+	public CategoryCMSAction(){
+		this.categories = new ArrayList<Category>();
+	}
+	
 	
 	/**
-	 * @return the name
+	 * @return the category
 	 */
-	public String getName() {
-		return name;
+	public Category getCategory() {
+		return category;
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param category the category to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
 
 	/**
 	 * @return the isParent
 	 */
-	public String getIsParent() {
+	public Boolean getIsParent() {
 		return isParent;
 	}
 
 	/**
 	 * @param isParent the isParent to set
 	 */
-	public void setIsParent(String isParent) {
+	public void setIsParent(Boolean isParent) {
 		this.isParent = isParent;
 	}
 
-	/**
-	 * @return the parentId
-	 */
-	public Long getParentId() {
-		return parentId;
-	}
 	
 	/**
 	 * @return the categories
@@ -96,12 +80,6 @@ public class CategoryCMSAction extends ActionSupport {
 		this.categories = categories;
 	}
 
-	/**
-	 * @param parentId the parentId to set
-	 */
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-	}
 
 	@Override
 	public String execute() throws Exception {
@@ -160,27 +138,24 @@ public class CategoryCMSAction extends ActionSupport {
 	 * */
 	public String create() throws Exception {
 		
-		Category category = new Category();
-		category.setName(this.getName());
-		category.setDescription(this.getDescription());
-		
 		//if category have a parent
-		if((Boolean.valueOf(this.getIsParent()) && this.getParentId() != -1) ||
-	      (!Boolean.valueOf(this.getIsParent()) && this.getParentId() == -1)){
+		if ((Boolean.valueOf(this.getIsParent()) && !this.getCategory().getParent().getId().equals(-1L)) ||
+	       (!Boolean.valueOf(this.getIsParent()) && this.getCategory().getParent().getId().equals(-1L))){
 				addActionError(getText("category.parent.selected.incorrect"));
 				this.setCategories(this.categoryService.listAllParents());
 				return ERROR;
-		}else{
-			if(!Boolean.valueOf(this.getIsParent())){
-				Category categoryParent = new Category();
-				categoryParent.setId(Long.valueOf(this.getParentId()));
-				category.setParentId(categoryParent);	
-			}
-			
+		}
+	
+		//configure parent from the childs
+		if(!Boolean.valueOf(this.getIsParent())){
+			Category categoryParent = new Category();
+			categoryParent.setId(this.getCategory().getParent().getId());
+			this.category.setParent(categoryParent);	
 		}
 		
+		
 		CategoryBean categoryBean = new CategoryBean();
-		categoryBean.setCategory(category);
+		categoryBean.setCategory(this.category);
 		
 		try {
 			this.categoryService.create(categoryBean);
@@ -193,4 +168,74 @@ public class CategoryCMSAction extends ActionSupport {
 			return ERROR;
 		}
 	}
+	
+	
+	/**
+	 * Prepare to show category detail
+	 * @return String
+	 * @throws Exception
+	 */
+	public String detail() throws Exception {
+		
+		try{
+			CategoryBean categoryBean = new CategoryBean();
+			categoryBean.setId(this.getCategory().getId());
+			
+			categoryBean = this.categoryService.load(categoryBean);
+			
+			Category category = categoryBean.getCategory();
+			if (category.getParent().getId() == null){
+				this.setIsParent(true);
+			}else{
+				this.setIsParent(false);
+			}
+			this.setCategory(category);
+			this.setCategories(this.categoryService.listAll());
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("error.detail.spot"));
+			return ERROR;
+		}		
+	}
+
+
+	/**
+	 * Update category
+	 * @return String
+	 * @throws Exception
+	 */
+	public String update() throws Exception {
+		
+		try{
+		
+			//if category have a parent
+			if ((Boolean.valueOf(this.getIsParent()) && !this.getCategory().getParent().getId().equals(-1L)) ||
+		       (!Boolean.valueOf(this.getIsParent()) && this.getCategory().getParent().getId().equals(-1L))){
+					addActionError(getText("category.parent.selected.incorrect"));
+					this.setCategories(this.categoryService.listAllParents());
+					return ERROR;
+			}
+		
+			//configure parent from the childs
+			if(!Boolean.valueOf(this.getIsParent())){
+				Category categoryParent = new Category();
+				categoryParent.setId(this.getCategory().getParent().getId());
+				this.category.setParent(categoryParent);	
+			}else{
+				this.category.setParent(null);
+			}
+			
+			CategoryBean categoryBean = new CategoryBean();
+			categoryBean.setCategory(category);
+			this.categoryService.update(categoryBean);
+			
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("error.detail.spot"));
+			return ERROR;
+		}		
+	}
+
 }

@@ -9,10 +9,11 @@
 		
 		<display:table  export="true" id="category" name="categories"
 		requestURI="br.com.store.cms.category.action.CategoryCMSAction" pagesize="20">
-			<display:column property="id" title="Id" sortable="true"/>
+			<display:column property="id" title="Id" sortable="true" paramId="category.id" url="/site/DetailCategoryRegisteredAction"/>
 			<display:column property="name" title="Nome" sortable="true"/>
 			<display:column property="description" title="Descrição" sortable="true"/>
-			<display:column property="parentId.id" title="Categoria pai" sortable="true"/>
+			<display:column property="parent.id" title="Categoria pai" sortable="true"/>
+			<display:column property="url" title="Link" sortable="true"/>
 		</display:table>
 			 
 		

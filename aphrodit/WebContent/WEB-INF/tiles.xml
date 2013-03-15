@@ -116,6 +116,10 @@
 	
 	
 	<!-- Category CMS -->
+	<definition name="template.cms.category.detail" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/category/detail.jsp" />
+	</definition>
+	
 	<definition name="template.cms.category.create" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/category/create.jsp" />
 	</definition>

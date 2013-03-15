@@ -178,7 +178,7 @@ public class SpotCMSAction extends ActionSupport {
 	
 	
 	/**
-	 * Prepare to create spot
+	 * Prepare to show the spot detail
 	 * @return String
 	 * @throws Exception
 	 */

@@ -19,10 +19,11 @@ public class Category implements Serializable {
 	private Long id;
 	private String name;
 	private String description;
+	private String url;
 	
-	@ManyToOne(fetch = FetchType.LAZY) 
+	@ManyToOne(fetch = FetchType.EAGER) 
 	@JoinColumn(name = "parentId", insertable = true, updatable = true, nullable = true) 
-	private Category parentId;
+	private Category parent;
 	/**
 	 * @return the id
 	 */
@@ -50,14 +51,14 @@ public class Category implements Serializable {
 	/**
 	 * @return the parentId
 	 */
-	public Category getParentId() {
-		return parentId;
+	public Category getParent() {
+		return parent;
 	}
 	/**
 	 * @param parentId the parentId to set
 	 */
-	public void setParentId(Category parentId) {
-		this.parentId = parentId;
+	public void setParent(Category parent) {
+		this.parent = parent;
 	}
 	/**
 	 * @return the description
@@ -71,6 +72,19 @@ public class Category implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	/**
+	 * @return the url
+	 */
+	public String getUrl() {
+		return url;
+	}
+	/**
+	 * @param url the url to set
+	 */
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
 	
 	
 }

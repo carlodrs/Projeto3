@@ -53,7 +53,7 @@ public class ProductAction {
 		product.setPercentDiscount(0d);
 		
 		// Set category
-		product.setCategory(category);
+		//product.setCategory(category);
 		
 		//List attr list
 		product.setAttributeList(attributes);

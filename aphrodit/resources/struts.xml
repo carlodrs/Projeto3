@@ -148,6 +148,26 @@
 			<result name="input" type="tiles">template.cms.category.create</result>
 		</action>
 		
+		
+		<action name="DetailCategoryRegisteredAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="detail">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.category.detail</result>
+	        <result name="error" type="tiles">template.cms.category.detail</result>
+		</action>
+		
+		
+		<action name="UpdateCategoryCMSAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="update"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
+	        <!-- success -->
+	        <result name="success" type="tiles">template.cms.category.message</result>
+	    	<!-- error --> 
+	    	<result name="error" type="tiles">template.cms.category.detail</result>
+	   	</action>
+		
 		<action name="PrepareCreateCategoryAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="prepare"> 	
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">prepare</param>

@@ -22,8 +22,10 @@ public class ProductActionTest extends SSJGenericSpringTest {
 		
 		
 		///////////////////////Set of test case o the users possibilites/////////////////////////////////
-		productAction.testCreateProduct(); 
-		productAction.testUpdateteProduct();
+		for (int i = 0; i < 6; i++) {
+			productAction.testCreateProduct(); 
+			productAction.testUpdateteProduct();
+		}
 		//productAction.testDeleteProduct();
 	}
 }
