@@ -5,7 +5,7 @@
   		<s:param name="name">${param.spotName}</s:param>
 	</s:bean>
 	
-	<!-- Posts -->
+	
 	<div>
 		<ul class="blocks-thumbs thumbs-rollover">
 			<c:forEach items="${spotBean.contentSpots}" var="contentSpot">
@@ -20,8 +20,16 @@
 							${product.description}
 						</div>
 						<div class="excerpt">
-							De: ${product.price}
-							Por: ${product.offerPrice}
+							<c:choose>
+								<c:when test="${product.offerPrice != null}">
+									<span>De: R$ ${product.price}</span>
+									<span>Por: R$ ${product.offerPrice}</span>
+								</c:when>
+								<c:otherwise>
+									<span>à vista ou cartão</span>
+									<span>Por: R$ ${product.price}</span>
+								</c:otherwise>
+							</c:choose>	
 						</div>
 						
 						<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
@@ -30,4 +38,3 @@
 			</c:forEach>
 		</ul>
 	</div>
-	<!-- ENDS posts -->

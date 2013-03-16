@@ -103,7 +103,11 @@ ul.tabs li.current a {
 
 .panes .blocks-thumbs li .excerpt{
 	line-height: 1.5em;
-	margin-bottom: 20px;
+	margin-bottom: 6px;
+}
+
+.panes .blocks-thumbs li .excerpt span{
+	display: block;
 }
 
 #content .panes .blocks-thumbs li .header{

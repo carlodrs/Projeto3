@@ -26,148 +26,26 @@
 					
 					<!-- tab "panes" -->
 					<div class="panes">
-					
+						
+						<!-- Posts -->
 						<jsp:include page="contentspot.jsp">
 							<jsp:param value="ofertas" name="spotName"/>
 						</jsp:include>
-						
-						<!-- Posts -->
-						<div>
-							<ul class="blocks-thumbs thumbs-rollover">
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								
-							</ul>
-						</div>
 						<!-- ENDS posts -->
-						
+							
+						<!-- Posts -->
+						<jsp:include page="contentspot.jsp">
+							<jsp:param value="ofertas" name="spotName"/>
+						</jsp:include>
+						<!-- ENDS posts -->
+											
 	
 						<!-- Posts -->
-						<div>
-							<ul class="blocks-thumbs thumbs-rollover">
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-								<li>
-									<a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-									<div class="excerpt">
-										<a href="single.html" class="header">Lorem ipsum dolor</a>
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-									</div>
-									<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-								</li>
-							</ul>
-						</div>
+						<jsp:include page="contentspot.jsp">
+							<jsp:param value="ofertas" name="spotName"/>
+						</jsp:include>
 						<!-- ENDS posts -->
-						
+											
 						
 					</div>
 					<!-- ENDS TABS -->
