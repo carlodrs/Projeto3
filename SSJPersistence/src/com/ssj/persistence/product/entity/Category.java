@@ -20,6 +20,7 @@ public class Category implements Serializable {
 	private String name;
 	private String description;
 	private String url;
+	private Integer showSequence;
 	
 	@ManyToOne(fetch = FetchType.EAGER) 
 	@JoinColumn(name = "parentId", insertable = true, updatable = true, nullable = true) 
@@ -84,7 +85,16 @@ public class Category implements Serializable {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	
-	
-	
+	/**
+	 * @return the showSequence
+	 */
+	public Integer getShowSequence() {
+		return showSequence;
+	}
+	/**
+	 * @param showSequence the showSequence to set
+	 */
+	public void setShowSequence(Integer showSequence) {
+		this.showSequence = showSequence;
+	}
 }

@@ -14,6 +14,7 @@
 			<s:textfield name="category.name" key="category.name" required="true"/>
 			<s:textfield name="category.description" key="category.description" required="true"/>
 			<s:textfield name="category.url" key="category.url" required="true"/>
+			<s:textfield name="category.showSequence" key="category.showSequence" required="true"/>
 			<s:select  key="parent.categories" required="true" headerKey="-1" headerValue="Selecione a categoria"
 				list="categories" listKey="id" listValue="name" value="%{category.parent.id}" name="category.parent.Id" />
 		

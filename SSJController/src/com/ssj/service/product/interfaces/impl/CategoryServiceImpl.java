@@ -3,7 +3,9 @@
  */
 package com.ssj.service.product.interfaces.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -80,5 +82,23 @@ public class CategoryServiceImpl implements CategoryService {
 	@Override
 	public List<Category> listAllParents() throws Exception {
 		return this.categoryDao.listAllParents();
+	}
+
+	@Override
+	public List<Category> listAllChilds( Category category) throws Exception {
+		return this.categoryDao.listAllChilds(category);
+	}
+
+	
+	@Override
+	public Map<Category, List<Category>> listStructuredCategories() throws Exception {
+		
+		Map<Category, List<Category>> categories = new HashMap<Category, List<Category>>();
+		
+		for (Category parent : this.listAllParents()) {
+			categories.put(parent, this.listAllChilds(parent));
+		}
+		
+		return categories;
 	}
 }

@@ -13,7 +13,7 @@
 			<message key="errors.required" />
 		</field-validator>
 	</field>
-	<field name="category.url">
+	<field name="category.showSequence">
 		<field-validator type="required">
 			<param name="trim">true</param>
 			<message key="errors.required" />

@@ -151,6 +151,8 @@ public class CategoryCMSAction extends ActionSupport {
 			Category categoryParent = new Category();
 			categoryParent.setId(this.getCategory().getParent().getId());
 			this.category.setParent(categoryParent);	
+		}else{
+			this.category.setParent(null);
 		}
 		
 		
@@ -184,7 +186,7 @@ public class CategoryCMSAction extends ActionSupport {
 			categoryBean = this.categoryService.load(categoryBean);
 			
 			Category category = categoryBean.getCategory();
-			if (category.getParent().getId() == null){
+			if (category.getParent() == null){
 				this.setIsParent(true);
 			}else{
 				this.setIsParent(false);

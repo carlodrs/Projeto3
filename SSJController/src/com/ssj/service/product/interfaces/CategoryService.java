@@ -4,6 +4,7 @@
 package com.ssj.service.product.interfaces;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ssj.persistence.product.entity.Category;
 import com.ssj.service.Service;
@@ -35,5 +36,25 @@ public interface CategoryService extends Service<CategoryBean> {
 	 * @throws Exception
 	 * */
 	public List<Category> listAllParents()  throws Exception;
+
+
+
+	/**
+	 * 
+	 * List all the parents categories structured by child itself 
+	 * @return Map Category and List categories
+	 * @throws Exception
+	 * */
+	public Map<Category, List<Category>> listStructuredCategories() throws Exception;
+
+
+
+	/**
+	 * 
+	 * List all the child categories by parent 
+	 * @return List<Category>
+	 * @throws Exception
+	 * */
+	public List<Category> listAllChilds(Category category) throws Exception;
 
 }

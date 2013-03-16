@@ -14,6 +14,7 @@
 			<display:column property="description" title="Descrição" sortable="true"/>
 			<display:column property="parent.id" title="Categoria pai" sortable="true"/>
 			<display:column property="url" title="Link" sortable="true"/>
+			<display:column property="showSequence" title="Sequencia de apresetação" sortable="true"/>
 		</display:table>
 			 
 		
