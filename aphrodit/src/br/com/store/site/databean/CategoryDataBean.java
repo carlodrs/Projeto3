@@ -1,6 +1,8 @@
 package br.com.store.site.databean;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -110,6 +112,13 @@ public class CategoryDataBean {
 			categoryDataBeans.add(categoryDataBean);
 		
 		}
+		
+		//order the category
+		Collections.sort(categoryDataBeans, new Comparator<CategoryDataBean>() {
+			public int compare(CategoryDataBean o1, CategoryDataBean o2) {
+	            return o1.getCategory().getShowSequence() - o2.getCategory().getShowSequence();
+	        }
+	    });
 		
 		return categoryDataBeans;
 	}
