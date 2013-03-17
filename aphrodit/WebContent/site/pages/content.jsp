@@ -35,14 +35,14 @@
 							
 						<!-- Posts -->
 						<jsp:include page="contentspot.jsp">
-							<jsp:param value="ofertas" name="spotName"/>
+							<jsp:param value="destaques" name="spotName"/>
 						</jsp:include>
 						<!-- ENDS posts -->
 											
 	
 						<!-- Posts -->
 						<jsp:include page="contentspot.jsp">
-							<jsp:param value="ofertas" name="spotName"/>
+							<jsp:param value="maiscomprados" name="spotName"/>
 						</jsp:include>
 						<!-- ENDS posts -->
 											

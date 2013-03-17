@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="/struts-tags" prefix="s" %>
+
 	<!-- FOOTER -->
 			<div id="footer">
 				<!-- wrapper-footer -->
@@ -5,34 +8,31 @@
 					<!-- footer-cols -->
 					<ul id="footer-cols">
 						<li class="col">
-							<h6>Pages</h6>
+							<h6>Páginas</h6>
 							<ul>
-								<li class="page_item"><a href="index.html">Home</a></li>
-								<li class="page_item"><a href="features.html">Features</a></li>
-								<li class="page_item"><a href="blog.html">Blog</a></li>
-								<li class="page_item"><a href="portfolio.html">Portfolio</a></li>
-								<li class="page_item"><a href="gallery.html">Gallery</a></li>
-								<li class="page_item"><a href="contact.html">Contact</a></li>
+								<c:forEach items="${categoryBean.structure}" var="parent">
+									<li class="page_item"><a href="${parent.category.url}">${parent.category.name}</a></li>
+								</c:forEach>	
 							</ul>
 						</li>
 						
 						<li class="col">
-							<h6>Categories</h6>
+							<h6>Redes sociais</h6>
+							
 							<ul>
-								<li><a href="#">Webdesign projects senectus</a></li>
-								<li><a href="#/">Wordpress projects senectus</a></li>
-								<li><a href="#">Vestibulum tortor quam</a></li>
-								<li><a href="#">Code projects amet quam egestas</a></li>
-								<li><a href="#">Web design projects senectus</a></li>
-								<li><a href="#/">Marketplace projects</a></li>
-								<li><a href="#">Writting projects senectus</a></li>
-								<li><a href="#">Drawings projects fames Aenean</a></li>
-								<li><a href="#/">Wordpress projects Aenean ultricies</a></li>
+								<li class="page_item"><a href="#">Facebook</a></li>
+								<li class="page_item"><a href="#">Twitter</a></li>
+								<li class="page_item"><a href="#">Our Work</a></li>
+								<li class="page_item"><a href="#">Tell Evebory</a></li>
+								<li class="page_item"><a href="#">Youtube</a></li>
 							</ul>
 						</li>
+						
 						<li class="col">
-							<h6>About the theme</h6>
-							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros.
+							<h6>Sobre nós</h6>
+							Somos uma empresa que tem por objetivo oferecer produtos que estejam alinhados com as verdadeiras necesidades de nossas clientes.
+							Com ética e respeito, levamos também até você nosso carinho e consideração.
+							Obrigado pela preferência e boas compras!   
 						</li>
 						
 					</ul>
