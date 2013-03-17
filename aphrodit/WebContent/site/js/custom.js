@@ -77,7 +77,7 @@ jQuery(document).ready(function($) {
 	
     $("#tweets").tweet({
         count: 3,
-        username: "ansimuz",
+        username: "caredom2000",
         callback: tweet_cycle
     });
 	
@@ -111,10 +111,9 @@ jQuery(document).ready(function($) {
 	
 	function tweet_cycle(){
     	$('#tweets .tweet_list').cycle({ 
-			fx:     'scrollHorz', 
-			speed:  500, 
-			timeout: 0, 
-			pause: 1,
+    		fx:     'scrollLeft', 
+    	    easing: 'easeOutBack', 
+    	    delay:  -4000, 
 			next:   '#twitter #next-tweet', 
 			prev:   '#twitter #prev-tweet' 
 		});
