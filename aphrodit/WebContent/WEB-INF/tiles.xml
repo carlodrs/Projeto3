@@ -63,26 +63,32 @@
   	
   	
   	<!-- Product message -->
-  	<definition name="cms.template.product.create" extends="cms.template">
+  	<definition name="template.cms.product.create" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/product/create.jsp" />
 	</definition>
 	
 	<!-- Product create -->
-  	<definition name="cms.template.product.message" extends="cms.template">
+					 
+  	<definition name="template.cms.product.message" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/product/message.jsp" />
 	</definition>
 	
 	<!-- Product list all products -->
-  	<definition name="cms.template.product.list" extends="cms.template">
+  	<definition name="template.cms.product.list" extends="cms.template">
   		<put-attribute name="content"  value="/cms/pages/product/listAll.jsp" />
 	</definition>
 	
-	<definition name="cms.template.product.popup.list" extends="popup.list">
-		<put-attribute name="content"  value="/cms/pages/product/listAvailableProducts.jsp" />
+	<!-- product detail -->
+	<definition name="template.cms.product.detail" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/product/detail.jsp" />
+	</definition>
+	
+	<definition name="template.cms.product.popup.list" extends="popup.list">
+		<put-attribute name="content"  value="/cms/pages/product/listProducts.jsp" />
 	</definition>
 	
 	<!-- Login CMS -->
-  	<definition name="cms.template.cms.login" extends="cms.template">
+  	<definition name="template.cms.login" extends="cms.template">
   		<put-attribute name="menu" value="" />
   		<put-attribute name="content"  value="/cms/security/login.jsp" />
 	</definition>

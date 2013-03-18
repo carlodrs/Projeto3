@@ -45,25 +45,25 @@
         
 		<!-- Login -->
 		<action name="loginCMS" class="br.com.store.cms.security.action.LoginCMSAction" method="doLogin">	
-			<result name="input">cms.template.cms.login</result>
-			<result name="error">cms.template.cms.login</result>
+			<result name="input">template.cms.login</result>
+			<result name="error">template.cms.login</result>
 			<result name="success">cms.template</result>
 		</action>
 		
 		<action name="prepareLoginCMS" class="br.com.store.cms.security.action.LoginPreparedCMSAction" method="prepare">	
-			<result name="input">cms.template.cms.login</result>
+			<result name="input">template.cms.login</result>
 		</action>
 		
 		<!-- Product -->
 		<action name="ProductInitCMSAction" class="br.com.store.cms.product.action.ProductCMSAction">	
-			<result name="input" type="tiles">cms.template.product.message</result>
+			<result name="input" type="tiles">template.cms.product.message</result>
 		</action>
 		
 		<action name="ProductPrepareCreateCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="prepare">	
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">prepare</param>
 	        </interceptor-ref>
-			<result name="input" type="tiles">cms.template.product.create</result>
+			<result name="input" type="tiles">template.cms.product.create</result>
 		</action>
 		
 		<action name="ProductCreateCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="create"> 	
@@ -75,9 +75,9 @@
 		    <interceptor-ref name="validation"/>
 		    <interceptor-ref name="workflow"/>
 			
-			<result name="error" type="tiles">cms.template.product.create</result>
-			<result name="success" type="tiles">cms.template.product.message</result>
-			<result name="input" type="tiles">cms.template.product.create</result>
+			<result name="error" type="tiles">template.cms.product.create</result>
+			<result name="success" type="tiles">template.cms.product.message</result>
+			<result name="input" type="tiles">template.cms.product.create</result>
 		</action>
 		
 		
@@ -85,14 +85,33 @@
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">listAll</param>
 	        </interceptor-ref>	
-			<result name="success" type="tiles">cms.template.product.list</result>
-			<result name="error" type="tiles">cms.template.product.list</result>
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.list</result>
 		</action>
 		
 		<action name="ProductSearchCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">	
-			<result name="success" type="tiles">cms.template.product.list</result>
-			<result name="error" type="tiles">cms.template.product.list</result>
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.list</result>
 		</action>
+		
+		<action name="DetailProductRegisteredAction" class="br.com.store.cms.product.action.ProductCMSAction" method="detail">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.product.detail</result>
+	        <result name="error" type="tiles">template.cms.product.detail</result>
+		</action>
+		
+		<action name="UpdateProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="update"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
+	        <!-- success -->
+	        <result name="success" type="tiles">template.cms.product.message</result>
+	    	<!-- error --> 
+	    	<result name="error" type="tiles">template.cms.product.detail</result>
+	   	</action>
+		
 		
 		<!-- client -->
 		<action name="ClientRegisteredAction" class="br.com.store.cms.user.action.ClientRegisteredAction" method="create"> 	
@@ -272,8 +291,8 @@
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">addProduct</param>
 	        </interceptor-ref>
-			<result name="success" type="tiles">cms.template.product.popup.list</result>
-	        <result name="error" type="tiles">cms.template.product.popup.list</result>
+			<result name="success" type="tiles">template.cms.product.popup.list</result>
+	        <result name="error" type="tiles">template.cms.product.popup.list</result>
 		</action>
 		
 		<action name="ContentSpotInitCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction">	
@@ -284,8 +303,8 @@
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">listAllProducts</param>
 	        </interceptor-ref>	
-			<result name="success" type="tiles">cms.template.product.popup.list</result>
-			<result name="error" type="tiles">cms.template.product.popup.list</result>
+			<result name="success" type="tiles">template.cms.product.popup.list</result>
+			<result name="error" type="tiles">template.cms.product.popup.list</result>
 		</action>
 		
 		

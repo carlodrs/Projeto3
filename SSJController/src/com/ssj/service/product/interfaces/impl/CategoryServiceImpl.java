@@ -89,6 +89,11 @@ public class CategoryServiceImpl implements CategoryService {
 		return this.categoryDao.listAllChilds(category);
 	}
 
+	@Override
+	public List<Category> listAllChilds() throws Exception {
+		return this.categoryDao.listAllChilds();
+	}
+
 	
 	@Override
 	public Map<Category, List<Category>> listStructuredCategories() throws Exception {

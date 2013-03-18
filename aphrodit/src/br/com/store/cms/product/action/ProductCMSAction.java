@@ -14,8 +14,11 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.ssj.persistence.product.entity.Category;
 import com.ssj.persistence.product.entity.Product;
+import com.ssj.service.product.bean.CategoryBean;
 import com.ssj.service.product.bean.ProductBean;
+import com.ssj.service.product.interfaces.CategoryService;
 import com.ssj.service.product.interfaces.ProductService;
 
 /**
@@ -30,14 +33,9 @@ import com.ssj.service.product.interfaces.ProductService;
 public class ProductCMSAction 
 	extends ActionSupport implements ServletRequestAware {
 
-	private String name;
-	private String shortName;
-	private String description;
-	private Double price;
-	private Double offerPrice;
-	private String picture;
-	private Double discount;
+	private Product product;
 	private List<Product> products;
+	private List<Category> categories;
 
 	//image file
 	private File image;
@@ -63,95 +61,33 @@ public class ProductCMSAction
 	@Autowired
 	protected ProductService productService;
 	
-	 private HttpServletRequest servletRequest;
+	@Autowired
+	protected CategoryService categoryService;
+	
+	private HttpServletRequest servletRequest;
 	 
 	 //Logger
 	 private static Logger logger = 
 		 Logger.getLogger(ProductCMSAction.class.getName());
 	 
+	 
 	/**
-	 * @return the name
+	 * @return the product
 	 */
-	public String getName() {
-		return name;
+	public Product getProduct() {
+		return product;
 	}
 
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+
 
 	/**
-	 * @return the description
+	 * @param product the product to set
 	 */
-	public String getDescription() {
-		return description;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
 
-	/**
-	 * @return the price
-	 */
-	public Double getPrice() {
-		return price;
-	}
-
-	/**
-	 * @param price the price to set
-	 */
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	/**
-	 * @return the offerPrice
-	 */
-	public Double getOfferPrice() {
-		return offerPrice;
-	}
-
-	/**
-	 * @param offerPrice the offerPrice to set
-	 */
-	public void setOfferPrice(Double offerPrice) {
-		this.offerPrice = offerPrice;
-	}
-
-	/**
-	 * @return the picture
-	 */
-	public String getPicture() {
-		return picture;
-	}
-
-	/**
-	 * @param picture the picture to set
-	 */
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
-
-	/**
-	 * @return the discount
-	 */
-	public Double getDiscount() {
-		return discount;
-	}
-
-	/**
-	 * @param discount the discount to set
-	 */
-	public void setDiscount(Double discount) {
-		this.discount = discount;
-	}
 
 	/**
 	 * @return the serialversionuid
@@ -159,24 +95,6 @@ public class ProductCMSAction
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	
-	
-	/**
-	 * @return the shortName
-	 */
-	public String getShortName() {
-		return shortName;
-	}
-
-	/**
-	 * @param shortName the shortName to set
-	 */
-	public void setShortName(String shortName) {
-		this.shortName = shortName;
-	}
-
-
 
 	/**
 	 * @return the products
@@ -439,6 +357,7 @@ public class ProductCMSAction
 	 * @throws Exception
 	 */
 	public String prepare() throws Exception {
+		this.setCategories(this.categoryService.listAllChilds());
 		return INPUT;
 	}
 	
@@ -450,20 +369,20 @@ public class ProductCMSAction
 	 * */
 	public String create() throws Exception {
 		
-		Product product = new Product();
-		product.setName(this.getName());
-		product.setDescription(this.getDescription());
-		product.setOfferPrice(this.getOfferPrice());
-		product.setPrice(this.getPrice());
-		product.setShortName(this.getShortName());
-		product.setPercentDiscount(this.getDiscount());
+		//Load the category
+		CategoryBean categoryBean = new CategoryBean();
+		categoryBean.setId(this.product.getCategory().getId());
+		categoryBean = this.categoryService.load(categoryBean);
+		
+		//configure category to product
+		this.product.setCategory(categoryBean.getCategory());
 		
 		//images configurations
-		product.setImage(this.getImageFileName());
-		product.setThumb1(this.getThumb1FileName());
-		product.setThumb2(this.getThumb2FileName());
-		product.setThumb3(this.getThumb3FileName());
-		product.setThumb4(this.getThumb4FileName());
+		this.product.setImage(this.getImageFileName());
+		this.product.setThumb1(this.getThumb1FileName());
+		this.product.setThumb2(this.getThumb2FileName());
+		this.product.setThumb3(this.getThumb3FileName());
+		this.product.setThumb4(this.getThumb4FileName());
 	
 		//bean
 		ProductBean productBean = new ProductBean();
@@ -485,6 +404,79 @@ public class ProductCMSAction
 		}
 	}
 
+	
+	
+	/**
+	 * @return the categories
+	 */
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+
+
+	/**
+	 * @param categories the categories to set
+	 */
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
+	}
+
+
+
+	/**
+	 * Prepare to show product detail
+	 * @return String
+	 * @throws Exception
+	 */
+	public String detail() throws Exception {
+		
+		try{
+			ProductBean productBean = new ProductBean();
+			productBean.setId(this.product.getId());
+			productBean = this.productService.load(productBean);
+			this.setCategories(this.categoryService.listAllChilds());
+			
+			this.setProduct(productBean.getProduct());
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("error.detail.spot"));
+			return ERROR;
+		}		
+	}
+	
+	
+	
+	/**
+	 * Update product
+	 * @return String
+	 * @throws Exception
+	 */
+	public String update() throws Exception {
+		
+		try{
+			
+			ProductBean ProductBean = new ProductBean();
+			ProductBean.setProduct(this.product);
+
+			//images configurations
+			this.product.setImage(this.getImageFileName());
+			this.product.setThumb1(this.getThumb1FileName());
+			this.product.setThumb2(this.getThumb2FileName());
+			this.product.setThumb3(this.getThumb3FileName());
+			this.product.setThumb4(this.getThumb4FileName());
+			
+			this.productService.update(ProductBean);
+			
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("error.detail.spot"));
+			return ERROR;
+		}		
+	}
+	
 	/**
 	 * Method to upload products files send by multipart request form
 	 * @param httpServletRequest

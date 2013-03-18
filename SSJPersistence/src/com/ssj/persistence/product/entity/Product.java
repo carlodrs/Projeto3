@@ -38,7 +38,7 @@ public class Product implements Serializable {
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY) 
 	private Set<Attribute> attributes;
 	
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne
 	private Category category;
 	
 	private static final long serialVersionUID = 1L;
