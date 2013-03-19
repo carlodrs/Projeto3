@@ -441,7 +441,81 @@ public class ProductCMSAction
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.addActionError(getText("error.detail.spot"));
+			this.addActionError(getText("error.detail.product"));
+			return ERROR;
+		}		
+	}
+	
+	
+	/**
+	 * Update product
+	 * @return String
+	 * @throws Exception
+	 */
+	public String updateImages() throws Exception {
+		
+		try{
+			
+			ProductBean productBean = new ProductBean();
+			productBean.setId(this.product.getId());
+			productBean = this.productService.load(productBean);
+			Product loadedProduct = productBean.getProduct();
+			
+			//images configurations
+			if (this.getImageFileName() != null && (!this.getImageFileName().equals(""))){
+				loadedProduct.setImage(this.getImageFileName());
+			}
+			if (this.getThumb1FileName() != null && (!this.getThumb1FileName().equals(""))){
+				loadedProduct.setThumb1(this.getThumb1FileName());
+			}
+			if (this.getThumb2FileName() != null && (!this.getThumb2FileName().equals(""))){
+				loadedProduct.setThumb2(this.getThumb2FileName());
+			}
+			if (this.getThumb3FileName() != null && (!this.getThumb3FileName().equals(""))){
+				loadedProduct.setThumb3(this.getThumb3FileName());
+			}
+			if (this.getThumb4FileName() != null && (!this.getThumb4FileName().equals(""))){
+				loadedProduct.setThumb4(this.getThumb4FileName());
+			}
+			
+			//configure and upadate
+			productBean.setProduct(loadedProduct);
+			
+			//upload files
+			uploadProductsFiles(this.servletRequest);
+			
+			//update product
+			this.productService.update(productBean);
+			
+			this.addActionMessage(getText("success.detail.image"));
+			
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("error.detail.image"));
+			return ERROR;
+		}		
+	}
+	
+	
+	/**
+	 * Show Images products
+	 * @return String
+	 * @throws Exception
+	 */
+	public String showImages() throws Exception {
+		
+		try{
+			
+			ProductBean productBean = new ProductBean();
+			productBean.setId(this.getProduct().getId());
+			productBean = this.productService.load(productBean);
+
+			this.setProduct(productBean.getProduct());
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("error.detail.image"));
 			return ERROR;
 		}		
 	}
@@ -457,22 +531,47 @@ public class ProductCMSAction
 		
 		try{
 			
-			ProductBean ProductBean = new ProductBean();
-			ProductBean.setProduct(this.product);
+			ProductBean productBean = new ProductBean();
+			productBean.setId(this.product.getId());
+			productBean = this.productService.load(productBean);			
+			
+			Product loadedProduct = productBean.getProduct();
 
 			//images configurations
-			this.product.setImage(this.getImageFileName());
-			this.product.setThumb1(this.getThumb1FileName());
-			this.product.setThumb2(this.getThumb2FileName());
-			this.product.setThumb3(this.getThumb3FileName());
-			this.product.setThumb4(this.getThumb4FileName());
+			if (this.getImageFileName() != null && (!this.getImageFileName().equals(""))){
+				this.product.setImage(this.getImageFileName());
+			}else{
+				this.product.setImage(loadedProduct.getImage());
+			}
+			if (this.getThumb1FileName() != null && (!this.getThumb1FileName().equals(""))){
+				this.product.setThumb1(this.getThumb1FileName());
+			}else{
+				this.product.setThumb1(loadedProduct.getThumb1());
+			}
+			if (this.getThumb2FileName() != null && (!this.getThumb2FileName().equals(""))){
+				this.product.setThumb2(this.getThumb2FileName());
+			}else{
+				this.product.setThumb2(loadedProduct.getThumb2());
+			}
+			if (this.getThumb3FileName() != null && (!this.getThumb3FileName().equals(""))){
+				this.product.setThumb3(this.getThumb3FileName());
+			}else{
+				this.product.setThumb3(loadedProduct.getThumb3());
+			}
+			if (this.getThumb4FileName() != null && (!this.getThumb4FileName().equals(""))){
+				this.product.setThumb4(this.getThumb4FileName());
+			}else{
+				this.product.setThumb4(loadedProduct.getThumb4());
+			}
 			
-			this.productService.update(ProductBean);
+			productBean.setProduct(this.product);
+
+			this.productService.update(productBean);
 			
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.addActionError(getText("error.detail.spot"));
+			this.addActionError(getText("error.detail.product"));
 			return ERROR;
 		}		
 	}

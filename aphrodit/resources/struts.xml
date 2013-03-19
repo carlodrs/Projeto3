@@ -55,6 +55,23 @@
 		</action>
 		
 		<!-- Product -->
+		
+		<action name="UpdateProductImagesCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="updateImages">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">updateImages</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.product.image.detail</result>
+	        <result name="error" type="tiles">template.cms.product.image.detail</result>
+		</action>
+		
+		<action name="ProductImageCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="showImages">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">showImages</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.product.image.detail</result>
+	        <result name="error" type="tiles">template.cms.product.image.detail</result>
+		</action>
+		
 		<action name="ProductInitCMSAction" class="br.com.store.cms.product.action.ProductCMSAction">	
 			<result name="input" type="tiles">template.cms.product.message</result>
 		</action>

@@ -87,6 +87,10 @@
 		<put-attribute name="content"  value="/cms/pages/product/listProducts.jsp" />
 	</definition>
 	
+	<definition name="template.cms.product.image.detail" extends="popup.list">
+		<put-attribute name="content"  value="/cms/pages/product/detailImages.jsp" />
+	</definition>
+	
 	<!-- Login CMS -->
   	<definition name="template.cms.login" extends="cms.template">
   		<put-attribute name="menu" value="" />

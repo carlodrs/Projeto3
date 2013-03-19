@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,6 +21,9 @@ import com.ssj.service.product.interfaces.CategoryService;
  * */
 public class CategoryDataBean {
 
+	private static Logger logger = 
+		Logger.getLogger(CategoryDataBean.class.getName());
+	
 	private Map<Category, List<Category>> mapCategories;
 	
 	private Category category;
@@ -101,6 +106,9 @@ public class CategoryDataBean {
 	 */
 	public List<CategoryDataBean> getStructure(){
 		
+		logger.log(Level.INFO, 
+				"** Lets get structure of the categories **");
+		
 		ArrayList<CategoryDataBean> categoryDataBeans = new  ArrayList<CategoryDataBean>();
 		
 		for (Map.Entry<Category, List<Category>> entry : getMapCategories().entrySet())	{
@@ -116,7 +124,14 @@ public class CategoryDataBean {
 		//order the category
 		Collections.sort(categoryDataBeans, new Comparator<CategoryDataBean>() {
 			public int compare(CategoryDataBean o1, CategoryDataBean o2) {
-	            return o1.getCategory().getShowSequence() - o2.getCategory().getShowSequence();
+				try {
+					return o1.getCategory().getShowSequence() - o2.getCategory().getShowSequence();
+				} catch (Exception e) {
+					logger.log(Level.WARNING, 
+							"Error on sort collection structured category, " +
+							"someone [show sequence] not configured", e);
+					return 999;
+				}
 	        }
 	    });
 		

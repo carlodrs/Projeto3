@@ -55,19 +55,17 @@
 			<param name="trim">true</param>
 			<message key="errors.required" />
 		</field-validator>
-        <field-validator type="regex" short-circuit="true">
-		    <param name="expression"><![CDATA[^[0-9]+$]]></param>
-		    <message key="errors.number" />
-		 </field-validator>
+          <field-validator type="long">
+             <message key="errors.number" />
+        </field-validator>
     </field>
 	<field name="product.offerPrice">
 		<field-validator type="required">
 			<param name="trim">true</param>
 			<message key="errors.required" />
 		</field-validator>
-		<field-validator type="regex" short-circuit="true">
-		    <param name="expression"><![CDATA[^[0-9]+$]]></param>
-		    <message key="errors.number" />
-		 </field-validator>
+        <field-validator type="long">
+             <message key="errors.number" />
+        </field-validator>
     </field>
 </validators>

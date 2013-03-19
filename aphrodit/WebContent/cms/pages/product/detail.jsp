@@ -10,20 +10,15 @@
 		<s:form name="UpdateProductCMSAction" action="UpdateProductCMSAction" method="post" enctype="multipart/form-data" validate="true">  
 	
 			<img src="/images/${product.image}" width="80px" height="80px"/>
-			<s:file name="image" key="product.image" value="%{product.image}" />
-			
 			<img src="/images/${product.thumb1}" width="80px" height="80px"/>
-			<s:file name="thumb1" key="product.thumb1" value="%{product.thumb1}"/>
-			
 			<img src="/images/${product.thumb2}" width="80px" height="80px"/>
-			<s:file name="thumb2" key="product.thumb2" value="%{product.thumb2}"/>
-			
 			<img src="/images/${product.thumb3}" width="80px" height="80px"/>
-			<s:file name="thumb3" key="product.thumb3" value="%{product.thumb3}" />
-			
 			<img src="/images/${product.thumb4}" width="80px" height="80px"/>
-			<s:file name="thumb4" key="product.thumb4" value="%{product.thumb4}" />
 			
+			<a href="#" onclick="javascript:window.open('ProductImageCMSAction?product.id=${product.id}','_blank','directories=no, status=no,width=500, height=500,top=0,left=0');">
+				clique aqui
+			</a>
+		
 			<s:textfield name="product.name" key="product.name" />
 			<s:textfield name="product.shortName" key="product.shortName" required="true"/>
 			<s:textarea name="product.description" key="product.description"  required="true"/>
