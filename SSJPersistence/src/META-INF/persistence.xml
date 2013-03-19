@@ -22,6 +22,7 @@
 		<class>com.ssj.persistence.order.entity.OrderItem</class>
 		<class>com.ssj.persistence.spot.entity.Spot</class>
 		<class>com.ssj.persistence.spot.entity.ContentSpot</class>
+		<class>com.ssj.persistence.spot.entity.BannerSlider</class>
 	</persistence-unit>
  
 </persistence>

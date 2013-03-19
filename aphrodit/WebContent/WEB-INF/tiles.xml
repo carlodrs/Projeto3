@@ -176,7 +176,29 @@
   		<put-attribute name="content"  value="/cms/pages/contentspot/detail.jsp" />
 	</definition>
 	
+	<!-- banner slider -->
 	
+	<definition name="template.cms.banner.slider.create" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/bannerslider/create.jsp" />
+	</definition>
+	
+	<definition name="template.cms.banner.slider.message" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/bannerslider/message.jsp" />
+	</definition>
+	
+	<definition name="template.cms.banner.slider.list" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/bannerslider/listAll.jsp" />
+	</definition>
+	
+	<definition name="template.cms.banner.slider.detail" extends="cms.template">
+  		<put-attribute name="content"  value="/cms/pages/bannerslider/detail.jsp" />
+	</definition>
+	
+	<definition name="template.cms.banner.image.detail" extends="popup.list">
+		<put-attribute name="content"  value="/cms/pages/bannerslider/detailImage.jsp" />
+	</definition>
+	
+	<!-- ends banner slider -->
 	
 	<!--  ====================================NOT DISCOMMENT =================================================== -->
   	<!-- NOT USED TEMPLATES PAGES MY ACCOUNT 

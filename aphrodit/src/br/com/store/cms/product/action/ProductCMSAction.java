@@ -1,17 +1,11 @@
 package br.com.store.cms.product.action;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Enumeration;
 import java.util.List;
-import java.util.logging.Logger;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.struts2.dispatcher.multipart.MultiPartRequestWrapper;
-import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import br.com.store.site.upload.action.BaseUploadActionSupport;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.persistence.product.entity.Category;
@@ -31,7 +25,7 @@ import com.ssj.service.product.interfaces.ProductService;
  * */
            
 public class ProductCMSAction 
-	extends ActionSupport implements ServletRequestAware {
+	extends BaseUploadActionSupport {
 
 	private Product product;
 	private List<Product> products;
@@ -64,12 +58,6 @@ public class ProductCMSAction
 	@Autowired
 	protected CategoryService categoryService;
 	
-	private HttpServletRequest servletRequest;
-	 
-	 //Logger
-	 private static Logger logger = 
-		 Logger.getLogger(ProductCMSAction.class.getName());
-	 
 	 
 	/**
 	 * @return the product
@@ -389,7 +377,7 @@ public class ProductCMSAction
 		productBean.setProduct(product);
 		try {
 			//upload files
-			uploadProductsFiles(this.servletRequest);
+			uploadImageFiles(this.getServletRequest());
 			
 			//create
 			productService.create(productBean);
@@ -482,7 +470,7 @@ public class ProductCMSAction
 			productBean.setProduct(loadedProduct);
 			
 			//upload files
-			uploadProductsFiles(this.servletRequest);
+			uploadImageFiles(this.getServletRequest());
 			
 			//update product
 			this.productService.update(productBean);
@@ -576,51 +564,6 @@ public class ProductCMSAction
 		}		
 	}
 	
-	/**
-	 * Method to upload products files send by multipart request form
-	 * @param httpServletRequest
-	 * @throws IOException
-	 * @see MultiPartRequestWrapper, HttpServletRequest
-	 **/
-	private void uploadProductsFiles(HttpServletRequest httpServletRequest) throws IOException {
-		//handle multipart request files to upload
-		if (httpServletRequest instanceof MultiPartRequestWrapper) {
-		    MultiPartRequestWrapper multiWrapper =
-		        (MultiPartRequestWrapper) httpServletRequest;
-		    if (multiWrapper != null) {
 
-		    	@SuppressWarnings("rawtypes")
-				Enumeration fileParameterNames = multiWrapper.getFileParameterNames();              
-		        //String fileName = multiWrapper.getFileNames("upload")[0];
-		        while(fileParameterNames.hasMoreElements()){
-		            String inputValue = (String) fileParameterNames.nextElement();
-		            String[] localFileNames = multiWrapper.getFileNames(inputValue);
-		            for (String fn : localFileNames) {
-		            	logger.info("Local Filename to Upload = " + fn);                   
-		            }
-		            File[] files = multiWrapper.getFiles(inputValue);
-		           
-		            for (File cf : files) {
-		                File destFile = new File(cf.getParentFile().getAbsolutePath()+"\\"+localFileNames[0]);
-		                try {
-							FileUtils.copyFile(cf, destFile);
-						} catch (IOException e) {
-							logger.info("Error on upload files ##" 
-									+ localFileNames[0] +  "##"+ e.getMessage());
-							e.printStackTrace();
-							throw e;
-						}
-		                FileUtils.deleteQuietly(cf);
 
-		            }               
-		        }
-		    }
-		}
-	}
-
-	@Override
-	public void setServletRequest(HttpServletRequest httpServletRequest) {
-		this.servletRequest = httpServletRequest;
-		
-	}
 }

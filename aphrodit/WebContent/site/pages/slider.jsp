@@ -1,10 +1,15 @@
+<%@taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<s:bean name="br.com.store.site.databean.BannerSliderDataBean" var="bannerBean"/>
+
 <!-- Slider -->
 <div id="slider-block">
 	<div id="slider-holder">
 		<div id="slider">
-			<a href="http://www.luiszuno.com"><img src="images/02.png" title="Encontre sapatos e acessórios diferenciados." alt="" /></a>
-			<a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz"><img src="images/03.png" title="Agende uma visita ao nosso Show Room em São João da Boa Vista e São José do Rio Pardo." alt="" /></a>
-			<a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz"><img src="images/04.png" title="Scarpins elegantes e diversas opções." alt="" /></a>
+			<c:forEach items="${bannerBean.banners}" var="banner">
+				<a href="${banner.link}"><img src="${banner.image}" title="${banner.title}" alt="" /></a>
+			</c:forEach>
 		</div>
 	</div>
 </div>

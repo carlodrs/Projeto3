@@ -324,8 +324,51 @@
 			<result name="error" type="tiles">template.cms.product.popup.list</result>
 		</action>
 		
+		<!--  Banner silder -->
+		<action name="BannerSliderInitCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="input"> 	
+			<result name="input" type="tiles">template.cms.banner.slider.message</result>
+		</action>
+		
+		<action name="BannerSliderCreateCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="create"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.message</result>
+			<result name="error" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="PrepareBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="prepare"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="DetailBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="detail"> 	
+			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="DeleteBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="delete"> 	
+			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="UpdateBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="update"> 	
+			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="ListBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="listAll"> 	
+			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="BannerSliderImageCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="listAll"> 	
+			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+			
+		<action name="UpdateBannerImagesCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="updateImage">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">updateImages</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.banner.image.detail</result>
+	        <result name="error" type="tiles">template.cms.banner.image.detail</result>
+		</action>
 		
 		
+		<!--  ends banner slider -->
 	</package>
     <!-- Add packages here -->
 

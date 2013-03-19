@@ -17,7 +17,6 @@ import org.springframework.stereotype.Repository;
 import com.ssj.persistence.generic.dao.impl.SSJGenericDaoImpl;
 import com.ssj.persistence.product.dao.AttributeDao;
 import com.ssj.persistence.product.entity.Attribute;
-import com.ssj.persistence.product.entity.Product;
 
 /**
  * 

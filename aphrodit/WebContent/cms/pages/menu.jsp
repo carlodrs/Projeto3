@@ -75,7 +75,7 @@
 						</li>
 						
 						<li>
-							<a href="ForumAction">Tópicos de forum</a>
+							<a href="BannerSliderInitCMSAction">Banner's slider</a>
 						</li>
 					</ul>		
 				</li>
