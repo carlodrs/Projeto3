@@ -8,7 +8,7 @@
 	<div id="slider-holder">
 		<div id="slider">
 			<c:forEach items="${bannerBean.banners}" var="banner">
-				<a href="${banner.link}"><img src="${banner.image}" title="${banner.title}" alt="" /></a>
+				<a href="${banner.link}"><img src="/images/${banner.image}" title="${banner.title}" alt="" /></a>
 			</c:forEach>
 		</div>
 	</div>

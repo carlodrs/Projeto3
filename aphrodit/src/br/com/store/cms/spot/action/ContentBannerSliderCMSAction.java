@@ -31,7 +31,7 @@ public class ContentBannerSliderCMSAction extends BaseUploadActionSupport {
 	 */
 	private static final long serialVersionUID = 1L;
 	private BannerSlider banner;
-	private BannerSlider banners;
+	private List<BannerSlider> banners;
 	private List<Category> categories; 
 	
 	
@@ -123,26 +123,26 @@ public class ContentBannerSliderCMSAction extends BaseUploadActionSupport {
 	/**
 	 * @return the banners
 	 */
-	public BannerSlider getBanners() {
+	public List<BannerSlider> getBanners() {
 		return banners;
 	}
 
 	/**
 	 * @param banners the banners to set
 	 */
-	public void setBanners(BannerSlider banners) {
+	public void setBanners(List<BannerSlider> banners) {
 		this.banners = banners;
 	}
 	
 	/**
 	 * List all banner registered
-	 * @return 
-	 * @return List
+	 * @return String
 	 * @throws Exception
 	 */
-	public List<BannerSlider> listAll() throws Exception{
-		return this.bannerService.listAll();
+	public String listAll() throws Exception{
 		
+		this.setBanners(this.bannerService.listAll());
+		return SUCCESS;
 	}
 	
 	/**
@@ -174,9 +174,12 @@ public class ContentBannerSliderCMSAction extends BaseUploadActionSupport {
 		BannerSliderBean bean = new BannerSliderBean();
 		bean.setBannerSlider(this.banner);
 		try {
+			this.uploadImageFiles(this.getServletRequest());
 			this.bannerService.create(bean);
+			this.addActionMessage(getText("banner.create.success"));
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Fail to create the banner", e);
+			this.addActionMessage(getText("banner.create.fail"));
 			return ERROR;
 		}
 		return SUCCESS;
@@ -191,11 +194,37 @@ public class ContentBannerSliderCMSAction extends BaseUploadActionSupport {
 	 */
 	public String update() {
 		BannerSliderBean bean = new BannerSliderBean();
-		bean.setBannerSlider(this.banner);
+		bean.setId(this.banner.getId());
 		try {
+			/* load banner */
+			bean = this.bannerService.load(bean);			
+			BannerSlider loadedBanner = bean.getBannerSlider();
+	
+			/* banner images configurations */
+			if (this.getImageFileName() != null && (!this.getImageFileName().equals(""))){
+				this.banner.setImage(this.getImageFileName());
+			}else{
+				this.banner.setImage(loadedBanner.getImage());
+			}
+		
+			/* set banner to bean */
+			bean.setBannerSlider(this.banner);
+		
+			/* update */
 			this.bannerService.update(bean);
+			
+			/* operation success */
+			this.addActionMessage(this.getText("banner.detail.success"));
+			
 		} catch (Exception e) {
+			
+			/* log */
 			logger.log(Level.SEVERE, "Fail to update the banner", e);
+			
+			/* apply message error */
+			this.addActionError(this.getText("banner.detail.fail"));
+		
+			/* return the error string identifier */
 			return ERROR;
 		}
 		return SUCCESS;
@@ -235,24 +264,73 @@ public class ContentBannerSliderCMSAction extends BaseUploadActionSupport {
 			bannerSliderBean = this.bannerService.load(bannerSliderBean);
 			BannerSlider bannerLoaded = bannerSliderBean.getBannerSlider();
 			
-			//images configurations
+			/* banner images configurations */
 			if (this.getImageFileName() != null && (!this.getImageFileName().equals(""))){
 				bannerLoaded.setImage(this.getImageFileName());
 			}
-			
 			//upload image
 			this.uploadImageFiles(this.getServletRequest());
 			
 			//setting and updating banner
-			bannerSliderBean.setBannerSlider(this.banner);
+			bannerSliderBean.setBannerSlider(bannerLoaded);
 			this.bannerService.update(bannerSliderBean);
+			this.addActionMessage(this.getText("banner.images.success"));
 			
 			return SUCCESS;
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error on update image banner", e);
+			
+			this.addActionError(this.getText("banner.images.fail"));
 			return ERROR;
 		}
 		
+	}
+	
+	
+	/**
+	 * Show Images banner
+	 * @return String
+	 * @throws Exception
+	 */
+	public String showImage() throws Exception {
+		
+		try{
+			
+			BannerSliderBean bannerSliderBean = new BannerSliderBean();
+			bannerSliderBean.setId(this.getBanner().getId());
+			bannerSliderBean = this.bannerService.load(bannerSliderBean);
+
+			this.setBanner(bannerSliderBean.getBannerSlider());
+			
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			this.addActionError(getText("banner.images.view.fail"));
+			return ERROR;
+		}		
+	}
+
+	/**
+	 * Prepare to show banner detail
+	 * @return String
+	 * @throws Exception
+	 */
+	public String detail() throws Exception {
+		
+		try{
+			BannerSliderBean bannerSliderBean = new BannerSliderBean();
+			bannerSliderBean.setId(this.getBanner().getId());
+			
+			bannerSliderBean = this.bannerService.load(bannerSliderBean);
+			
+			this.setBanner(bannerSliderBean.getBannerSlider());
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.addActionError(getText("banner.detail.fail"));
+			return ERROR;
+		}		
 	}
 	
 	

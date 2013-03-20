@@ -339,7 +339,8 @@
 		</action>
 		
 		<action name="DetailBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="detail"> 	
-			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+			<result name="success" type="tiles">template.cms.banner.slider.detail</result>
+			<result name="error" type="tiles">template.cms.banner.slider.detail</result>
 		</action>
 		
 		<action name="DeleteBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="delete"> 	
@@ -347,17 +348,22 @@
 		</action>
 		
 		<action name="UpdateBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="update"> 	
-			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+			<result name="success" type="tiles">template.cms.banner.slider.message</result>
+			<result name="error" type="tiles">template.cms.banner.slider.detail</result>
+		
 		</action>
 		
 		<action name="ListBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="listAll"> 	
-			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+			<result name="success" type="tiles">template.cms.banner.slider.list</result>
 		</action>
 		
-		<action name="BannerSliderImageCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="listAll"> 	
-			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+		<action name="BannerSliderImageCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="showImage"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">showImage</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.banner.image.detail</result>
+	        <result name="error" type="tiles">template.cms.banner.image.detail</result>
 		</action>
-		
 			
 		<action name="UpdateBannerImagesCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="updateImage">
 			<interceptor-ref name="defaultStack">

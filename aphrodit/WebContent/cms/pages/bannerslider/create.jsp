@@ -13,9 +13,10 @@
 			<s:textfield name="banner.link" key="banner.link" required="true"/>
 			<s:textfield name="banner.sequence" key="category.showSequence" required="true"/>
 			
+			<!-- 
 			<s:select  key="banner.category" required="true" headerKey="null" headerValue="Selecione a categoria"
 				list="categories" listKey="id" listValue="name" name="category.id" />
-		
+		 	-->
 			<s:submit key="buttonregistry" align="center"/>
 		</s:form>
 		

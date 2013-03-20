@@ -14,7 +14,7 @@
 			<s:file name="image" key="banner.image"/>
 			
 			<s:submit key="buttonupdate" />
-	
+			
 		</s:form>		
 	</body>
 </html>		
