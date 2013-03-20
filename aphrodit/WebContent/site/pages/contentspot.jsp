@@ -17,8 +17,11 @@
 						
 						<div class="excerpt">
 							<a href="/DetailProduct?id=${product.id}" class="header">${product.name}</a>
-							${product.description}
+							<span>Modelo: ${product.shortName}</span>
+							<span>Número: 38</span>
+							<span>Preço: R$ ${product.price} ou ${product.offerPrice}x sem juros no cartão</span>
 						</div>
+						<%--
 						<div class="excerpt">
 							<c:choose>
 								<c:when test="${product.offerPrice != null}">
@@ -31,7 +34,7 @@
 								</c:otherwise>
 							</c:choose>	
 						</div>
-						
+						 --%>
 						<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
 					</li>
 				</c:forEach>	

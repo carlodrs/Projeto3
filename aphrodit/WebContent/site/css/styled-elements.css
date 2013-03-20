@@ -225,7 +225,7 @@
 
 #content .link-button{
 	display: block;
-	height: 37px;
+	height: 30px;
 	width: 100px;
 	padding-left: 5px;
 	text-decoration: none;
@@ -250,7 +250,7 @@
 	display: block;
 	height: 100% ;
 	font-size: 12px;
-	line-height: 37px;
+	line-height: 30px;
 	padding-left: 9px;
 	padding-right: 15px;
 	/* background: url(../img/button.png) right -36px  no-repeat; */

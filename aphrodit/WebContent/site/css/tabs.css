@@ -108,6 +108,7 @@ ul.tabs li.current a {
 
 .panes .blocks-thumbs li .excerpt span{
 	display: block;
+	font-size: 12px;
 }
 
 #content .panes .blocks-thumbs li .header{

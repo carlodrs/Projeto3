@@ -23,7 +23,7 @@
 			<display:column property="description" title="Descrição" sortable="true"/>
 			<display:column property="shortName" title="Curto Nome" sortable="true"/>
 			<display:column property="price" title="Preço" sortable="true" />
-			<display:column property="offerPrice" title="Preço Sugerido" sortable="true" />
+			<display:column property="offerPrice" title="Qtd parcelas" sortable="true" />
 			<display:column property="category.name" title="Categoria" sortable="true" />
 		</display:table>
 			 
