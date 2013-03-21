@@ -54,6 +54,7 @@ public class AttributeDaoImpl extends
 		CriteriaQuery<Attribute> criteriaQuery = criteriaBuilder.createQuery(Attribute.class);
 		Root<Attribute> root = criteriaQuery.from(Attribute.class);
 		criteriaQuery.where(criteriaBuilder.equal(root.get("name"), name));
+		criteriaQuery.orderBy(criteriaBuilder.asc(root.get("name")));
 		
 		TypedQuery<Attribute> typedQuery = getEntityManager().createQuery(criteriaQuery);
 		

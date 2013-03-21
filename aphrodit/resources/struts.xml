@@ -55,6 +55,21 @@
 		</action>
 		
 		<!-- Product -->
+		<action name="AddAttributeProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="addAttributes">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">addAttributes</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.attribute.popup.message</result>
+			<result name="error" type="tiles">template.cms.attribute.popup.list</result>
+		</action>
+		
+		<action name="ProductAttributeListCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAllAtributes">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAllAtributes</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.attribute.popup.list</result>
+			<result name="error" type="tiles">template.cms.attribute.popup.list</result>
+		</action>
 		
 		<action name="UpdateProductImagesCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="updateImages">
 			<interceptor-ref name="defaultStack">
@@ -123,11 +138,9 @@
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">update</param>
 	        </interceptor-ref>
-	        <!-- success -->
-	        <result name="success" type="tiles">template.cms.product.message</result>
-	    	<!-- error --> 
-	    	<result name="error" type="tiles">template.cms.product.detail</result>
-	   	</action>
+	        <result name="success" type="tiles">template.cms.product.detail</result>
+	        <result name="error" type="tiles">template.cms.product.detail</result>
+       	</action>
 		
 		
 		<!-- client -->
@@ -308,7 +321,7 @@
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">addProduct</param>
 	        </interceptor-ref>
-			<result name="success" type="tiles">template.cms.product.popup.list</result>
+			<result name="success" type="tiles">template.cms.attribute.popup.message</result>
 	        <result name="error" type="tiles">template.cms.product.popup.list</result>
 		</action>
 		

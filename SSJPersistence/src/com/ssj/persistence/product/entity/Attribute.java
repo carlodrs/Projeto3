@@ -13,7 +13,7 @@ import javax.persistence.Id;
  */
 @Entity
 
-public class Attribute implements Serializable {
+public class Attribute implements Serializable, Comparable<Attribute>  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,6 +53,10 @@ public class Attribute implements Serializable {
 
 	public void setListValue(String listValue) {
 		this.listValue = listValue;
+	}
+	@Override
+	public int compareTo(Attribute attribute) {
+		return this.name.compareTo(attribute.getName());
 	}
    
 }

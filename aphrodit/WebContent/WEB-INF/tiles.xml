@@ -87,6 +87,14 @@
 		<put-attribute name="content"  value="/cms/pages/product/listProducts.jsp" />
 	</definition>
 	
+	<definition name="template.cms.attribute.popup.list" extends="popup.list">
+		<put-attribute name="content"  value="/cms/pages/product/listAttributes.jsp" />
+	</definition>
+	
+	<definition name="template.cms.attribute.popup.message" extends="popup.list">
+		<put-attribute name="content"  value="/cms/pages/product/popupMessage.jsp" />
+	</definition>
+	
 	<definition name="template.cms.product.image.detail" extends="popup.list">
 		<put-attribute name="content"  value="/cms/pages/product/detailImages.jsp" />
 	</definition>

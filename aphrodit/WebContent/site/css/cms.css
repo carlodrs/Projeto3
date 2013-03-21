@@ -75,6 +75,12 @@ ul#menucms li a:hover {
 	background: #2a2d30 url(../img/header-glow.png) top center no-repeat;
 }
 
+.bt_attr{
+	margin-top: -80px;
+	margin-left: 280px;
+	position: absolute;
+	
+}
 
 .buttons{
 	margin-top: 194px;

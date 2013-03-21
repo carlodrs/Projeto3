@@ -35,7 +35,7 @@ public class Product implements Serializable {
 	private String thumb3;
 	private String thumb4;
 	
-	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY) 
+	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER) 
 	private Set<Attribute> attributes;
 	
 	@OneToOne

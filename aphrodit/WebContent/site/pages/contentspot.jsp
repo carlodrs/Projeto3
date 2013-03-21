@@ -17,9 +17,11 @@
 						
 						<div class="excerpt">
 							<a href="/DetailProduct?id=${product.id}" class="header">${product.name}</a>
-							<span>Modelo: ${product.shortName}</span>
-							<span>Número: 38</span>
-							<span>Preço: R$ ${product.price} ou ${product.offerPrice}x sem juros no cartão</span>
+							<span>${product.shortName}</span>
+							<c:forEach items="${product.attributes}" var="attr">
+								<span>N&deg; ${attr.value}</span>
+							</c:forEach>
+							<span>R$ ${product.price} ou ${product.offerPrice}x sem juros no cartão</span>
 						</div>
 						<%--
 						<div class="excerpt">

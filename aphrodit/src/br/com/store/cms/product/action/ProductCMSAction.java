@@ -1,17 +1,25 @@
 package br.com.store.cms.product.action;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.store.site.upload.action.BaseUploadActionSupport;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.ssj.persistence.product.entity.Attribute;
 import com.ssj.persistence.product.entity.Category;
 import com.ssj.persistence.product.entity.Product;
 import com.ssj.service.product.bean.CategoryBean;
 import com.ssj.service.product.bean.ProductBean;
+import com.ssj.service.product.interfaces.AttributeService;
 import com.ssj.service.product.interfaces.CategoryService;
 import com.ssj.service.product.interfaces.ProductService;
 
@@ -27,9 +35,15 @@ import com.ssj.service.product.interfaces.ProductService;
 public class ProductCMSAction 
 	extends BaseUploadActionSupport {
 
+	
+	private static Logger logger
+	= Logger.getLogger(ProductCMSAction.class.getName());
+	
 	private Product product;
 	private List<Product> products;
-	private List<Category> categories;
+	private List<Category> categories = new ArrayList<Category>();
+	private String[] listAttributes = new String[]{};
+	
 
 	//image file
 	private File image;
@@ -58,7 +72,28 @@ public class ProductCMSAction
 	@Autowired
 	protected CategoryService categoryService;
 	
+	@Autowired
+	protected AttributeService attributeService;
+	
 	 
+	/**
+	 * @return the listAttributes
+	 */
+	public String[] getListAttributes() {
+		return listAttributes;
+	}
+
+
+
+	/**
+	 * @param listAttributes the listAttributes to set
+	 */
+	public void setListAttributes(String[] listAttributes) {
+		this.listAttributes = listAttributes;
+	}
+
+
+
 	/**
 	 * @return the product
 	 */
@@ -552,9 +587,12 @@ public class ProductCMSAction
 				this.product.setThumb4(loadedProduct.getThumb4());
 			}
 			
+			this.product.setAttributeList(retrieveAttributes());
 			productBean.setProduct(this.product);
 
 			this.productService.update(productBean);
+			
+			this.addActionMessage(this.getText("product.update.success"));
 			
 			return SUCCESS;
 		} catch (Exception e) {
@@ -564,6 +602,84 @@ public class ProductCMSAction
 		}		
 	}
 	
-
-
+	
+	/**
+	 * Method to add attributes of the products
+	 * @param 
+	 * @return String
+	 * @throws Exception 
+	 * @see AttributeService
+	 */
+	public String addAttributes() throws Exception{
+		
+		try{
+			ProductBean bean = new ProductBean();
+			bean.setId(this.getProduct().getId());
+			bean = this.productService.load(bean);
+			
+			Product productLoaded = bean.getProduct();
+			productLoaded.setAttributeList(retrieveAttributes());
+			
+			bean.setProduct(productLoaded);
+			this.productService.update(bean);
+			
+			this.addActionMessage(getText("product.attribute.success"));
+			
+		}catch (Exception e) {
+			this.addActionMessage(getText("error.related.attributes"));
+			logger.log(Level.SEVERE, "Error add attribute for the product", e);
+			this.addActionMessage(getText("error.related.attributes"));
+			return ERROR;
+		}
+		return SUCCESS;
+		
+	}
+	
+	/**
+	 * Extract attibutes from the dropdown list
+	 * @return Set
+	 */
+	private Set<Attribute> retrieveAttributes() {
+		//load products from hidden fields
+		Set<Attribute> set = new HashSet<Attribute>();
+		
+		if (this.getListAttributes() != null){
+			for(String p : this.getListAttributes()){
+				Attribute attr = new  Attribute();
+				attr.setId(Long.valueOf(p));
+				set.add(attr);
+			}
+		}
+		return set;
+	}
+	
+	
+	/**
+	 * 
+	 * List all attributes
+	 * @return String
+	 * @throws Exception 
+	 */
+	public String listAllAtributes() throws Exception{
+		
+		
+		try {
+		
+			ProductBean bean = new ProductBean();
+			bean.setId(this.product.getId());
+			bean = this.productService.load(bean);
+			this.product = bean.getProduct();
+			
+			Set<Attribute> set = 
+				new TreeSet<Attribute>(this.attributeService.listAll());
+			
+			this.product.setAttributeList(set);
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Error on list all attributes", e);
+			this.addActionMessage(getText("error.list.attributes"));
+			return ERROR;
+		}
+	
+		return SUCCESS;
+	}
 }
