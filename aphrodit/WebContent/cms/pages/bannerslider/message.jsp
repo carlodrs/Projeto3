@@ -3,7 +3,8 @@
 <div id="messageContent" class="cmscontent">
 		
 		<h3><s:actionmessage/></h3>
-		
+		<h3><s:actionerror/></h3>
+
 		<div id="messageNew">
 			<s:form name="PrepareBannerSliderCMSAction" action="PrepareBannerSliderCMSAction" method="post"> 
 				<s:submit key="buttonregistrynew" align="center"/>	

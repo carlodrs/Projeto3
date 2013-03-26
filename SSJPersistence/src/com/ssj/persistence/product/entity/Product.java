@@ -34,7 +34,21 @@ public class Product implements Serializable {
 	private String thumb2;
 	private String thumb3;
 	private String thumb4;
+	private int deactive;
 	
+	/**
+	 * @return the deactive
+	 */
+	public int getDeactive() {
+		return deactive;
+	}
+	/**
+	 * @param deactive the deactive to set
+	 */
+	public void setDeactive(int deactive) {
+		this.deactive = deactive;
+	}
+
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER) 
 	private Set<Attribute> attributes;
 	

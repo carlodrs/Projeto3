@@ -6,9 +6,9 @@
 			
 		<span><s:actionerror/></span>
 		
-		<s:form name="BannerSliderCreateCMSAction" action="BannerSliderCreateCMSAction" method="post" validate="true">  
+		<s:form name="BannerSliderCreateCMSAction" action="BannerSliderCreateCMSAction" method="post" enctype="multipart/form-data" validate="true">  
 			
-			<s:file name="banner.image" key="banner.image"/>
+			<s:file name="image" key="banner.image"/>
 			<s:textfield name="banner.title" key="banner.title" required="true"/>
 			<s:textfield name="banner.link" key="banner.link" required="true"/>
 			<s:textfield name="banner.sequence" key="category.showSequence" required="true"/>
@@ -20,7 +20,7 @@
 			<s:submit key="buttonregistry" align="center"/>
 		</s:form>
 		
-		<s:form name="ListBannerSliderRegisteredAction" action="ListBannerSliderRegisteredAction" method="post"> 
+		<s:form name="ListBannerSliderCMSAction" action="ListBannerSliderCMSAction" method="post"> 
 			<s:submit key="buttonlistall" align="center"/>	
 		</s:form>
 	

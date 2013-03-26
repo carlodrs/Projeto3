@@ -36,6 +36,7 @@ public class ProductDaoImpl extends
 		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
 		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
 		Root<Product> root = criteriaQuery.from(Product.class);
+		criteriaQuery.where(criteriaBuilder.notEqual(root.get("deactive"), 1));
 		criteriaQuery.orderBy(criteriaBuilder.asc(root.get("name")));
 		
 		TypedQuery<Product> typedQuery = getEntityManager().createQuery(criteriaQuery);

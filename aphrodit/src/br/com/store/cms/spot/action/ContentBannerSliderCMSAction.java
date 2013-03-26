@@ -172,6 +172,12 @@ public class ContentBannerSliderCMSAction extends BaseUploadActionSupport {
 	public String create() {
 		
 		BannerSliderBean bean = new BannerSliderBean();
+		
+		/* banner images configurations */
+		if (this.getImageFileName() != null && (!this.getImageFileName().equals(""))){
+			this.banner.setImage(this.getImageFileName());
+		}
+		
 		bean.setBannerSlider(this.banner);
 		try {
 			this.uploadImageFiles(this.getServletRequest());
@@ -244,8 +250,11 @@ public class ContentBannerSliderCMSAction extends BaseUploadActionSupport {
 			this.bannerService.delete(bean);
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Fail to delete the banner", e);
+			this.addActionError(getText("error.delete.banner"));
 			return ERROR;
 		}
+		
+		this.addActionMessage(getText("success.delete.banner"));
 		return SUCCESS;
 	}
 

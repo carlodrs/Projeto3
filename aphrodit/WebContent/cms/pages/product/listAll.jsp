@@ -1,9 +1,28 @@
 <%@taglib uri="/struts-tags" prefix="s" %>
 <%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 
+
+<script type="text/javascript">
+
+function deactive(id){
+	if(confirm('Deseja desativar esse produto')){
+		document.forms[0].action = 'DeactiveProductCMSAction?product.id='+id;
+		document.forms[0].submit();
+	}
+	
+}
+
+function deleteProduct(id){
+	if(confirm('Deseja excluir esse produto')){
+		document.forms[0].action = 'DeleteProductCMSAction?product.id='+id;
+		document.forms[0].submit();
+	}	
+}
+</script>
+
 <div id="listProductContent" class="cmscontent">
 	
-		<h3>Listagem de Produtos cadastrados</h3>
+		<h3><s:actionmessage/></h3>
 			
 		<s:actionerror/>
 	
@@ -25,6 +44,8 @@
 			<display:column property="price" title="Preço" sortable="true" />
 			<display:column property="offerPrice" title="Qtd parcelas" sortable="true" />
 			<display:column property="category.name" title="Categoria" sortable="true" />
+			<display:column><input type="button" value="desativar" onclick="javascript: deactive(${product.id});"></display:column>
+			<display:column><input type="button" value="excluir" onclick="javascript: deleteProduct(${product.id});"></display:column>
 		</display:table>
 			 
 		

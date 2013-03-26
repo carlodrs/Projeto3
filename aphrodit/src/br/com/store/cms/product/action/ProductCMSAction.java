@@ -35,9 +35,9 @@ import com.ssj.service.product.interfaces.ProductService;
 public class ProductCMSAction 
 	extends BaseUploadActionSupport {
 
-	
-	private static Logger logger
-	= Logger.getLogger(ProductCMSAction.class.getName());
+	//logger
+	private static Logger logger = Logger.getLogger(
+			ProductCMSAction.class.getName());
 	
 	private Product product;
 	private List<Product> products;
@@ -676,10 +676,64 @@ public class ProductCMSAction
 			this.product.setAttributeList(set);
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error on list all attributes", e);
-			this.addActionMessage(getText("error.list.attributes"));
+			this.addActionError(getText("error.list.attributes"));
 			return ERROR;
 		}
 	
 		return SUCCESS;
 	}
+	
+	/**
+	 * 
+	 * Method to delete product
+	 * @return String
+	 * @see ProductService
+	 * */
+	public String delete(){
+		
+		try{
+			ProductBean bean = new ProductBean();
+			bean.setId(this.product.getId());
+			bean = this.productService.load(bean);
+			this.productService.delete(bean);
+		}catch (Exception e) {
+			logger.log(Level.SEVERE, "Error to remove the product", e);
+			this.addActionError(getText("error.product.delete"));
+			return ERROR;
+		}
+		this.addActionMessage(getText("product.delete.success"));
+		
+		return SUCCESS;
+		
+	}
+	
+
+	/**
+	 * Deactive the product
+	 * @return String
+	 * @see Product, ProductDaoImpl
+	 */
+	public String deactive(){
+		try{
+			ProductBean bean = new ProductBean();
+			bean.setId(this.product.getId());
+			bean = this.productService.load(bean);
+			this.product = bean.getProduct();
+			this.product.setDeactive(1);
+			bean.setProduct(this.product);
+			
+			this.productService.update(bean);
+		}catch (Exception e) {
+			logger.log(Level.SEVERE, "Error to deactove the product", e);
+			this.addActionError(getText("error.product.deactive"));
+			return ERROR;
+		}
+		
+		
+		this.addActionMessage(getText("product.deactive.success"));
+		
+		return SUCCESS;
+	}
+	
 }
+

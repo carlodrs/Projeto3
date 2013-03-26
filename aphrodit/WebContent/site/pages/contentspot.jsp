@@ -1,5 +1,6 @@
 	<%@taglib uri="/struts-tags" prefix="s" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 		
 	<s:bean name="br.com.store.site.databean.SpotDataBean" var="spotBean">
   		<s:param name="name">${param.spotName}</s:param>
@@ -21,7 +22,12 @@
 							<c:forEach items="${product.attributes}" var="attr">
 								<span>N&deg; ${attr.value}</span>
 							</c:forEach>
-							<span>R$ ${product.price} ou ${product.offerPrice}x sem juros no cartão</span>
+							
+							<fmt:formatNumber value="${product.price}" type="currency" var="priceCurrency"/>
+							<fmt:formatNumber type="number" maxFractionDigits="0" value="${product.offerPrice}" var="installment" />
+							<fmt:formatNumber value="${product.price/product.offerPrice}" type="currency" var="installmentValue"/>
+			
+       						<span>${priceCurrency} ou ${installment} x de ${installmentValue} sem juros à prazo</span>
 						</div>
 						<%--
 						<div class="excerpt">

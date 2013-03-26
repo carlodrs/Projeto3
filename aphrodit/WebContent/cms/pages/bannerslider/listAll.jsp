@@ -1,6 +1,18 @@
 <%@taglib uri="/struts-tags" prefix="s" %>
 <%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 
+<script type="text/javascript">
+	
+	function deleteBanner(id){
+		if(confirm('Deseja excluir esse banner')){
+			document.forms[0].action = 'DeleteBannerSliderCMSAction?banner.id='+id;
+			document.forms[0].submit();
+		}
+	}
+
+
+</script>
+
 <div id="listProductContent" class="cmscontent">
 	
 		<h3>Listagem de banners cadastradas</h3>
@@ -23,6 +35,7 @@
 			<display:column property="sequence" title="Sequencia de apresetação" sortable="true"/>
 			<display:column property="title" title="Título" sortable="true"/>
 			<display:column property="link" title="Link" sortable="true"/>
+			<display:column><input type="button" value="excluir" onclick="javascript: deleteBanner(${banner.id});"></display:column>
 		</display:table>
 			 
 		

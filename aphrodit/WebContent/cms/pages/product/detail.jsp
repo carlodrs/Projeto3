@@ -1,4 +1,5 @@
 <%@taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div id="productContent" class="cmscontent">
 	
@@ -67,8 +68,15 @@
 			<s:textfield name="product.name" key="product.name" />
 			<s:textfield name="product.shortName" key="product.shortName" required="true"/>
 			<s:textarea name="product.description" key="product.description"  required="true"/>
-			<s:textfield name="product.price" key="product.price" required="true"/>
-			<s:textfield name="product.offerPrice" key="product.offerPrice" required="true"/>
+			
+			<fmt:formatNumber value="${product.price}" type="number" maxFractionDigits="2" var="priceCurrency"/>
+       		<s:set var="price">${priceCurrency}</s:set> 
+       		<s:textfield name="product.price" key="product.price" required="true" value="%{price}"/> 
+			
+			<fmt:formatNumber type="number" maxFractionDigits="0" value="${product.offerPrice}" var="nParc" />
+			<s:set var="installment">${nParc}</s:set> 
+			<s:textfield name="product.offerPrice" key="product.offerPrice" required="true" value="%{installment}"/>
+			
 			<s:select  key="parent.categories" required="true" list="categories" listKey="id" listValue="name"
 			 value="%{product.category.id}"  name="product.category.id" />
 			

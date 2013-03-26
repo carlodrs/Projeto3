@@ -55,6 +55,22 @@
 		</action>
 		
 		<!-- Product -->
+		<action name="DeleteProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="delete"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">delete</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.detail</result>
+		</action>
+		
+		<action name="DeactiveProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="deactive"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">deactive</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.detail</result>
+		</action>
+		
 		<action name="AddAttributeProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="addAttributes">
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">addAttributes</param>
@@ -357,7 +373,8 @@
 		</action>
 		
 		<action name="DeleteBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="delete"> 	
-			<result name="input" type="tiles">template.cms.banner.slider.create</result>
+			<result name="success" type="tiles">template.cms.banner.slider.list</result>
+			<result name="error" type="tiles">template.cms.banner.slider.detail</result>
 		</action>
 		
 		<action name="UpdateBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="update"> 	
