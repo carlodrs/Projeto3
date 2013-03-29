@@ -230,6 +230,7 @@
 	padding-left: 5px;
 	text-decoration: none;
 	color: #fff;
+	margin-top: 10px;
 	/* background: url(../img/button.png) 1px 0px  no-repeat; */
 	
 	border-radius: 33px;
@@ -255,7 +256,6 @@
 	padding-right: 15px;
 	/* background: url(../img/button.png) right -36px  no-repeat; */
 	text-shadow: 0px -1px rgba(0, 0, 0, .8);
-	margin-top: 10px;
 }	
 
 #content .link-button:hover{
