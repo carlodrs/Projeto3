@@ -73,3 +73,8 @@
 		<link rel="stylesheet" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 		<!-- ENDS Fancybox -->
+		
+		<!-- facebook -->
+		<script type="text/javascript" src="//connect.facebook.net/pt_BR/all.js#xfbml=1"></script>
+	 	<script type="text/javascript" src="//static.ak.fbcdn.net/connect.php/js/FB.Share"></script>
+ 		<!-- ends facebook -->

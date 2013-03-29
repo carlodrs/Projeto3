@@ -49,9 +49,10 @@
 						
 					</div>
 					<!-- ENDS TABS -->
-	
-	
-	
+					
+					<div id="adsBanner" >
+						<img alt="" src="images/redessociais.png">
+					</div>
 			</div>
 			<!-- ENDS content -->
 		</div>

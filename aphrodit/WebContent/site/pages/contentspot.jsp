@@ -12,8 +12,10 @@
 			<c:forEach items="${spotBean.contentSpots}" var="contentSpot">
 				<c:forEach items="${contentSpot.products}" var="product">
 					<li>
-						<a href="/DetailProduct?id=${product.id}" class="thumb" title="An image">
-							<img src="/images/${product.image}" width="282px" height="150px" alt="Post" />
+					
+					
+						<a href="/images/${product.image}" rel="prettyPhoto" class="thumb" title="Clique no icone acima para expandir">
+							<img src="/images/${product.thumb1}" width="282px" height="150px" alt="${produc.shorName}"  title="Ampliar"/>
 						</a>
 						
 						<div class="excerpt">
@@ -29,20 +31,9 @@
 			
        						<span>${priceCurrency} ou ${installment} x de ${installmentValue} sem juros à prazo</span>
 						</div>
-						<%--
-						<div class="excerpt">
-							<c:choose>
-								<c:when test="${product.offerPrice != null}">
-									<span>De: R$ ${product.price}</span>
-									<span>Por: R$ ${product.offerPrice}</span>
-								</c:when>
-								<c:otherwise>
-									<span>à vista ou cartão</span>
-									<span>Por: R$ ${product.price}</span>
-								</c:otherwise>
-							</c:choose>	
-						</div>
-						 --%>
+						
+						<fb:like href="http://www.shoppingsaojoao.com" showfaces="false" send="false"></fb:like> 
+						
 						<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
 					</li>
 				</c:forEach>	

@@ -52,6 +52,10 @@ body {
 	width: 100%;
 }
 
+#adsBanner{
+ 	position: relative; 
+ 	margin-top: -100px; 
+}
 #content{
 	min-height: 400px;
 	overflow: hidden;

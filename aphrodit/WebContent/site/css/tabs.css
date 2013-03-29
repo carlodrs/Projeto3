@@ -89,11 +89,12 @@ ul.tabs li.current a {
 .panes .blocks-thumbs{
 	overflow: hidden;
 	padding-top: 30px;
+	padding-bottom: 115px;
 }
 
 .panes .blocks-thumbs li{
 	display: block;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	float: left;
 	width: 282px;
 	margin: 0px 0px 30px 30px;
