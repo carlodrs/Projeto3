@@ -32,6 +32,7 @@ public class User implements Serializable {
 	private String docNumber;
 	private String rg;
 	private Calendar birthday;
+	private String role;
 	
 	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
 	@NotNull
@@ -191,6 +192,22 @@ public class User implements Serializable {
 	 */
 	public void setBirthday(Calendar birthday) {
 		this.birthday = birthday;
+	}
+
+
+	/**
+	 * @return the role
+	 */
+	public String getRole() {
+		return role;
+	}
+
+
+	/**
+	 * @param role the role to set
+	 */
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 }

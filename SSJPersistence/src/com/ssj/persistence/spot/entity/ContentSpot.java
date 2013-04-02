@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.Where;
+
 import com.ssj.persistence.product.entity.Product;
 
 /**
@@ -30,6 +32,7 @@ public class ContentSpot implements Serializable {
 	
 	
 	@ManyToMany(fetch = FetchType.EAGER)
+	@Where(clause="deactive <>  1")
 	private List<Product> products;
 	private String textContent;
 
