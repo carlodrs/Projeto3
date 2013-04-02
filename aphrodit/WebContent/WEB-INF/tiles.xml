@@ -27,7 +27,7 @@
   	<definition name="parent.header" template="/site/header.jsp">
   		<put-attribute name="charset" value="UTF-8" />
   		<put-attribute name="title" value="Aphrodit" />
-  	  	<put-attribute name="includes.js.css" value="/site/include/includes.jsp" />
+  	  	<put-attribute name="includes.js.css" value="/include/includes.jsp" />
   	</definition>
   	<!-- ENDS HEADER OF TEMPLATE PAGE -->
   	
