@@ -13,7 +13,8 @@
 	<constant name="struts.multipart.saveDir" value="C:/JAVA/tomcat7/webapps/images" />
 	<constant name="struts.multipart.parser"  value="jakarta"/>
 	<constant name="struts.multipart.maxSize" value="10000000"/>
-
+	
+	<!--  
     <package name="default" namespace="/" extends="struts-default">
 
         <default-action-ref name="index" />
@@ -33,9 +34,20 @@
             </result>
         </action>
     </package>
+    -->
     
     
-    <package name="site" namespace="/site" extends="struts-default">
+   	
+   	<package name="site" namespace="/site" extends="struts-default">
+   	
+   	    <result-types>
+            <result-type default="true" name="tiles" class="com.ssj.servlet.tiles.TilesResult"/>
+        </result-types>
+   	
+   	
+	</package>  
+    
+    <package name="cms" namespace="/cms" extends="struts-default">
 	
 	    <result-types>
             <result-type default="true" name="tiles" class="com.ssj.servlet.tiles.TilesResult"/>
