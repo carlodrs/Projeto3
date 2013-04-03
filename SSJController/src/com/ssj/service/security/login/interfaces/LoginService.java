@@ -14,7 +14,7 @@ import com.ssj.service.security.login.bean.LoginBean;
  * */
 
 @Transactional
-public interface LoginService{
+public interface LoginService extends Service<LoginBean>{
 
 	/**
 	 * Check the user system

@@ -1,4 +1,4 @@
-package com.ssj.action.account.user;
+package com.ssj.store.site.user.action;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

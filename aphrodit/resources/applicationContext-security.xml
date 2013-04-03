@@ -1,80 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
-  - Application context containing authentication, channel
-  - security and web URI beans.
-  -
-  - Only used by "filter" artifact.
+  - Sample namespace-based configuration
   -
   -->
 
-<b:beans xmlns="http://www.springframework.org/schema/security"
-    xmlns:b="http://www.springframework.org/schema/beans"
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-    <global-method-security pre-post-annotations="enabled">
-        <expression-handler ref="expressionHandler"/>
-    </global-method-security>
+    <debug />
 
-	<!-- 
-    <http auto-config="true">
-        <intercept-url pattern="*/site/PrepareBannerSliderCMSAction/**" access="ROLE_ADMIN"/>
+    <global-method-security pre-post-annotations="enabled" />
 
-        <form-login login-page="/login.jsp" authentication-failure-url="/login.jsp?login_error=1"/>
-        <http-basic/>
-        <logout logout-success-url="/index.jsp"/>
+    <http pattern="/static/**" security="none"/>
+    <http pattern="/loggedout.jsp" security="none"/>
+
+    <http use-expressions="true">
+        <intercept-url pattern="/cms/**" access="hasRole('supervisor')"/>
+        <!--
+             Allow all other requests. In a real application you should
+             adopt a whitelisting approach where access is not allowed by default
+          -->
+        <intercept-url pattern="/**" access="permitAll" />
+        <form-login />
+        <logout logout-success-url="/loggedout.jsp" delete-cookies="JSESSIONID"/>
         <remember-me />
-        <custom-filter ref="switchUserProcessingFilter" position="SWITCH_USER_FILTER"/>
-    </http>
-	-->
-	
-	
-	<http realm="Contacts Realm">
-        <intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/index.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/hello.htm" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/cms/*" access="ROLE_SUPERVISOR"/>
-        <intercept-url pattern="/switchuser.jsp" access="ROLE_SUPERVISOR"/>
-        <intercept-url pattern="/j_spring_security_switch_user" access="ROLE_SUPERVISOR"/>
-        <intercept-url pattern="/site/*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+<!--
+    Uncomment to enable X509 client authentication support
+        <x509 />
+-->
+        <!-- Uncomment to limit the number of sessions a user can have -->
+        <session-management invalid-session-url="/timeout.jsp">
+            <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+        </session-management>
 
-        <form-login login-page="/login.jsp" authentication-failure-url="/login.jsp?login_error=1"/>
-        <http-basic/>
-        <logout logout-success-url="/index.jsp"/>
-        <remember-me />
-        <custom-filter ref="switchUserProcessingFilter" position="SWITCH_USER_FILTER"/>
     </http>
+
+    <!--
+    Usernames/Passwords are
+        rod/koala
+        dianne/emu
+        scott/wombat
+        peter/opal
+    -->
+    <beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder"/>
 
     <authentication-manager>
         <authentication-provider>
-           <password-encoder hash="md5"/>
-           <jdbc-user-service data-source-ref="dataSource"/>
+            <password-encoder ref="encoder"/>
+            <user-service>
+                <user name="carlosrenato.s@gmail.com" password="38e121fa2255a518c899abd81e1d618729db706674cd686c87553141d2bcf03910123f5bfddf7a40" authorities="supervisor, user, teller" />
+            </user-service>
         </authentication-provider>
     </authentication-manager>
 
-    <!-- Automatically receives AuthenticationEvent messages -->
-    <b:bean id="loggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>
-
-    <!-- Filter used to switch the user context. Note: the switch and exit url must be secured
-        based on the role granted the ability to 'switch' to another user -->
-    <!-- In this example 'rod' has ROLE_SUPERVISOR that can switch to regular ROLE_USER(s) -->
-    <b:bean id="switchUserProcessingFilter" class="org.springframework.security.web.authentication.switchuser.SwitchUserFilter" autowire="byType">
-       <b:property name="targetUrl" value="/secure/index.htm"/>
-    </b:bean>
-
-    <b:bean id="expressionHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
-        <b:property name="permissionEvaluator" ref="permissionEvaluator"/>
-        <b:property name="permissionCacheOptimizer">
-            <b:bean class="org.springframework.security.acls.AclPermissionCacheOptimizer">
-                <b:constructor-arg ref="aclService"/>
-            </b:bean>
-        </b:property>
-    </b:bean>
-
-    <b:bean id="permissionEvaluator" class="org.springframework.security.acls.AclPermissionEvaluator">
-        <b:constructor-arg ref="aclService"/>
-    </b:bean>
-
-</b:beans>
+</beans:beans>

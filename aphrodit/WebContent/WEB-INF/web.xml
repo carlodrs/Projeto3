@@ -13,18 +13,6 @@
         <listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
     </listener>
 	-->
-	 
-  	<!-- Struts 2 Main Filter -->
-	<filter>
-    	<filter-name>struts2</filter-name>
-    	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
- 	</filter>
- 
- 	<!--  Mapping for the Main filter -->
- 	 <filter-mapping>
-    	<filter-name>struts2</filter-name>
-    	<url-pattern>/*</url-pattern>
-  	</filter-mapping>
  
  	<!-- Welcome File list -->
  	<welcome-file-list>
@@ -44,32 +32,58 @@
   	 	<param-name>contextConfigLocation</param-name>
   		<param-value>
   			classpath*:META-INF/applicationContext.xml
-            classpath:applicationContext-common-authorization.xml
             classpath:applicationContext-security.xml
   		</param-value>
   	</context-param>
 
 	<!-- Spring security config -->
-	
-	<filter>
-        <filter-name>localizationFilter</filter-name>
-        <filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
-    </filter>
-
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
 
     <filter-mapping>
-        <filter-name>localizationFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <filter-mapping>
       <filter-name>springSecurityFilterChain</filter-name>
       <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--
+      - Publishes events for session creation and destruction through the application
+      - context. Optional unless concurrent session control is being used.
+      -->
+    <listener>
+      <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+    </listener>
+    	
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>tutorial.root</param-value>
+    </context-param>	
+    	 
+  	<!-- Struts 2 Main Filter -->
+	<filter>
+    	<filter-name>struts2</filter-name>
+    	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+ 	</filter>
+ 
+ 	<!--  Mapping for the Main filter -->
+ 	 <filter-mapping>
+    	<filter-name>struts2</filter-name>
+    	<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+    
+    
+	<!-- 
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	 -->
 	
 	<!-- ends config -->
 

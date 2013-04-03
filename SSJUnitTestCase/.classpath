@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="/SSJWeb/WebContent/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="/SSJWeb/WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Tiles"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring-Security"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
