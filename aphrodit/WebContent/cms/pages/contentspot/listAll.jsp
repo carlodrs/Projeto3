@@ -9,7 +9,7 @@
 		
 		<display:table  export="true" id="contentSpot" name="contentSpots"
 		requestURI="ListContentSpotRegisteredAction" pagesize="20">
-			<display:column property="id" title="Id" paramId="id" sortable="true" url="/site/DetailContentSpotRegisteredAction"/>
+			<display:column property="id" title="Id" paramId="id" sortable="true" url="/cms/DetailContentSpotRegisteredAction"/>
 			<display:column property="contentName" title="Nome" sortable="true"/>
 			<display:column property="contentDescription" title="Descrição" sortable="true"/>
 		</display:table>

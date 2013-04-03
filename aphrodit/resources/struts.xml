@@ -334,13 +334,13 @@
 	        <result name="success" type="redirectAction">
 	        	<param name="actionName">DetailContentSpotRegisteredAction</param>
 	        	<param name="id">${id}</param>
-                <param name="namespace">/site</param>
+                <param name="namespace">/cms</param>
             </result>
 	    	<!-- error -->
 	     	<result name="error" type="redirectAction">
 	        	<param name="actionName">DetailContentSpotRegisteredAction</param>
                 <param name="id">${id}</param>
-                <param name="namespace">/site</param>
+                <param name="namespace">/cms</param>
             </result>
 	   	
 		</action>

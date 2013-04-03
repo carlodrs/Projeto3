@@ -32,7 +32,13 @@
        						<span>${priceCurrency} ou ${installment} x de ${installmentValue} sem juros à prazo</span>
 						</div>
 						
+						<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="verdana"></div>
+						
+						<%-- 
 						<fb:like href="http://www.shoppingsaojoao.com" showfaces="false" send="false"></fb:like> 
+						<fb:like send="true" layout="button_count" width="450" show-faces="true" />
+						
+						 --%>
 						
 						<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
 					</li>
