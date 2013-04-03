@@ -20,6 +20,8 @@
 	<div class="wrapper">
 		<a href="cms/index.jsp" class="titlelogo">${appName}</a>
 	</div>
-	<!-- ENDS wrapper-header -->					
+	<!-- ENDS wrapper-header -->	
+	
+	<a href="../j_spring_security_logout">Logout</a>			
 </div>
 <!-- ENDS HEADER -->
