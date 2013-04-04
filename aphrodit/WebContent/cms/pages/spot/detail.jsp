@@ -16,7 +16,7 @@
 			<s:textfield name="spot.spotDescription" key="spot.description" required="true"/>
 			<s:select key="content.spot.choose" required="true" list="contentSpots" value="%{contentSpot.id}" listKey="id" listValue="contentName" name="contentSpot.id" />
 		
-			<s:hidden id="id" name="id"/>
+			<s:hidden id="spot.id" name="spot.id"/>
 			<s:submit key="buttonregistry" align="center"/>
 			
 		</s:form>

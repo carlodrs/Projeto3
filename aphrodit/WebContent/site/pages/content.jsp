@@ -1,3 +1,9 @@
+<%@taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<s:bean name="br.com.store.site.databean.SpotDataBean" var="spotBean"/>
+	
 	<!-- MAIN -->
 	<div id="main">
 		<!-- wrapper-main -->
@@ -19,9 +25,9 @@
 					<!-- TABS -->
 					<!-- the tabs -->
 					<ul class="tabs">
-						<li><a href="#"><span>Ofertas</span></a></li>
-						<li><a href="#"><span>Destaques</span></a></li>
-						<li><a href="#"><span>Mais comprados</span></a></li>
+						<c:forEach items="${spotBean.spots}" var="spot">
+							<li><a href="#"><span>${spot.spotDescription}</span></a></li>
+						</c:forEach>
 					</ul>
 					
 					<!-- tab "panes" -->
@@ -29,30 +35,31 @@
 						
 						<!-- Posts -->
 						<jsp:include page="contentspot.jsp">
-							<jsp:param value="ofertas" name="spotName"/>
+							<jsp:param value="spot1" name="spotName"/>
 						</jsp:include>
 						<!-- ENDS posts -->
 							
 						<!-- Posts -->
 						<jsp:include page="contentspot.jsp">
-							<jsp:param value="destaques" name="spotName"/>
+							<jsp:param value="spot2" name="spotName"/>
 						</jsp:include>
 						<!-- ENDS posts -->
 											
 	
 						<!-- Posts -->
 						<jsp:include page="contentspot.jsp">
-							<jsp:param value="maiscomprados" name="spotName"/>
+							<jsp:param value="spot3" name="spotName"/>
 						</jsp:include>
 						<!-- ENDS posts -->
 											
 						
 					</div>
 					<!-- ENDS TABS -->
-					
+					<%--
 					<div id="adsBanner" >
 						<img alt="" src="images/redessociais.png">
 					</div>
+					 --%>
 			</div>
 			<!-- ENDS content -->
 		</div>

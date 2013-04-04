@@ -15,7 +15,7 @@
 					
 					
 						<a href="/images/${product.image}" rel="prettyPhoto" class="thumb" title="Clique no icone acima para expandir">
-							<img src="/images/${product.thumb1}" width="282px" height="150px" alt="${produc.shorName}"  title="Ampliar"/>
+							<img src="/images/${product.thumb1}" width="282px" height="200px" alt="${produc.shorName}"  title="Ampliar"/>
 						</a>
 						
 						<div class="excerpt">
@@ -32,9 +32,11 @@
        						<span>${priceCurrency} ou ${installment} x de ${installmentValue} sem juros à prazo</span>
 						</div>
 						
-						<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="verdana"></div>
+						<div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="verdana"></div>
 						
 						<%-- 
+						<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="verdana"></div>
+						
 						<fb:like href="http://www.shoppingsaojoao.com" showfaces="false" send="false"></fb:like> 
 						<fb:like send="true" layout="button_count" width="450" show-faces="true" />
 						

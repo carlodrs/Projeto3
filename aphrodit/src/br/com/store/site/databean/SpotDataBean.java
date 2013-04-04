@@ -1,5 +1,6 @@
 package br.com.store.site.databean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,26 @@ public class SpotDataBean {
 
 	public SpotDataBean(){
 	}
-	
 	private String name;
 	private List<ContentSpot> contentSpots;
 	
 	@Autowired
 	private SpotService service;
 
+	/**
+	 * Return the spots
+	 * @return {@link List}
+	 * */
+	public List<Spot>getSpots(){
+		List<Spot> spots = new ArrayList<Spot>();
+		try {
+			spots = this.service.listAll();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return spots;
+	}
 	
 	
 	/**

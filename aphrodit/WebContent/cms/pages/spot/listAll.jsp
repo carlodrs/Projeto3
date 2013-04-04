@@ -9,7 +9,7 @@
 		
 		<display:table  export="true" id="spot" name="spots"
 		requestURI="br.com.store.cms.spot.action.SpotCMSAction" pagesize="20">
-			<display:column property="id" title="Id" sortable="true" paramId="spot.id" url="/site/DetailSpotRegisteredAction"/>
+			<display:column property="id" title="Id" sortable="true" paramId="spot.id" url="/cms/DetailSpotRegisteredAction"/>
 			<display:column property="spotName" title="Nome" sortable="true"/>
 			<display:column property="spotDescription" title="Descrição" sortable="true"/>
 			<display:column property="active" title="Ativo" sortable="true"/>

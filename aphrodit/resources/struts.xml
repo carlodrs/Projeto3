@@ -297,6 +297,26 @@
 			<result name="input" type="tiles">template.cms.spot.message</result>
 		</action>
 		
+		<action name="UpdateSpotRegisteredAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="update">	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
+			
+			 <!-- redirect to detail -->
+	    	<!-- success -->
+	        <result name="success" type="redirectAction">
+	        	<param name="actionName">DetailSpotRegisteredAction</param>
+	        	<param name="spot.id">${spot.id}</param>
+                <param name="namespace">/cms</param>
+            </result>
+	    	<!-- error -->
+	     	<result name="error" type="redirectAction">
+	        	<param name="actionName">DetailSpotRegisteredAction</param>
+                <param name="spot.id">${spot.id}</param>
+                <param name="namespace">/cms</param>
+            </result></action>
+		
+		
 		<!-- content spots contents -->
 		<action name="ContentSpotCreateCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="create"> 	
 			<result name="error" type="tiles">template.cms.content.spot.create</result>

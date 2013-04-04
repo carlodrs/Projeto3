@@ -208,6 +208,39 @@ public class SpotCMSAction extends ActionSupport {
 	}
 	
 	/**
+	 * Update the spot data
+	 * @return String
+	 * @throws Exception
+	 */
+	public String update() throws Exception {
+		
+		SpotBean bean = new SpotBean();
+		bean.setId(this.spot.getId());
+		bean = this.spotService.load(bean);
+		
+		Spot spot = bean.getSpot();
+		spot.setSpotName(this.spot.getSpotName());
+		spot.setSpotDescription(this.spot.getSpotDescription());
+		
+		List<ContentSpot> contentSpots =  new ArrayList<ContentSpot>();
+		contentSpots.add(this.contentSpot);
+		spot.setContentSpots(contentSpots);
+		
+		bean.setSpot(spot);
+		
+		try {
+			//update spot data
+			this.spotService.update(bean);
+				
+		} catch (Exception e) {
+			this.addActionError(getText("error.update.spot"));
+			e.printStackTrace();
+			return ERROR;
+		}
+		return SUCCESS;
+	}
+	
+	/**
 	 * Prepare to create spot
 	 * @return String
 	 * @throws Exception

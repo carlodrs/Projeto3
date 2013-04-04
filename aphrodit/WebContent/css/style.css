@@ -60,10 +60,9 @@ body {
 	width: 115%;
 	min-height: 400px;
 	overflow: hidden;
-	margin-bottom: 70px;
+	margin-bottom: 40px;
 	font-size: 14px;
 	line-height: 1.5em;
-	margin-left: -40px;
 }
 
 #logo{
