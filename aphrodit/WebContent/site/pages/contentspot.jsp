@@ -14,7 +14,7 @@
 					<li>
 					
 					
-						<a href="/images/${product.image}" rel="prettyPhoto[${param.spotName}]" class="thumb" title="Clique no icone acima para expandir">
+						<a href="/images/${product.image}" rel="prettyPhoto" class="thumb" title="Clique no icone acima para expandir">
 							<img src="/images/${product.thumb1}" width="282px" height="150px" alt="${produc.shorName}"  title="Ampliar"/>
 						</a>
 						
