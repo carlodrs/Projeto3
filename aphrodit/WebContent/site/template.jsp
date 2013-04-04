@@ -1,8 +1,9 @@
 <!DOCTYPE  html>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
-<%-- HTM VERSION 5 DIV --%>
-<html>
+<!-- HTM VERSION 5 DIV -->
+<html xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
 		<!-- TEMPLATE HEADER -->
 	    	<tiles:insertAttribute name="header" />
 	    <!-- ENDS TEMPLATE HEADER -->
