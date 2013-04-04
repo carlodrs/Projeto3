@@ -2,12 +2,15 @@ package br.com.store.cms.spot.action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssj.persistence.product.entity.Product;
 import com.ssj.persistence.spot.entity.ContentSpot;
+import com.ssj.persistence.spot.entity.Spot;
 import com.ssj.service.product.interfaces.ProductService;
 import com.ssj.service.spot.bean.SpotBean;
 import com.ssj.service.spot.interfaces.ContentSpotService;
@@ -26,16 +29,16 @@ public class ContentSpotCMSAction extends ActionSupport {
 	 * Serial version
 	 */
 	private static final long serialVersionUID = 1L;
-	private String contentName;
-	private String contentDescription;
-	private String contentText;
-	private String isContentText;
-	
+	private ContentSpot contentSpot;
+	private Spot spot;
 	private List<ContentSpot> contentSpots;
-	private Long spotId;
-	private Long id;
 	private List<Product> products;
-	private String[] listProduct;
+	private String[] listProduct;	
+	
+	//logger
+	private static Logger logger = 
+		Logger.getLogger(ContentSpotCMSAction.class.getName());
+	
 	
 	@Autowired
 	private ProductService productService;
@@ -49,6 +52,38 @@ public class ContentSpotCMSAction extends ActionSupport {
 	}
 
 	
+	/**
+	 * @return the contentSpot
+	 */
+	public ContentSpot getContentSpot() {
+		return contentSpot;
+	}
+
+
+	/**
+	 * @param contentSpot the contentSpot to set
+	 */
+	public void setContentSpot(ContentSpot contentSpot) {
+		this.contentSpot = contentSpot;
+	}
+
+
+	/**
+	 * @return the spot
+	 */
+	public Spot getSpot() {
+		return spot;
+	}
+
+
+	/**
+	 * @param spot the spot to set
+	 */
+	public void setSpot(Spot spot) {
+		this.spot = spot;
+	}
+
+
 	/**
 	 * @return the spotListProduct
 	 */
@@ -80,28 +115,6 @@ public class ContentSpotCMSAction extends ActionSupport {
 	}
 
 
-
-
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-
-
-
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-
-
 	/**
 	 * @return the contentSpots
 	 */
@@ -117,87 +130,7 @@ public class ContentSpotCMSAction extends ActionSupport {
 		this.contentSpots = contentSpots;
 	}
 
-
-	/**
-	 * @return the spotId
-	 */
-	public Long getSpotId() {
-		return spotId;
-	}
-
-
-	/**
-	 * @param spotId the spotId to set
-	 */
-	public void setSpotId(Long spotId) {
-		this.spotId = spotId;
-	}
-
-	/**
-	 * @return the contentDescription
-	 */
-	public String getContentDescription() {
-		return contentDescription;
-	}
-
-
-	/**
-	 * @param contentDescription the contentDescription to set
-	 */
-	public void setContentDescription(String contentDescription) {
-		this.contentDescription = contentDescription;
-	}
-
-
-	/**
-	 * @return the contentName
-	 */
-	public String getContentName() {
-		return contentName;
-	}
-
-
-	/**
-	 * @param contentName the contentName to set
-	 */
-	public void setContentName(String contentName) {
-		this.contentName = contentName;
-	}
-
 	
-
-	/**
-	 * @return the contentText
-	 */
-	public String getContentText() {
-		return contentText;
-	}
-
-
-	/**
-	 * @param contentText the contentText to set
-	 */
-	public void setContentText(String contentText) {
-		this.contentText = contentText;
-	}
-
-
-	/**
-	 * @return the isContentText
-	 */
-	public String getIsContentText() {
-		return isContentText;
-	}
-
-
-	/**
-	 * @param isContentText the isContentText to set
-	 */
-	public void setIsContentText(String isContentText) {
-		this.isContentText = isContentText;
-	}
-
-
 	@Override
 	public String execute() throws Exception {
 		addActionMessage(getText("content.spot.select.option"));
@@ -227,16 +160,9 @@ public class ContentSpotCMSAction extends ActionSupport {
 	 * */
 	public String create() throws Exception {
 		
-		//content spot entity
-		ContentSpot contentSpot  = new ContentSpot();
-		contentSpot.setContentName(this.contentName);
-		contentSpot.setContentDescription(this.contentDescription);
-		contentSpot.setTextContent(this.contentText);
-		contentSpot.setIsContentText(this.isContentText);
-		
 		//creating bean spot to configure the content spot
 		SpotBean spotBean  = new SpotBean();
-		spotBean.setContentSpot(contentSpot);
+		spotBean.setContentSpot(this.contentSpot);
 		
 		try {
 			this.contentSpotService.create(spotBean);
@@ -269,17 +195,14 @@ public class ContentSpotCMSAction extends ActionSupport {
 		try {
 
 			SpotBean spotBean = new SpotBean();
-			spotBean.setId(this.getId());
+			spotBean.setId(this.getContentSpot().getId());
 			spotBean = this.contentSpotService.load(spotBean);
 
-			ContentSpot contentSpot = spotBean.getContentSpot();
-			
-			this.setContentName(contentSpot.getContentName());
-			this.setContentDescription(contentSpot.getContentDescription());
-			this.setProducts(contentSpot.getProducts());
+			this.setContentSpot(spotBean.getContentSpot());
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Error to presents detail content spot", e);
+			this.addActionError(getText("error.detail.contentspot"));
 			return ERROR;
 		}		
 		return SUCCESS;	
@@ -296,18 +219,18 @@ public class ContentSpotCMSAction extends ActionSupport {
 		
 		//content spot entity
 		SpotBean spotBean = new SpotBean();
-		spotBean.setId(this.id);
+		spotBean.setId(this.getContentSpot().getId());
 		spotBean = contentSpotService.load(spotBean);
 		
 		ContentSpot contentSpot = spotBean.getContentSpot();
 		
 		//configure product list attribute
-		this.extractProducts();
-		contentSpot.setProducts(this.products);
-		contentSpot.setContentName(this.contentName);
-		contentSpot.setContentDescription(this.contentDescription);
-		contentSpot.setTextContent(this.contentText);
-		contentSpot.setIsContentText(this.isContentText);
+		contentSpot.setProducts(this.extractProducts());
+		contentSpot.setContentName(this.getContentSpot().getContentName());
+		contentSpot.setContentDescription(this.getContentSpot().getContentDescription());
+		contentSpot.setTextContent(this.getContentSpot().getTextContent());
+		contentSpot.setIsContentText(this.getContentSpot().getIsContentText());
+		
 		return update(spotBean);
 	}
 
@@ -341,7 +264,7 @@ public class ContentSpotCMSAction extends ActionSupport {
 		
 		//content spot entity
 		SpotBean spotBean = new SpotBean();
-		spotBean.setId(this.id);
+		spotBean.setId(this.getContentSpot().getId());
 		spotBean = contentSpotService.load(spotBean);
 		
 		//main content spot
@@ -349,17 +272,17 @@ public class ContentSpotCMSAction extends ActionSupport {
 		this.products = content.getProducts();
 
 		//configure products list attribute
-		extractProducts();
-		content.setProducts(this.products);
+		content.setProducts(extractProducts());
 		
 		return update(spotBean);
 	}
 
 	/**
 	 * Extract products from the dropdown list
+	 * @return 
 	 * @return ArrayList
 	 */
-	private void extractProducts() {
+	private List<Product> extractProducts() {
 		//load products from hidden fields
 		if (this.getListProduct() != null){
 			for(String p : this.getListProduct()){
@@ -368,6 +291,8 @@ public class ContentSpotCMSAction extends ActionSupport {
 				this.products.add(product);
 			}
 		}
+		
+		return this.products;
 	}
 	
 	/**
@@ -383,5 +308,25 @@ public class ContentSpotCMSAction extends ActionSupport {
 			return ERROR;
 		}
 	}
-
+	
+	
+	/**
+	 * Delete the content spot regitered on the system
+	 * @return String success or error
+	 * @exception Exception
+	 */
+	public String delete() throws Exception {
+		try {
+			
+			SpotBean bean = new SpotBean();
+			bean.setContentSpot(this.getContentSpot());
+			this.contentSpotService.delete(bean);
+			this.addActionMessage(getText("delete.contentspot.success"));
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Error to delete content spot", e);
+			this.addActionError(getText("delete.contentspot.error"));
+			return ERROR;
+		}
+		return SUCCESS;	
+	}
 }

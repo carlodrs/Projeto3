@@ -2,6 +2,8 @@ package br.com.store.cms.category.action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,6 +29,8 @@ public class CategoryCMSAction extends ActionSupport {
 	private Category category;
 	private Boolean isParent;
 	private List<Category> categories;
+	private static Logger logger = 
+		Logger.getLogger(CategoryCMSAction.class.getName());
 	
 	@Autowired
 	protected CategoryService categoryService;
@@ -239,5 +243,23 @@ public class CategoryCMSAction extends ActionSupport {
 			return ERROR;
 		}		
 	}
-
+	
+	/**
+	 * Method to delete category
+	 * @return String
+	 * */
+	public String delete(){
+		try {
+			
+			CategoryBean categoryBean = new CategoryBean();
+			categoryBean.setCategory(this.getCategory());
+			this.categoryService.delete(categoryBean);
+			this.addActionMessage(getText("delete.category.success"));
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Error to delete category", e);
+			this.addActionError(getText("delete.category.error"));
+			return ERROR;
+		}
+		return SUCCESS;
+	}
 }

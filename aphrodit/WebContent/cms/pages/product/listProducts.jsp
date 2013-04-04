@@ -53,7 +53,7 @@
 					<display:column property="offerPrice" title="Preço Sugerido" sortable="true" />
 				</display:table>
 				
-					<s:hidden id="id" name="id"/>
+					<s:hidden id="contentSpot.id" name="contentSpot.id"/>
 					<input type="button" value="relacionar" onclick="javascript:sendProductsToContent();"/>
 					<input type="button" value="fechar" onclick="window.close();"/>
 				</s:form>	 

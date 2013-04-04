@@ -2,6 +2,8 @@ package br.com.store.cms.spot.action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -31,7 +33,9 @@ public class SpotCMSAction extends ActionSupport {
 	private List<ContentSpot> contentSpots;
 	private List<String> activeOptions;
 	private List<Spot> spots;
-	
+	//logger
+	private static Logger logger = 
+			Logger.getLogger(SpotCMSAction.class.getName());
 	@Autowired
 	private SpotService spotService;
 	
@@ -222,9 +226,13 @@ public class SpotCMSAction extends ActionSupport {
 		spot.setSpotName(this.spot.getSpotName());
 		spot.setSpotDescription(this.spot.getSpotDescription());
 		
-		List<ContentSpot> contentSpots =  new ArrayList<ContentSpot>();
-		contentSpots.add(this.contentSpot);
-		spot.setContentSpots(contentSpots);
+		if (this.contentSpot.getId() != null){
+			List<ContentSpot> contentSpots =  new ArrayList<ContentSpot>();
+			contentSpots.add(this.contentSpot);
+			spot.setContentSpots(contentSpots);
+		}else{
+			spot.setContentSpots(null);
+		}
 		
 		bean.setSpot(spot);
 		
@@ -246,8 +254,27 @@ public class SpotCMSAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String input() throws Exception {
-		//list all content to spot page
-		this.setContentSpots(this.contentSpotService.listAll());
+		this.addActionMessage(getText("spot.page"));
 		return INPUT;
+	}
+	
+	/**
+	 * Delete the  spot regitered on the system
+	 * @return String success or error
+	 * @exception Exception
+	 */
+	public String delete() throws Exception {
+		try {
+			
+			SpotBean bean = new SpotBean();
+			bean.setSpot(this.getSpot());
+			this.spotService.delete(bean);
+			this.addActionMessage(getText("delete.spot.success"));
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Error to delete the spot", e);
+			this.addActionError(getText("delete.spot.error"));
+			return ERROR;
+		}
+		return SUCCESS;	
 	}
 }

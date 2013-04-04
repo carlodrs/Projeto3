@@ -8,10 +8,10 @@
 		
 		<s:form name="ContentSpotCreateCMSAction" action="ContentSpotCreateCMSAction" method="post" validate="true">  
 	
-			<s:textfield name="contentName" key="spot.contentName" required="true"/>
-			<s:textfield name="contentDescription" key="spot.contentDescription" required="true"/>
-			<s:textarea name="contentText" key="spot.contentText"></s:textarea>
-			<s:checkbox name="isContentText" key="spot.is.contentText" />
+			<s:textfield name="contentSpot.contentName" key="spot.contentName" required="true"/>
+			<s:textfield name="contentSpot.contentDescription" key="spot.contentDescription" required="true"/>
+			<s:textarea name="contentSpot.textContent" key="spot.contentText"></s:textarea>
+			<s:checkbox name="contentSpot.isContentText" key="spot.is.contentText" />
 			<s:submit key="buttonregistry" align="center"/>
 			
 		</s:form>

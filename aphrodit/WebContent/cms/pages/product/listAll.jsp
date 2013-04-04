@@ -5,7 +5,7 @@
 <script type="text/javascript">
 
 function deactive(id){
-	if(confirm('Deseja desativar esse produto')){
+	if(confirm('Deseja desativar esse produto?')){
 		document.forms[0].action = 'DeactiveProductCMSAction?product.id='+id;
 		document.forms[0].submit();
 	}
@@ -13,7 +13,7 @@ function deactive(id){
 }
 
 function deleteProduct(id){
-	if(confirm('Deseja excluir esse produto')){
+	if(confirm('Deseja excluir esse produto?')){
 		document.forms[0].action = 'DeleteProductCMSAction?product.id='+id;
 		document.forms[0].submit();
 	}	

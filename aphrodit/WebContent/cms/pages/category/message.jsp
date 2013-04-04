@@ -3,6 +3,7 @@
 <div id="messageContent" class="cmscontent">
 		
 		<h3><s:actionmessage/></h3>
+		<h3><s:actionerror/></h3>
 		
 		<div id="messageNew">
 			<s:form name="PrepareCreateCategoryAction" action="PrepareCreateCategoryAction" method="post"> 
