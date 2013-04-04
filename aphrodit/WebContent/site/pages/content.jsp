@@ -12,8 +12,8 @@
 			<!-- headline -->
 			<div class="clear"></div>
 			<div id="headline">
-				<span class="main">Bem vindo ao nosso site</span>
-				<span class="sub">Aproveite todas ofertas e destaques. A Aphrodit leva-os até você!</span>
+				<span class="main">Bem vindo ao site</span>
+				<span class="sub">Experimente nossos destaques! Levamos até você sem compromisso!</span>
 				<!-- <a href="http://luiszuno.com/blog/downloads/nova-html-template" id="link" class="link-button-big"><span>Download Nova</span></a> 
 				 -->	
 			</div>
