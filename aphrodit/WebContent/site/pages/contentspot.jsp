@@ -33,7 +33,7 @@
 						</div>
 						
 						<div class="fb-like" data-send="true" data-width="450" data-show-faces="false" data-font="verdana"></div>
-						
+					
 						<%-- 
 						<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="verdana"></div>
 						

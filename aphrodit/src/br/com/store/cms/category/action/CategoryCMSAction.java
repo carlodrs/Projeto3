@@ -235,11 +235,11 @@ public class CategoryCMSAction extends ActionSupport {
 			CategoryBean categoryBean = new CategoryBean();
 			categoryBean.setCategory(category);
 			this.categoryService.update(categoryBean);
-			
+			this.addActionMessage(getText("success.update.category"));
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.addActionError(getText("error.detail.spot"));
+			this.addActionError(getText("error.update.category"));
 			return ERROR;
 		}		
 	}

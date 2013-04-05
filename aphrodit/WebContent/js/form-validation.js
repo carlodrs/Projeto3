@@ -8,32 +8,45 @@ jQuery(document).ready(function($) {
 	$("#contactForm #submit").click(function() {
 		$("#error").hide();
 		
+		
+		alert('1');
 		//required:
 		
 		//name
 		var name = $("input#name").val();
 		if(name == ""){
-			$("#error").fadeIn().text("Name required.");
+			$("#error").fadeIn().text("Nome obrigatório.");
 			$("input#name").focus();
 			return false;
 		}
 		
+
+		alert('2');
 		// email
 		var email = $("input#email").val();
 		if(email == ""){
-			$("#error").fadeIn().text("Email required");
+			$("#error").fadeIn().text("Email obrigatório.");
 			$("input#email").focus();
 			return false;
 		}
-		
-		// web
-		var web = $("input#web").val();
-		if(web == ""){
-			$("#error").fadeIn().text("Web required");
-			$("input#web").focus();
+		//birthday
+		var birthday = $("input#birthday").val();
+		if(birthday == ""){
+			$("#error").fadeIn().text("Nascimento obrigatório");
+			$("input#birthday").focus();
 			return false;
 		}
 		
+		// phone
+		var phone = $("input#phone").val();
+		if(phone == ""){
+			$("#error").fadeIn().text("Telefone obrigatório");
+			$("input#phone").focus();
+			return false;
+		}
+		
+
+		alert('3');
 		// comments
 		var comments = $("#comments").val();
 		
@@ -48,11 +61,15 @@ jQuery(document).ready(function($) {
 		// data string
 		var dataString = 'name='+ name
 						+ '&email=' + email        
-						+ '&web=' + web
+						+ '&phone=' + phone
 						+ '&comments=' + comments
 						+ '&to=' + to
 						+ '&from=' + from
-						+ '&subject=' + subject;						         
+						+ '&subject=' + subject;			
+		
+		alert(sendMailUrl);
+		alert(dataString);
+		
 		// ajax
 		$.ajax({
 			type:"POST",

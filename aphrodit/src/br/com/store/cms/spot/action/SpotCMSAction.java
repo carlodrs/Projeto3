@@ -239,7 +239,7 @@ public class SpotCMSAction extends ActionSupport {
 		try {
 			//update spot data
 			this.spotService.update(bean);
-				
+			this.addActionMessage(getText("sucess.update.spot"));	
 		} catch (Exception e) {
 			this.addActionError(getText("error.update.spot"));
 			e.printStackTrace();

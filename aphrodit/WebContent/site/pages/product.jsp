@@ -43,7 +43,7 @@
 							
 							
 							<!-- project gallery -->
-							<h2>Galeria de imagens</h2>
+							<h5>Galeria de imagens</h5>
 							<ul class="project-gallery">
 								<li><a href="/images/${product.thumb1}" rel="group${product.id}" class="fancybox"><img width="220px" height="150px" src="/images/${product.thumb1}" alt="${product.shortName}"></a></li>
 								<li><a href="/images/${product.thumb2}" rel="group${product.id}" class="fancybox"><img width="220px" height="150px" src="/images/${product.thumb2}" alt="${product.shortName}"></a></li>
@@ -52,6 +52,17 @@
 							</ul>
 							<!-- ENDS project gallery -->
 							
+							<!-- project gallery -->
+							<div class="project-gallery-others">
+								<h6>Outras opções</h6>
+								<ul class="project-gallery-others-images">
+									<li><a href="/images/${product.thumb1}" rel="group${product.id}" class="fancybox"><img width="220px" height="150px" src="/images/${product.thumb1}" alt="${product.shortName}"></a></li>
+									<li><a href="/images/${product.thumb2}" rel="group${product.id}" class="fancybox"><img width="220px" height="150px" src="/images/${product.thumb2}" alt="${product.shortName}"></a></li>
+									<li><a href="/images/${product.thumb3}" rel="group${product.id}" class="fancybox"><img width="220px" height="150px" src="/images/${product.thumb3}" alt="${product.shortName}"></a></li>
+									<li><a href="/images/${product.thumb4}" rel="group${product.id}" class="fancybox"><img width="220px" height="150px" src="/images/${product.thumb4}" alt="${product.shortName}"></a></li>
+								</ul>
+								<!-- ENDS project gallery -->
+							</div>
 							
 						</div>
 						<!-- ENDS project column (left)-->
@@ -68,6 +79,17 @@
 									<li><h6><strong>Numeração:</strong> ${nr}</h6></li>
 								</ul>
 								<!-- ENDS meta -->
+						
+							<div class="recommends">
+								<div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-action="recommend"></div>
+							</div>
+							<div class="tweet">
+								<a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt">Tweetar</a>
+							</div>
+							<div class="follow">
+								<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-lang="pt">Seguir @twitter</a>
+							</div>
+								
 						</div>
 						<div class="clear"></div>
 						<!-- ENDS project column (right) -->

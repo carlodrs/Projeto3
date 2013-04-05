@@ -23,6 +23,7 @@
 		<class>com.ssj.persistence.spot.entity.Spot</class>
 		<class>com.ssj.persistence.spot.entity.ContentSpot</class>
 		<class>com.ssj.persistence.spot.entity.BannerSlider</class>
+		<class>com.ssj.persistence.contact.entity.Contact</class>
 	</persistence-unit>
  
 </persistence>

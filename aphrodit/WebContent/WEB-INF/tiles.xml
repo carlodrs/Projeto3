@@ -10,6 +10,12 @@
 	<!-- PHISICAL PAGES HOME PAGE -->
   	<definition name="home.page" extends="template"/>
   	
+  	<!-- Phisical contact page -->
+  	<definition name="contact.page" extends="template">
+	  	<put-attribute name="slider" value=""/>
+  		<put-attribute name="content" value="/site/pages/contact.jsp" />
+  	</definition>	
+  	
   	<!-- PHISICAL DETAIL PAGE -->
   	<definition name="product.page" extends="template">
  		<put-attribute name="slider" value=""/>

@@ -13,7 +13,7 @@
 			<div class="clear"></div>
 			<div id="headline">
 				<span class="main">Bem vindo ao site</span>
-				<span class="sub">Experimente nossos destaques! Levamos até você sem compromisso!</span>
+				<h6>Modelos diferenciados para você!</h6>
 				<!-- <a href="http://luiszuno.com/blog/downloads/nova-html-template" id="link" class="link-button-big"><span>Download Nova</span></a> 
 				 -->	
 			</div>

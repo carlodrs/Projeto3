@@ -40,12 +40,20 @@
    	
    	<package name="site" namespace="/site" extends="struts-default">
    	
+   		<!--  result type tiles and ajax -->
    	    <result-types>
             <result-type default="true" name="tiles" class="com.ssj.servlet.tiles.TilesResult"/>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult" />
         </result-types>
-   	
-   	  
-		<!-- Product -->
+   			
+   		<!-- Begin Views -->
+   		<action name="contato" class="com.opensymphony.xwork2.ActionSupport" method="input">	
+			<result name="input">contact.page</result>
+		</action>
+   		
+   		<!-- Ends Views -->
+   		
+   		<!-- Product -->
 		<action name="ProductDetalheAction" class="br.com.store.site.product.action.ProductAction" method="detail">	
 			<interceptor-ref name="defaultStack">
 	          <param name="validation.excludeMethods">detail</param>
@@ -53,8 +61,11 @@
 			<result name="error">home.page</result>
 			<result name="success">product.page</result>
 		</action>
-   		
-   	
+		
+		<!-- contact -->
+   		<action name="ContactAction" class="br.com.store.site.contact.action.ContactAction" method="register">
+   			 <result name="success" type="json" />
+		</action>
 	</package>  
     
     <package name="cms" namespace="/cms" extends="struts-default">

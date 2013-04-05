@@ -15,7 +15,7 @@
 <div id="header">
 	<!-- wrapper-header -->
 	<div class="wrapper">
-		<a href="index.html" class="titlelogo">${appName}</a>
+		<a href="index.jsp" class="titlelogo">${appName}</a>
 		<!-- search -->
 		<div class="top-search">
 			<form  method="get" id="searchform" action="#">
