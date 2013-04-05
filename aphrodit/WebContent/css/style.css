@@ -309,7 +309,7 @@ h4{ font-size: 24px; }
 
 h5{ font-size: 22px; }
 
-h6{ font-size: 20px; }
+h6{ font-size: 16px; }
 
 /* COLUMNS LAYOUT----------------------------------------------------------*/
 
@@ -539,7 +539,7 @@ h6{ font-size: 20px; }
 }
 
 .project-shadow{
-	background: url(../img/shadow-project.png) no-repeat 0px 267px;
+	background: url(../img/shadow-project.png) no-repeat 0px 330px;
 }
 
 #projects-list .project .project-thumbnail{
@@ -589,7 +589,7 @@ h6{ font-size: 20px; }
 .project-column .project-thumbnail{
 	overflow: hidden;
 	width: 438px;
-	height: 267px;
+	height: 330px;
 	margin-bottom: 30px;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -603,13 +603,13 @@ h6{ font-size: 20px; }
 	color: #fff;
 	padding: 3px 10px;
 	text-decoration: none;
-	background: #363636;
+	/*background: #363636;*/
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
 
-#content .project-column .meta a:hover{ background: #000;}
+/*#content .project-column .meta a:hover{ background: #000;}*/
 
 .project-column .project-title{
 	margin-bottom: 20px;
@@ -627,7 +627,7 @@ h6{ font-size: 20px; }
 .project-column .project-gallery{
 	display: block;
 	overflow: hidden;
-	width: 468px;
+	width: 1300px;
 }
 
 .project-column .project-gallery li{

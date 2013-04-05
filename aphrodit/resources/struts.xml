@@ -44,6 +44,16 @@
             <result-type default="true" name="tiles" class="com.ssj.servlet.tiles.TilesResult"/>
         </result-types>
    	
+   	  
+		<!-- Product -->
+		<action name="ProductDetalheAction" class="br.com.store.site.product.action.ProductAction" method="detail">	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+			<result name="error">home.page</result>
+			<result name="success">product.page</result>
+		</action>
+   		
    	
 	</package>  
     

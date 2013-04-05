@@ -458,7 +458,7 @@ public class ProductCMSAction
 			ProductBean productBean = new ProductBean();
 			productBean.setId(this.product.getId());
 			productBean = this.productService.load(productBean);
-			this.setCategories(this.categoryService.listAllChilds());
+			this.setCategories(this.categoryService.listAllParents());
 			
 			this.setProduct(productBean.getProduct());
 			return SUCCESS;

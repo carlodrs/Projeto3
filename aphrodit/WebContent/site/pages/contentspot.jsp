@@ -42,7 +42,7 @@
 						
 						 --%>
 						
-						<a href="single.html" class="link-button"><span>Ver Detalhes</span></a>
+						<a href="ProductDetalheAction?product.id=${product.id}" class="link-button"><span>Ver Detalhes</span></a>
 					</li>
 				</c:forEach>	
 			</c:forEach>

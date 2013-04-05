@@ -10,6 +10,12 @@
 	<!-- PHISICAL PAGES HOME PAGE -->
   	<definition name="home.page" extends="template"/>
   	
+  	<!-- PHISICAL DETAIL PAGE -->
+  	<definition name="product.page" extends="template">
+ 		<put-attribute name="slider" value=""/>
+  		<put-attribute name="content" value="/site/pages/product.jsp" />
+	</definition>
+  	
   	<!-- FULL TEMPLATE PARTS HEADER, CONTENT AND FOOTER -->
 	<definition name="template" template="/site/template.jsp">
     	<put-attribute name="header" value="parent.header" />

@@ -78,7 +78,7 @@
 			<s:textfield name="product.offerPrice" key="product.offerPrice" required="true" value="%{installment}"/>
 			
 			<s:select  key="parent.categories" required="true" list="categories" listKey="id" listValue="name"
-			 value="%{product.category.id}"  name="product.category.id" />
+			 value="%{product.category.id}"  name="product.category.id" headerKey="" headerValue="Sem categoria" />
 			
 			<s:select multiple="true" key="product.attributes" required="true" list="product.attributes" listKey="id" listValue="name"
 			  name="listAttributes" id="listAttributes"/>
