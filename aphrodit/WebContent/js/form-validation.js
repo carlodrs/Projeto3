@@ -8,31 +8,28 @@ jQuery(document).ready(function($) {
 	$("#contactForm #submit").click(function() {
 		$("#error").hide();
 		
-		
-		alert('1');
 		//required:
 		
 		//name
 		var name = $("input#name").val();
 		if(name == ""){
-			$("#error").fadeIn().text("Nome obrigatório.");
+			$("#error").fadeIn().text("Informe seu nome.");
 			$("input#name").focus();
 			return false;
 		}
 		
 
-		alert('2');
 		// email
 		var email = $("input#email").val();
 		if(email == ""){
-			$("#error").fadeIn().text("Email obrigatório.");
+			$("#error").fadeIn().text("Informe seu email.");
 			$("input#email").focus();
 			return false;
 		}
 		//birthday
 		var birthday = $("input#birthday").val();
 		if(birthday == ""){
-			$("#error").fadeIn().text("Nascimento obrigatório");
+			$("#error").fadeIn().text("Informe a data de nascimento");
 			$("input#birthday").focus();
 			return false;
 		}
@@ -40,35 +37,33 @@ jQuery(document).ready(function($) {
 		// phone
 		var phone = $("input#phone").val();
 		if(phone == ""){
-			$("#error").fadeIn().text("Telefone obrigatório");
+			$("#error").fadeIn().text("Informe o telefone para contato");
 			$("input#phone").focus();
 			return false;
 		}
 		
+		// period
+		var period = $("input#period").val();
+		if(phone == ""){
+			$("#error").fadeIn().text("Informe o periodo para contato");
+			$("input#period").focus();
+			return false;
+		}
+		
 
-		alert('3');
 		// comments
 		var comments = $("#comments").val();
 		
-		// send mail php
+		// send mail
 		var sendMailUrl = $("#sendMailUrl").val();
 		
-		//to, from & subject
-		var to = $("#to").val();
-		var from = $("#from").val();
-		var subject = $("#subject").val();
-		
 		// data string
-		var dataString = 'name='+ name
-						+ '&email=' + email        
-						+ '&phone=' + phone
-						+ '&comments=' + comments
-						+ '&to=' + to
-						+ '&from=' + from
-						+ '&subject=' + subject;			
-		
-		alert(sendMailUrl);
-		alert(dataString);
+		var dataString = 'contact.fullName='+ name
+						+ '&contact.email=' + email        
+						+ '&contact.phone=' + phone
+						+ '&contact.period=' + period
+						+ '&contact.birthday=' + birthday 
+						+ '&contact.comments=' + comments;
 		
 		// ajax
 		$.ajax({

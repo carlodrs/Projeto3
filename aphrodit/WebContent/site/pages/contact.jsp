@@ -52,9 +52,6 @@
 									</div>
 									
 									<!-- send mail configuration -->
-									<input type="hidden" value="youremail@yourserver.com" name="to" id="to" />
-									<input type="hidden" value="youremail@yourserver.com" name="from" id="from" />
-									<input type="hidden" value="From torn wordpress online" name="subject" id="subject" />
 									<input type="hidden" value="ContactAction" name="sendMailUrl" id="sendMailUrl" />
 									<!-- ENDS send mail configuration -->
 									

@@ -54,10 +54,4 @@ public class ContactServiceImpl implements ContactService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public void register(Contact contact) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
 }

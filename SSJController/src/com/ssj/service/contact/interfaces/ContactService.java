@@ -11,10 +11,4 @@ import com.ssj.service.Service;
  * */
 public interface ContactService extends Service <Contact>{
 
-	/**
-	 * Method to register the user contact
-	 * @param contact
-	 * @throws Exception  
-	 **/
-	public void register(Contact contact) throws Exception;
 }

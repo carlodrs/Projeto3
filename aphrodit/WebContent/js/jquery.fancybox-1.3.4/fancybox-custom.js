@@ -2,11 +2,7 @@ $(".thumb")
     .attr('rel', 'prettyPhoto')
     .fancybox({
         beforeShow: function () {
-            
-        	alert('aqui');
-        	
-        	alert(this.href);
-        	 
+             
         	if (this.title) {
                 // New line
                 this.title += '<br />';
@@ -19,8 +15,7 @@ $(".thumb")
             }
         },
         afterShow: function() {
-        	alert('aqui2');
-            // Render tweet button
+        	// Render tweet button
             twttr.widgets.load();
         },
         helpers : {

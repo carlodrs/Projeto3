@@ -21,7 +21,8 @@ public class Contact implements Serializable {
 	private String birthday;
 	private String email;
 	private String phone;
-	private String comment;
+	private String comments;
+	private String period;
 	private static final long serialVersionUID = 1L;
 
 	public Contact() {
@@ -62,12 +63,24 @@ public class Contact implements Serializable {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}   
-	public String getComment() {
-		return this.comment;
+	public String getComments() {
+		return this.comments;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+	/**
+	 * @return the period
+	 */
+	public String getPeriod() {
+		return period;
+	}
+	/**
+	 * @param period the period to set
+	 */
+	public void setPeriod(String period) {
+		this.period = period;
 	}
    
 }

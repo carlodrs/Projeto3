@@ -29,6 +29,21 @@ public class ContactAction extends ActionSupport {
 	 * @throws Exception
 	 * */
 	public void register() throws Exception{
-		this.contactService.register(contact);
+		this.contactService.create(contact);
 	}
+
+	/**
+	 * @return the contact
+	 */
+	public Contact getContact() {
+		return contact;
+	}
+
+	/**
+	 * @param contact the contact to set
+	 */
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+	
 }
