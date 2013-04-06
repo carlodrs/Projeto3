@@ -70,15 +70,17 @@ jQuery(document).ready(function($) {
 			type:"POST",
 			url: sendMailUrl,
 			data: dataString,
-			success: success()
+			success: success(name)
 		});
 	});  
 		
 		
 	// on success...
-	 function success(){
-	 	$("#success").fadeIn();
-	 	$("#contactForm").fadeOut();
+	 function success(name){
+		 $.scrollTo( {top:'0px', left:'0px'}, 300 );
+		 $("#nameShow").text(name);
+		 $("#success").fadeIn();
+	 	 $("#contactForm").fadeOut();
 	 }
 	
     return false;

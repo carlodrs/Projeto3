@@ -59,7 +59,7 @@
 								</fieldset>
 								<p id="error" class="warning">Message</p>
 							</form>
-							<p id="success" class="success">Obrigado pelas informações. Entraremos em contato no período que foi preenchido no formulário.</p>
+							<p id="success" class="success">Prezado(a) <b><label id="nameShow"></label></b>. Entraremos em contato no período informado. Agradecemos as informações!<br> Isabel Cipriano.</p>
 							<!-- ENDS form -->
 						</div>
 						<!-- ENDS column -->
@@ -67,21 +67,26 @@
 						<!-- column (right)-->
 						<div class="one-column">
 							<!-- content -->
-							<p><img src="../img/dummies/map2.jpg" alt="map"></p>
-							<p><h6><u>São João da Boa Vista</u></h6>					
-							<p>www.aphrodit.com.br<br/>
-							Vitrine Virtual - Atendimento domiciliar<br/>
-							(19) 3631-7686, (19) 3056-4433, (19) 8121-9364 <br/>
-							<a href="mailto:isabel@aphrodit.com.br">isabel@aphrodit.com.br</a></p>
+							<div class="contact1">
+								<p><img src="../img/dummies/map2.jpg" alt="map"></p>
+								<p><h6><u>São João da Boa Vista</u></h6>					
+								<p>www.aphrodit.com.br<br/>
+								Vitrine Virtual - Atendimento domiciliar<br/>
+								Fixo: (19) 3631-7686, (19) 3056-4433, <br>
+								Celular: (19) 8121-9364 <br/>
+								<a href="mailto:isabel@aphrodit.com.br">isabel@aphrodit.com.br</a></p>
+							</div>
 							<!-- ENDS content -->
 							
-							<p><h6><u>São José do Rio Pardo</u></h6>				
-							<p>www.belezabrasil.net.br<br/>
-							Vitrine Virtual e Loja<br/>
-							Rua Benjamin Constant, Centro<br/>
-							(19) 8353-2475, (19) 9187-5557<br/>
-							<a href="mailto:carol@belezabrasil.net.br">carol@belezabrasil.net.br</a></p>
-							
+							<!-- content -->
+							<div class="contact2">
+								<p><h6><u>São José do Rio Pardo</u></h6>				
+								<p>www.belezabrasil.net.br<br/>
+								Loja: Rua Benjamin Constant, Centro<br/>
+								Fixo: (19) 3684-1211 <br/>
+								Celular: (19) 8353-2475, (19) 9187-5557<br/>
+								<a href="mailto:carol@belezabrasil.net.br">carol@belezabrasil.net.br</a></p>
+							</div>	
 							<!-- ENDS content -->
 						</div>
 						<!-- ENDS column -->							

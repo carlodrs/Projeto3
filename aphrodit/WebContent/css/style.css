@@ -1050,6 +1050,24 @@ h6{ font-size: 16px; }
 	margin-left: 30px;
 }
 
+
+.one-column .contact1{
+	font-size:12px;
+	width: 438px;
+	float: left;
+	margin-left: 30px;
+}
+
+
+.one-column .contact2{
+	font-size:12px;
+	width: 438px;
+	float: left;
+	margin-left: 345px;
+	margin-top: -167px;
+}
+
+
 /* FORMS ------------------------------------------------------------*/
 
 #sc-contact-form,
