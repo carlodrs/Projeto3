@@ -1,13 +1,13 @@
 <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
 		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 <validators>
-	<field name="contentName">
+	<field name="contentSpot.contentName">
 		<field-validator type="required">
 			<param name="trim">true</param>
 			<message key="errors.required" />
 		</field-validator>
 	</field>
-	<field name="contentDescription">
+	<field name="contentSpot.contentDescription">
 		<field-validator type="required">
 			<param name="trim">true</param>
 			<message key="errors.required" />

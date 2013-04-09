@@ -12,9 +12,8 @@
 	<!-- multipart form data -->
 	<constant name="struts.multipart.saveDir" value="C:/JAVA/tomcat7/webapps/images" />
 	<constant name="struts.multipart.parser"  value="jakarta"/>
-	<constant name="struts.multipart.maxSize" value="10000000"/>
-	
-	<!--  
+	<constant name="struts.multipart.maxSize" value="20000000"/>
+		<!--  
     <package name="default" namespace="/" extends="struts-default">
 
         <default-action-ref name="index" />

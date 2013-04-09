@@ -254,6 +254,7 @@ public class SpotCMSAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String input() throws Exception {
+		this.setContentSpots(this.contentSpotService.listAll());
 		this.addActionMessage(getText("spot.page"));
 		return INPUT;
 	}
