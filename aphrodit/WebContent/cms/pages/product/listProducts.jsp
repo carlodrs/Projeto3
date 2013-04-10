@@ -45,7 +45,7 @@
 							<input type="checkbox" id="listProduct" name="listProduct"  value="${product.id}"/>
 						</div>
 					</display:column>
-					<display:column title="Imagem"><img src="/images/${product.image}" width="70px" height="70px"/></display:column>
+					<display:column title="Imagem"><img src="/images/${product.thumb1}" width="70px" height="70px"/></display:column>
 					<display:column property="name" title="Nome" sortable="true"/>
 					<display:column property="description" title="Descrição" sortable="true"/>
 					<display:column property="shortName" title="Curto Nome" sortable="true"/>

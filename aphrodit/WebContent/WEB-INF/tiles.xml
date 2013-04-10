@@ -16,6 +16,12 @@
   		<put-attribute name="content" value="/site/pages/contact.jsp" />
   	</definition>	
   	
+  	<!-- Phisical category page -->
+  	<definition name="category.page" extends="template">
+	  	<put-attribute name="slider" value=""/>
+  		<put-attribute name="content" value="/site/pages/category.jsp" />
+  	</definition>	
+  	
   	<!-- PHISICAL DETAIL PAGE -->
   	<definition name="product.page" extends="template">
  		<put-attribute name="slider" value=""/>

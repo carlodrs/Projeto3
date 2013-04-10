@@ -119,4 +119,23 @@ public class CategoryDaoImpl extends SSJGenericDaoImpl<Category>
 			throw new NotFoundException("No Categories found : " + e.getMessage());
 		}
 	}
+
+
+	@Override
+	public Category findCategoryByName(Category category) throws Exception {
+		
+		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		CriteriaQuery<Category> criteriaQuery = criteriaBuilder.createQuery(Category.class);
+			
+		Root<Category> root = criteriaQuery.from(Category.class);
+		criteriaQuery.where(criteriaBuilder.equal(root.get("name"), category.getName()));
+		
+		TypedQuery<Category> typedQuery = getEntityManager().createQuery(criteriaQuery);
+		
+		try {
+			return typedQuery.getSingleResult();
+		} catch (Exception e) {
+			throw new NotFoundException("No Category found : " + e.getMessage());
+		} 
+	}
 }

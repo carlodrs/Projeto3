@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ssj.persistence.generic.dao.impl.SSJGenericDaoImpl;
 import com.ssj.persistence.product.dao.ProductDao;
+import com.ssj.persistence.product.entity.Category;
 import com.ssj.persistence.product.entity.Product;
 
 /**
@@ -49,4 +50,23 @@ public class ProductDaoImpl extends
 		}
 	}
 
+	@Override
+	public List<Product> listByCategory(Category category) throws Exception {
+
+		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
+		Root<Product> root = criteriaQuery.from(Product.class);
+		criteriaQuery.where(criteriaBuilder.equal(root.get("category"), category));
+				
+		criteriaQuery.orderBy(criteriaBuilder.asc(root.get("name")));
+		
+		TypedQuery<Product> typedQuery = getEntityManager().createQuery(criteriaQuery);
+		
+		try {
+			List<Product> productList = typedQuery.getResultList();
+			return productList;
+		} catch (Exception e) {
+			throw new NotFoundException("No product found : " + e.getMessage());
+		}
+	}
 }

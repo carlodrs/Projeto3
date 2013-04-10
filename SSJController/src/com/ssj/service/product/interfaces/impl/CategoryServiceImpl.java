@@ -106,4 +106,9 @@ public class CategoryServiceImpl implements CategoryService {
 		
 		return categories;
 	}
+
+	@Override
+	public Category findCategoryByName(Category category) throws Exception {
+		return this.categoryDao.findCategoryByName(category);
+	}
 }

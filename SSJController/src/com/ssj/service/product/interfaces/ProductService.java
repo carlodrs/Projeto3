@@ -10,6 +10,7 @@ package com.ssj.service.product.interfaces;
 
 import java.util.List;
 
+import com.ssj.persistence.product.entity.Category;
 import com.ssj.persistence.product.entity.Product;
 import com.ssj.service.Service;
 import com.ssj.service.product.bean.ProductBean;
@@ -22,4 +23,12 @@ public interface ProductService extends Service <ProductBean>{
 	 * @throws Exception;
 	 * */
 	public List<Product> listAll() throws Exception;
+
+	/**
+	 * List products by category
+	 * @param category
+	 * @return {@link List}
+	 * @throws Exception
+	 * */
+	public List<Product> listByCategory(Category category) throws Exception;
 }

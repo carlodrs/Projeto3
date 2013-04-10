@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssj.persistence.product.dao.ProductDao;
+import com.ssj.persistence.product.entity.Category;
 import com.ssj.persistence.product.entity.Product;
 import com.ssj.service.product.bean.ProductBean;
 import com.ssj.service.product.interfaces.ProductService;
@@ -73,6 +74,11 @@ public class ProductServicesImpl implements ProductService{
 	@Override
 	public List<Product> listAll() throws Exception {
 		return productDao.listAll();
+	}
+
+	@Override
+	public List<Product> listByCategory(Category category) throws Exception {
+		return productDao.listByCategory(category);
 	}
 
 }

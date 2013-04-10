@@ -65,4 +65,14 @@ public interface CategoryService extends Service<CategoryBean> {
 	 * @throws Exception
 	 * */
 	public List<Category> listAllChilds() throws Exception;
+
+
+	/**
+	 * 
+	 * Lista categoria pelo nome
+	 * @param category
+	 * @return {@link Category}
+	 * @throws Exception
+	 * */
+	public Category findCategoryByName(Category category) throws Exception;
 }

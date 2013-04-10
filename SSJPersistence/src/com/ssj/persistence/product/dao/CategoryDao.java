@@ -49,4 +49,13 @@ public interface CategoryDao extends SSJGenericDao<Category> {
 	 * @throws Exception
 	 * */
 	public List<Category> listAllChilds() throws Exception;
+
+
+	/**
+	 * Dao to lista category by name
+	 * @return Category
+	 * @return Category
+	 * @throws Exception
+	 * */
+	public Category findCategoryByName(Category category) throws Exception;
 }
