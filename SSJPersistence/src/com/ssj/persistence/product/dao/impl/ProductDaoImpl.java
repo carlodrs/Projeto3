@@ -7,6 +7,8 @@ import java.util.List;
 
 import javassist.NotFoundException;
 
+
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -50,23 +52,24 @@ public class ProductDaoImpl extends
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> listByCategory(Category category) throws Exception {
-
-		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
-		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
-		Root<Product> root = criteriaQuery.from(Product.class);
-		criteriaQuery.where(criteriaBuilder.equal(root.get("category"), category));
-				
-		criteriaQuery.orderBy(criteriaBuilder.asc(root.get("name")));
-		
-		TypedQuery<Product> typedQuery = getEntityManager().createQuery(criteriaQuery);
+		String query = "select p from Product p order by rand()";
+		Query q = getEntityManager().createQuery(query);
+		q.setMaxResults(4);
 		
 		try {
-			List<Product> productList = typedQuery.getResultList();
+			List<Product> productList = q.getResultList();
 			return productList;
 		} catch (Exception e) {
 			throw new NotFoundException("No product found : " + e.getMessage());
 		}
+	}
+
+	@Override
+	public List<Product> listTop4ByCategory(Category category) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

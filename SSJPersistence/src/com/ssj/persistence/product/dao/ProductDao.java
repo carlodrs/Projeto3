@@ -31,4 +31,12 @@ public interface ProductDao extends SSJGenericDao<Product> {
 	 * @return {@link List} 
 	 * */
 	public List<Product> listByCategory(Category category) throws Exception;
+
+	/**
+	 * List 4 recommendations product by category
+	 * @param category
+	 * @throws Exception
+	 * @return {@link List} 
+	 * */
+	public List<Product> listTop4ByCategory(Category category);
 }

@@ -31,4 +31,12 @@ public interface ProductService extends Service <ProductBean>{
 	 * @throws Exception
 	 * */
 	public List<Product> listByCategory(Category category) throws Exception;
+
+	/**
+	 * List products by category
+	 * @param category
+	 * @return {@link List}
+	 * @throws Exception
+	 * */
+	public List<Product> listTop4ByCategory(Category category);
 }

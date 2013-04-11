@@ -31,8 +31,8 @@
 						<ul id="portfolio-list" class="gallery three-cols">
 							<c:forEach items="${products}" var="product">
 								<li class="pink">
-									<a href="/images/${product.image}" rel="group1" class="fancybox" title="${product.name}">
-										<img src="/images/${product.thumb1}" width="282px" height="267px" alt="${product.name}">
+									<a href="ProductDetalheAction?product.id=${product.id}" title="${product.name}">
+										<img src="/images/${product.image}" width="332px" height="267px" alt="${product.name}">
 									</a>
 								</li>
 							</c:forEach>
