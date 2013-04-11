@@ -21,8 +21,8 @@
 						
 						<!-- filter -->
 						<ul id="portfolio-filter" class="filter">
-							<li>Produtos</li>
-							<li><a href="#" data-filter="*" > por nome </a></li>
+							<li>Classificação</li>
+							<li><a href="#" data-filter="*" > Todas as marcas </a></li>
 				    	</ul>
 						<!-- ENDS filter -->
 						

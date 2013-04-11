@@ -11,15 +11,15 @@
 						
 						<!-- title -->
 						<div id="page-title">
-							<span class="title">Fale conosco</span>
-							<span class="subtitle">Conheça locais de atuação e atendimento focados em relacionamento.</span>
+							<span class="title">Agendamento de visitas</span>
+							<span class="subtitle">Conheça nossos produtos e locais de atendimento</span>
 						</div>
 						<!-- ENDS title -->
 							
 						<!-- column (left)-->
 						<div class="one-column">
 							<!-- form -->
-							<h2>Contato</h2>
+							<h2>Formulário</h2>
 							<script type="text/javascript" src="../js/form-validation.js"></script>
 							<form id="contactForm" action="#" method="post">
 								<fieldset>
@@ -37,7 +37,7 @@
 										<input name="email"  id="email" type="text" class="form-poshytip" title="Informe seu email" />
 									</div>
 									<div>
-										<label>Telefone</label>
+										<label>DDD + Telefone</label>
 										<input name="phone"  id="phone" type="text" class="form-poshytip" title="Informe o telefone para contato" />
 									</div>
 									
