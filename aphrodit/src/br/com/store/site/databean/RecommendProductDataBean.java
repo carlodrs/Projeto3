@@ -1,6 +1,8 @@
 package br.com.store.site.databean;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,31 +19,33 @@ import com.ssj.service.product.interfaces.ProductService;
  * */
 public class RecommendProductDataBean {
 
+	
 	public RecommendProductDataBean(){
 	}
-	private Category category;
-	private List<Product> products;
 	
+	private List<Product> products;
+	private Category category;
+	private long categoryId;
+	
+	private static Logger logger = 
+		Logger.getLogger(RecommendProductDataBean.class.getName());
 	@Autowired
+	
 	private ProductService service;
 
 	/**
 	 * @return the products
 	 */
 	public List<Product> getProducts() {
-		this.setProducts(
-				this.service.listTop4ByCategory(this.category));
-		
+		this.category = new Category();
+		this.category.setId(this.categoryId);
+		try {
+			this.products = this.service.listTop4ByCategory(this.category);
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Error to list at least 4 products recommendations", e);
+		}
 		return this.products;
 	}
-
-	/**
-	 * @param products the products to set
-	 */
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
 
 	/**
 	 * @return the category
@@ -56,6 +60,27 @@ public class RecommendProductDataBean {
 	 */
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	/**
+	 * @return the categoryId
+	 */
+	public long getCategoryId() {
+		return categoryId;
+	}
+
+	/**
+	 * @param categoryId the categoryId to set
+	 */
+	public void setCategoryId(long categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	/**
+	 * @param products the products to set
+	 */
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 	

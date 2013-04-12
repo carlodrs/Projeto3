@@ -82,7 +82,7 @@ public class ProductServicesImpl implements ProductService{
 	}
 
 	@Override
-	public List<Product> listTop4ByCategory(Category category) {
+	public List<Product> listTop4ByCategory(Category category) throws Exception {
 		return productDao.listTop4ByCategory(category);
 	}
 

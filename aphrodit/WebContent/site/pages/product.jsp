@@ -6,9 +6,8 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 		
-	xxxx - 	${product.category}
 	<s:bean name="br.com.store.site.databean.RecommendProductDataBean" var="recommendDataBean">
-  		<s:param name="category">${product.category}</s:param>
+  		<s:param name="categoryId">${product.category.id}</s:param>
 	</s:bean>
 	
 
@@ -67,7 +66,7 @@
 								<h6>Outras opções</h6>
 								<ul class="project-gallery-others-images">
 									<c:forEach items="${recommendDataBean.products}" var="productRecommend">
-										<li><a href="/images/${productRecommend.thumb1}" rel="group${productRecommend.id}" class="fancybox"><img width="220px" height="150px" src="/images/${productRecommend.thumb1}" alt="${productRecommend.shortName}"></a></li>
+										<li><a href="ProductDetalheAction?product.id=${productRecommend.id}"><img width="220px" height="150px" src="/images/${productRecommend.thumb1}" alt="${productRecommend.shortName}"></a></li>
 									</c:forEach>
 								</ul>
 								<!-- ENDS project gallery -->

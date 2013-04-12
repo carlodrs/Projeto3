@@ -52,15 +52,20 @@ public class ProductDaoImpl extends
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> listByCategory(Category category) throws Exception {
-		String query = "select p from Product p order by rand()";
-		Query q = getEntityManager().createQuery(query);
-		q.setMaxResults(4);
+
+		CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
+		Root<Product> root = criteriaQuery.from(Product.class);
+		criteriaQuery.where(criteriaBuilder.equal(root.get("category"), category));
+				
+		criteriaQuery.orderBy(criteriaBuilder.asc(root.get("name")));
+		
+		TypedQuery<Product> typedQuery = getEntityManager().createQuery(criteriaQuery);
 		
 		try {
-			List<Product> productList = q.getResultList();
+			List<Product> productList = typedQuery.getResultList();
 			return productList;
 		} catch (Exception e) {
 			throw new NotFoundException("No product found : " + e.getMessage());
@@ -68,8 +73,17 @@ public class ProductDaoImpl extends
 	}
 
 	@Override
-	public List<Product> listTop4ByCategory(Category category) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> listTop4ByCategory(Category category) throws Exception{
+		String query = "select p from Product p order by rand()";
+		Query q = getEntityManager().createQuery(query);
+		q.setMaxResults(4);
+		
+		try {
+			@SuppressWarnings("unchecked")
+			List<Product> productList = q.getResultList();
+			return productList;
+		} catch (Exception e) {
+			throw new NotFoundException("No products found : " + e.getMessage());
+		}
 	}
 }
