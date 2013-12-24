@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<constant name="struts.i18n.encoding" value="LATIN1" />
+	<constant name="struts.enable.SlashesInActionNames" value="true"/>
+	
+	<!-- 
+	<constant name="struts.action.extension" value=","/>
+	<constant name="struts.enable.SlashesInActionNames" value="true"/>
+	 -->
+	 
+	<!-- multipart form data -->
+	<constant name="struts.multipart.saveDir" value="C:/JAVA/tomcat7/webapps/images" />
+	<constant name="struts.multipart.parser"  value="jakarta"/>
+	<constant name="struts.multipart.maxSize" value="20000000"/>
+		<!--  
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">Store</param>
+                <param name="namespace">/site</param>
+            </result>
+        </action>
+    </package>
+    -->
+    
+    
+   	
+   	<package name="site" namespace="/site" extends="struts-default">
+   	
+   		<!--  result type tiles and ajax -->
+   	    <result-types>
+            <result-type default="true" name="tiles" class="com.ssj.servlet.tiles.TilesResult"/>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult" />
+        </result-types>
+   			
+   		<!-- Begin Views -->
+   		<action name="contato" class="com.opensymphony.xwork2.ActionSupport" method="input">	
+			<result name="input">contact.page</result>
+		</action>
+		
+		<action name="*" class="br.com.store.site.catetory.action.CategoryAction" method="execute">	
+			<param name="category.name">{1}</param>
+			<result name="success">category.page</result>
+		</action>
+		   		
+   		<!-- Ends Views -->
+   		
+   		<!-- Product -->
+		<action name="ProductDetalheAction" class="br.com.store.site.product.action.ProductAction" method="detail">	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+			<result name="error">home.page</result>
+			<result name="success">product.page</result>
+		</action>
+		
+		<!-- contact -->
+   		<action name="ContactAction" class="br.com.store.site.contact.action.ContactAction" method="register">
+   			 <result name="success" type="json" />
+		</action>
+	</package>  
+    
+    <package name="cms" namespace="/cms" extends="struts-default">
+	
+	    <result-types>
+            <result-type default="true" name="tiles" class="com.ssj.servlet.tiles.TilesResult"/>
+        </result-types>
+        
+        <action name="images"/>
+        
+		<!-- Login -->
+		<action name="loginCMS" class="br.com.store.cms.security.action.LoginCMSAction" method="doLogin">	
+			<result name="input">template.cms.login</result>
+			<result name="error">template.cms.login</result>
+			<result name="success">cms.template</result>
+		</action>
+		
+		<action name="prepareLoginCMS" class="br.com.store.cms.security.action.LoginPreparedCMSAction" method="prepare">	
+			<result name="input">template.cms.login</result>
+		</action>
+		
+		<!-- Product -->
+		<action name="DeleteProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="delete"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">delete</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.detail</result>
+		</action>
+		
+		<action name="DeactiveProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="deactive"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">deactive</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.detail</result>
+		</action>
+		
+		<action name="AddAttributeProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="addAttributes">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">addAttributes</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.attribute.popup.message</result>
+			<result name="error" type="tiles">template.cms.attribute.popup.list</result>
+		</action>
+		
+		<action name="ProductAttributeListCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAllAtributes">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAllAtributes</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.attribute.popup.list</result>
+			<result name="error" type="tiles">template.cms.attribute.popup.list</result>
+		</action>
+		
+		<action name="UpdateProductImagesCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="updateImages">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">updateImages</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.product.image.detail</result>
+	        <result name="error" type="tiles">template.cms.product.image.detail</result>
+		</action>
+		
+		<action name="ProductImageCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="showImages">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">showImages</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.product.image.detail</result>
+	        <result name="error" type="tiles">template.cms.product.image.detail</result>
+		</action>
+		
+		<action name="ProductInitCMSAction" class="br.com.store.cms.product.action.ProductCMSAction">	
+			<result name="input" type="tiles">template.cms.product.message</result>
+		</action>
+		
+		<action name="ProductPrepareCreateCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="prepare">	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">prepare</param>
+	        </interceptor-ref>
+			<result name="input" type="tiles">template.cms.product.create</result>
+		</action>
+		
+		<action name="ProductCreateCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="create"> 	
+			<interceptor-ref name="defaultStack"/>
+		    <interceptor-ref name="fileUpload">
+		        <param name="allowedTypes">image/jpeg,image/gif,image/png,image/jpg</param>
+		    	<param name="maximumSize">10000000</param>
+		    </interceptor-ref> 
+		    <interceptor-ref name="validation"/>
+		    <interceptor-ref name="workflow"/>
+			
+			<result name="error" type="tiles">template.cms.product.create</result>
+			<result name="success" type="tiles">template.cms.product.message</result>
+			<result name="input" type="tiles">template.cms.product.create</result>
+		</action>
+		
+		
+		<action name="ProductListCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAll</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.list</result>
+		</action>
+		
+		<action name="ProductSearchCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="listAll">	
+			<result name="success" type="tiles">template.cms.product.list</result>
+			<result name="error" type="tiles">template.cms.product.list</result>
+		</action>
+		
+		<action name="DetailProductRegisteredAction" class="br.com.store.cms.product.action.ProductCMSAction" method="detail">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.product.detail</result>
+	        <result name="error" type="tiles">template.cms.product.detail</result>
+		</action>
+		
+		<action name="UpdateProductCMSAction" class="br.com.store.cms.product.action.ProductCMSAction" method="update"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.product.detail</result>
+	        <result name="error" type="tiles">template.cms.product.detail</result>
+       	</action>
+		
+		
+		<!-- client -->
+		<action name="ClientRegisteredAction" class="br.com.store.cms.user.action.ClientRegisteredAction" method="create"> 	
+			<result name="error" type="tiles">template.cms.user.create</result>
+			<result name="success" type="tiles">template.cms.user.message</result>
+			<result name="input" type="tiles">template.cms.user.create</result>
+		</action>
+		
+		
+		<action name="PrepareClientRegisteredAction" class="br.com.store.cms.user.action.PrepareClientRegisteredAction" method="prepare"> 	
+			<result name="input" type="tiles">template.cms.user.create</result>
+		</action>
+		
+		<action name="ListClientRegisteredAction" class="br.com.store.cms.user.action.PrepareClientRegisteredAction" method="listAll">	
+			<result name="success" type="tiles">template.cms.user.list</result>
+			<result name="error" type="tiles">template.cms.user.list</result>
+		</action>
+		
+		<action name="ClientInitRegisteredAction" class="br.com.store.cms.user.action.PrepareClientRegisteredAction">	
+			<result name="input" type="tiles">template.cms.user.message</result>
+		</action>
+		
+		<!-- attribute -->
+		<action name="AttributeCreateCMSAction" class="br.com.store.cms.attribute.action.AttributeCMSAction" method="create"> 	
+			<result name="error" type="tiles">template.cms.attribute.create</result>
+			<result name="success" type="tiles">template.cms.attribute.message</result>
+			<result name="input" type="tiles">template.cms.attribute.create</result>
+		</action>
+		
+		<action name="PrepareCreateAttributeAction" class="br.com.store.cms.attribute.action.AttributeCMSAction" method="prepare"> 
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">prepare</param>
+	        </interceptor-ref>	
+			<result name="input" type="tiles">template.cms.attribute.create</result>
+		</action>
+		
+		<action name="ListAttributeRegisteredAction" class="br.com.store.cms.attribute.action.AttributeCMSAction" method="listAll">	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAll</param>
+	        </interceptor-ref>
+			<result name="success" type="tiles">template.cms.attribute.list</result>
+			<result name="error" type="tiles">template.cms.attribute.list</result>
+		</action>
+		
+		<action name="AttributeInitCMSAction" class="br.com.store.cms.attribute.action.AttributeCMSAction">	
+			<result name="input" type="tiles">template.cms.attribute.message</result>
+		</action>
+
+		<!-- Category -->
+
+		
+		<action name="DeleteCategoryCMSAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="delete"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">delete</param>
+	        </interceptor-ref>
+			<result name="error" type="tiles">template.cms.category.message</result>
+			<result name="success" type="tiles">template.cms.category.message</result>
+		</action>
+		
+		
+		<action name="CategoryCreateCMSAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="create"> 	
+			<result name="error" type="tiles">template.cms.category.create</result>
+			<result name="success" type="tiles">template.cms.category.message</result>
+			<result name="input" type="tiles">template.cms.category.create</result>
+		</action>
+		
+		
+		<action name="DetailCategoryRegisteredAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="detail">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.category.detail</result>
+	        <result name="error" type="tiles">template.cms.category.detail</result>
+		</action>
+		
+		
+		<action name="UpdateCategoryCMSAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="update"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
+	        <!-- success -->
+	        <result name="success" type="tiles">template.cms.category.message</result>
+	    	<!-- error --> 
+	    	<result name="error" type="tiles">template.cms.category.detail</result>
+	   	</action>
+		
+		<action name="PrepareCreateCategoryAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="prepare"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">prepare</param>
+	        </interceptor-ref>	
+			<result name="input" type="tiles">template.cms.category.create</result>
+		</action>
+		
+		<action name="ListCategoryRegisteredAction" class="br.com.store.cms.category.action.CategoryCMSAction" method="listAll">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAll</param>
+	        </interceptor-ref>	
+			
+			<result name="success" type="tiles">template.cms.category.list</result>
+			<result name="error" type="tiles">template.cms.category.list</result>
+		</action>
+		
+		<action name="CategoryInitCMSAction" class="br.com.store.cms.category.action.CategoryCMSAction">	
+			<result name="input" type="tiles">template.cms.category.message</result>
+		</action>
+		
+		<!-- spots contents -->
+		<action name="DeleteSpotCMSAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="delete"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">delete</param>
+	        </interceptor-ref>
+			<result name="success" type="tiles">template.cms.spot.message</result>
+			<result name="error" type="tiles">template.cms.spot.message</result>
+		</action>
+		
+		<action name="DetailSpotRegisteredAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="detail">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.spot.detail</result>
+	        <result name="error" type="tiles">template.cms.spot.detail</result>
+		</action>
+		
+		<action name="SpotCreateCMSAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="create"> 	
+			<result name="error" type="tiles">template.cms.spot.create</result>
+			<result name="success" type="tiles">template.cms.spot.message</result>
+			<result name="input" type="tiles">template.cms.spot.create</result>
+		</action>
+		
+		<action name="PrepareCreateSpotAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="input"> 	
+			<result name="input" type="tiles">template.cms.spot.create</result>
+		</action>
+		
+		<action name="ListSpotRegisteredAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="listAll">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAll</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.spot.list</result>
+	        <result name="error" type="tiles">template.cms.spot.list</result>
+		</action>
+		
+		<action name="SpotInitCMSAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="input">	
+			<result name="input" type="tiles">template.cms.spot.message</result>
+		</action>
+		
+		<action name="UpdateSpotRegisteredAction" class="br.com.store.cms.spot.action.SpotCMSAction" method="update">	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
+			
+			 <!-- redirect to detail -->
+	    	<!-- success -->
+	        <result name="success" type="redirectAction">
+	        	<param name="actionName">DetailSpotRegisteredAction</param>
+	        	<param name="spot.id">${spot.id}</param>
+                <param name="namespace">/cms</param>
+            </result>
+	    	<!-- error -->
+	     	<result name="error" type="redirectAction">
+	        	<param name="actionName">DetailSpotRegisteredAction</param>
+                <param name="spot.id">${spot.id}</param>
+                <param name="namespace">/cms</param>
+            </result></action>
+		
+		
+		<!-- content spots contents -->
+		
+		<action name="DeleteContentSpotCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="delete"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">delete</param>
+	        </interceptor-ref>
+			<result name="error" type="tiles">template.cms.content.spot.message</result>
+			<result name="success" type="tiles">template.cms.content.spot.message</result>
+		</action>
+		
+		<action name="ContentSpotCreateCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="create"> 	
+			<result name="error" type="tiles">template.cms.content.spot.create</result>
+			<result name="success" type="tiles">template.cms.content.spot.message</result>
+			<result name="input" type="tiles">template.cms.content.spot.create</result>
+		</action>
+		
+		<action name="PrepareCreateContentSpotAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="input"> 	
+			<result name="input" type="tiles">template.cms.content.spot.create</result>
+		</action>
+		
+		<action name="ListContentSpotRegisteredAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="listAll">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAll</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.content.spot.list</result>
+	        <result name="error" type="tiles">template.cms.content.spot.list</result>
+		</action>
+		
+		<action name="DetailContentSpotRegisteredAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="detail">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">detail</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.content.spot.detail</result>
+	        <result name="error" type="tiles">template.cms.content.spot.message</result>
+		</action>
+		
+		<action name="UpdateContentSpotRegisteredAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="update">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">update</param>
+	        </interceptor-ref>
+	        
+	        <!-- redirect to detail -->
+	    	<!-- success -->
+	        <result name="success" type="redirectAction">
+	        	<param name="actionName">DetailContentSpotRegisteredAction</param>
+	        	<param name="contentSpot.id">${contentSpot.id}</param>
+                <param name="namespace">/cms</param>
+            </result>
+	    	<!-- error -->
+	     	<result name="error" type="redirectAction">
+	        	<param name="actionName">DetailContentSpotRegisteredAction</param>
+                <param name="contentSpot.id">${contentSpot.id}</param>
+                <param name="namespace">/cms</param>
+            </result>
+	   	
+		</action>
+		
+		<action name="AddProductContentSpot" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="addProduct">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">addProduct</param>
+	        </interceptor-ref>
+			<result name="success" type="tiles">template.cms.attribute.popup.message</result>
+	        <result name="error" type="tiles">template.cms.product.popup.list</result>
+		</action>
+		
+		<action name="ContentSpotInitCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction">	
+			<result name="input" type="tiles">template.cms.content.spot.message</result>
+		</action>
+		
+		<action name="ProductAvailableListCMSAction" class="br.com.store.cms.spot.action.ContentSpotCMSAction" method="listAllProducts">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">listAllProducts</param>
+	        </interceptor-ref>	
+			<result name="success" type="tiles">template.cms.product.popup.list</result>
+			<result name="error" type="tiles">template.cms.product.popup.list</result>
+		</action>
+		
+		<!--  Banner silder -->
+		<action name="BannerSliderInitCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="input"> 	
+			<result name="input" type="tiles">template.cms.banner.slider.message</result>
+		</action>
+		
+		<action name="BannerSliderCreateCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="create"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.message</result>
+			<result name="error" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="PrepareBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="prepare"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.create</result>
+		</action>
+		
+		<action name="DetailBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="detail"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.detail</result>
+			<result name="error" type="tiles">template.cms.banner.slider.detail</result>
+		</action>
+		
+		<action name="DeleteBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="delete"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.list</result>
+			<result name="error" type="tiles">template.cms.banner.slider.detail</result>
+		</action>
+		
+		<action name="UpdateBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="update"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.message</result>
+			<result name="error" type="tiles">template.cms.banner.slider.detail</result>
+		
+		</action>
+		
+		<action name="ListBannerSliderCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="listAll"> 	
+			<result name="success" type="tiles">template.cms.banner.slider.list</result>
+		</action>
+		
+		<action name="BannerSliderImageCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="showImage"> 	
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">showImage</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.banner.image.detail</result>
+	        <result name="error" type="tiles">template.cms.banner.image.detail</result>
+		</action>
+			
+		<action name="UpdateBannerImagesCMSAction" class="br.com.store.cms.spot.action.ContentBannerSliderCMSAction" method="updateImage">
+			<interceptor-ref name="defaultStack">
+	          <param name="validation.excludeMethods">updateImages</param>
+	        </interceptor-ref>
+	        <result name="success" type="tiles">template.cms.banner.image.detail</result>
+	        <result name="error" type="tiles">template.cms.banner.image.detail</result>
+		</action>
+		
+		
+		<!--  ends banner slider -->
+	</package>
+    <!-- Add packages here -->
+
+</struts>
+

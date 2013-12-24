@@ -1,0 +1,71 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+
+	<field name="image">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="thumb1">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="thumb2">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="thumb3">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="thumb4">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="product.name">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="product.description">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="product.shortName">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="product.price">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+          <field-validator type="long">
+             <message key="errors.number" />
+        </field-validator>
+    </field>
+	<field name="product.offerPrice">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+        <field-validator type="long">
+             <message key="errors.number" />
+        </field-validator>
+    </field>
+</validators>

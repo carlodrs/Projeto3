@@ -1,0 +1,28 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="spot.spotName">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="spot.spotDescription">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="spot.active">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+	<field name="contentSpot.id">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message key="errors.required" />
+		</field-validator>
+	</field>
+</validators>
