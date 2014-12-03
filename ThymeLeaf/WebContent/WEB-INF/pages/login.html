@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+	<body>
+		<header>
+			<div class="titulo">
+				<span>
+					Thymleaf mini! 
+				</span>
+			</div>
+		</header>
+		
+		<section>
+			<div id="auth">
+				
+				<span class="tit">
+					LOGIN
+				</span>
+				
+				<input type="text" name="email=" class="clsNm">
+				
+				<input type="password" name="password" class="clsPwd">
+			
+				<a class="bt">Enviar</a>
+			</div>	
+					
+		</section>
+		
+		<footer>
+			<DIV>
+				RODAPÉ - NÃO LOGADO! 
+				<p th:utext="#{mensage.inicial}">Inicial</p>
+			</DIV>
+		</footer>
+	</body>
+</html>
